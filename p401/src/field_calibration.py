@@ -31,28 +31,46 @@ def fit_field_data(I, B, Ierr, Berr):
 
     return params, paramsErr
 
-def plot_data_fit(fig, ax, I, B, Ierr, Berr, dataLabel, fitLabel):
-    ax.errorbar(I, B, Berr, Ierr, label=dataLabel)
+def plot_data_fit(fig, ax, I, B, Ierr, Berr):
+    ax.errorbar(I, B, Berr, Ierr, label='Daten')
 
     params, paramsErr = fit_field_data(I, B, Ierr, Berr)
+    paramsPrint = np.array((params, paramsErr)).T
+    paramsPrint = (r' \pm '.join(tuple(np.array(param, dtype=str))) for param in paramsPrint)
+    paramsPrint = r',\ '.join(paramsPrint)
+    print(paramsPrint)
+
+    # print('params', params, paramsErr)
     xFit = array_range(I, overhang=0)
     yFit = field_fit_fn(xFit, *params)
-    ax.plot(xFit, yFit, label=fitLabel)
+    ax.plot(xFit, yFit, label='Kalibrierungskurve')
 
 
+xLims = (0, 10)
+yLims = (0, 550)
 
 fig, ax = plt.subplots()
 I, B, Ierr, Berr = load_data('p401/data/Magnetkalibrierung.txt', .02, (0.002, 0.2))
-plot_data_fit(fig, ax, I, B, Ierr, Berr, 'Daten Anfang', 'Kalibrierungskurve Anfang')
+plot_data_fit(fig, ax, I, B, Ierr, Berr)
+ax.set_xlim(*xLims)
+ax.set_ylim(*yLims)
+ax.minorticks_on()
+ax.grid(which='both',)
 ax.legend()
+ax.set_title('Magnetfeldkalibrierung vor Messung')
 ax.set_xlabel(r'Strom $I/\mathrm{A}$')
 ax.set_ylabel(r'Magnetfeld $B/\mathrm{mT}$')
 fig.savefig('p401/plot/magnetkalib.pdf')
 
-fig.clf()
+fig, ax = plt.subplots()
 I, B, Ierr, Berr = load_data('p401/data/Magnetkalibrierung2.txt', .02, (0.002, 0.2))
-plot_data_fit(fig, ax, I, B, Ierr, Berr, 'Daten Ende', 'Kalibrierungskurve Ende')
+plot_data_fit(fig, ax, I, B, Ierr, Berr)
+ax.set_xlim(*xLims)
+ax.set_ylim(*yLims)
+ax.minorticks_on()
+ax.grid(which='both',)
 ax.legend()
+ax.set_title('Magnetfeldkalibrierung nach Messung')
 ax.set_xlabel(r'Strom $I/\mathrm{A}$')
 ax.set_ylabel(r'Magnetfeld $B/\mathrm{mT}$')
 fig.savefig('p401/plot/magnetkalib2.pdf')

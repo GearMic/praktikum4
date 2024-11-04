@@ -66,7 +66,7 @@
   {\par\medskip\noindent\minipage{\linewidth}}
   {\endminipage\par\medskip}
 \newcommand*{\inputPath}{./plot} % prepend this command to the argument of all input commands
-\graphicspath{ {./images/}{./figure/} }
+\graphicspath{ {./images/}{./figure/}{../plot/} }
 % own enviroment for definitions
 \newenvironment{definition}[1]
 {\begin{quote} \noindent \textbf{\textit{#1\ifx&#1& \else : \fi}} \itshape}
@@ -263,13 +263,44 @@ wodurch am Computer mithilfe einer speziellen Software die Abhängigkeit automat
 Die Messung wird gestartet und der Strom allmählich bis zum maximal erreichbaren Wert hochgefahren.
 Dann wird die Messung gestoppt und der Strom wieder ausgeschaltet.
 
-In Abb. \ref{} sind die Messdaten zusammen mit einem $\Chi^2$-Fit der Form
+Eine solche Kalibrierung wurde zweimal durchgeführt, einmal vor und einmal nach den Messungen aus \ref{messungmessung}.
+In Abb. \ref{fig:magnetkalib} sind die Messdaten zusammen mit einem $\chi^2$-Fit der Form
 \[
-  B(I) = a + bI + cI^2
+  B(I) = a + bI + cI^2 + dI^3
 \]
 dargestellt. Als Fehlerwerte auf $I$ und $B$ wurden dabei $2\%$ des jeweiligen Werts angesetzt,
 wobei Fehlerwerte von $\SI{0.002}{\A}$ und $\SI{0.2}{\mT}$ nicht unterschritten werden dürfen.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\linewidth]{magnetkalib}
+  \caption{Magnetfeldkalibierung vor der Messung mit CCD-Kamera}
+  \includegraphics[width=.8\linewidth]{magnetkalib2}
+  \caption{Magnetfeldkalibierung nach der Messung mit CCD-Kamera}
+  \label{fig:magnetkalib}
+\end{figure}
+
+\begin{align*}
+  a_1&=\SI{-0.548 \pm 0.025}{\mT},\ b_1=\SI{65.44 \pm 0.16}{\mT\per\A}, \\
+  c_1&=\SI{3.96 \pm 0.065}{\mT\per\A\squared},\ d_1=\SI{-0.5213 \pm 0.0059}{\mT\per\A\cubed} \\
+  a_1&=\SI{-0.104 \pm 0.027}{\mT},\ b_1=\SI{66.20 \pm 0.53}{\mT\per\A}, \\
+  c_1&=\SI{3.97 \pm 0.186}{\mT\per\A\squared},\ d_1=\SI{-0.5361 \pm 0.0152}{\mT\per\A\cubed}
+\end{align*}
+
+Diese Werte sind in relativ guter Übereinstimmung miteinander; alle Parameter haben Überschneidungen in ihren Fehlerbereichen.
+Leichte Abweichungen, z.B. beim Parameter $a$ lassen sich unter anderem dadurch erklären, dass die zweite Messung durchgeführt wurde,
+als die Magnetspulen noch heiß vom vorigen Betrieb waren. Dies kann die Ergebnisse verändern.
+
+Um eine einzelne Kalibrationskurve zu haben, verwenden wir im Folgenden die Mittelwerte der Parameter:
+\begin{align*}
+  % i = \frac{i_1+i_2}{2},\enspace \Delta I = \frac{\sqrt{i_1^2 + i_2^2}}{2}
+  i &= \frac{i_1+i_2}{2},\enspace i=a,\,b,\,c,\,d \\
+  a &= \dots \todo{ausrechnen}
+\end{align*}
+Der Fehler wird dabei mithilfe von Gauß'scher Fehlerfortpflanzung bestimmt.
+
+
+\subsubsection{Messungen mit CCD-Kamera} \label{messungmessung}
 
 
 \clearpage
