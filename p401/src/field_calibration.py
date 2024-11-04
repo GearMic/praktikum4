@@ -23,24 +23,23 @@ def load_data(filename, errorPortion, errorMin):
 def field_fit_fn(I, a, b, c, d):
     return a + b*I + c*I**2 + d*I**3
 
-def fit_field_data(I, B, Ierr, Berr):
-
-    # popt, pcov = optimize.curve_fit(field_fit_fn, I, B, p0=(0,1,-1, 0), sigma=Berr)
-    popt, pcov = optimize.curve_fit(field_fit_fn, I, B, sigma=Berr)
-    params, paramsErr = popt, np.sqrt(np.diag(pcov))
-
-    return params, paramsErr
-
-def plot_data_fit(fig, ax, I, B, Ierr, Berr):
-    ax.errorbar(I, B, Berr, Ierr, label='Daten')
-
-    params, paramsErr = fit_field_data(I, B, Ierr, Berr)
+def print_params_err(params, paramsErr):
     paramsPrint = np.array((params, paramsErr)).T
     paramsPrint = (r' \pm '.join(tuple(np.array(param, dtype=str))) for param in paramsPrint)
     paramsPrint = r',\ '.join(paramsPrint)
     print(paramsPrint)
 
-    # print('params', params, paramsErr)
+def fit_field_data(I, B, Ierr, Berr):
+    # popt, pcov = optimize.curve_fit(field_fit_fn, I, B, p0=(0,1,-1, 0), sigma=Berr)
+    popt, pcov = optimize.curve_fit(field_fit_fn, I, B, sigma=Berr)
+    params, paramsErr = popt, np.sqrt(np.diag(pcov))
+    print_params_err(params, paramsErr)
+
+    return params, paramsErr
+
+def plot_data_fit(fig, ax, I, B, Ierr, Berr, params, paramsErr):
+    ax.errorbar(I, B, Berr, Ierr, label='Daten')
+
     xFit = array_range(I, overhang=0)
     yFit = field_fit_fn(xFit, *params)
     ax.plot(xFit, yFit, label='Kalibrierungskurve')
@@ -51,7 +50,8 @@ yLims = (0, 550)
 
 fig, ax = plt.subplots()
 I, B, Ierr, Berr = load_data('p401/data/Magnetkalibrierung.txt', .02, (0.002, 0.2))
-plot_data_fit(fig, ax, I, B, Ierr, Berr)
+params1, params1Err = fit_field_data(I, B, Ierr, Berr)
+plot_data_fit(fig, ax, I, B, Ierr, Berr, params1, params1Err)
 ax.set_xlim(*xLims)
 ax.set_ylim(*yLims)
 ax.minorticks_on()
@@ -64,7 +64,8 @@ fig.savefig('p401/plot/magnetkalib.pdf')
 
 fig, ax = plt.subplots()
 I, B, Ierr, Berr = load_data('p401/data/Magnetkalibrierung2.txt', .02, (0.002, 0.2))
-plot_data_fit(fig, ax, I, B, Ierr, Berr)
+params2, params2Err = fit_field_data(I, B, Ierr, Berr)
+plot_data_fit(fig, ax, I, B, Ierr, Berr, params2, params2Err)
 ax.set_xlim(*xLims)
 ax.set_ylim(*yLims)
 ax.minorticks_on()
@@ -74,3 +75,8 @@ ax.set_title('Magnetfeldkalibrierung nach Messung')
 ax.set_xlabel(r'Strom $I/\mathrm{A}$')
 ax.set_ylabel(r'Magnetfeld $B/\mathrm{mT}$')
 fig.savefig('p401/plot/magnetkalib2.pdf')
+
+paramsMean = (params1+params2)/2
+paramsMeanErr = np.sqrt(params1Err**2+params2Err**2)/2
+print('mean params:')
+print_params_err(paramsMean, paramsMeanErr)
