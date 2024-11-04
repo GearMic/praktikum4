@@ -26,10 +26,10 @@ def plot_data_fit(fig, ax, I, B, Ierr, Berr):
     ax.errorbar(I, B, Berr, Ierr, label='Kalibrierungsdaten Anfang')
 
 
-I, B, Ierr, Berr = load_data('data/Magnetkalibrierung.txt', .02, (0.002, 0.2))
+I, B, Ierr, Berr = load_data('p401/data/Magnetkalibrierung.txt', .02, (0.002, 0.2))
 params, paramsErr = fit_data(I, B, Ierr, Berr)
 print(params, paramsErr)
 
 fig, ax = plt.subplots()
 plot_data_fit(fig, ax, I, B, Ierr, Berr)
-fig.savefig('plot/magnetkalib.pdf')
+fig.savefig('p401/plot/magnetkalib.pdf')
