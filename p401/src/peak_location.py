@@ -81,3 +81,5 @@ for i in range(len(inFilenames)):
     ax.minorticks_on()
     ax.grid(which='both')
     fig.savefig(outFilenames[i])
+
+print(params)
