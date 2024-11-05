@@ -74,10 +74,14 @@ def calc_delta_E(alphaPi, alphaSigma, alphaPiErr, alphaSigmaErr):
     h = 6.626e-34
     c = 3e8
     lbda0 = 643.8e-9
+    alphaPi *= 2*np.pi/360
+    alphaSigma *= 2*np.pi/360
+    alphaPiErr *= 2*np.pi/360
+    alphaSigmaErr *= 2*np.pi/360
     deltaE = -c/lbda0 * h * (1 - np.sqrt(n**2 - np.sin(alphaPi)**2)/np.sqrt(n**2 - np.sin(alphaSigma)**2))
     # TODO: calculate error
 
-    return deltaE, np.sqrt(alphaPiErr**2 + alphaSigmaErr**2)/2
+    return deltaE, np.sqrt(alphaPiErr**2 + alphaSigmaErr**2)/2e19
 
 def mean_mean_err(value1, value2, value1Err, value2Err):
     mean = (value1 + value2) / 2
@@ -148,16 +152,32 @@ alpha_pi_err = paramsErr[:, 4]
 alpha_sigma_plus_err = paramsErr[:, 7]
 deltaEMinus, deltaEMinusErr = calc_delta_E(alpha_pi, alpha_sigma_minus, alpha_pi_err, alpha_sigma_minus_err)
 deltaEPlus, deltaEPlusErr = calc_delta_E(alpha_pi, alpha_sigma_plus, alpha_pi_err, alpha_sigma_plus_err)
-deltaE, deltaEErr = mean_mean_err(deltaEMinus, deltaEPlus, deltaEMinusErr, deltaEPlusErr)
+deltaE, deltaEErr = mean_mean_err(np.abs(deltaEMinus), np.abs(deltaEPlus), deltaEMinusErr, deltaEPlusErr)
 
 B = field_fit_fn(I, a, b, c, d)
-Berr = np.sqrt(field_fit_fn(I, a+aErr, b+bErr, c+cErr, d+dErr)**2 + field_fit_fn(I, a-aErr, b-bErr, c-cErr, d-dErr)**2)
+Berr = np.sqrt(field_fit_fn(I, a+aErr, b+bErr, c+cErr, d+dErr)**2 + field_fit_fn(I, a-aErr, b-bErr, c-cErr, d-dErr)**2)/6/I
 
+e = 1.602e-19
 energyData = pd.DataFrame({
     "B": B, "Berr": Berr,
-    "dEm": deltaEMinus, 'dEm_err': deltaEMinusErr,
-    "dEp": deltaEMinus, 'dEp_err': deltaEMinusErr,
-    "dE": deltaE, 'dE_err': deltaEErr
+    "dEm": deltaEMinus/e, 'dEm_err': deltaEMinusErr/e,
+    "dEp": deltaEPlus/e, 'dEp_err': deltaEPlusErr/e,
+    "dE": deltaE/e, 'dE_err': deltaEErr/e
 })
-energyData.to_csv('p401/data/energy_data.csv', index=False, float_format='%.5f')
+energyData.to_csv('p401/data/energy_data.csv', index=False)
 
+sliceFront = 3
+B = B[sliceFront:]/1000
+deltaE = deltaE[sliceFront:]
+deltaEErr = deltaEErr[sliceFront:]
+
+fig, ax = plt.subplots()
+ax.plot(B, deltaE)
+fig.savefig('p401/plot/energy_plot.pdf')
+
+def linear_fit(x, a, b):
+    return a + b*x
+
+popt, pcov = optimize.curve_fit(linear_fit, B, deltaE, sigma=deltaEErr)
+paramsErr = np.sqrt(np.diag(pcov))
+print(popt,paramsErr*15)

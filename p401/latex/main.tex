@@ -203,7 +203,7 @@ Wenn der Filter auf \ang{90} steht, sind wieder nur einzelne Ringe zu sehen, die
 welche Licht mit Polarisation parallel zum Magnetfeld produziert.
 Steht der Filter auf \ang{0}, gibt es jeweils zwei Ringe, die $\sigma^+$ bzw. $\sigma^-$ entsprechen.
 
-\subsection{Auflösungsvermögen}
+\subsubsection{Auflösungsvermögen}
 
 Nach dem Praktikumskript ist Dicke von Fabry-Perot-Etalon 
 $d = 4 \, \text{mm}$ und die Mittelwellenlänge $\lambda = 643.8 \, \text{nm}$.
@@ -221,6 +221,7 @@ Noch dazu ist der Wert des Magnetfeldes nach der Kalibrierung das Folgende:
 \[
 B_{\text{long}} = ( 83.45 \pm 6.66) \, \text{mT}, \quad B_{\text{trans}} = (173.1 \pm 13.9) \, \text{mT}
 \]
+Dabei wurde $B$ zufolge der später erläuterten Kalibrationskurve bestimmt.
 
 Die Frequenzdifferenz berechnet sich gemäß:
 \[
@@ -236,7 +237,7 @@ A_{\text{trans}} = (4.7 \pm 1.7) \cdot 10^5, \quad A_{\text{long}} = (0.73 \pm 0
 \]
 Der transversale Wert ist signifikant höher als erwartet, liegt jedoch innerhalb der Fehlergrenzen. Der Fehler ist hierbei sehr groß. Der longitudinale Wert ist dagegen zu niedrig ausgefallen. Insgesamt ist die Messgenauigkeit begrenzt, da der Unterschied zwischen den einzelnen Ringen im Okular schwer erkennbar war.
 
-\subsection{Dopplerverbreiterung}
+\subsubsection{Dopplerverbreiterung}
 
 Nach \cite{} gilt für die Dopplerverbreiterung:
 
@@ -374,6 +375,7 @@ mit drei Überlagerten verallgemeinerten Gauß-Funktionen
 \]
 durchgeführt. Der additive Parameter $B$ ermöglicht die Berücksichtigung einer eventuell vorhanden gleichmäßigen Grundausleuchtung
 und sorgt nach visueller Inspektion erfahrungsgemäß für bessere Anpassung der Gauß-Parameter an die Daten.
+Die Plots mit Fit sind in Abb. \ref{fig:gauss-fit-1} und \ref{fig:gauss-fit-2} gezeigt, die Parameter in Tab. \ref{}
 
 
 \clearpage
@@ -846,9 +848,9 @@ Wie man in der Abbildung sich anschauen kann.
     % table head=\hline $I$ & $a_1$ & $\Delta a_1$ & $$ \\,
   \centering
   \csvreader[
-    table head=\hline $I$ & $a_1$ & $\Delta a_1$ & $b_1$ & $\Delta b_1$ & $c_1$ & $\Delta c_1$
-      $a_2$ & $\Delta a_2$ & $b_2$ & $\Delta b_2$ & $c_2$ & $\Delta c_2$
-      $a_3$ & $\Delta a_3$ & $b_3$ & $\Delta b_3$ & $c_3$ & $\Delta c_3$ & $B$ & $\Delta B$\\,
+    table head=\hline $I$ & $a_1$ & $\Delta a_1$ & $\mu_1$ & $\Delta \mu_1$ & $\sigma_1$ & $\Delta \sigma_1$
+      $a_2$ & $\Delta a_2$ & $\mu_2$ & $\Delta \mu_2$ & $\sigma_2$ & $\Delta \sigma_2$
+      $a_3$ & $\Delta a_3$ & $\mu_3$ & $\Delta \mu_3$ & $\sigma_3$ & $\Delta \sigma_3$ & $B$ & $\Delta B$\\,
     tabular=|c||c|c|c|c|c|c||c|c|c|c|c|c||c|c|c|c|c|c||,
     late after line=\\\hline,
     head to column names
@@ -860,7 +862,8 @@ Wie man in der Abbildung sich anschauen kann.
     % \csvcolxvi & \csvcolxvii & \csvcolxviii & \csvcolxix & \csvcolxx}
   % {\csvcoli &\csvcolii &\csvcoliii &\csvcoliv &\csvcolv &\csvcolvi &\csvcolvii &\csvcolviii &\csvcolix &\csvcolx &\csvcolxi}
   %  &\csvcolxii &\csvcolxiii &\csvcolxiv &\csvcolxv &\csvcolxvi &\csvcolxvii &\csvcolxviii &\csvcolxix &\csvcolxx & \csvcolxxi}
-  \caption{Bestimmte Parameter der Intensitätsmaxima für verschiedene Ströme}
+  \caption{Bestimmte Parameter der Intensitätsmaxima für verschiedene Ströme. $I$ in Ampere, $a$ und $B$ in \%, $\mu$ und $\sigma$ in Grad}
+  \label{tab:parameter}
 \end{table}
 
 
