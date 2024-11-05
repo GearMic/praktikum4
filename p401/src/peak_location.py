@@ -33,7 +33,7 @@ def fit_ccd_data(alpha, y, yErr, p0=None):
 
     return params, paramsErr
 
-def plot_data_fit(fig, ax, alpha, y, yErr, params):
+def plot_data_fit(fig, ax, alpha, y, yErr, params=None):
     # ax.errorbar(alpha, y, yErr, label='Daten')
     ax.plot(alpha, y, '-', lw=1, label='Daten')
 
@@ -42,18 +42,47 @@ def plot_data_fit(fig, ax, alpha, y, yErr, params):
     # paramsPrint = r',\ '.join(paramsPrint)
     # print(paramsPrint)
 
-    xFit = array_range(alpha, overhang=0)
-    yFit = triple_gauss_fn(xFit, *params)
-    ax.plot(xFit, yFit, label='Kalibrierungskurve')
+    if not (params is None):
+        xFit = array_range(alpha, overhang=0)
+        yFit = triple_gauss_fn(xFit, *params)
+        ax.plot(xFit, yFit, label='Kalibrierungskurve')
+
+"""
+def alpha_to_lambda(alpha, alphaErr):
+    alpha *= 2*np.pi/360 # convert to radians
+    d = 0.004
+    k = 2
+    n = 1.457
+    lbda = 2*d/k * np.sqrt(n**2-(np.sin(alpha)**2))
+    lbdaErr = d/k * (np.sin(2*alpha)**2) / np.sqrt(n**2 - np.sin(alpha)**2) * alphaErr
+    return lbda, lbdaErr
+
+def calc_delta_E(lbda1, lbda1, lbda1Err, lbda2Err):
+    lbda1, lbda2, lbda3 = lbda
+    lbda1Err, lbda2Err, lbda3Err = lbdaErr
+    # lbdaDiff1 = np.abs(lbda2 - lbda1)
+    # lbdaDiff1Err = np.sqrt(lbda2Err**2 + lbda1Err**2)
+    # lbdaDiff2 = np.abs(lbda3 - lbda2)
+    # lbdaDiff2Err = np.sqrt(lbda3Err**2 + lbda2Err**2)
+
+    # deltaLbda = (lbdaDiff1 + lbdaDiff2)/2
+    # deltaLbdaErr = np.sqrt(lbdaDiff1Err**2 + lbdaDiff2Err**2)/2
+"""
+
+def calc_delta_E(lbda1, lbda2, lbda1Err, lbda2Err):
+    h = 6.626e-34
+    c = 3e8
+    lbda0 = 643.8e-9
+    deltaE = 0 # TODO
 
 # alpha, y, yErr, load_data('p401/data/interference_9.1A.txt', 0.02, 0.5)
-# alpha, y, yErr = load_data('p401/data/interference_9.1A.txt', 1)
 
-# fig, ax = plt.subplots()
-# plot_data_fit(fig, ax, alpha, y, yErr)
-# ax.minorticks_on()
-# ax.grid(which='both')
-# fig.savefig('p401/plot/gauss_1.pdf')
+alpha, y, yErr = load_data('p401/data/interference_9.1A.txt', 1)
+fig, ax = plt.subplots()
+plot_data_fit(fig, ax, alpha, y, yErr)
+ax.minorticks_on()
+ax.grid(which='both')
+fig.savefig('p401/plot/gauss_1.pdf')
 
 I = np.array((2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 7.5, 8.0, 8.5, 9.1))
 alphaRange = np.array(((0.77, 1.16), (0.77, 1.16), (0.77, 1.16), (0.77, 1.16), (0.77, 1.16), (0.77, 1.16), (0.77, 1.16), (0.77, 1.16), (0.77, 1.16), (0.77, 1.16)))
@@ -82,4 +111,20 @@ for i in range(len(inFilenames)):
     ax.grid(which='both')
     fig.savefig(outFilenames[i])
 
-print(params)
+# mu1 = params[:, 1]
+# mu2 = params[:, 2]
+# mu3 = params[:, 3]
+# mu1Err = paramsErr[:, 1]
+# mu2Err = paramsErr[:, 2]
+# mu3Err = paramsErr[:, 3]
+mu = params[:, (1, 4, 7)].T
+muErr = params[:, (1, 4, 7)].T
+lbda, lbdaErr = alpha_to_lambda(mu, muErr)
+print(lbda)
+print(lbdaErr)
+
+
+fig, ax = plt.subplots()
+# ax.plot(I, params[:, 4])
+# ax.plot(I, params[:, 7])
+# fig.savefig('p401/plot/peak-location.pdf')
