@@ -70,6 +70,7 @@ def calc_delta_E(lbda1, lbda1, lbda1Err, lbda2Err):
 """
 
 def calc_delta_E(alphaPi, alphaSigma, alphaPiErr, alphaSigmaErr):
+    n = 1.457
     h = 6.626e-34
     c = 3e8
     lbda0 = 643.8e-9
@@ -77,6 +78,11 @@ def calc_delta_E(alphaPi, alphaSigma, alphaPiErr, alphaSigmaErr):
     # TODO: calculate error
 
     return deltaE, np.sqrt(alphaPiErr**2 + alphaSigmaErr**2)/2
+
+def mean_mean_err(value1, value2, value1Err, value2Err):
+    mean = (value1 + value2) / 2
+    meanErr = np.sqrt(value1Err**2 + value2Err**2) / 2
+    return mean, meanErr
 
 # alpha, y, yErr, load_data('p401/data/interference_9.1A.txt', 0.02, 0.5)
 
@@ -118,29 +124,40 @@ for i in range(len(inFilenames)):
     ax.set_ylabel('Intensität $I$/%')
     fig.savefig(outFilenames[i])
 
-paramsParamsErr = np.zeros((params.shape[0], params.shape[1]+paramsErr.shape[1]))
-paramsParamsErr[:, ::2] = params
-paramsParamsErr[:, 1::2] = paramsErr
+def field_fit_fn(I, a, b, c, d):
+    return a + b*I + c*I**2 + d*I**3
+
+a, b, c, d = -0.326, 56.82, 3.960, -0.5288
+aErr, bErr, cErr, dErr = 0.019, 0.28, 0.099, 0.0082
+
+paramsParamsErr = np.zeros((params.shape[0], 1+params.shape[1]+paramsErr.shape[1]))
+paramsParamsErr[:, 0] = I
+paramsParamsErr[:, 1::2] = params
+paramsParamsErr[:, 2::2] = paramsErr
 csvFilename = 'p401/data/zeeman_params.csv'
 # np.savetxt(csvFilename, paramsParamsErr, delimiter=',')
-pd.DataFrame(paramsParamsErr).to_csv(csvFilename, index=False, float_format='%.8f')
+pd.DataFrame(paramsParamsErr).to_csv(csvFilename, index=False, float_format='%.5f')
 # paramsParamsErr.tofile('p401/data/zeeman_params.csv', sep=',', format='%.3f')
 # paramsParamsErr.tofile('p401/data/zeeman_params.csv', sep=',')
 
-# # mu1 = params[:, 1]
-# # mu2 = params[:, 2]
-# # mu3 = params[:, 3]
-# # mu1Err = paramsErr[:, 1]
-# # mu2Err = paramsErr[:, 2]
-# # mu3Err = paramsErr[:, 3]
-# mu = params[:, (1, 4, 7)].T
-# muErr = params[:, (1, 4, 7)].T
-# lbda, lbdaErr = alpha_to_lambda(mu, muErr)
-# print(lbda)
-# print(lbdaErr)
+alpha_sigma_minus = params[:, 1]
+alpha_pi = params[:, 4]
+alpha_sigma_plus = params[:, 7]
+alpha_sigma_minus_err = paramsErr[:, 1]
+alpha_pi_err = paramsErr[:, 4]
+alpha_sigma_plus_err = paramsErr[:, 7]
+deltaEMinus, deltaEMinusErr = calc_delta_E(alpha_pi, alpha_sigma_minus, alpha_pi_err, alpha_sigma_minus_err)
+deltaEPlus, deltaEPlusErr = calc_delta_E(alpha_pi, alpha_sigma_plus, alpha_pi_err, alpha_sigma_plus_err)
+deltaE, deltaEErr = mean_mean_err(deltaEMinus, deltaEPlus, deltaEMinusErr, deltaEPlusErr)
 
+B = field_fit_fn(I, a, b, c, d)
+Berr = np.sqrt(field_fit_fn(I, a+aErr, b+bErr, c+cErr, d+dErr)**2 + field_fit_fn(I, a-aErr, b-bErr, c-cErr, d-dErr)**2)
 
-# fig, ax = plt.subplots()
-# # ax.plot(I, params[:, 4])
-# # ax.plot(I, params[:, 7])
-# # fig.savefig('p401/plot/peak-location.pdf')
+energyData = pd.DataFrame({
+    "B": B, "Berr": Berr,
+    "dEm": deltaEMinus, 'dEm_err': deltaEMinusErr,
+    "dEp": deltaEMinus, 'dEp_err': deltaEMinusErr,
+    "dE": deltaE, 'dE_err': deltaEErr
+})
+energyData.to_csv('p401/data/energy_data.csv', index=False, float_format='%.5f')
+

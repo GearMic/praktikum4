@@ -695,14 +695,23 @@ Wie man in der Abbildung sich anschauen kann.
 
 \begin{table}[h]
     % table head=\hline $I$ & $a_1[\%]$ & $\Delta a_1[\%]$ \\ \hline,
+    % table head=\hline $I$ & $a_1$ & $\Delta a_1$ & $$ \\,
   \centering
   \csvreader[
-    tabular=|c||c|c||,
-    table head=\hline $I$ & $a_1$ & $\Delta a_1$\\\hline,
+    table head=\hline $I$ & $a_1$ & $\Delta a_1$ & $b_1$ & $\Delta b_1$ & $c_1$ & $\Delta c_1$
+      $a_2$ & $\Delta a_2$ & $b_2$ & $\Delta b_2$ & $c_2$ & $\Delta c_2$
+      $a_3$ & $\Delta a_3$ & $b_3$ & $\Delta b_3$ & $c_3$ & $\Delta c_3$ & $B$ & $\Delta B$\\,
+    tabular=|c||c|c|c|c|c|c||c|c|c|c|c|c||c|c|c|c|c|c||,
     late after line=\\\hline,
     head to column names
   ]{../data/zeeman_params.csv}{}%
-  { \csvcoli &\csvcolii &\csvcoliii }
+  {    \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & 
+    \csvcolvii & \csvcolviii & \csvcolix & \csvcolx &
+    \csvcolxi & \csvcolxii & \csvcolxiii & \csvcolxiv & \csvcolxv &\csvcolxvi & \csvcolxvii & \csvcolxviii & \csvcolxix}
+
+    % \csvcolxvi & \csvcolxvii & \csvcolxviii & \csvcolxix & \csvcolxx}
+  % {\csvcoli &\csvcolii &\csvcoliii &\csvcoliv &\csvcolv &\csvcolvi &\csvcolvii &\csvcolviii &\csvcolix &\csvcolx &\csvcolxi}
+  %  &\csvcolxii &\csvcolxiii &\csvcolxiv &\csvcolxv &\csvcolxvi &\csvcolxvii &\csvcolxviii &\csvcolxix &\csvcolxx & \csvcolxxi}
   \caption{Bestimmte Parameter der Intensitätsmaxima für verschiedene Ströme}
 \end{table}
 
