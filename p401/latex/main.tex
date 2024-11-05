@@ -223,23 +223,37 @@ Spektralinien sich unterscheiden können.
 I_{\text{long}} = (1.2 \pm 0.1) \, \text{A}, \quad I_{\text{trans}} = (2.4 \pm 0.2) \, \text{A}
 \]
 Noch dazu ist der Wert des Magnetfeldes nach der Kalibrierung das Folgende: 
+
 \[
 B_{\text{long}} = ( 83.45 \pm 6.66) \, \text{mT}, \quad B_{\text{trans}} = (173.1 \pm 13.9) \, \text{mT}
 \]
 
 Zuletzt mit $A=\frac{hc}{\mu_B \lambda B}$ (und mit $\cdot \frac{1}{2}$ bei longitudinale 
 Konfiguration) sind die jeweiligen Auflösungsvermögen und Finesse die folgende:
+
 \[
 A_{\text{trans}} = (1.88 \pm 0.14) \cdot 10^5, \quad A_{\text{long}} = (1.19 \pm 0.13) \cdot 10^5
 \]
+
 \[
   F_{\text{trans}} = 10.61 \pm 0.14 \, \text{N}, F_{\text{long}} = 6.72 \pm 0.13 \, \text{N}
 \]
+
 Unsere Werte sind ähnlich, was es zu erwarten war, denn Unsere Werte für 
 $B_i$ das doppelte sind. Jedoch sind unsere beiden Werte zu niedrig gefallen und 
 könnte an der Messgenauigkeit liegen. 
 
 \subsection{Dopplerverbreiterung}
+Die Dopplerverbreitung der Linien errechnet sich mit der Formel:
+\begin{equation*}
+  \Delta \lambda_D = \frac{\lambda}{A} \approx 112 pm
+\end{equation*}
+Dies hier ist bei dem Fall, dass die Cadmiumlampe eine Temperatur 
+\( T=1000\,K \) hat. Der erwartete Wert aus \cite{einheit}liegt aber bei \( \Delta \lambda_{\text{Doppler}}
+ = (1.375 \pm 0.028) \, \text{pm} \). Dies liegt wiederum an der Messgenauigkeit und 
+ äußeren Einflüssen wie dem Linsenfehler.
+
+
 
 
 \subsubsection{longitudinale Konfiguration}
@@ -712,66 +726,34 @@ fällt auf, dass bei erhöhter Temperatur $T$ und Gegenspannung $U_G$ die Anoden
   \caption{zugeordnete $\delta U^i_B$}
   \label{tab:measurements}
 \end{table}
-Im Folgenden sind die Mittelwerte der Beschleunigungsspannung sowie die entsprechenden Fehler dargestellt.
-\begin{table}[H]
-  \centering
-  \begin{tabular}{cc} 
-      \hline
-      & Mittelwert [V] \\ \hline
-      $U^1_B$ & 36.3 \\ \hline
-      $U^2_B$ & 31.2 \\ \hline
-      $U^3_B$ & 26.3 \\ \hline
-      $U^4_B$ & 21.6 \\ \hline
-      $U^5_B$ & 16.6 \\ \hline
-      $U^6_B$ & 11.8 \\ \hline
-  \end{tabular}
-  \caption{Mittelwerte zu $U^i_B$}
-  \label{tab:median_values}
-\end{table}
 
-\begin{table}[H]
-  \centering
-  \begin{tabular}{cc} 
-      \hline
-       & Mittelwert [V] \\ \hline
-      $\delta U^1_B$ & $\pm 0.0504$ \\ \hline
-      $\delta U^2_B$ & $\pm 0.133$ \\ \hline
-      $\delta U^3_B$ & $\pm 0.0112$ \\ \hline
-      $\delta U^4_B$ & $\pm 0.0161$ \\ \hline
-      $\delta U^5_B$ & $\pm 0.0307$ \\ \hline
-      $\delta U^6_B$ & $\pm 0.131$ \\ \hline
-  \end{tabular}
-  \caption{Mittelwerte zu $\delta U^i_B$}
-  \label{tab:mean_values}
-\end{table}
-Nun kann man aus den Diferenzen der benachbaren Peaks der Energiedifferenz $\Delta E$ bestimmt werden. 
-\begin{equation*}
-  \Delta E=(4.9 \pm 0.0803)eV
-\end{equation*}
-Das Ergebnis unserer experimentellen Messungen ist äußerst erfreulich und stimmt vollständig 
-mit dem erwarteten theoretischen Wert der Übergang zwischen $6^1 S_o \rightarrow 6^3P_1$ überein. 
-Wie man in der Abbildung sich anschauen kann. 
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.45]{Vereinfachtes Hg-Termschema.png}
-  \caption{Termschema des Quecksilbers}
-\end{figure}
-\subsection{Einfluss der Temperatur $T$ und der Gegenspannung $U_2$}
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.55]{Totaler Wirkungsquerschnitt.png}
-  \caption{Totaler Wirkungsquerschnitt $Q(\pi a^2_0$) von Hg für Elektronenstoßanregung}
-\end{figure}
-
-
-
-\section{Fazit}
 \end{multicols}
-\clearpage
 
-\section*{Anhang}
 
-\begin{figure}[h]
+\begin{table}[h]
+    % table head=\hline $I$ & $a_1[\%]$ & $\Delta a_1[\%]$ \\ \hline,
+    % table head=\hline $I$ & $a_1$ & $\Delta a_1$ & $$ \\,
+  \centering
+  \csvreader[
+    table head=\hline $I$ & $a_1$ & $\Delta a_1$ & $b_1$ & $\Delta b_1$ & $c_1$ & $\Delta c_1$
+      $a_2$ & $\Delta a_2$ & $b_2$ & $\Delta b_2$ & $c_2$ & $\Delta c_2$
+      $a_3$ & $\Delta a_3$ & $b_3$ & $\Delta b_3$ & $c_3$ & $\Delta c_3$ & $B$ & $\Delta B$\\,
+    tabular=|c||c|c|c|c|c|c||c|c|c|c|c|c||c|c|c|c|c|c||,
+    late after line=\\\hline,
+    head to column names
+  ]{../data/zeeman_params.csv}{}%
+  {    \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & 
+    \csvcolvii & \csvcolviii & \csvcolix & \csvcolx &
+    \csvcolxi & \csvcolxii & \csvcolxiii & \csvcolxiv & \csvcolxv &\csvcolxvi & \csvcolxvii & \csvcolxviii & \csvcolxix}
+
+    % \csvcolxvi & \csvcolxvii & \csvcolxviii & \csvcolxix & \csvcolxx}
+  % {\csvcoli &\csvcolii &\csvcoliii &\csvcoliv &\csvcolv &\csvcolvi &\csvcolvii &\csvcolviii &\csvcolix &\csvcolx &\csvcolxi}
+  %  &\csvcolxii &\csvcolxiii &\csvcolxiv &\csvcolxv &\csvcolxvi &\csvcolxvii &\csvcolxviii &\csvcolxix &\csvcolxx & \csvcolxxi}
+  \caption{Bestimmte Parameter der Intensitätsmaxima für verschiedene Ströme}
+\end{table}
+
+
+begin{figure}[h]
   \centering
   \begin{minipage}{.49\linewidth}
     \centering
@@ -831,29 +813,6 @@ Wie man in der Abbildung sich anschauen kann.
   \label{fig:gauss-fit-2}
 \end{figure}
 
-\begin{table}[h]
-    % table head=\hline $I$ & $a_1[\%]$ & $\Delta a_1[\%]$ \\ \hline,
-    % table head=\hline $I$ & $a_1$ & $\Delta a_1$ & $$ \\,
-  \centering
-  \csvreader[
-    table head=\hline $I$ & $a_1$ & $\Delta a_1$ & $b_1$ & $\Delta b_1$ & $c_1$ & $\Delta c_1$
-      $a_2$ & $\Delta a_2$ & $b_2$ & $\Delta b_2$ & $c_2$ & $\Delta c_2$
-      $a_3$ & $\Delta a_3$ & $b_3$ & $\Delta b_3$ & $c_3$ & $\Delta c_3$ & $B$ & $\Delta B$\\,
-    tabular=|c||c|c|c|c|c|c||c|c|c|c|c|c||c|c|c|c|c|c||,
-    late after line=\\\hline,
-    head to column names
-  ]{../data/zeeman_params.csv}{}%
-  {    \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & 
-    \csvcolvii & \csvcolviii & \csvcolix & \csvcolx &
-    \csvcolxi & \csvcolxii & \csvcolxiii & \csvcolxiv & \csvcolxv &\csvcolxvi & \csvcolxvii & \csvcolxviii & \csvcolxix}
-
-    % \csvcolxvi & \csvcolxvii & \csvcolxviii & \csvcolxix & \csvcolxx}
-  % {\csvcoli &\csvcolii &\csvcoliii &\csvcoliv &\csvcolv &\csvcolvi &\csvcolvii &\csvcolviii &\csvcolix &\csvcolx &\csvcolxi}
-  %  &\csvcolxii &\csvcolxiii &\csvcolxiv &\csvcolxv &\csvcolxvi &\csvcolxvii &\csvcolxviii &\csvcolxix &\csvcolxx & \csvcolxxi}
-  \caption{Bestimmte Parameter der Intensitätsmaxima für verschiedene Ströme}
-\end{table}
-
-
 
 
 \begin{thebibliography}{9}
@@ -864,6 +823,9 @@ Wie man in der Abbildung sich anschauen kann.
 \bibitem{Leybold}
 \textit{Beobachtung des normalen Zeeman-Effekts in transversaler und longitudinaler Konfiguration}, Leybold Didactic, Abruf 30.10.2024
 
+\bibitem{einheit}
+\textit{Physics LibreTexts. (n.d.). 4.2: Measuring Motion - the Doppler Shift. , Abruf 05.11.2024}
+\label{einheit}
 \end{thebibliography}
 
 
