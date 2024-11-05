@@ -69,11 +69,14 @@ def calc_delta_E(lbda1, lbda1, lbda1Err, lbda2Err):
     # deltaLbdaErr = np.sqrt(lbdaDiff1Err**2 + lbdaDiff2Err**2)/2
 """
 
-def calc_delta_E(lbda1, lbda2, lbda1Err, lbda2Err):
+def calc_delta_E(alphaPi, alphaSigma, alphaPiErr, alphaSigmaErr):
     h = 6.626e-34
     c = 3e8
     lbda0 = 643.8e-9
-    deltaE = 0 # TODO
+    deltaE = -c/lbda0 * h * (1 - np.sqrt(n**2 - np.sin(alphaPi)**2)/np.sqrt(n**2 - np.sin(alphaSigma)**2))
+    # TODO: calculate error
+
+    return deltaE, np.sqrt(alphaPiErr**2 + alphaSigmaErr**2)/2
 
 # alpha, y, yErr, load_data('p401/data/interference_9.1A.txt', 0.02, 0.5)
 
@@ -114,6 +117,15 @@ for i in range(len(inFilenames)):
     ax.set_xlabel('Position $\\alpha$/°')
     ax.set_ylabel('Intensität $I$/%')
     fig.savefig(outFilenames[i])
+
+paramsParamsErr = np.zeros((params.shape[0], params.shape[1]+paramsErr.shape[1]))
+paramsParamsErr[:, ::2] = params
+paramsParamsErr[:, 1::2] = paramsErr
+csvFilename = 'p401/data/zeeman_params.csv'
+# np.savetxt(csvFilename, paramsParamsErr, delimiter=',')
+pd.DataFrame(paramsParamsErr).to_csv(csvFilename, index=False, float_format='%.8f')
+# paramsParamsErr.tofile('p401/data/zeeman_params.csv', sep=',', format='%.3f')
+# paramsParamsErr.tofile('p401/data/zeeman_params.csv', sep=',')
 
 # # mu1 = params[:, 1]
 # # mu2 = params[:, 2]

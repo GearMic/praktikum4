@@ -693,6 +693,19 @@ Wie man in der Abbildung sich anschauen kann.
   \label{fig:gauss-fit-2}
 \end{figure}
 
+\begin{table}[h]
+    % table head=\hline $I$ & $a_1[\%]$ & $\Delta a_1[\%]$ \\ \hline,
+  \centering
+  \csvreader[
+    tabular=|c||c|c||,
+    table head=\hline $I$ & $a_1$ & $\Delta a_1$\\\hline,
+    late after line=\\\hline,
+    head to column names
+  ]{../data/zeeman_params.csv}{}%
+  { \csvcoli &\csvcolii &\csvcoliii }
+  \caption{Bestimmte Parameter der Intensitätsmaxima für verschiedene Ströme}
+\end{table}
+
 
 
 
