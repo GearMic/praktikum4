@@ -375,8 +375,35 @@ mit drei Überlagerten verallgemeinerten Gauß-Funktionen
 \]
 durchgeführt. Der additive Parameter $B$ ermöglicht die Berücksichtigung einer eventuell vorhanden gleichmäßigen Grundausleuchtung
 und sorgt nach visueller Inspektion erfahrungsgemäß für bessere Anpassung der Gauß-Parameter an die Daten.
-Die Plots mit Fit sind in Abb. \ref{fig:gauss-fit-1} und \ref{fig:gauss-fit-2} gezeigt, die Parameter in Tab. \ref{}
+Die Plots mit Fit sind in Abb. \ref{fig:gauss-fit-1} und \ref{fig:gauss-fit-2} gezeigt, die Parameter in Tab. \ref{tab:parameter}.
 
+Für die Energiedifferenz gilt
+\[
+  \Delta E_\pm = -\frac{h c}{\lambda_\pi} \frac{\lambda_\sigma - \lambda_\pi}{\lambda_\sigma} \cite{Anleitung}
+\]
+mit $\lambda_pi^0 = \SI{643.8}{\nm}$ \cite{Leybold}. Die Interferenzbedingung des Interferometers lautet
+\[
+  k\lambda = 2d\sqrt{n^2 - \sin^2(\alpha)} \cite{Leybold}
+\].
+Eingesetzt in den Zusammenhang für die Energiedifferenz ergibt sich
+\[
+  \Delta E_\pm = -\frac{h c}{\lambda_\pi} (1 - \frac{\sqrt{n^2-\sin^2(\alpha_\pi)}}{\sqrt{n^2-\sin^2(\alpha_\sigma)}})
+\]
+
+Die Werte, die sich hieraus ergeben, sind, zusammen mit den aus der Kalibrationskurve bestimmten B-Werten, sind in Tab. \ref{tab:} gezeigt.
+Dabei ist $\Delta E$ jeweils der Mittelwert aus $\Delta E_-$ und $\Delta E_+$.
+
+\begin{table}
+  \centering
+  \csvreader[
+    table head=\hline $B$ & $\Delta B$ & $\Delta E_-$ & $\Delta (\Delta E_-)$ & $\Delta E_+$ & $\Delta (\Delta E_+)$ & $\Delta E$ & $\Delta (\Delta E)$\\,
+    tabular=|c||c|c||c|c||c|c||,
+    late after line=\\\hline,
+    head to column names
+  ]{../data/energy_data.csv}{}%
+  {\csvcoli & \csvcolii & \csvcoliii}
+  
+\end{table}
 
 \clearpage
 \section{Franck-Hertz-Versuch}
