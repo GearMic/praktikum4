@@ -203,7 +203,54 @@ Wenn der Filter auf \ang{90} steht, sind wieder nur einzelne Ringe zu sehen, die
 welche Licht mit Polarisation parallel zum Magnetfeld produziert.
 Steht der Filter auf \ang{0}, gibt es jeweils zwei Ringe, die $\sigma^+$ bzw. $\sigma^-$ entsprechen.
 
-\todo{Auflösungsvermögen}
+\subsection{Auflösungsvermögen}
+
+Nach dem Praktikumskript ist Dicke von Fabry-Perot-Etalon 
+$d = 4 \, \text{mm}$ und die Mittelwellenlänge $\lambda = 643.8 \, \text{nm}$.
+Damit lässt sich das theoretische Auflösungsvermögen bestimmen, es gilt dann:
+
+\[
+A_{\text{theo}} = \frac{2 \pi n d}{\lambda (1 - r)} = (3.79) \cdot 10^5
+\]
+Wie im Protokoll beschrieben wird, wird der Strom so eingestellt, sodass die Aufspaltung
+Spektralinien sich unterscheiden können.
+\[
+I_{\text{long}} = (1.2 \pm 0.1) \, \text{A}, \quad I_{\text{trans}} = (2.4 \pm 0.2) \, \text{A}
+\]
+Noch dazu ist der Wert des Magnetfeldes nach der Kalibrierung das Folgende: 
+\[
+B_{\text{long}} = ( 83.45 \pm 6.66) \, \text{mT}, \quad B_{\text{trans}} = (173.1 \pm 13.9) \, \text{mT}
+\]
+
+Die Frequenzdifferenz berechnet sich gemäß:
+\[
+\nu = \frac{\Delta M \, \mu_B B}{h}
+\]
+Man verwendet die Literaturwerte für $h$ und $\mu_B$  folgt:
+\[
+\nu_{\text{trans}} = (4.85 \pm 0.39) \, \text{GHz}, \quad \nu_{\text{long}} = (1.17 \pm 0.093) \, \text{GHz}
+\]
+Zuletzt mit $\nu_0 = \frac{c}{\lambda_0} = 456 \, \text{THz}$ sind die jeweiligen Auflösungsvermögen die folgende:
+\[
+A_{\text{trans}} = (4.7 \pm 1.7) \cdot 10^5, \quad A_{\text{long}} = (0.73 \pm 0.035) \cdot 10^5
+\]
+Der transversale Wert ist signifikant höher als erwartet, liegt jedoch innerhalb der Fehlergrenzen. Der Fehler ist hierbei sehr groß. Der longitudinale Wert ist dagegen zu niedrig ausgefallen. Insgesamt ist die Messgenauigkeit begrenzt, da der Unterschied zwischen den einzelnen Ringen im Okular schwer erkennbar war.
+
+\subsection{Dopplerverbreiterung}
+
+Nach \cite{} gilt für die Dopplerverbreiterung:
+
+\[
+\Delta \nu_D = \frac{1}{\lambda_0} \pi \sqrt{\frac{8 k_B T \ln 2}{m}}
+\]
+
+Für Caesium mit einer Masse von $m = 1.86 \cdot 10^{-25} \, \text{kg}$ und einer angenommenen Temperatur von $T = 1000 \, \text{K}$ (nach \cite{source11}) erhalten wir eine Dopplerverbreiterung von:
+
+\[
+\Delta \nu \approx 1 \, \text{GHz}
+\]
+
+Dies entspricht etwa $25.7 \, \%$ der Halbwertsbreite.
 
 \subsubsection{longitudinale Konfiguration}
 Die Magneten mitsamt der Cadmiumlampe werden um \ang{90} gedreht,
@@ -385,7 +432,121 @@ sind. Dadurch entsteht eine Gaußkurve, die die Daten im ausgewählten Bereich b
    verschiedene Gegenspannung $T$ und fester Temperatur $U_G$}
 \end{figure}
 \clearpage
-Nun sind auch die zugehörigen Tabellen aufgeführt.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.55]{FH_vieleU.png}
+  \caption{Die gemessene Beschleunigungsspannung $U_B$ gegen Anodenspannung $U_A$ 
+  verschiedenen Temperaturen $T$ und Gegenspannung $U_G$}
+\end{figure}
+
+\subsection*{Bestimmung der $\Delta$Energiedifferenz}
+Um die Eindeutigkeit zu gewährleisten, bezeichnen wir die Peaks bzw. die Erwartungswerte mit $U^i_B$ und 
+fassen alle relevanten Informationen in einer Tabelle zusammen.
+Der Fehler des Mittelwerts wird durch die folgende Formel und in der Tabelle dargestellt:
+\begin{equation*}
+\Delta(U^i_B) = \sqrt{\frac{1}{N} \sum_{n=1}^{N} \left( \delta U_{i,n}^B \right)^2}
+\end{equation*}
+Dabei ist \( N \) die Anzahl der Werte, die zur Berechnung des Mittelwerts beitragen.
+
+Im Folgenden sind die Mittelwerte der Beschleunigungsspannung sowie die entsprechenden Fehler dargestellt.
+\begin{table}[H]
+  \centering
+  \begin{tabular}{cc} 
+      \hline
+      & Mittelwert [V] \\ \hline
+      $U^1_B$ & 36.3 \\ \hline
+      $U^2_B$ & 31.2 \\ \hline
+      $U^3_B$ & 26.3 \\ \hline
+      $U^4_B$ & 21.6 \\ \hline
+      $U^5_B$ & 16.6 \\ \hline
+      $U^6_B$ & 11.8 \\ \hline
+  \end{tabular}
+  \caption{Mittelwerte zu $U^i_B$}
+  \label{tab:median_values}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{cc} 
+      \hline
+       & Mittelwert [V] \\ \hline
+      $\delta U^1_B$ & $\pm 0.0504$ \\ \hline
+      $\delta U^2_B$ & $\pm 0.133$ \\ \hline
+      $\delta U^3_B$ & $\pm 0.0112$ \\ \hline
+      $\delta U^4_B$ & $\pm 0.0161$ \\ \hline
+      $\delta U^5_B$ & $\pm 0.0307$ \\ \hline
+      $\delta U^6_B$ & $\pm 0.131$ \\ \hline
+  \end{tabular}
+  \caption{Mittelwerte zu $\delta U^i_B$}
+  \label{tab:mean_values}
+\end{table}
+Nun kann man aus den Diferenzen der benachbaren Peaks der Energiedifferenz $\Delta E$ bestimmt werden. 
+\begin{equation*}
+  \Delta E=(4.9 \pm 0.0803)eV
+\end{equation*}
+Das Ergebnis unserer experimentellen Messungen ist äußerst erfreulich und stimmt vollständig 
+mit dem erwarteten theoretischen Wert der Übergang zwischen $6^1 S_o \rightarrow 6^3P_1$ überein. 
+Wie man in der Abbildung sich anschauen kann. 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.45]{Vereinfachtes Hg-Termschema.png}
+  \caption{Termschema des Quecksilbers}
+\end{figure}
+\clearpage
+\subsection{Einfluss der Temperatur $T$ und der Gegenspannung $U_2$}
+
+Untersucht man den Zusammenhang zwischen Energiedifferenz und Wirkungsquerschnitt, so 
+stellt man fest, dass die Wechselwirkung ihr Maximum bei $\Delta E = 4{.}9 \, \mathrm{eV}$ 
+erreicht. Dennoch weist der Peak eine Breite auf, was auf die Natur des Triplet-Zustands 
+$6^3P$ zurückzuführen ist, da einige Elektronen mit etwas geringerer oder höherer Energie 
+wechselwirken können.(siehe Abbildung \ref{Wirkungsquerschnitt})
+
+Zudem erkennt man mithilfe des Anhangs im Praktikumskript, dass der Dampfdruck von 
+Quecksilber stark von der Temperatur abhängt (siehe untenstehende Formel).
+
+\begin{equation*}
+  log(p) = 10.55 - \frac{3333}{T} - 0.85log(T)
+\end{equation*}
+Daraus folgt, dass bei steigender Temperatur vermehrt thermische Stöße zwischen den H
+g-Atomen stattfinden können, was dazu führt, dass weniger Elektronen die notwendige 
+Energie besitzen, um die Anode zu erreichen. Andererseits treten bei niedrigeren 
+Temperaturen weniger Stöße auf, was zur Folge hat, dass nur geringe oder gar keine Peaks 
+beobachtet werden können.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.55]{Totaler Wirkungsquerschnitt.png}
+  \caption{Totaler Wirkungsquerschnitt $Q(\pi a^2_0$) von Hg für Elektronenstoßanregung}
+  \label{Wirkungsquerschnitt}
+\end{figure}
+\clearpage
+\section{Fazit}
+
+Im zweiten Versuchsteil wird der Franck-Hertz-Versuch aufgebaut und untersucht. Dabei 
+wird die Beschleunigungsspannung in Abhängigkeit von der Anodenspannung bei verschiedenen 
+Temperaturen und Gegenspannungen aufgezeichnet, wodurch die erwarteten Peaks entstehen. 
+Mithilfe der Berechnung des Erwartungswerts $\mu_i$ und der Standardabweichung $\sigma_i$ 
+wird nach der Datenanalyse festgestellt, dass die Energiedifferenz für den Übergang im 
+Hg-Atom zwischen den Zuständen $6^1S_0$ und $6^3P_1$ den Wert $\Delta E = (4.9 \pm 0.0803) \, 
+\text{eV}$ annimmt, was erstaunlich gut mit dem theoretischen Wert übereinstimmt. Zudem 
+fällt auf, dass bei erhöhter Temperatur $T$ und Gegenspannung $U_G$ die Anodenspannung $U_A$ abnimmt.
+
+
+
+\clearpage
+\begin{thebibliography}{9}
+
+\bibitem{Anleitung}
+\textit{Physikalisches Praktikum Teil IV -- Versuchsbeschreibungen}, Universität Bonn, Abruf 29.10.2024
+
+\bibitem{Leybold}
+\textit{Beobachtung des normalen Zeeman-Effekts in transversaler und longitudinaler Konfiguration}, Leybold Didactic, Abruf 30.10.2024
+
+\end{thebibliography}
+\clearpage
+\section{Anhang}
 \begin{table}[H]
   \centering
   \begin{tabular}{|c|c|c|}
@@ -465,13 +626,6 @@ Nun sind auch die zugehörigen Tabellen aufgeführt.
   \label{tab:data_no_height_5}
 \end{table}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.55]{FH_vieleU.png}
-  \caption{Die gemessene Beschleunigungsspannung $U_B$ gegen Anodenspannung $U_A$ 
-  verschiedenen Temperaturen $T$ und Gegenspannung $U_G$}
-\end{figure}
-
 \begin{table}[H]
   \centering
   \begin{tabular}{|c|c|c|}
@@ -533,9 +687,7 @@ Nun sind auch die zugehörigen Tabellen aufgeführt.
   \caption{Parameter bei $U_G=2.7V$ und $T=180^\circ C$}
   \label{tab:data_no_height_8}
 \end{table}
-\subsection*{Bestimmung der $\Delta$Energiedifferenz}
-Um die Eindeutigkeit zu gewährleisten, bezeichnen wir die Peaks bzw. die Erwartungswerte mit $U^i_B$ und 
-fassen alle relevanten Informationen in einer Tabelle zusammen.
+
 \begin{table}[H]
   \centering
   \begin{tabular}{cccccc} 
@@ -552,11 +704,7 @@ fassen alle relevanten Informationen in einer Tabelle zusammen.
   \caption{zugeordnete $U^i_B$}
   \label{tab:measurements}
 \end{table}
-Der Fehler des Mittelwerts wird durch die folgende Formel und in der Tabelle dargestellt:
-\begin{equation*}
-\Delta(U^i_B) = \sqrt{\frac{1}{N} \sum_{n=1}^{N} \left( \delta U_{i,n}^B \right)^2}
-\end{equation*}
-Dabei ist \( N \) die Anzahl der Werte, die zur Berechnung des Mittelwerts beitragen.
+
 \begin{table}[H]
   \centering
   \small 
@@ -574,6 +722,7 @@ Dabei ist \( N \) die Anzahl der Werte, die zur Berechnung des Mittelwerts beitr
   \caption{zugeordnete $\delta U^i_B$}
   \label{tab:measurements}
 \end{table}
+<<<<<<< HEAD
 Im Folgenden sind die Mittelwerte der Beschleunigungsspannung sowie die entsprechenden Fehler dargestellt.
 \begin{table}[H]
   \centering
@@ -728,6 +877,9 @@ Wie man in der Abbildung sich anschauen kann.
 
 \end{thebibliography}
 
+=======
+\end{multicols}
+>>>>>>> 5a38031d9735c571a921db4486ce46e9351e6194
 
 \end{document}
 
