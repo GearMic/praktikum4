@@ -173,6 +173,8 @@ deltaEErr = deltaEErr[sliceFront:]
 
 fig, ax = plt.subplots()
 ax.plot(B, deltaE)
+ax.set_xlabel("B/T")
+ax.set_ylabel("$\Delta$E/J")
 fig.savefig('p401/plot/energy_plot.pdf')
 
 def linear_fit(x, a, b):
