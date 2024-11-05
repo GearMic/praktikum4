@@ -203,15 +203,20 @@ Wenn der Filter auf \ang{90} steht, sind wieder nur einzelne Ringe zu sehen, die
 welche Licht mit Polarisation parallel zum Magnetfeld produziert.
 Steht der Filter auf \ang{0}, gibt es jeweils zwei Ringe, die $\sigma^+$ bzw. $\sigma^-$ entsprechen.
 
-\subsection{Auflösungsvermögen}
+\subsection{Auflösungsvermögen und Finesse}
 
 Nach dem Praktikumskript ist Dicke von Fabry-Perot-Etalon 
-$d = 4 \, \text{mm}$ und die Mittelwellenlänge $\lambda = 643.8 \, \text{nm}$.
-Damit lässt sich das theoretische Auflösungsvermögen bestimmen, es gilt dann:
-
+$d = 4 \, \text{mm}$, die Mittelwellenlänge $\lambda = 643.8 \, \text{nm}$ und 
+für Reflexiongrad $R=0.85$.
+Damit lässt sich das theoretische Auflösungsvermögen und die Finesse $F$ 
+bestimmen, es gilt dann:
 \[
-A_{\text{theo}} = \frac{2 \pi n d}{\lambda (1 - r)} = (3.79) \cdot 10^5
+F_{\text{theo}} = \frac{\pi R}{1 - R^2}= 9.63
 \]
+\[
+  A_{\text{theo}} = \frac{F \cdot 2nd}{\lambda} = 1.742 \cdot 10^5
+\]
+
 Wie im Protokoll beschrieben wird, wird der Strom so eingestellt, sodass die Aufspaltung
 Spektralinien sich unterscheiden können.
 \[
@@ -222,35 +227,20 @@ Noch dazu ist der Wert des Magnetfeldes nach der Kalibrierung das Folgende:
 B_{\text{long}} = ( 83.45 \pm 6.66) \, \text{mT}, \quad B_{\text{trans}} = (173.1 \pm 13.9) \, \text{mT}
 \]
 
-Die Frequenzdifferenz berechnet sich gemäß:
+Zuletzt mit $A=\frac{hc}{\mu_B \lambda B}$ (und mit $\cdot \frac{1}{2}$ bei longitudinale 
+Konfiguration) sind die jeweiligen Auflösungsvermögen und Finesse die folgende:
 \[
-\nu = \frac{\Delta M \, \mu_B B}{h}
+A_{\text{trans}} = (1.88 \pm 0.14) \cdot 10^5, \quad A_{\text{long}} = (1.19 \pm 0.13) \cdot 10^5
 \]
-Man verwendet die Literaturwerte für $h$ und $\mu_B$  folgt:
 \[
-\nu_{\text{trans}} = (4.85 \pm 0.39) \, \text{GHz}, \quad \nu_{\text{long}} = (1.17 \pm 0.093) \, \text{GHz}
+  F_{\text{trans}} = 10.61 \pm 0.14 \, \text{N}, F_{\text{long}} = 6.72 \pm 0.13 \, \text{N}
 \]
-Zuletzt mit $\nu_0 = \frac{c}{\lambda_0} = 456 \, \text{THz}$ sind die jeweiligen Auflösungsvermögen die folgende:
-\[
-A_{\text{trans}} = (4.7 \pm 1.7) \cdot 10^5, \quad A_{\text{long}} = (0.73 \pm 0.035) \cdot 10^5
-\]
-Der transversale Wert ist signifikant höher als erwartet, liegt jedoch innerhalb der Fehlergrenzen. Der Fehler ist hierbei sehr groß. Der longitudinale Wert ist dagegen zu niedrig ausgefallen. Insgesamt ist die Messgenauigkeit begrenzt, da der Unterschied zwischen den einzelnen Ringen im Okular schwer erkennbar war.
+Unsere Werte sind ähnlich, was es zu erwarten war, denn Unsere Werte für 
+$B_i$ das doppelte sind. Jedoch sind unsere beiden Werte zu niedrig gefallen und 
+könnte an der Messgenauigkeit liegen. 
 
 \subsection{Dopplerverbreiterung}
 
-Nach \cite{} gilt für die Dopplerverbreiterung:
-
-\[
-\Delta \nu_D = \frac{1}{\lambda_0} \pi \sqrt{\frac{8 k_B T \ln 2}{m}}
-\]
-
-Für Caesium mit einer Masse von $m = 1.86 \cdot 10^{-25} \, \text{kg}$ und einer angenommenen Temperatur von $T = 1000 \, \text{K}$ (nach \cite{source11}) erhalten wir eine Dopplerverbreiterung von:
-
-\[
-\Delta \nu \approx 1 \, \text{GHz}
-\]
-
-Dies entspricht etwa $25.7 \, \%$ der Halbwertsbreite.
 
 \subsubsection{longitudinale Konfiguration}
 Die Magneten mitsamt der Cadmiumlampe werden um \ang{90} gedreht,
