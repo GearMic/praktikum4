@@ -169,7 +169,7 @@ die Polarisation vom $\pi$-Übergang steht senkrecht dazu.
 Das am Okular enstehende Bild ist in Abb. \ref{fig:zeeman-transveral-ohne-ohne} gezeigt.
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=.8\linewidth]{zeeman-transversal-ohne-ohne}
+  \includegraphics[width=.8\linewidth]{zeeman-transversal-ohne-ohne}
   \caption{Interferenzmuster bei transversaler Beobachtung ohne Magnetfeld, ohne Polarisationsfilter.}
   \label{fig:zeeman-transveral-ohne-ohne}
 \end{figure}
@@ -178,7 +178,7 @@ Es sind die verschiedenen Interferenzringe zu erkennen, die hier alle von der gl
 Nun wird das Magnetfeld eingeschaltet und erhöht, bis man eine Aufspaltung der Ringe sieht, siehe Abb. \ref{fig:zeeman-transveral-mit-ohne}
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=.8\linewidth]{zeeman-transversal-mit-ohne}
+  \includegraphics[width=.8\linewidth]{zeeman-transversal-mit-ohne}
   \caption{Interferenzmuster bei transversaler Beobachtung mit Magnetfeld, ohne Polarisationsfilter.}
   \label{fig:zeeman-transveral-mit-ohne}
 \end{figure}
@@ -189,13 +189,13 @@ eine etwas geringere bzw. höhere Wellenlänge produzieren. Was zuvor ein Ring w
 Die verschiedenen Komponenten können durch Einsatz des Polarisationsfilters herausgefiltert werden (Abb. \ref{fig:zeeman-transveral-mit-90}, \ref{fig:zeeman-transveral-mit-0}).
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=.8\linewidth]{zeeman-transversal-mit-90}
+  \includegraphics[width=.8\linewidth]{zeeman-transversal-mit-90}
   \caption{Interferenzmuster bei transversaler Beobachtung mit Magnetfeld, mit Polarisationsfilter auf \ang{90}.}
   \label{fig:zeeman-transveral-mit-90}
 \end{figure}
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=.8\linewidth]{zeeman-transversal-mit-0}
+  \includegraphics[width=.8\linewidth]{zeeman-transversal-mit-0}
   \caption{Interferenzmuster bei transversaler Beobachtung mit Magnetfeld, mit Polarisationsfilter auf \ang{0}.}
   \label{fig:zeeman-transveral-mit-0}
 \end{figure}
@@ -214,7 +214,7 @@ Ohne Magnetfeld ergibt sich das Muster in Abb. \ref{fig:zeeman-longitudinal-ohne
 bei transversaler Konfiguration übereinstimmt.
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=.8\linewidth]{zeeman-longitudinal-ohne-ohne}
+  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-ohne-ohne}
   \caption{Interferenzmuster bei longitudinaler Beobachtung ohne Magnetfeld, ohne Polarisationsfilter.}
   \label{fig:zeeman-longitudinal-ohne-ohne}
 \end{figure}
@@ -224,7 +224,7 @@ Diese entsprechen den beiden $\sigma$-Übergängen, während der $\pi$-Übergang
 in longitudinaler Konfiguration nicht zu sehen ist.
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=.8\linewidth]{zeeman-longitudinal-mit-ohne}
+  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-mit-ohne}
   \caption{Interferenzmuster bei longitudinaler Beobachtung mit Magnetfeld, ohne Polarisationsfilter.}
   \label{fig:zeeman-longitudinal-mit-ohne}
 \end{figure}
@@ -237,7 +237,7 @@ welche dann mit dem Polarisationsfilter ausgewählt werden können.
 Mit dem Polarisationsfilter auf \ang{-45} ist nur noch jeweils ein Ring stark zu sehen (Abb. \ref{fig:zeeman-longitudinal-mit--45})
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=.8\linewidth]{zeeman-longitudinal-mit--45}
+  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-mit--45}
   \caption{Interferenzmuster bei longitudinaler Beobachtung mit Magnetfeld, mit Polarisationsfilter.}
   \label{fig:zeeman-longitudinal-mit--45}
 \end{figure}
@@ -245,15 +245,16 @@ Mit dem Polarisationsfilter auf \ang{-45} ist nur noch jeweils ein Ring stark zu
 Mit dem Polarisationsfilter in \ang{45}-Stellung ist nur der jeweils andere Ring stark zu sehen (Abb. \ref{fig:zeeman-longitudinal-mit-45}).
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=.8\linewidth]{zeeman-longitudinal-mit-45}
+  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-mit-45}
   \caption{Interferenzmuster bei longitudinaler Beobachtung mit Magnetfeld, mit Polarisationsfilter.}
   \label{fig:zeeman-longitudinal-mit-45}
 \end{figure}
 
 
 \subsection{Messung des Zeeman-Effekts}
-Es soll nun quantitativ die Stärke der Aufspaltung in Abhängigkeit des anliegenden Magnetfelds gemessen werden.
-Hierzu wird die transversale Konfiguration verwendet.
+Es soll nun quantitativ die Stärke der Aufspaltung in Abhängigkeit des anliegenden Magnetfelds gemessen werden,
+mit dem Ziel, das Bohrsche Magneton $\mu_B$ zu bestimmten.
+Hierzu wird die transversale Konfiguration verwendet und $\lambda/4$-Platte sowie Polarisationsfilter aus dem Strahlengang entfernt.
 
 \subsubsection{Magnetfeldkalibrierung}
 Es wird die Abhängigkeit der Magnetfeldstärke vom fließenden Strom durchmessen, um daraus eine Kalibrierungskurve zu erstellen.
@@ -302,6 +303,31 @@ Der Fehler wird dabei mithilfe von Gauß'scher Fehlerfortpflanzung bestimmt.
 
 
 \subsubsection{Messungen mit CCD-Kamera} \label{messungmessung}
+Die Messung der Positionen der Interferenzmaxima erfolgt mithilfe einer CCD-Kamera, die anstatt des Okulars
+in den Strahlengang eingesetzt wird. Die Kamera (Auflösung von $1024$ Pixeln) wird mit dem Computer verbunden, wo mithilfe eines dafür ausgelegten
+Programms die Lichtintensität in Abhängigkeit des Ablenkwinkels $\alpha$ aufgenommen wird.
+Dabei wird $\alpha$ automatisch aus der Pixel-Position $p$ berechnet nach der Formel
+\[
+  \alpha = \arctan(\frac{(1024-p) \cdot \SI{0.014}{\mm}}{f}),\ f=\SI{150}{\mm}\ (\cite{Anleitung}, S.7)
+\]
+\todo{braucht man Seitenangaben?}
+
+Nun wird das Magnetfeld durch Änderung des Stroms variiert und am Computer beobachtet,
+wie sich die Aufspaltung der Linien verändert.
+Für $10$ verschiedene Ströme wird die Messung (Werte der Intensität $I$ in Abhängigkeit des Winkels $\alpha$) jeweils abgespeichert.
+Aus jeder Messung wird eine Beugungsordnung ausgesucht, bei der wir die Positionen drei verschiedenen Peaks bestimmen.
+Dazu wird immer nur der Bereich dieser drei Peaks aus den Daten ausgewählt und ein Fit der Form
+% Dies erfolgt mithilfe eines Dreifachen Gauß-Fits der Form
+\[
+  I(\alpha) = B + G(\alpha; a_1, \mu_1, \sigma_1) + G(\alpha; a_2, \mu_2, \sigma_2) + G(\alpha; a_3, \mu_3, \sigma_3)
+\]
+mit drei Überlagerten verallgemeinerten Gauß-Funktionen
+\[
+  G(xg a, \mu, \sigma) = a \exp(\frac{(x-b)^2}{2c^2})
+\]
+durchgeführt. Der additive Parameter $B$ ermöglicht die Berücksichtigung einer eventuell vorhanden gleichmäßigen Grundausleuchtung
+und sorgt nach visueller Inspektion erfahrungsgemäß für bessere Anpassung der Gauß-Parameter an die Daten.
+
 
 \clearpage
 \section{Franck-Hertz-Versuch}
@@ -587,7 +613,6 @@ Nun kann man aus den Diferenzen der benachbaren Peaks der Energiedifferenz $\Del
 Das Ergebnis unserer experimentellen Messungen ist äußerst erfreulich und stimmt vollständig 
 mit dem erwarteten theoretischen Wert der Übergang zwischen $6^1 S_o \rightarrow 6^3P_1$ überein. 
 Wie man in der Abbildung sich anschauen kann. 
-\clearpage
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.45]{Vereinfachtes Hg-Termschema.png}
@@ -599,8 +624,78 @@ Wie man in der Abbildung sich anschauen kann.
   \includegraphics[scale=0.55]{Totaler Wirkungsquerschnitt.png}
   \caption{Totaler Wirkungsquerschnitt $Q(\pi a^2_0$) von Hg für Elektronenstoßanregung}
 \end{figure}
+
+
+
 \section{Fazit}
+\end{multicols}
 \clearpage
+
+\section*{Anhang}
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{gauss_2.0A.pdf}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{gauss_3.0A.pdf}
+  \end{minipage}
+
+  \begin{minipage}{.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{gauss_4.0A.pdf}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{gauss_5.0A.pdf}
+  \end{minipage}
+
+  \begin{minipage}{.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{gauss_6.0A.pdf}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{gauss_7.0A.pdf}
+  \end{minipage}
+  \caption{Ausgewählte Intensitätsmaxima für verschiedene Magnetströme $I$, mit Gauß-Fit [Teil 1]}
+  \label{fig:gauss-fit-1}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{gauss_7.5A.pdf}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{gauss_8.0A.pdf}
+  \end{minipage}
+
+  \begin{minipage}{.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{gauss_8.5A.pdf}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{gauss_9.1A.pdf}
+  \end{minipage}
+  \caption{Ausgewählte Intensitätsmaxima für verschiedene Magnetströme $I$, mit Gauß-Fit [Teil 2]}
+  \label{fig:gauss-fit-2}
+\end{figure}
+
+
+
+
 \begin{thebibliography}{9}
 
 \bibitem{Anleitung}
@@ -611,7 +706,6 @@ Wie man in der Abbildung sich anschauen kann.
 
 \end{thebibliography}
 
-\end{multicols}
 
 \end{document}
 

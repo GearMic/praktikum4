@@ -34,8 +34,8 @@ def fit_ccd_data(alpha, y, yErr, p0=None):
     return params, paramsErr
 
 def plot_data_fit(fig, ax, alpha, y, yErr, params=None):
-    # ax.errorbar(alpha, y, yErr, label='Daten')
-    ax.plot(alpha, y, '-', lw=1, label='Daten')
+    ax.errorbar(alpha, y, yErr, fmt='x', label='Daten')
+    # ax.plot(alpha, y, '-', lw=1, label='Daten')
 
     # paramsPrint = np.array((params, paramsErr)).T
     # paramsPrint = (r' \pm '.join(tuple(np.array(param, dtype=str))) for param in paramsPrint)
@@ -109,22 +109,26 @@ for i in range(len(inFilenames)):
     ax.legend()
     ax.minorticks_on()
     ax.grid(which='both')
+
+    ax.set_title('Intensitätsmaxima für $I=%.1f\\mathrm{A}$' % I[i])
+    ax.set_xlabel('Position $\\alpha$/°')
+    ax.set_ylabel('Intensität $I$/%')
     fig.savefig(outFilenames[i])
 
-# mu1 = params[:, 1]
-# mu2 = params[:, 2]
-# mu3 = params[:, 3]
-# mu1Err = paramsErr[:, 1]
-# mu2Err = paramsErr[:, 2]
-# mu3Err = paramsErr[:, 3]
-mu = params[:, (1, 4, 7)].T
-muErr = params[:, (1, 4, 7)].T
-lbda, lbdaErr = alpha_to_lambda(mu, muErr)
-print(lbda)
-print(lbdaErr)
+# # mu1 = params[:, 1]
+# # mu2 = params[:, 2]
+# # mu3 = params[:, 3]
+# # mu1Err = paramsErr[:, 1]
+# # mu2Err = paramsErr[:, 2]
+# # mu3Err = paramsErr[:, 3]
+# mu = params[:, (1, 4, 7)].T
+# muErr = params[:, (1, 4, 7)].T
+# lbda, lbdaErr = alpha_to_lambda(mu, muErr)
+# print(lbda)
+# print(lbdaErr)
 
 
-fig, ax = plt.subplots()
-# ax.plot(I, params[:, 4])
-# ax.plot(I, params[:, 7])
-# fig.savefig('p401/plot/peak-location.pdf')
+# fig, ax = plt.subplots()
+# # ax.plot(I, params[:, 4])
+# # ax.plot(I, params[:, 7])
+# # fig.savefig('p401/plot/peak-location.pdf')
