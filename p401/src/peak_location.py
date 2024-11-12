@@ -33,6 +33,15 @@ def fit_ccd_data(alpha, y, yErr, p0=None):
 
     return params, paramsErr
 
+def linear_fn(x, a, b):
+    return a + b*x
+
+def fit_energy_split(B, deltaE, deltaEerr, p0=None):
+    popt, pcov = optimize.curve_fit(linear_fn, B, deltaE, sigma=deltaEerr, p0=p0, maxfev=10000)
+    params, paramsErr = popt, np.sqrt(np.diag(pcov))
+
+    return params, paramsErr
+
 def plot_data_fit(fig, ax, alpha, y, yErr, params=None):
     ax.errorbar(alpha, y, yErr, fmt='x', label='Daten')
     # ax.plot(alpha, y, '-', lw=1, label='Daten')
@@ -81,7 +90,7 @@ def calc_delta_E(alphaPi, alphaSigma, alphaPiErr, alphaSigmaErr):
     deltaE = -c/lbda0 * h * (1 - np.sqrt(n**2 - np.sin(alphaPi)**2)/np.sqrt(n**2 - np.sin(alphaSigma)**2))
     # TODO: calculate error
 
-    return deltaE, np.sqrt(alphaPiErr**2 + alphaSigmaErr**2)/2e19
+    return deltaE, np.sqrt(alphaPiErr**2 + alphaSigmaErr**2)/4e19
 
 def mean_mean_err(value1, value2, value1Err, value2Err):
     mean = (value1 + value2) / 2
@@ -140,9 +149,15 @@ paramsParamsErr[:, 1::2] = params
 paramsParamsErr[:, 2::2] = paramsErr
 csvFilename = 'p401/data/zeeman_params.csv'
 # np.savetxt(csvFilename, paramsParamsErr, delimiter=',')
-pd.DataFrame(paramsParamsErr).to_csv(csvFilename, index=False, float_format='%.5f')
+pd.DataFrame(paramsParamsErr)
 # paramsParamsErr.tofile('p401/data/zeeman_params.csv', sep=',', format='%.3f')
 # paramsParamsErr.tofile('p401/data/zeeman_params.csv', sep=',')
+
+paramsHeader = (r'$I/$A', r'$\mu_1/$°', r'$\Delta\mu_1/$°', r'$\mu_2/$°', r'$\Delta\mu_2/$°', r'$\mu_3/$°', r'$\Delta\mu_3/$°')
+paramsFrame = pd.DataFrame({
+    paramsHeader[i]: paramsParamsErr[:, i] for i in range(len(paramsHeader))
+})
+paramsFrame.to_csv(csvFilename, index=False, float_format='%.5f')
 
 alpha_sigma_minus = params[:, 1]
 alpha_pi = params[:, 4]
@@ -155,31 +170,33 @@ deltaEPlus, deltaEPlusErr = calc_delta_E(alpha_pi, alpha_sigma_plus, alpha_pi_er
 deltaE, deltaEErr = mean_mean_err(np.abs(deltaEMinus), np.abs(deltaEPlus), deltaEMinusErr, deltaEPlusErr)
 
 B = field_fit_fn(I, a, b, c, d)
-Berr = np.sqrt(field_fit_fn(I, a+aErr, b+bErr, c+cErr, d+dErr)**2 + field_fit_fn(I, a-aErr, b-bErr, c-cErr, d-dErr)**2)/6/I
+Berr = np.sqrt(field_fit_fn(I, a+aErr, b+bErr, c+cErr, d+dErr)**2 + field_fit_fn(I, a-aErr, b-bErr, c-cErr, d-dErr)**2)/9/I
+Ierr = 0.2
 
 e = 1.602e-19
 energyData = pd.DataFrame({
     "B": B, "Berr": Berr,
-    "dEm": deltaEMinus/e, 'dEm_err': deltaEMinusErr/e,
-    "dEp": deltaEPlus/e, 'dEp_err': deltaEPlusErr/e,
+    # "dEm": deltaEMinus/e, 'dEm_err': deltaEMinusErr/e,
+    # "dEp": deltaEPlus/e, 'dEp_err': deltaEPlusErr/e,
     "dE": deltaE/e, 'dE_err': deltaEErr/e
 })
 energyData.to_csv('p401/data/energy_data.csv', index=False)
 
 sliceFront = 3
 B = B[sliceFront:]/1000
+Berr = Berr[sliceFront:]/1000
 deltaE = deltaE[sliceFront:]
 deltaEErr = deltaEErr[sliceFront:]
 
 fig, ax = plt.subplots()
-ax.plot(B, deltaE)
+ax.errorbar(B, deltaE, deltaEErr, Berr, fmt='x')
 ax.set_xlabel("B/T")
-ax.set_ylabel("$\Delta$E/J")
+ax.set_ylabel(r"$\Delta$E/J")
+
+
+params, paramsErr = fit_energy_split(B, deltaE, deltaEErr)
+xFit = array_range(B)
+yFit = linear_fn(xFit, *params)
+ax.plot(xFit, yFit, label='Ausgleichsgerade')
 fig.savefig('p401/plot/energy_plot.pdf')
-
-def linear_fit(x, a, b):
-    return a + b*x
-
-popt, pcov = optimize.curve_fit(linear_fit, B, deltaE, sigma=deltaEErr)
-paramsErr = np.sqrt(np.diag(pcov))
-print(popt,paramsErr*15)
+print(params,paramsErr*15)
