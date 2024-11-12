@@ -567,6 +567,9 @@ beobachtet werden können.
 \end{figure}
 \clearpage
 \section{Fazit}
+Anhand der Energiedifferenz zwischen verschiedenen Übergängen konnte das Bohrsche Magneton auf $\mu_B = \SI{1.1e-23}{\J\per\T}$ bestimmt
+werden. Dazu wurde ein Fabry-Perot-Etalon verwendet, anhand dessen Interferenzbild die Positionen der Intensitätsmaxima
+bei verschieden starken Magnetfeldern verglichen wurden.
 
 Im zweiten Versuchsteil wird der Franck-Hertz-Versuch aufgebaut und untersucht. Dabei 
 wird die Beschleunigungsspannung in Abhängigkeit von der Anodenspannung bei verschiedenen 
@@ -579,16 +582,8 @@ fällt auf, dass bei erhöhter Temperatur $T$ und Gegenspannung $U_G$ die Anoden
 
 
 
-\clearpage
-\begin{thebibliography}{9}
 
-\bibitem{Anleitung}
-\textit{Physikalisches Praktikum Teil IV -- Versuchsbeschreibungen}, Universität Bonn, Abruf 29.10.2024
 
-\bibitem{Leybold}
-\textit{Beobachtung des normalen Zeeman-Effekts in transversaler und longitudinaler Konfiguration}, Leybold Didactic, Abruf 30.10.2024
-
-\end{thebibliography}
 \clearpage
 \section{Anhang}
 \begin{table}[H]
@@ -770,30 +765,8 @@ fällt auf, dass bei erhöhter Temperatur $T$ und Gegenspannung $U_G$ die Anoden
 \end{multicols}
 
 
-\begin{table}[h]
-    % table head=\hline $I$ & $a_1[\%]$ & $\Delta a_1[\%]$ \\ \hline,
-    % table head=\hline $I$ & $a_1$ & $\Delta a_1$ & $$ \\,
-  \centering
-  \csvreader[
-    table head=\hline $I$ & $a_1$ & $\Delta a_1$ & $b_1$ & $\Delta b_1$ & $c_1$ & $\Delta c_1$
-      $a_2$ & $\Delta a_2$ & $b_2$ & $\Delta b_2$ & $c_2$ & $\Delta c_2$
-      $a_3$ & $\Delta a_3$ & $b_3$ & $\Delta b_3$ & $c_3$ & $\Delta c_3$ & $B$ & $\Delta B$\\,
-    tabular=|c||c|c|c|c|c|c||c|c|c|c|c|c||c|c|c|c|c|c||,
-    late after line=\\\hline,
-    head to column names
-  ]{../data/zeeman_params.csv}{}%
-  {    \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & 
-    \csvcolvii & \csvcolviii & \csvcolix & \csvcolx &
-    \csvcolxi & \csvcolxii & \csvcolxiii & \csvcolxiv & \csvcolxv &\csvcolxvi & \csvcolxvii & \csvcolxviii & \csvcolxix}
 
-    % \csvcolxvi & \csvcolxvii & \csvcolxviii & \csvcolxix & \csvcolxx}
-  % {\csvcoli &\csvcolii &\csvcoliii &\csvcoliv &\csvcolv &\csvcolvi &\csvcolvii &\csvcolviii &\csvcolix &\csvcolx &\csvcolxi}
-  %  &\csvcolxii &\csvcolxiii &\csvcolxiv &\csvcolxv &\csvcolxvi &\csvcolxvii &\csvcolxviii &\csvcolxix &\csvcolxx & \csvcolxxi}
-  \caption{Bestimmte Parameter der Intensitätsmaxima für verschiedene Ströme}
-\end{table}
-
-
-begin{figure}[h]
+\begin{figure}[h]
   \centering
   \begin{minipage}{.49\linewidth}
     \centering
@@ -854,14 +827,15 @@ begin{figure}[h]
 \end{figure}
 
 \begin{table}[h]
+  \small
     % table head=\hline $I$ & $a_1[\%]$ & $\Delta a_1[\%]$ \\ \hline,
     % table head=\hline $I$ & $a_1$ & $\Delta a_1$ & $$ \\,
   \centering
   \csvreader[
-    table head=\hline $I$ & $a_1$ & $\Delta a_1$ & $\mu_1$ & $\Delta \mu_1$ & $\sigma_1$ & $\Delta \sigma_1$
-      $a_2$ & $\Delta a_2$ & $\mu_2$ & $\Delta \mu_2$ & $\sigma_2$ & $\Delta \sigma_2$
+    table head=\hline $I$ & $a_1$ & $\Delta a_1$ & $\mu_1$ & $\Delta \mu_1$ & $\sigma_1$ & $\Delta \sigma_1$ &
+      $a_2$ & $\Delta a_2$ & $\mu_2$ & $\Delta \mu_2$ & $\sigma_2$ & $\Delta \sigma_2$ &
       $a_3$ & $\Delta a_3$ & $\mu_3$ & $\Delta \mu_3$ & $\sigma_3$ & $\Delta \sigma_3$ & $B$ & $\Delta B$\\,
-    tabular=|c||c|c|c|c|c|c||c|c|c|c|c|c||c|c|c|c|c|c||,
+    tabular=|c||c|c|c|c|c|c||c|c|c|c|c|c||c|c|c|c|c|c||c|c|,
     late after line=\\\hline,
     head to column names
   ]{../data/zeeman_params.csv}{}%
