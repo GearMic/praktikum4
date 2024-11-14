@@ -34,6 +34,7 @@
 \usepackage{amsthm}
 \usepackage{float}
 \usepackage{enumitem}
+\usepackage{booktabs}
 
 
 
@@ -227,6 +228,7 @@ Noch dazu ist der Wert des Magnetfeldes nach der Kalibrierung das Folgende:
 \[
 B_{\text{long}} = ( 83.45 \pm 6.66) \, \text{mT}, \quad B_{\text{trans}} = (173.1 \pm 13.9) \, \text{mT}
 \]
+Dabei wurde $B$ zufolge der später erläuterten Kalibrationskurve bestimmt.
 
 Zuletzt mit $A=\frac{hc}{\mu_B \lambda B}$ (und mit $\cdot \frac{1}{2}$ bei longitudinale 
 Konfiguration) sind die jeweiligen Auflösungsvermögen und Finesse die folgende:
@@ -252,8 +254,6 @@ Dies hier ist bei dem Fall, dass die Cadmiumlampe eine Temperatur
 \( T=1000\,K \) hat. Der erwartete Wert aus \cite{einheit}liegt aber bei \( \Delta \lambda_{\text{Doppler}}
  = (1.375 \pm 0.028) \, \text{pm} \). Dies liegt wiederum an der Messgenauigkeit und 
  äußeren Einflüssen wie dem Linsenfehler.
-
-
 
 
 \subsubsection{longitudinale Konfiguration}
@@ -378,6 +378,73 @@ mit drei Überlagerten verallgemeinerten Gauß-Funktionen
 \]
 durchgeführt. Der additive Parameter $B$ ermöglicht die Berücksichtigung einer eventuell vorhanden gleichmäßigen Grundausleuchtung
 und sorgt nach visueller Inspektion erfahrungsgemäß für bessere Anpassung der Gauß-Parameter an die Daten.
+Die Plots mit Fit sind in Abb. \ref{fig:gauss-fit-1} und \ref{fig:gauss-fit-2} gezeigt, die Parameter in Tab. \ref{tab:parameter}.
+
+Für die Energiedifferenz gilt
+\[
+  \Delta E_\pm = -\frac{h c}{\lambda_\pi} \frac{\lambda_\sigma - \lambda_\pi}{\lambda_\sigma} \cite{Anleitung}
+\]
+mit $\lambda_pi^0 = \SI{643.8}{\nm}$ \cite{Leybold}. Die Interferenzbedingung des Interferometers lautet
+\[
+  k\lambda = 2d\sqrt{n^2 - \sin^2(\alpha)} \cite{Leybold}
+\].
+Eingesetzt in den Zusammenhang für die Energiedifferenz ergibt sich
+\[
+  \Delta E_\pm = -\frac{h c}{\lambda_\pi} (1 - \frac{\sqrt{n^2-\sin^2(\alpha_\pi)}}{\sqrt{n^2-\sin^2(\alpha_\sigma)}})
+\]
+
+Die Werte, die sich hieraus ergeben, sind, zusammen mit den aus der Kalibrationskurve bestimmten B-Werten, sind in Tab. \ref{tab:zeeman-energies} gezeigt.
+Dabei ist $\Delta E$ jeweils der Mittelwert aus $\Delta E_-$ und $\Delta E_+$.
+% Die Werte, die sich hieraus ergeben, sind, zusammen mit den aus der Kalibrationskurve bestimmten B-Werten, sind in der untenstehenden Abbildung geplottet.
+
+% Dabei ist $\Delta E$ jeweils der Mittelwert aus $\Delta E_-$ und $\Delta E_+$.
+
+% \begin{table}
+%   \centering
+%   \csvreader[
+%     table head=\hline $B$ & $\Delta B$ & $\Delta E_-$ & $\Delta (\Delta E_-)$ & $\Delta E_+$ & $\Delta (\Delta E_+)$ & $\Delta E$ & $\Delta (\Delta E)$\\,
+%     tabular=|c||c|c||c|c||c|c||,
+%     late after line=\\\hline,
+%     head to column names
+%   ]{../data/energy_data.csv}{}%
+%   {\csvcoli & \csvcolii & \csvcoliii}
+  
+\begin{table}[H]
+    \centering
+    \begin{tabular}{cccc}
+        \toprule
+        $B$ & $\Delta B$ & $\Delta E$ & $\Delta (\Delta E)$ \\
+        \midrule
+        \num{124.92} & \num{9.82} & \num{9.34e-5} & \num{4.8e-6} \\
+        \num{191.50} & \num{10.03} & \num{9.39e-5} & \num{8.3e-6} \\
+        \num{256.47} & \num{10.08} & \num{8.48e-5} & \num{3.5e-6} \\
+        \num{316.67} & \num{9.95} & \num{8.94e-5} & \num{1.3e-6} \\
+        \num{368.93} & \num{9.66} & \num{9.38e-5} & \num{1.6e-6} \\
+        \num{410.08} & \num{9.21} & \num{9.59e-5} & \num{1.7e-6} \\
+        \num{425.49} & \num{8.92} & \num{9.67e-5} & \num{1.7e-6} \\
+        \num{436.93} & \num{8.59} & \num{9.72e-5} & \num{1.7e-6} \\
+        \num{444.00} & \num{8.21} & \num{9.78e-5} & \num{1.7e-6} \\
+        \num{446.18} & \num{7.71} & \num{9.88e-5} & \num{1.9e-6} \\
+        \bottomrule
+    \end{tabular}
+    \caption{Magnetfeldstärken und zugehörige Energiewerte}
+    \label{tab:zeeman-energies}
+\end{table}
+
+Wir tragen $\Delta E$ gegen $B$ auf und passen eine Gerade daran an. Nach \eqref{} (mit $\Delta m_J=1$)
+entspricht die Steigung dieser Geraden dem Bohrschen Magneton $\mu_B$. Wir erhalten die Steigung
+\todo{richtige Gleichung aufschreiben in Theorie}
+\todo{weiter}
+
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{energy_plot.pdf}
+\end{figure}
+aus einem linearen Fit ergibt sich für die Steigung
+$\mu_B = \SI{1.1\pm 0.313}{\J\per\T}$
+
 
 
 \clearpage
@@ -527,6 +594,9 @@ beobachtet werden können.
 \end{figure}
 \clearpage
 \section{Fazit}
+Anhand der Energiedifferenz zwischen verschiedenen Übergängen konnte das Bohrsche Magneton auf $\mu_B = \SI{1.1e-23}{\J\per\T}$ bestimmt
+werden. Dazu wurde ein Fabry-Perot-Etalon verwendet, anhand dessen Interferenzbild die Positionen der Intensitätsmaxima
+bei verschieden starken Magnetfeldern verglichen wurden.
 
 Im zweiten Versuchsteil wird der Franck-Hertz-Versuch aufgebaut und untersucht. Dabei 
 wird die Beschleunigungsspannung in Abhängigkeit von der Anodenspannung bei verschiedenen 
@@ -539,16 +609,8 @@ fällt auf, dass bei erhöhter Temperatur $T$ und Gegenspannung $U_G$ die Anoden
 
 
 
-\clearpage
-\begin{thebibliography}{9}
 
-\bibitem{Anleitung}
-\textit{Physikalisches Praktikum Teil IV -- Versuchsbeschreibungen}, Universität Bonn, Abruf 29.10.2024
 
-\bibitem{Leybold}
-\textit{Beobachtung des normalen Zeeman-Effekts in transversaler und longitudinaler Konfiguration}, Leybold Didactic, Abruf 30.10.2024
-
-\end{thebibliography}
 \clearpage
 \section{Anhang}
 \begin{table}[H]
@@ -730,30 +792,8 @@ fällt auf, dass bei erhöhter Temperatur $T$ und Gegenspannung $U_G$ die Anoden
 \end{multicols}
 
 
-\begin{table}[h]
-    % table head=\hline $I$ & $a_1[\%]$ & $\Delta a_1[\%]$ \\ \hline,
-    % table head=\hline $I$ & $a_1$ & $\Delta a_1$ & $$ \\,
-  \centering
-  \csvreader[
-    table head=\hline $I$ & $a_1$ & $\Delta a_1$ & $b_1$ & $\Delta b_1$ & $c_1$ & $\Delta c_1$
-      $a_2$ & $\Delta a_2$ & $b_2$ & $\Delta b_2$ & $c_2$ & $\Delta c_2$
-      $a_3$ & $\Delta a_3$ & $b_3$ & $\Delta b_3$ & $c_3$ & $\Delta c_3$ & $B$ & $\Delta B$\\,
-    tabular=|c||c|c|c|c|c|c||c|c|c|c|c|c||c|c|c|c|c|c||,
-    late after line=\\\hline,
-    head to column names
-  ]{../data/zeeman_params.csv}{}%
-  {    \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & 
-    \csvcolvii & \csvcolviii & \csvcolix & \csvcolx &
-    \csvcolxi & \csvcolxii & \csvcolxiii & \csvcolxiv & \csvcolxv &\csvcolxvi & \csvcolxvii & \csvcolxviii & \csvcolxix}
 
-    % \csvcolxvi & \csvcolxvii & \csvcolxviii & \csvcolxix & \csvcolxx}
-  % {\csvcoli &\csvcolii &\csvcoliii &\csvcoliv &\csvcolv &\csvcolvi &\csvcolvii &\csvcolviii &\csvcolix &\csvcolx &\csvcolxi}
-  %  &\csvcolxii &\csvcolxiii &\csvcolxiv &\csvcolxv &\csvcolxvi &\csvcolxvii &\csvcolxviii &\csvcolxix &\csvcolxx & \csvcolxxi}
-  \caption{Bestimmte Parameter der Intensitätsmaxima für verschiedene Ströme}
-\end{table}
-
-
-begin{figure}[h]
+\begin{figure}[h]
   \centering
   \begin{minipage}{.49\linewidth}
     \centering
@@ -812,6 +852,29 @@ begin{figure}[h]
   \caption{Ausgewählte Intensitätsmaxima für verschiedene Magnetströme $I$, mit Gauß-Fit [Teil 2]}
   \label{fig:gauss-fit-2}
 \end{figure}
+
+\begin{table}[h]
+  \centering
+  % \begin{tabular}{S[table-format=1.2] S[table-format=2.2] S[table-format=1.2] S[table-format=1.3] S[table-format=1.3] S[table-format=1.3] S[table-format=1.3]}
+  \begin{tabular}{|ccccccc|}
+    \toprule
+    {$I/\si{A}$} & {$\mu_1/\si{\degree}$} & {$\Delta \mu_1/\si{\degree}$} & {$\mu_2/\si{\degree}$} & {$\Delta \mu_2/\si{\degree}$} & {$\mu_3/\si{\degree}$} & {$\Delta \mu_3/\si{\degree}$} \\
+    \midrule
+      2.00 & 1.46 & 0.14 & 0.85 & 0.0025 & 0.021 & 0.0026 \\
+      3.00 & -4.67 & 0.74 & 0.88 & 0.0019 & 0.017 & 0.0029 \\
+      4.00 & 26.43 & 0.43 & 0.93 & 0.0020 & 0.042 & 0.0015 \\
+      5.00 & 22.97 & 0.18 & 0.90 & 0.00075 & 0.042 & 0.00073 \\
+      6.00 & 22.62 & 0.38 & 0.88 & 0.00083 & 0.037 & 0.0011 \\
+      7.00 & 23.84 & 0.56 & 0.87 & 0.00077 & 0.033 & 0.0011 \\
+      7.50 & 24.48 & 0.62 & 0.86 & 0.00074 & 0.031 & 0.0011 \\
+      8.00 & 24.80 & 0.66 & 0.86 & 0.00072 & 0.030 & 0.0010 \\
+      8.50 & 25.29 & 0.69 & 0.85 & 0.00070 & 0.030 & 0.0010 \\
+      9.10 & 20.42 & 0.63 & 0.85 & 0.00074 & 0.028 & 0.0011 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Bestimmte Parameter der Intensitätsmaxima für verschiedene Ströme. $\Delta I=\SI{0.2}{\A}$}
+  \label{tab:parameter}
+\end{table}
 
 
 
