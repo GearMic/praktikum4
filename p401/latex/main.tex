@@ -217,9 +217,9 @@ und die Kondensorlinse verschoben, um eine gleichmäßige Ausleuchtung zu erhalt
 \subsubsection{transversale Konfiguration}
 Zunächst wird in transversaler Konfiguration ohne eingesetzten Polarisationsfilter beobachtet,
 d.h. die optische Achse steht senkrecht zum Magnetfeld, wie in Abb. \ref{fig:zeeman-aufbau} gezeigt.
-Nach Abb. \ref{fig:zeeman-abstrahlung} sollte hier sowohl Strahlung vom $\Delta M_J=0$-Übergang ($\pi$-Übergang),
-als auch den $\Delta M_J=\pm 1$-Übergängen ($\sigma^\pm$-Übergänge), zu sehen sein.
-Hierbei ist die Strahlung der beiden verschiedenen $\sigma$-Übergänge gleich Polarisiert;
+Nach Abb. \ref{fig:zeeman-abstrahlung} sollte hier sowohl Strahlung vom $\pi$-Übergang,
+als auch den $\sigma^\pm$-Übergängen, zu sehen sein.
+Hierbei ist die Strahlung der beiden verschiedenen $\sigma$-Übergänge gleich polarisiert;
 die Polarisation vom $\pi$-Übergang steht senkrecht dazu.
 
 \begin{figure}[H]
@@ -238,18 +238,19 @@ Das am Okular enstehende Bild ist in Abb. \ref{fig:zeeman-transveral-ohne-ohne} 
 \end{figure}
 Es sind die verschiedenen Interferenzringe zu erkennen, die hier alle von der gleichen Wellenlänge stammen.
 
-Nun wird das Magnetfeld eingeschaltet und erhöht, bis man eine Aufspaltung der Ringe sieht, siehe Abb. \ref{fig:zeeman-transveral-mit-ohne}
+Nun wird das Magnetfeld eingeschaltet und erhöht, bis man eine Aufspaltung der einzelnen Ringe sieht, siehe Abb. \ref{fig:zeeman-transveral-mit-ohne}
 \begin{figure}[H]
   \centering
   \includegraphics[width=.8\linewidth]{zeeman-transversal-mit-ohne}
   \caption{Interferenzmuster bei transversaler Beobachtung mit Magnetfeld, ohne Polarisationsfilter.}
   \label{fig:zeeman-transveral-mit-ohne}
 \end{figure}
-Durch den Zeeman-Effekt gibt es eine Energieaufspaltung $\Delta E \propto B_zM_J$ der Niveaus.
-Dadurch sind die $\pi$-Übergänge unbeeinflusst, während die $\sigma^+$- bzw. $\sigma^-$-Übergänge
-eine etwas geringere bzw. höhere Wellenlänge produzieren. Was zuvor ein Ring war, spaltet sich daher in drei Ringe auf.
+Die Aufspaltung der Ringe lässt sich durch den Zeeman-Effekt erklären. Der $\pi$-Übergang mit $\Delta m_J=0$ ist nach \eqref{eq:delta-e}
+unbeeinflusst, während die $\sigma$-Übergänge eine Änderung ihrer Energie proportional zu $B$ erfahren.
+Was zuvor ein Ring war, spaltet sich daher in drei Ringe leicht unterschiedlicher Wellenlängen auf.
 
-Die verschiedenen Komponenten können durch Einsatz des Polarisationsfilters herausgefiltert werden (Abb. \ref{fig:zeeman-transveral-mit-90}, \ref{fig:zeeman-transveral-mit-0}).
+Die verschiedenen Komponenten können durch Einsatz eines Polarisationsfilters zwischen Kondensorlinse und Etalon
+herausgefiltert werden (Abb. \ref{fig:zeeman-transveral-mit-90}, \ref{fig:zeeman-transveral-mit-0}).
 \begin{figure}[H]
   \centering
   \includegraphics[width=.8\linewidth]{zeeman-transversal-mit-90}
@@ -263,8 +264,60 @@ Die verschiedenen Komponenten können durch Einsatz des Polarisationsfilters her
   \label{fig:zeeman-transveral-mit-0}
 \end{figure}
 Wenn der Filter auf \ang{90} steht, sind wieder nur einzelne Ringe zu sehen, die dem $\pi$-Übergang entsprechen,
-welche Licht mit Polarisation parallel zum Magnetfeld produziert.
+welcher Licht mit Polarisation parallel zum Magnetfeld produziert.
 Steht der Filter auf \ang{0}, gibt es jeweils zwei Ringe, die $\sigma^+$ bzw. $\sigma^-$ entsprechen.
+
+
+\subsubsection{longitudinale Konfiguration}
+Die Magneten mitsamt der Cadmiumlampe werden um \ang{90} gedreht,
+um die Beobachtungen in longitudinaler Konfiguration (Magnetfeld parallel zur optischen Achse bzw. der Beobachtungsrichtung)
+zu wiederholen.
+
+Ohne Magnetfeld ergibt sich das Muster in Abb. \ref{fig:zeeman-longitudinal-ohne-ohne}, was mit der entsprechenden Beobachtung
+bei transversaler Konfiguration übereinstimmt. Da kein Magnetfeld anliegt, können $\pi$ und $\sigma^\pm$-Übergänge nicht unterschieden
+werden alle Betrachtungsrichtungen lassen das gleiche Muster erkennen.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-ohne-ohne}
+  \caption{Interferenzmuster bei longitudinaler Beobachtung ohne Magnetfeld, ohne Polarisationsfilter.}
+  \label{fig:zeeman-longitudinal-ohne-ohne}
+\end{figure}
+
+Wird das Magnetfeld angeschaltet (Abb. \ref{fig:zeeman-longitudinal-mit-ohne}),
+ist eine Aufspaltung eines Rings in jeweils zwei Ringe zu beobachten.
+Diese entsprechen den beiden $\sigma$-Übergängen, während der $\pi$-Übergang aufgrund seiner Abstrahlungscharakteristik
+in longitudinaler Konfiguration nicht zu sehen ist.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-mit-ohne}
+  \caption{Interferenzmuster bei longitudinaler Beobachtung mit Magnetfeld, ohne Polarisationsfilter.}
+  \label{fig:zeeman-longitudinal-mit-ohne}
+\end{figure}
+
+Als nächstes wird zusätzlich eine $\lambda / 4$-Platte in \ang{0}-Stellung in den Strahlengang vor dem
+Polarisationsfilter eingesetzt. 
+
+Mit dem Polarisationsfilter auf \ang{-45} ist in jeder Beugungsordnung statt zwei Ringen nur noch ein Ring stark zu sehen (Abb. \ref{fig:zeeman-longitudinal-mit--45})
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-mit--45}
+  \caption{Interferenzmuster bei longitudinaler Beobachtung mit Magnetfeld, mit Polarisationsfilter.}
+  \label{fig:zeeman-longitudinal-mit--45}
+\end{figure}
+
+Mit dem Polarisationsfilter in \ang{45}-Stellung ist nur der jeweils andere Ring stark zu sehen (Abb. \ref{fig:zeeman-longitudinal-mit-45}).
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-mit-45}
+  \caption{Interferenzmuster bei longitudinaler Beobachtung mit Magnetfeld, mit Polarisationsfilter.}
+  \label{fig:zeeman-longitudinal-mit-45}
+\end{figure}
+
+Dies lässt sich wie folgt erklären: Die $\lambda / 4$-Platte erzeugt aus dem
+rechts- bzw. linkspolarisierte Licht der $\sigma$-Übergänge
+(siehe Abb. \ref{fig:zeeman-abstrahlung}) verschiedene zueinander senkrechte lineare Polarisationsrichtungen,
+von denen dann mit dem Polarisationsfilter jeweils eine ausgewählt wurde.
+
 
 \subsection{Auflösungsvermögen und Finesse}
 
@@ -318,52 +371,6 @@ Dies hier ist bei dem Fall, dass die Cadmiumlampe eine Temperatur
  äußeren Einflüssen wie dem Linsenfehler.
 
 
-\subsubsection{longitudinale Konfiguration}
-Die Magneten mitsamt der Cadmiumlampe werden um \ang{90} gedreht,
-um die Beobachtungen in longitudinaler Konfiguration (Magnetfeld parallel zur optischen Achse bzw. der Beobachtungsrichtung)
-zu wiederholen.
-
-Ohne Magnetfeld ergibt sich das Muster in Abb. \ref{fig:zeeman-longitudinal-ohne-ohne}, was mit der entsprechenden Beobachtung
-bei transversaler Konfiguration übereinstimmt.
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-ohne-ohne}
-  \caption{Interferenzmuster bei longitudinaler Beobachtung ohne Magnetfeld, ohne Polarisationsfilter.}
-  \label{fig:zeeman-longitudinal-ohne-ohne}
-\end{figure}
-
-Wird das Magnetfeld angeschaltet (Abb. \ref{fig:zeeman-longitudinal-mit-ohne}), ist eine Aufspaltung in jeweils zwei Ringe zu beobachten.
-Diese entsprechen den beiden $\sigma$-Übergängen, während der $\pi$-Übergang aufgrund seiner Abstrahlungscharakteristik
-in longitudinaler Konfiguration nicht zu sehen ist.
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-mit-ohne}
-  \caption{Interferenzmuster bei longitudinaler Beobachtung mit Magnetfeld, ohne Polarisationsfilter.}
-  \label{fig:zeeman-longitudinal-mit-ohne}
-\end{figure}
-
-Als nächstes wird zusätzlich eine $\lambda / 4$-Platte in \ang{0}-Stellung in den Strahlengang vor dem
-Polarisationsfilter eingesetzt. Diese dient dazu, das rechts- bzw. linkspolarisierte Licht der $\sigma$-Übergänge
-(siehe Abb. \ref{fig:zeeman-abstrahlung}) zu verschiedenen linearen Polarisationsrichtungen umzuwandeln,
-welche dann mit dem Polarisationsfilter ausgewählt werden können.
-
-Mit dem Polarisationsfilter auf \ang{-45} ist nur noch jeweils ein Ring stark zu sehen (Abb. \ref{fig:zeeman-longitudinal-mit--45})
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-mit--45}
-  \caption{Interferenzmuster bei longitudinaler Beobachtung mit Magnetfeld, mit Polarisationsfilter.}
-  \label{fig:zeeman-longitudinal-mit--45}
-\end{figure}
-
-Mit dem Polarisationsfilter in \ang{45}-Stellung ist nur der jeweils andere Ring stark zu sehen (Abb. \ref{fig:zeeman-longitudinal-mit-45}).
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-mit-45}
-  \caption{Interferenzmuster bei longitudinaler Beobachtung mit Magnetfeld, mit Polarisationsfilter.}
-  \label{fig:zeeman-longitudinal-mit-45}
-\end{figure}
-
-
 \subsection{Messung des Zeeman-Effekts}
 Es soll nun quantitativ die Stärke der Aufspaltung in Abhängigkeit des anliegenden Magnetfelds gemessen werden,
 mit dem Ziel, das Bohrsche Magneton $\mu_B$ zu bestimmten.
@@ -384,6 +391,8 @@ In Abb. \ref{fig:magnetkalib} sind die Messdaten zusammen mit einem $\chi^2$-Fit
 \]
 dargestellt. Als Fehlerwerte auf $I$ und $B$ wurden dabei $2\%$ des jeweiligen Werts angesetzt,
 wobei Fehlerwerte von $\SI{0.002}{\A}$ und $\SI{0.2}{\mT}$ nicht unterschritten werden dürfen.
+Es ist anzumerken, dass die hier Strommessung mit dem hier verwendeten Cassy-Modul deutlich präzisere Werte liefert,
+als das Netzgerät, welche nur eine Nachkommastelle des Stroms anzeigt.
 
 \begin{figure}[H]
   \centering
@@ -396,9 +405,9 @@ wobei Fehlerwerte von $\SI{0.002}{\A}$ und $\SI{0.2}{\mT}$ nicht unterschritten 
 
 \begin{align*}
   a_1&=\SI{-0.548 \pm 0.025}{\mT},\ b_1=\SI{65.44 \pm 0.16}{\mT\per\A}, \\
-  c_1&=\SI{3.96 \pm 0.065}{\mT\per\A\squared},\ d_1=\SI{-0.5213 \pm 0.0059}{\mT\per\A\cubed} \\
-  a_1&=\SI{-0.104 \pm 0.027}{\mT},\ b_1=\SI{66.20 \pm 0.53}{\mT\per\A}, \\
-  c_1&=\SI{3.97 \pm 0.186}{\mT\per\A\squared},\ d_1=\SI{-0.5361 \pm 0.0152}{\mT\per\A\cubed}
+  c_1&=\SI{3.964 \pm 0.065}{\mT\per\A\squared},\ d_1=\SI{-0.5213 \pm 0.0059}{\mT\per\A\cubed} \\
+  a_2&=\SI{-0.104 \pm 0.027}{\mT},\ b_2=\SI{66.20 \pm 0.53}{\mT\per\A}, \\
+  c_2&=\SI{3.97 \pm 0.19}{\mT\per\A\squared},\ d_2=\SI{-0.536 \pm 0.015}{\mT\per\A\cubed}
 \end{align*}
 
 Diese Werte sind in relativ guter Übereinstimmung miteinander; alle Parameter haben Überschneidungen in ihren Fehlerbereichen.
@@ -410,7 +419,7 @@ Um eine einzelne Kalibrationskurve zu haben, verwenden wir im Folgenden die Mitt
   % i = \frac{i_1+i_2}{2},\enspace \Delta I = \frac{\sqrt{i_1^2 + i_2^2}}{2}
   i &= \frac{i_1+i_2}{2},\enspace i=a,\,b,\,c,\,d \\
   a&=\SI{-0.326 \pm 0.019}{\mT},\ b=\SI{65.82 \pm 0.28}{\mT\per\A}, \\
-  c&=\SI{3.96 \pm 0.099}{\mT\per\A\squared},\ d=\SI{-0.5288 \pm 0.0082}{\mT\per\A\cubed}
+  c&=\SI{3.967 \pm 0.099}{\mT\per\A\squared},\ d=\SI{-0.5288 \pm 0.0082}{\mT\per\A\cubed}
 \end{align*}
 Der Fehler wird dabei mithilfe von Gauß'scher Fehlerfortpflanzung bestimmt.
 
@@ -423,7 +432,6 @@ Dabei wird $\alpha$ automatisch aus der Pixel-Position $p$ berechnet nach der Fo
 \[
   \alpha = \arctan(\frac{(1024-p) \cdot \SI{0.014}{\mm}}{f}),\ f=\SI{150}{\mm}\ (\cite{Anleitung}, S.7)
 \]
-\todo{braucht man Seitenangaben?}
 
 Nun wird das Magnetfeld durch Änderung des Stroms variiert und am Computer beobachtet,
 wie sich die Aufspaltung der Linien verändert.
@@ -434,12 +442,14 @@ Dazu wird immer nur der Bereich dieser drei Peaks aus den Daten ausgewählt und 
 \[
   I(\alpha) = B + G(\alpha; a_1, \mu_1, \sigma_1) + G(\alpha; a_2, \mu_2, \sigma_2) + G(\alpha; a_3, \mu_3, \sigma_3)
 \]
-mit drei Überlagerten verallgemeinerten Gauß-Funktionen
+durchgeführt.
+Der additive Parameter $B$ ermöglicht die Berücksichtigung einer eventuell vorhanden gleichmäßigen Grundausleuchtung
+und sorgt nach visueller Inspektion erfahrungsgemäß für bessere Anpassung der Gauß-Parameter an die Daten.
+Es werden die verallgemeinerten Gauß-Funktionen
 \[
   G(xg a, \mu, \sigma) = a \exp(\frac{(x-b)^2}{2c^2})
 \]
-durchgeführt. Der additive Parameter $B$ ermöglicht die Berücksichtigung einer eventuell vorhanden gleichmäßigen Grundausleuchtung
-und sorgt nach visueller Inspektion erfahrungsgemäß für bessere Anpassung der Gauß-Parameter an die Daten.
+verwendet. 
 Die Plots mit Fit sind in Abb. \ref{fig:gauss-fit-1} und \ref{fig:gauss-fit-2} gezeigt, die Parameter in Tab. \ref{tab:parameter}.
 
 Für die Energiedifferenz gilt
@@ -470,30 +480,28 @@ Dabei ist $\Delta E$ jeweils der Mittelwert aus $\Delta E_-$ und $\Delta E_+$.
   
 \begin{table}[H]
     \centering
-        \begin{tabular}{cccc}
+    \begin{tabular}{cccc}
         \toprule
-        $B$ & $\Delta B$ & $\Delta E$ & $\Delta \Delta E$ \\
+        $B/\si{\mT}$ & $\Delta B/\si{\mT}$ & $\Delta E/\si{\J}$ & $\Delta \Delta E/\si{\J}$ \\
         \midrule
-        \num{124.92} & \num{11.89} & \num{9.34e-5} & \num{3.26e-7} \\
-        \num{191.50} & \num{12.71} & \num{9.39e-5} & \num{6.85e-7} \\
-        \num{256.47} & \num{14.11} & \num{8.48e-5} & \num{2.72e-7} \\
-        \num{316.67} & \num{16.25} & \num{8.94e-5} & \num{9.84e-8} \\
-        \num{368.93} & \num{19.20} & \num{9.38e-5} & \num{1.33e-7} \\
-        \num{410.08} & \num{23.00} & \num{9.59e-5} & \num{1.45e-7} \\
-        \num{425.49} & \num{25.22} & \num{9.67e-5} & \num{1.47e-7} \\
-        \num{436.93} & \num{27.66} & \num{9.72e-5} & \num{1.50e-7} \\
-        \num{444.00} & \num{30.30} & \num{9.78e-5} & \num{1.47e-7} \\
-        \num{446.18} & \num{33.75} & \num{9.88e-5} & \num{1.62e-7} \\
+        \num{124.9236} & \num{11.885} & \num{9.338e-5} & \num{4.655e-7} \\
+        \num{191.4964} & \num{12.705} & \num{9.391e-5} & \num{8.974e-7} \\
+        \num{256.4708} & \num{14.110} & \num{8.479e-5} & \num{3.411e-7} \\
+        \num{316.6740} & \num{16.246} & \num{8.945e-5} & \num{1.225e-7} \\
+        \num{368.9332} & \num{19.199} & \num{9.376e-5} & \num{1.565e-7} \\
+        \num{410.0756} & \num{23.002} & \num{9.592e-5} & \num{1.685e-7} \\
+        \num{425.4865} & \num{25.223} & \num{9.666e-5} & \num{1.710e-7} \\
+        \num{436.9284} & \num{27.656} & \num{9.721e-5} & \num{1.734e-7} \\
+        \num{444.0047} & \num{30.300} & \num{9.779e-5} & \num{1.714e-7} \\
+        \num{446.1753} & \num{33.751} & \num{9.883e-5} & \num{1.912e-7} \\
         \bottomrule
     \end{tabular}
-    \caption{Magnetfeldstärken und zugehörige Energiewerte}
+    \caption{Magnetfeldstärken und zugehörige Energieverschiebungen.}
     \label{tab:zeeman-energies}
 \end{table}
 
-Wir tragen $\Delta E$ gegen $B$ auf und passen eine Gerade daran an. Nach \eqref{} (mit $\Delta m_J=1$)
-entspricht die Steigung dieser Geraden dem Bohrschen Magneton $\mu_B$. Wir erhalten die Steigung
-\todo{richtige Gleichung aufschreiben in Theorie}
-\todo{weiter}
+Wir tragen $\Delta E$ gegen $B$ auf und passen eine Gerade daran an. Nach \eqref{eq:delta-e} (mit $\Delta m_J=1$)
+entspricht die Steigung dieser Geraden dem Bohrschen Magneton $\mu_B$.
 
 
 
@@ -501,15 +509,23 @@ entspricht die Steigung dieser Geraden dem Bohrschen Magneton $\mu_B$. Wir erhal
   \centering
   \includegraphics[width=\linewidth]{energy_plot.pdf}
 \end{figure}
-aus einem linearen Fit ergibt sich für die Steigung
-$\mu_B = \SI{1.10\pm 0.31e-23}{\J\per\T}$.
+aus einem linearen $\chi^2$-Fit erhalten wir die Gleichung
+\[
+  \Delta E = \SI{1.100\pm 0.050 e-23}{\J} + \SI{1.06\pm 0.13 e-23}{\J\per\T}
+\]
+also ist das Ergebnis $\mu_B = \SI{1.06\pm 0.15e-23}{\J\per\T}$.
 
-Der Literaturwert für das Bohrsche Magneton ist $\SI{0.93e-23}{\J\per\T}$ \cite{bohr-magneton}, was im Fehlerbereich unseres Wertes liegt,
-aber eine relativ große Abweichung von über $15\%$ hat.
+Der Literaturwert für das Bohrsche Magneton ist $\SI{0.927e-23}{\J\per\T}$ \cite{bohr-magneton}, was im Fehlerbereich unseres Wertes liegt,
+aber eine relativ große Abweichung von über $10\%$ hat.
 Abweichungen bei dieser Messung lassen sich unter anderem darauf zurückführen, dass der Strom am Netzgerät abgelesen wurde,
 während er zur Magnetfeldkalibierung mit einem zusätzlichen Gerät gemessen wurde. Zwischen diesen beiden Messungen kann
 es Abweichungen geben, und Die Messung des Netzgeräts ist relativ unpräzise (ablesbar ist nur eine Nachkommastelle).
 
+Es fällt außerdem der große Achsenabschnitt der Gerade auf, der dem theoretischen Zusammenhang zufolge eigentlich $0$
+sein sollte. Dieser ließe sich unter anderem durch einen konstanten Offset in der, wie zuvor erwähnt ungenauen, Stromangabe des
+Netzgeräts, erklären. Dieser würde einen konstanten Offset des Magnetfelds hinzufügen,
+würde aber die Abstände zwischen Magnetfeldwerten und damit die errechnete Steigung $\mu_B$
+nicht stark beeinflussen, da die Kalibrationskurve in großen Bereichen linear ist.
 
 
 \clearpage

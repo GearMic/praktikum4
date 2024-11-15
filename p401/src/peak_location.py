@@ -93,7 +93,10 @@ def calc_delta_E(alphaPi, alphaSigma, alphaPiErr, alphaSigmaErr):
     denominator = np.sqrt(n**2 - np.sin(alphaSigma)**2)
     deltaE = gamma * (1 - numerator/denominator)
     # deltaEerr = np.sqrt(alphaPiErr**2 + alphaSigmaErr**2)/7e19
-    deltaEerr = gamma * np.sqrt((alphaPiErr * np.sin(alphaPi)*np.cos(alphaPi)/numerator)**2 + (alphaSigmaErr * np.sin(alphaSigma)*np.cos(alphaSigma)/denominator**3)**2)
+    deltaEerr = gamma * np.sqrt((
+        alphaPiErr * np.sin(alphaPi)*np.cos(alphaPi)/numerator/denominator)**2 +
+        (alphaSigmaErr * np.sin(alphaSigma)*np.cos(alphaSigma)*numerator/denominator**3)**2)
+    # deltaEerr *= 3
 
     return deltaE, deltaEerr
 
@@ -195,14 +198,18 @@ deltaE = deltaE[sliceFront:]
 deltaEErr = deltaEErr[sliceFront:]
 
 fig, ax = plt.subplots()
-ax.errorbar(B, deltaE, deltaEErr, Berr, fmt='x')
+ax.errorbar(B, deltaE, deltaEErr, Berr, fmt=',', label='Messdaten')
 ax.set_xlabel("B/T")
 ax.set_ylabel(r"$\Delta$E/J")
 
 
 params, paramsErr = fit_energy_split(B, deltaE, deltaEErr)
+B[1] = -0.05
 xFit = array_range(B)
 yFit = linear_fn(xFit, *params)
 ax.plot(xFit, yFit, label='Ausgleichsgerade')
+ax.grid()
+ax.legend()
 fig.savefig('p401/plot/energy_plot.pdf')
-print(params,paramsErr*15)
+print(params,paramsErr)
+print(params,paramsErr*2.3)
