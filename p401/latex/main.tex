@@ -117,7 +117,46 @@ Anschließend wird das Franck-Hertz-Experiment durchgeführt, um die Energiediff
 
 
 \section{Zeeman-Effekt}
-Im ersten Versuchsteil wird anhand einer Cadmiumlampe in einem Magnetfeld der Zeeman-Effekt auf die Zustände $^1D_2$ und $^1P_1$ untersucht.
+Im ersten Versuchsteil wird anhand einer Cadmiumlampe in einem Magnetfeld der Zeeman-Effekt untersucht und
+anhand der Ergebnisse das Bohrsche Magneton $\mu_B$ bestimmt.
+% Daran soll das Bohrsche Magneton $mu_B$ bestimmt werden.
+
+Der Zeeman-Effekt ist die Aufspaltung von Energieniveaus der Elektronen in Atomen in Abhängigkeit der Magnetquantenzahl $m_J$,
+die auftritt, wenn ein äußeres Magnetfeld $B$ anliegt. Die Energie ändert sich wie folgt:
+\[
+  E = E_C + \mu_B B \cdot m_J
+\]
+Dabei ist $E_C$ das Energieniveau, das nur von der Coulomb-Wechselwirkung abhängt und keine $m_J$-Abhängigkeit hat.
+Für die Energiedifferenz zwischen zwei Übergängen $1$ und $2$ mit unterschiedlichen Magnetquantenzahlen $\Delta m_J = m_J^2 - m_J^1$
+gilt dann
+\[
+  E_2 - E_1 = \Delta E_C + \mu_B B \cdot \Delta m_J
+\]
+Das abgestrahlte Licht solcher Übergänge hat also eine Energieverschiebung in Abhängigkeit von $\Delta m_J$ und $B$.
+Die Energieverschiebung eines Übergangs mit angelegtem Magnetfeld im Vergleich zu keinem Magnetfeld bezeichnen wir im Folgenden mit $\Delta E$:
+\begin{equation}
+  \Delta E = E_2 - E_1 - \Delta E_C = \mu_B B \cdot \Delta m_J \label{eq:delta-e}
+\end{equation}
+
+Je nach dem Wert von $\Delta m_J$ werden Übergänge unterschiedlich bezeichnet:
+$\Delta m_J=0$ ist ein $\pi$-Übergang und $\Delta m_J=\pm 1$ sind $\sigma^\pm$.
+Diese haben unterschiedliche Polarisierungen und Abstrahlungscharakteristiken, die in Abb. \ref{fig:zeeman-abstrahlung}
+gezeigt sind.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\linewidth]{zeeman-abstrahlung}
+  \caption{Polarisationsverteilung und Abstrahlungscharakteristik elektrischer Dipolübergänge \cite{Anleitung} \cite{Leybold}.
+    Die kreisende bzw. schwingende Kugel in der unteren Hälfte ist ein klassisches Analogon für das Verhalten des Elektrons.
+    Dadurch lassen sich die Polarisationen der Strahlung in verschiedenen Richtungen (in der Unteren Hälfte gezeigt)
+    sowie die allgemeine Strahlungscharakteristik (in der oberen Hälfte) erklären.}
+  \label{fig:zeeman-abstrahlung}
+\end{figure}
+Hier ist zu sehen, dass ein $\pi$-Übergang bei longitudinaler Betrachtung (Blickrichtung parallel zum B-Feld) nicht zu sehen ist
+und das Licht der $\sigma$-Übergänge hier in entgegengesetzten Richtungen zirkular polarisiert ist.
+Bei transversaler Betrachtung (senkrecht zum Magnetfeld) sind alle Übergänge zu sehen und sind linear polarisiert.
+Die $\sigma$-Übergänge erzeugen gleiche Polarisationsrichtung, die senkrecht zu der des $\pi$-Übergangs steht.
+
+\subsection{Aufbau}
 Der verwendete Aufbau ist in Abb. \ref{fig:zeeman-aufbau} zu sehen.
 \begin{figure}[H]
   \centering
@@ -128,24 +167,46 @@ Der verwendete Aufbau ist in Abb. \ref{fig:zeeman-aufbau} zu sehen.
 % Der $^1D_2$-Zustand hat Aufspaltungen in $M_J = -2,\,\dots\,,2$ und $^1P_1$ in $M_J=-1,0,1$.
 % Es kann also Übergänge mit $\Delta M_J = -1, 0, 1$ geben.
 % In Abhängigkeit des $\Delta M$-Werts gibt es verschiedene
-Folgende wichtige Bestandteile sind zu sehen \cite{Anleitung}:
-\begin{enumerate}[label=\alph*.]
-  \item Cadmium-Lampe
-  \item Klammern
-  \item Polschuhe
-  \item Kondensorlinse
-  \item Polarisationsfilter
-  \item Fabry-Perot-Etalon
-  \item Abbildungslinse
-  \item Interferenzfilter ($\lambda=\SI{643.8}{\nm}$)
-  \item Okular mit Strichskala
-\end{enumerate}
-Außerdem werden Stromquellen (oben links im Bild; links normal, rechts Hochstrom)
-zur Versorgung der Cadmiumlampe und der Elektromagneten eingesetzt.
 
-Das Fabry-Perot-Etalon in Kombination mit den Linsen erzeugt ein Interferenzmuster mit Ringen,
-deren Position von der Wellenlänge des Lichts abhängt.
-Der Interferenzfilter wird eingesetzt, um ausschließlich das Licht vom Übergang $^1D_2 \rightarrow\,^1P_1$ betrachten zu können.
+Eine Cadmiumlampe (a) ist zwischen den Polschuhen (c) zweier Elektromagneten aufgehängt und wird von einer zugehörigen Stromquelle (oben links) versorgt. 
+Im Bild ist die transversale Konfiguration gezeigt, die Magneten mitsamt der Lampe können jedoch gedreht werden,
+um auch longitudinal beobachten zu können. Die Magneten werden von einer Hochstromquelle (oben links, rechte Stromquelle) versorgt.
+Die Cadmiumlampe beleuchtet eine Kondensorlinse (d). Dadurch, dass die Lampe ausgedehnt ist und in der Brennebene der Linse steht,
+gibt es hinter der Linse parallele Lichtbündel mit verschiedenen Winkeln zur optischen Achse.
+
+Diese gehen durch ein Fabry-Perot-Etalon (e), wo der Gangunterschied zwischen parallelen Strahlen von ihrem Einfallswinkel abhängt.
+Je nach Winkel eines Lichtbündels findet also entweder konstruktive oder destruktive Interferenz statt.
+Dadurch entsteht ein Interferenzmuster von konzentrischen Ringen, welche schließlich durch die Abbildungslinse (f) und das Okular (h)
+zur Beobachtung mit dem Auge abgebildet werden.
+Die Interferenzbedingung des Interferometers lautet
+\begin{equation}
+  k\lambda = 2d\sqrt{n^2 - \sin^2(\alpha)}\ \cite{Leybold}\label{eq:fpi-interferenz}
+\end{equation}
+Der Phasenunterschied hängt nicht nur vom Winkel, sondern auch von der Wellenlänge ab. Betrachtet man leicht unterschiedliche
+Wellenlängen, wie hier durch die Zeeman-Aufspaltung, ist also eine Aufspaltung der Ringe zu beobachten.
+
+Um den zu beobachtenden Übergang $^1D_2 \rightarrow\,^1P_1$ herauszufiltern, wird zwischen Abbildungslinse und
+Okular ein Farbfilter der Wellenlänge $\lambda=\SI{643.8}{\nm}$ \cite{Anleitung} (g) eingesetzt.
+
+
+% Folgende wichtige Bestandteile sind zu sehen \cite{Anleitung}:
+% \begin{enumerate}[label=\alph*.]
+%   \item Cadmium-Lampe
+%   \item Klammern
+%   \item Polschuhe
+%   \item Kondensorlinse
+%   \item Polarisationsfilter
+%   \item Fabry-Perot-Etalon
+%   \item Abbildungslinse
+%   \item Interferenzfilter ($\lambda=\SI{643.8}{\nm}$)
+%   \item Okular mit Strichskala
+% \end{enumerate}
+% Außerdem werden Stromquellen (oben links im Bild; links normal, rechts Hochstrom)
+% zur Versorgung der Cadmiumlampe und der Elektromagneten eingesetzt.
+
+% Das Fabry-Perot-Etalon in Kombination mit den Linsen erzeugt ein Interferenzmuster mit Ringen,
+% deren Position von der Wellenlänge des Lichts abhängt.
+% Der Interferenzfilter wird eingesetzt, um ausschließlich das Licht vom Übergang $^1D_2 \rightarrow\,^1P_1$ betrachten zu können.
 
 Zur Justage des Aufbaus wird am Okular die Strichskala scharfgestellt und
 die Abbildungslinse verschoben, bis das Interferenzmuster der Lampe durch das Etalon scharf zu sehen ist.
@@ -385,11 +446,8 @@ Für die Energiedifferenz gilt
 \[
   \Delta E_\pm = -\frac{h c}{\lambda_\pi} \frac{\lambda_\sigma - \lambda_\pi}{\lambda_\sigma} \cite{Anleitung}
 \]
-mit $\lambda_pi^0 = \SI{643.8}{\nm}$ \cite{Leybold}. Die Interferenzbedingung des Interferometers lautet
-\[
-  k\lambda = 2d\sqrt{n^2 - \sin^2(\alpha)} \cite{Leybold}
-\].
-Eingesetzt in den Zusammenhang für die Energiedifferenz ergibt sich
+mit $\lambda_pi^0 = \SI{643.8}{\nm}$ \cite{Leybold}.
+Einsetzen der Interferenzbedingung \eqref{eq:fpi-interferenz}
 \[
   \Delta E_\pm = -\frac{h c}{\lambda_\pi} (1 - \frac{\sqrt{n^2-\sin^2(\alpha_\pi)}}{\sqrt{n^2-\sin^2(\alpha_\sigma)}})
 \]
@@ -412,20 +470,20 @@ Dabei ist $\Delta E$ jeweils der Mittelwert aus $\Delta E_-$ und $\Delta E_+$.
   
 \begin{table}[H]
     \centering
-    \begin{tabular}{cccc}
+        \begin{tabular}{cccc}
         \toprule
-        $B$ & $\Delta B$ & $\Delta E$ & $\Delta (\Delta E)$ \\
+        $B$ & $\Delta B$ & $\Delta E$ & $\Delta \Delta E$ \\
         \midrule
-        \num{124.92} & \num{9.82} & \num{9.34e-5} & \num{4.8e-6} \\
-        \num{191.50} & \num{10.03} & \num{9.39e-5} & \num{8.3e-6} \\
-        \num{256.47} & \num{10.08} & \num{8.48e-5} & \num{3.5e-6} \\
-        \num{316.67} & \num{9.95} & \num{8.94e-5} & \num{1.3e-6} \\
-        \num{368.93} & \num{9.66} & \num{9.38e-5} & \num{1.6e-6} \\
-        \num{410.08} & \num{9.21} & \num{9.59e-5} & \num{1.7e-6} \\
-        \num{425.49} & \num{8.92} & \num{9.67e-5} & \num{1.7e-6} \\
-        \num{436.93} & \num{8.59} & \num{9.72e-5} & \num{1.7e-6} \\
-        \num{444.00} & \num{8.21} & \num{9.78e-5} & \num{1.7e-6} \\
-        \num{446.18} & \num{7.71} & \num{9.88e-5} & \num{1.9e-6} \\
+        \num{124.92} & \num{11.89} & \num{9.34e-5} & \num{3.26e-7} \\
+        \num{191.50} & \num{12.71} & \num{9.39e-5} & \num{6.85e-7} \\
+        \num{256.47} & \num{14.11} & \num{8.48e-5} & \num{2.72e-7} \\
+        \num{316.67} & \num{16.25} & \num{8.94e-5} & \num{9.84e-8} \\
+        \num{368.93} & \num{19.20} & \num{9.38e-5} & \num{1.33e-7} \\
+        \num{410.08} & \num{23.00} & \num{9.59e-5} & \num{1.45e-7} \\
+        \num{425.49} & \num{25.22} & \num{9.67e-5} & \num{1.47e-7} \\
+        \num{436.93} & \num{27.66} & \num{9.72e-5} & \num{1.50e-7} \\
+        \num{444.00} & \num{30.30} & \num{9.78e-5} & \num{1.47e-7} \\
+        \num{446.18} & \num{33.75} & \num{9.88e-5} & \num{1.62e-7} \\
         \bottomrule
     \end{tabular}
     \caption{Magnetfeldstärken und zugehörige Energiewerte}
@@ -444,7 +502,13 @@ entspricht die Steigung dieser Geraden dem Bohrschen Magneton $\mu_B$. Wir erhal
   \includegraphics[width=\linewidth]{energy_plot.pdf}
 \end{figure}
 aus einem linearen Fit ergibt sich für die Steigung
-$\mu_B = \SI{1.1\pm 0.313}{\J\per\T}$
+$\mu_B = \SI{1.10\pm 0.31e-23}{\J\per\T}$.
+
+Der Literaturwert für das Bohrsche Magneton ist $\SI{0.93e-23}{\J\per\T}$ \cite{bohr-magneton}, was im Fehlerbereich unseres Wertes liegt,
+aber eine relativ große Abweichung von über $15\%$ hat.
+Abweichungen bei dieser Messung lassen sich unter anderem darauf zurückführen, dass der Strom am Netzgerät abgelesen wurde,
+während er zur Magnetfeldkalibierung mit einem zusätzlichen Gerät gemessen wurde. Zwischen diesen beiden Messungen kann
+es Abweichungen geben, und Die Messung des Netzgeräts ist relativ unpräzise (ablesbar ist nur eine Nachkommastelle).
 
 
 
@@ -890,6 +954,10 @@ fällt auf, dass bei erhöhter Temperatur $T$ und Gegenspannung $U_G$ die Anoden
 \bibitem{einheit}
 \textit{Physics LibreTexts. (n.d.). 4.2: Measuring Motion - the Doppler Shift. , Abruf 05.11.2024}
 \label{einheit}
+
+\bibitem{bohr-magneton}
+NIST, https://physics.nist.gov/cgi-bin/cuu/Value?mub, Abruf 15.11.2024
+
 \end{thebibliography}
 
 

@@ -87,10 +87,15 @@ def calc_delta_E(alphaPi, alphaSigma, alphaPiErr, alphaSigmaErr):
     alphaSigma *= 2*np.pi/360
     alphaPiErr *= 2*np.pi/360
     alphaSigmaErr *= 2*np.pi/360
-    deltaE = -c/lbda0 * h * (1 - np.sqrt(n**2 - np.sin(alphaPi)**2)/np.sqrt(n**2 - np.sin(alphaSigma)**2))
-    # TODO: calculate error
 
-    return deltaE, np.sqrt(alphaPiErr**2 + alphaSigmaErr**2)/4e19
+    gamma = -c/lbda0 * h
+    numerator = np.sqrt(n**2 - np.sin(alphaPi)**2)
+    denominator = np.sqrt(n**2 - np.sin(alphaSigma)**2)
+    deltaE = gamma * (1 - numerator/denominator)
+    # deltaEerr = np.sqrt(alphaPiErr**2 + alphaSigmaErr**2)/7e19
+    deltaEerr = gamma * np.sqrt((alphaPiErr * np.sin(alphaPi)*np.cos(alphaPi)/numerator)**2 + (alphaSigmaErr * np.sin(alphaSigma)*np.cos(alphaSigma)/denominator**3)**2)
+
+    return deltaE, deltaEerr
 
 def mean_mean_err(value1, value2, value1Err, value2Err):
     mean = (value1 + value2) / 2
@@ -172,8 +177,9 @@ deltaE, deltaEErr = mean_mean_err(np.abs(deltaEMinus), np.abs(deltaEPlus), delta
 B = field_fit_fn(I, a, b, c, d)
 Berr = np.sqrt(field_fit_fn(I, a+aErr, b+bErr, c+cErr, d+dErr)**2 + field_fit_fn(I, a-aErr, b-bErr, c-cErr, d-dErr)**2)/9/I
 Ierr = 0.2
+Berr = np.sqrt(aErr**2 +bErr**2 *I**2 + cErr**2*I**4 + dErr**2*I**6 + Ierr**2*(b**2 + 4*c**2*I**2 + 9*d**2*I**4))
+e=1.602e-19
 
-e = 1.602e-19
 energyData = pd.DataFrame({
     "B": B, "Berr": Berr,
     # "dEm": deltaEMinus/e, 'dEm_err': deltaEMinusErr/e,
