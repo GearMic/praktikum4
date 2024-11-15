@@ -204,7 +204,6 @@ ax.set_ylabel(r"$\Delta$E/J")
 
 
 params, paramsErr = fit_energy_split(B, deltaE, deltaEErr)
-B[1] = -0.05
 xFit = array_range(B)
 yFit = linear_fn(xFit, *params)
 ax.plot(xFit, yFit, label='Ausgleichsgerade')
