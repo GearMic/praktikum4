@@ -9,6 +9,11 @@ def array_range(array, overhang=0.05, nPoints=100):
     max += overhang*span
     return np.linspace(min, max, nPoints)
 
+def mean_mean_err(value1, value2, value1Err, value2Err):
+    mean = (value1 + value2) / 2
+    meanErr = np.sqrt(value1Err**2 + value2Err**2) / 2
+    return mean, meanErr
+
 def linear_fn(x, a, b):
     return a + b*x
 

@@ -22,10 +22,8 @@ def calc_lbdarec(lbda, lbdaErr):
     lbdarecErr = lbdaErr/lbda**2
     return lbdarec, lbdarecErr
 
-def calc_delta_lbda(beta, betaErr, deltad):
+def calc_delta_lbda(beta, betaErr, deltaBeta):
     # calculate Aufspaltung
-    deltaBeta = deltad/f
-
     deltaLambda = g * np.cos(beta) * deltaBeta
     deltaLambdaErr = deltaBeta * np.sqrt((gErr*np.cos(beta))**2 + (g*np.sin(beta)*betaErr)**2)
     return deltaLambda, deltaLambdaErr
@@ -48,13 +46,13 @@ beta = np.deg2rad(180+omegaG-omegaB)
 betaErr = alphaErr
 
 # reshape data
-deltad = d[1::2] - d[::2]
+deltaBeta = (d[1::2] - d[::2])/f
 slicer = slice(None, None, 2)
 alpha, beta, m = alpha[slicer], beta[slicer], m[slicer]
 
 # get wavelengths and splitting
 lbda, lbdaErr = calc_lbda(g, alpha, beta, gErr, alphaErr, betaErr)
-deltaLbda, deltaLbdaErr = calc_delta_lbda(beta, betaErr, deltad)
+deltaLbda, deltaLbdaErr = calc_delta_lbda(beta, betaErr, deltaBeta)
 
 print(len(lbda))
 isotropyData = pd.DataFrame({
@@ -70,6 +68,8 @@ x = 1/m**2
 
 # slicer = slice(2, None, 2)
 # y, yErr, x = y[slicer], yErr[slicer], x[slicer]
+mask = m!=0
+y, yErr, x = y[mask], yErr[mask], x[mask]
 print(x)
 
 params, paramsErr = chisq_fit(linear_fn, x, y, yErr)
