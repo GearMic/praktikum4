@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.constants import h, c, e
 from lattice_constant import get_lattice_constant
+from gauss_fit import full_gauss_fit_for_lines
 from helpers import *
 
 def calc_lbda(g, alpha, beta, gErr, alphaErr, betaErr, k=1):
@@ -28,6 +29,15 @@ def calc_delta_lbda(beta, betaErr, deltaBeta):
     deltaLambdaErr = deltaBeta * np.sqrt((gErr*np.cos(beta))**2 + (g*np.sin(beta)*betaErr)**2)
     return deltaLambda, deltaLambdaErr
 
+def get_isotropy_data(beta, betaErr, deltaBeta, m, lbda, lbdaErr):
+    deltaLbda, deltaLbdaErr = calc_delta_lbda(beta, betaErr, deltaBeta)
+
+    isotropyData = pd.DataFrame({
+        r'$m$': m, r'$\lambda/\si{\nm}$': lbda*1e9, r'$\Delta\lambda/\si{\nm}$': lbdaErr*1e9,
+        r'$\delta\lambda/\si{\nm}$': deltaLbda*1e9, r'$\Delta\delta\lambda/\si{\nm}$': deltaLbdaErr*1e9,
+    })
+    return isotropyData
+
 
 g, gErr = get_lattice_constant('p402/data/balmer_Hg.csv')
 
@@ -49,18 +59,7 @@ betaErr = alphaErr
 deltaBeta = (d[1::2] - d[::2])/f
 slicer = slice(None, None, 2)
 alpha, beta, m = alpha[slicer], beta[slicer], m[slicer]
-
-# get wavelengths and splitting
 lbda, lbdaErr = calc_lbda(g, alpha, beta, gErr, alphaErr, betaErr)
-deltaLbda, deltaLbdaErr = calc_delta_lbda(beta, betaErr, deltaBeta)
-
-print(len(lbda))
-isotropyData = pd.DataFrame({
-    r'$m$': m, r'$\lambda/\si{\nm}$': lbda*1e9, r'$\Delta\lambda/\si{\nm}$': lbdaErr*1e9,
-    r'$\delta\lambda/\si{\nm}$': deltaLbda*1e9, r'$\Delta\delta\lambda/\si{\nm}$': deltaLbdaErr*1e9,
-})
-print(isotropyData)
-
 
 # get rydberg constant
 y, yErr = calc_lbdarec(lbda, lbdaErr)
@@ -70,11 +69,8 @@ x = 1/m**2
 # y, yErr, x = y[slicer], yErr[slicer], x[slicer]
 mask = m!=0
 y, yErr, x = y[mask], yErr[mask], x[mask]
-print(x)
 
 params, paramsErr = chisq_fit(linear_fn, x, y, yErr)
-print(params)
-print(paramsErr)
 
 fig, ax = plt.subplots()
 ax.errorbar(x, y, yErr, fmt='x', color='xkcd:blue', label='Messdaten')
@@ -85,3 +81,15 @@ ax.plot(xFit, yFit, color='xkcd:red', label='Ausgleichsgerade')
 ax.set_xlabel(r'$1/m^2$')
 ax.set_ylabel(r'$\frac{1}{\lambda}\,/\,\frac{1}{\mathrm{m}}$')
 fig.savefig('p402/plot/rydberg_fit.pdf')
+
+
+# get wavelengths and splitting for ocular data
+isotropyDataOcular = get_isotropy_data(beta, betaErr, deltaBeta, m, lbda, lbdaErr)
+isotropyDataOcular.to_csv('p402/data/isotropy_ocular.csv', index=False)
+
+alpha, beta, deltaBeta, betaErr, deltaBetaErr, gaussFrame = full_gauss_fit_for_lines()
+alphaErr = betaErr
+lbda, lbdaErr = calc_lbda(g, alpha, beta, gErr, alphaErr, betaErr)
+isotropyDataCCD = get_isotropy_data(beta, betaErr, deltaBeta, m[mask], lbda, lbdaErr)
+isotropyDataCCD.to_csv('p402/data/isotropy_CCD.csv', index=False)
+

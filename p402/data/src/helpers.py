@@ -17,8 +17,8 @@ def mean_mean_err(value1, value2, value1Err, value2Err):
 def linear_fn(x, a, b):
     return a + b*x
 
-def chisq_fit(function, x, y, yErr, p0=None):
-    popt, pcov = optimize.curve_fit(function, x, y, sigma=yErr, p0=p0, maxfev=10000, absolute_sigma=True)
+def chisq_fit(function, x, y, yErr, p0=None, bounds=None):
+    popt, pcov = optimize.curve_fit(function, x, y, sigma=yErr, p0=p0, maxfev=10000, absolute_sigma=True, bounds=(-np.inf, np.inf))
     params, paramsErr = popt, np.sqrt(np.diag(pcov))
 
     return params, paramsErr
