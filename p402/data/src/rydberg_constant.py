@@ -39,7 +39,7 @@ def get_isotropy_data(beta, betaErr, deltaBeta, m, lbda, lbdaErr):
     return isotropyData
 
 
-g, gErr = get_lattice_constant('p402/data/balmer_Hg.csv')
+g, gErr = get_lattice_constant('p402/data/balmer_Hg.csv', 'p402/data/balmer_Hg_analysis.csv', 'p402/plot/fit-gitterkonstante.pdf')
 
 data = pd.read_csv('p402/data/balmer_H.csv', sep=r',\s+', engine='python')
 omegaG = np.array(data[r'\omega_G/°'])
