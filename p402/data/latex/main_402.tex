@@ -24,7 +24,7 @@
 \usepackage{csquotes} % e.g. provides \enquote
 \usepackage[separate-uncertainty=true]{siunitx} % units
 \usepackage{xcolor} % colored text
-\usepackage{csvsimple}
+\usepackage[l3]{csvsimple}
 \usepackage{subcaption}
 \usepackage{physics}
 \usepackage{hyperref}
@@ -86,7 +86,7 @@
 
 %% preparation
 \begin{titlepage}
-    \title{Praktikum Atome, Moleküle, kondensierte Materie \\ Versuch 402}
+    \title{Praktikum Atome, Moleküle, kondensierte Materie \\ Versuch 402: Quantelung von Energie}
     \author[1]{Carlos Pascua\thanks{s87cpasc@uni-bonn.de}}
     \author[1]{Michael Vogt\thanks{s65mvogt@uni-bonn.de}}
     \affil[1]{Uni Bonn}
@@ -238,7 +238,41 @@ warum wir die Gitterkonstante hier selbst experimentell bestimmt haben.
 
 \subsection{Messung der Isotopieaufspaltung}
 Auf zwei verschiedene Arten soll die Isotopieaufspaltung gemessen werden. Zunächst wird das Okular verwendet und anhand
-der Position entlang der Strichskala die Aufspaltung zweier Linien bestimmt.
+der Position entlang der Strichskala die Aufspaltung zweier Linien bestimmt. Anschließend wir das Okular durch eine
+CCD-Kamera ersetzt, deren Daten am Computer exportiert werden können.
+
+Da die Aufspaltung der Wellenlänge $\delta \lambda$ zweier Linien nur klein ist, kann ihre Abhängigkeit von der
+Winkelaufspaltung $\delta\beta$ linear genähert werden:
+\begin{equation}
+  \delta\lambda = \delta\beta \cdot \diffp{\lambda}{\beta} = g\cos(\beta)\delta\beta \label{eq:balmer-aufspaltung}
+\end{equation}
+
+\subsubsection{Messung mit Okular}
+Die beobachteten Linien und ihre Positionen entlang der Strichskala des Okulars sind in Tab. \ref{tab:balmer-linien-okular}
+gezeigt. Die Mitte der Strichskala liegt bei $d = \SI{5}{\mm}$.
+\begin{table}[h]
+  \centering
+  % \csvsimple{../balmer_H.csv}
+  % \csvsimple[
+  %   head=true,
+  %   separator=comma,
+  % ]
+  \csvautotabular{../balmer_H.csv}
+  \caption{Messung der Balmer-Linien mit einem Okular, mit zugeordneter Quantenzahl $m$.}
+  \label{tab:balmer-linien-okular}
+\end{table}
+% \begin{table}[h!]
+%     \centering
+%     % \csvsimple[
+%     %     head=true,  % Use the first row as the table header
+%     %     separator=comma,  % Specify the delimiter (comma is default)
+%     %     tabular=|c|c|c|,  % Table format
+%     %     table head=\hline Column 1 & Column 2 & Column 3 \\ \hline,
+%     %     late after line=\\\hline  % Line after each row
+%     % ]{example.csv}
+% \end{table}
+
+
 
 \clearpage
 \section{Fazit}
