@@ -117,7 +117,8 @@ Es soll anhand einer Balmer-Lampe die Balmer-Serie von Spektrallinien des Wasser
 die Rydberg-Konstante sowie das Plank'sche Wirkungsquantum bestimmt werden. Außerdem wird die Isotopieaufspaltung zwischen Wasserstoff und Deuterium quantifiziert.
 
 Als Balmer-Serie bezeichnet man eine bestimmte Reihe von Spektrallinien des Wasserstoffatoms, die besonders gut mit dem bloßen Auge zu sehen sind
-und 1885 von Johann Jakob Balmer untersucht wurden \cite[S. 99]{demtröder3}. Das Vorhandensein diskreter Linien ist ein bedeutendes Beispiel der Quantelung von Energie.
+und 1885 von Johann Jakob Balmer untersucht wurden \cite[S. 99]{demtröder3}. Sie werden i.d.R. mit griechischen Buchstaben bezeichnet (siehe Tab. \ref{tab:balmer-literatur})
+Das Vorhandensein diskreter Linien ist ein bedeutendes Beispiel der Quantelung von Energie.
 Balmer fand empirisch eine Gleichung für die inverse Wellenlänge, welche einem Spezialfall der Rydberg-Formel
 \begin{equation}
   \frac{1}{\lambda} = R \left(\frac{1}{n^2} - \frac{1}{m^2}\right)\ \cite{demtröder3} \label{eq:rydberg-formel}
@@ -181,9 +182,9 @@ hier für die Bestimmung der Isotopieaufspaltung verwendet werden kann.
 % Das Zentrum der Skala liegt bei \SI{5}{\mm} und
 Der Winkelunterschied zwischen zwei Linien bei $d_1$ und $d_2$ auf der Skala ergibt sich aus dem Abstand zur Abbildungslinse:
 \begin{equation}
-  \delta \beta = \tan^{-1}\left(\frac{\lvert d_2-d_1 \rvert}{f}\right) = \left\lvert \frac{d_2-d_1}{f} \right\rvert \label{eq:}
+  \delta \beta = \tan^{-1}\left(\frac{\delta d \rvert}{f}\right) \tan^{-1}\left(\frac{\lvert d_2-d_1 \rvert}{f}\right) = \left\lvert \frac{d_2-d_1}{f} \right\rvert \label{eq:winkelunterschied}
 \end{equation}
-wobei im zweiten Schritt die Kleinwinkelnäherung verwendet wurde und $f=\SI{300}{\mm}$ die Brennweite der Linse ist \cite{Anleitung}.
+wobei im dritten Schritt die Kleinwinkelnäherung verwendet wurde und $f=\SI{300}{\mm}$ die Brennweite der Linse ist \cite{Anleitung}.
 
 \subsection{Bestimmung der Gitterkonstanten}
 Zunächst soll die Gitterkonstante $g$ des verwendeten Gitters bestimmt werden.
@@ -242,35 +243,45 @@ der Position entlang der Strichskala die Aufspaltung zweier Linien bestimmt. Ans
 CCD-Kamera ersetzt, deren Daten am Computer exportiert werden können.
 
 Da die Aufspaltung der Wellenlänge $\delta \lambda$ zweier Linien nur klein ist, kann ihre Abhängigkeit von der
-Winkelaufspaltung $\delta\beta$ linear genähert werden:
+Winkelaufspaltung $\delta\beta$ mithilfe der ersten Ableitung der Gittergleichung linear genähert werden:
 \begin{equation}
   \delta\lambda = \delta\beta \cdot \diffp{\lambda}{\beta} = g\cos(\beta)\delta\beta \label{eq:balmer-aufspaltung}
 \end{equation}
+Die nach der Literatur erwarteten Wellenlängen und Aufspaltungen der Linien sind in Tab. \ref{tab:balmer-literatur} gezeigt.
+
+\begin{table}
+  \begin{tabular}{c||c|c|c}
+    Bezeichung & $m$ & $\lambda/\si{nm}$ (bei Wasserstoff) & $\delta \lambda/\si{nm}$ \\ \hline
+    H$_\alpha$ & 3 & \SI{656.28}{\nm} & \SI{0.179}{\nm} \\
+    H$_\beta$  & 4 & \SI{486.13}{\nm} & \SI{0.132}{\nm} \\
+    H$_\gamma$ & 5 & \SI{434.05}{\nm} & \SI{0.118}{\nm} \\
+    H$_\delta$ & 6 & \SI{410.17}{\nm} & \SI{0.112}{\nm}
+  \end{tabular}
+  \caption{Die ersten vier Linien der Balmer-Serie und ihre Wellenlängen bei Wassserstoff (Protium) sowie die Isotopieaufspaltung. \cite{leybold-balmer}}
+  \label{tab:balmer-literatur}
+\end{table}
 
 \subsubsection{Messung mit Okular}
-Die beobachteten Linien und ihre Positionen entlang der Strichskala des Okulars sind in Tab. \ref{tab:balmer-linien-okular}
+Die beobachteten Linien und ihre Positionen entlang der Strichskala des Okulars sind in Tab. \ref{tab:balmer-messung-okular}
 gezeigt. Die Mitte der Strichskala liegt bei $d = \SI{5}{\mm}$.
 \begin{table}[h]
   \centering
-  % \csvsimple{../balmer_H.csv}
-  % \csvsimple[
-  %   head=true,
-  %   separator=comma,
-  % ]
   \csvautotabular{../balmer_H.csv}
-  \caption{Messung der Balmer-Linien mit einem Okular, mit zugeordneter Quantenzahl $m$.}
+  \caption{Messung der Balmer-Linien mit einem Okular, mit zugeordneter Quantenzahl $m$.
+  $m=0$ bedeutet, dass wir diese Linie nicht zum Balmer-Spektrum zuordnen konnten.
+  Jede Linie ist zweimal aufgeführt, für die zwei aufgespaltenen sichtbaren Peaks, die sich in ihrer Position entlang der Strichskala $d$ unterscheiden.
+  $\Delta \omega_G=\ang{0.6}$, $\Delta d=\SI{0.1}{\mm}$}
   \label{tab:balmer-linien-okular}
 \end{table}
-% \begin{table}[h!]
-%     \centering
-%     % \csvsimple[
-%     %     head=true,  % Use the first row as the table header
-%     %     separator=comma,  % Specify the delimiter (comma is default)
-%     %     tabular=|c|c|c|,  % Table format
-%     %     table head=\hline Column 1 & Column 2 & Column 3 \\ \hline,
-%     %     late after line=\\\hline  % Line after each row
-%     % ]{example.csv}
-% \end{table}
+
+Für jede der Linien wird der Abstand $\delta d$ der Peaks berechnet und daraus
+der Winkelabstand $\delta \beta$ mithilfe von \eqref{eq:winkelunterschied}.
+Die Aufspaltung $\delta \lambda$ der Wellenlängen folgt dann aus \eqref{eq:balmer-aufspaltung}.
+Die resultierenden Werte sind in Tab. \ref{tab:balmer-aufspaltung-okular} gezeigt.
+\begin{table}
+  \caption{mit dem Okular gemessene Isotopieaufspaltung der Balmer-Linien}
+  \label{tab:balmer-aufspaltung-okular}
+\end{table}
 
 
 
