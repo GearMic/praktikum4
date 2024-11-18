@@ -115,7 +115,46 @@ Anschließend wird das Franck-Hertz-Experiment durchgeführt, um die Energiediff
 
 
 \section{Zeeman-Effekt}
-Im ersten Versuchsteil wird anhand einer Cadmiumlampe in einem Magnetfeld der Zeeman-Effekt auf die Zustände $^1D_2$ und $^1P_1$ untersucht.
+Im ersten Versuchsteil wird anhand einer Cadmiumlampe in einem Magnetfeld der Zeeman-Effekt untersucht und
+anhand der Ergebnisse das Bohrsche Magneton $\mu_B$ bestimmt.
+% Daran soll das Bohrsche Magneton $mu_B$ bestimmt werden.
+
+Der Zeeman-Effekt ist die Aufspaltung von Energieniveaus der Elektronen in Atomen in Abhängigkeit der Magnetquantenzahl $m_J$,
+die auftritt, wenn ein äußeres Magnetfeld $B$ anliegt. Die Energie ändert sich wie folgt:
+\[
+  E = E_C + \mu_B B \cdot m_J
+\]
+Dabei ist $E_C$ das Energieniveau, das nur von der Coulomb-Wechselwirkung abhängt und keine $m_J$-Abhängigkeit hat.
+Für die Energiedifferenz zwischen zwei Übergängen $1$ und $2$ mit unterschiedlichen Magnetquantenzahlen $\Delta m_J = m_J^2 - m_J^1$
+gilt dann
+\[
+  E_2 - E_1 = \Delta E_C + \mu_B B \cdot \Delta m_J
+\]
+Das abgestrahlte Licht solcher Übergänge hat also eine Energieverschiebung in Abhängigkeit von $\Delta m_J$ und $B$.
+Die Energieverschiebung eines Übergangs mit angelegtem Magnetfeld im Vergleich zu keinem Magnetfeld bezeichnen wir im Folgenden mit $\Delta E$:
+\begin{equation}
+  \Delta E = E_2 - E_1 - \Delta E_C = \mu_B B \cdot \Delta m_J \label{eq:delta-e}
+\end{equation}
+
+Je nach dem Wert von $\Delta m_J$ werden Übergänge unterschiedlich bezeichnet:
+$\Delta m_J=0$ ist ein $\pi$-Übergang und $\Delta m_J=\pm 1$ sind $\sigma^\pm$.
+Diese haben unterschiedliche Polarisierungen und Abstrahlungscharakteristiken, die in Abb. \ref{fig:zeeman-abstrahlung}
+gezeigt sind.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\linewidth]{zeeman-abstrahlung}
+  \caption{Polarisationsverteilung und Abstrahlungscharakteristik elektrischer Dipolübergänge \cite{Anleitung} \cite{Leybold}.
+    Die kreisende bzw. schwingende Kugel in der unteren Hälfte ist ein klassisches Analogon für das Verhalten des Elektrons.
+    Dadurch lassen sich die Polarisationen der Strahlung in verschiedenen Richtungen (in der Unteren Hälfte gezeigt)
+    sowie die allgemeine Strahlungscharakteristik (in der oberen Hälfte) erklären.}
+  \label{fig:zeeman-abstrahlung}
+\end{figure}
+Hier ist zu sehen, dass ein $\pi$-Übergang bei longitudinaler Betrachtung (Blickrichtung parallel zum B-Feld) nicht zu sehen ist
+und das Licht der $\sigma$-Übergänge hier in entgegengesetzten Richtungen zirkular polarisiert ist.
+Bei transversaler Betrachtung (senkrecht zum Magnetfeld) sind alle Übergänge zu sehen und sind linear polarisiert.
+Die $\sigma$-Übergänge erzeugen gleiche Polarisationsrichtung, die senkrecht zu der des $\pi$-Übergangs steht.
+
+\subsection{Aufbau}
 Der verwendete Aufbau ist in Abb. \ref{fig:zeeman-aufbau} zu sehen.
 \begin{figure}[H]
   \centering
@@ -126,24 +165,46 @@ Der verwendete Aufbau ist in Abb. \ref{fig:zeeman-aufbau} zu sehen.
 % Der $^1D_2$-Zustand hat Aufspaltungen in $M_J = -2,\,\dots\,,2$ und $^1P_1$ in $M_J=-1,0,1$.
 % Es kann also Übergänge mit $\Delta M_J = -1, 0, 1$ geben.
 % In Abhängigkeit des $\Delta M$-Werts gibt es verschiedene
-Folgende wichtige Bestandteile sind zu sehen \cite{Anleitung}:
-\begin{enumerate}[label=\alph*.]
-  \item Cadmium-Lampe
-  \item Klammern
-  \item Polschuhe
-  \item Kondensorlinse
-  \item Polarisationsfilter
-  \item Fabry-Perot-Etalon
-  \item Abbildungslinse
-  \item Interferenzfilter ($\lambda=\SI{643.8}{\nm}$)
-  \item Okular mit Strichskala
-\end{enumerate}
-Außerdem werden Stromquellen (oben links im Bild; links normal, rechts Hochstrom)
-zur Versorgung der Cadmiumlampe und der Elektromagneten eingesetzt.
 
-Das Fabry-Perot-Etalon in Kombination mit den Linsen erzeugt ein Interferenzmuster mit Ringen,
-deren Position von der Wellenlänge des Lichts abhängt.
-Der Interferenzfilter wird eingesetzt, um ausschließlich das Licht vom Übergang $^1D_2 \rightarrow\,^1P_1$ betrachten zu können.
+Eine Cadmiumlampe (a) ist zwischen den Polschuhen (c) zweier Elektromagneten aufgehängt und wird von einer zugehörigen Stromquelle (oben links) versorgt. 
+Im Bild ist die transversale Konfiguration gezeigt, die Magneten mitsamt der Lampe können jedoch gedreht werden,
+um auch longitudinal beobachten zu können. Die Magneten werden von einer Hochstromquelle (oben links, rechte Stromquelle) versorgt.
+Die Cadmiumlampe beleuchtet eine Kondensorlinse (d). Dadurch, dass die Lampe ausgedehnt ist und in der Brennebene der Linse steht,
+gibt es hinter der Linse parallele Lichtbündel mit verschiedenen Winkeln zur optischen Achse.
+
+Diese gehen durch ein Fabry-Perot-Etalon (e), wo der Gangunterschied zwischen parallelen Strahlen von ihrem Einfallswinkel abhängt.
+Je nach Winkel eines Lichtbündels findet also entweder konstruktive oder destruktive Interferenz statt.
+Dadurch entsteht ein Interferenzmuster von konzentrischen Ringen, welche schließlich durch die Abbildungslinse (f) und das Okular (h)
+zur Beobachtung mit dem Auge abgebildet werden.
+Die Interferenzbedingung des Interferometers lautet
+\begin{equation}
+  k\lambda = 2d\sqrt{n^2 - \sin^2(\alpha)}\ \cite{Leybold}\label{eq:fpi-interferenz}
+\end{equation}
+Der Phasenunterschied hängt nicht nur vom Winkel, sondern auch von der Wellenlänge ab. Betrachtet man leicht unterschiedliche
+Wellenlängen, wie hier durch die Zeeman-Aufspaltung, ist also eine Aufspaltung der Ringe zu beobachten.
+
+Um den zu beobachtenden Übergang $^1D_2 \rightarrow\,^1P_1$ herauszufiltern, wird zwischen Abbildungslinse und
+Okular ein Farbfilter der Wellenlänge $\lambda=\SI{643.8}{\nm}$ \cite{Anleitung} (g) eingesetzt.
+
+
+% Folgende wichtige Bestandteile sind zu sehen \cite{Anleitung}:
+% \begin{enumerate}[label=\alph*.]
+%   \item Cadmium-Lampe
+%   \item Klammern
+%   \item Polschuhe
+%   \item Kondensorlinse
+%   \item Polarisationsfilter
+%   \item Fabry-Perot-Etalon
+%   \item Abbildungslinse
+%   \item Interferenzfilter ($\lambda=\SI{643.8}{\nm}$)
+%   \item Okular mit Strichskala
+% \end{enumerate}
+% Außerdem werden Stromquellen (oben links im Bild; links normal, rechts Hochstrom)
+% zur Versorgung der Cadmiumlampe und der Elektromagneten eingesetzt.
+
+% Das Fabry-Perot-Etalon in Kombination mit den Linsen erzeugt ein Interferenzmuster mit Ringen,
+% deren Position von der Wellenlänge des Lichts abhängt.
+% Der Interferenzfilter wird eingesetzt, um ausschließlich das Licht vom Übergang $^1D_2 \rightarrow\,^1P_1$ betrachten zu können.
 
 Zur Justage des Aufbaus wird am Okular die Strichskala scharfgestellt und
 die Abbildungslinse verschoben, bis das Interferenzmuster der Lampe durch das Etalon scharf zu sehen ist.
@@ -154,9 +215,9 @@ und die Kondensorlinse verschoben, um eine gleichmäßige Ausleuchtung zu erhalt
 \subsubsection{transversale Konfiguration}
 Zunächst wird in transversaler Konfiguration ohne eingesetzten Polarisationsfilter beobachtet,
 d.h. die optische Achse steht senkrecht zum Magnetfeld, wie in Abb. \ref{fig:zeeman-aufbau} gezeigt.
-Nach Abb. \ref{fig:zeeman-abstrahlung} sollte hier sowohl Strahlung vom $\Delta M_J=0$-Übergang ($\pi$-Übergang),
-als auch den $\Delta M_J=\pm 1$-Übergängen ($\sigma^\pm$-Übergänge), zu sehen sein.
-Hierbei ist die Strahlung der beiden verschiedenen $\sigma$-Übergänge gleich Polarisiert;
+Nach Abb. \ref{fig:zeeman-abstrahlung} sollte hier sowohl Strahlung vom $\pi$-Übergang,
+als auch den $\sigma^\pm$-Übergängen, zu sehen sein.
+Hierbei ist die Strahlung der beiden verschiedenen $\sigma$-Übergänge gleich polarisiert;
 die Polarisation vom $\pi$-Übergang steht senkrecht dazu.
 
 \begin{figure}[H]
@@ -175,18 +236,19 @@ Das am Okular enstehende Bild ist in Abb. \ref{fig:zeeman-transveral-ohne-ohne} 
 \end{figure}
 Es sind die verschiedenen Interferenzringe zu erkennen, die hier alle von der gleichen Wellenlänge stammen.
 
-Nun wird das Magnetfeld eingeschaltet und erhöht, bis man eine Aufspaltung der Ringe sieht, siehe Abb. \ref{fig:zeeman-transveral-mit-ohne}
+Nun wird das Magnetfeld eingeschaltet und erhöht, bis man eine Aufspaltung der einzelnen Ringe sieht, siehe Abb. \ref{fig:zeeman-transveral-mit-ohne}
 \begin{figure}[H]
   \centering
   \includegraphics[width=.8\linewidth]{zeeman-transversal-mit-ohne}
   \caption{Interferenzmuster bei transversaler Beobachtung mit Magnetfeld, ohne Polarisationsfilter.}
   \label{fig:zeeman-transveral-mit-ohne}
 \end{figure}
-Durch den Zeeman-Effekt gibt es eine Energieaufspaltung $\Delta E \propto B_zM_J$ der Niveaus.
-Dadurch sind die $\pi$-Übergänge unbeeinflusst, während die $\sigma^+$- bzw. $\sigma^-$-Übergänge
-eine etwas geringere bzw. höhere Wellenlänge produzieren. Was zuvor ein Ring war, spaltet sich daher in drei Ringe auf.
+Die Aufspaltung der Ringe lässt sich durch den Zeeman-Effekt erklären. Der $\pi$-Übergang mit $\Delta m_J=0$ ist nach \eqref{eq:delta-e}
+unbeeinflusst, während die $\sigma$-Übergänge eine Änderung ihrer Energie proportional zu $B$ erfahren.
+Was zuvor ein Ring war, spaltet sich daher in drei Ringe leicht unterschiedlicher Wellenlängen auf.
 
-Die verschiedenen Komponenten können durch Einsatz des Polarisationsfilters herausgefiltert werden (Abb. \ref{fig:zeeman-transveral-mit-90}, \ref{fig:zeeman-transveral-mit-0}).
+Die verschiedenen Komponenten können durch Einsatz eines Polarisationsfilters zwischen Kondensorlinse und Etalon
+herausgefiltert werden (Abb. \ref{fig:zeeman-transveral-mit-90}, \ref{fig:zeeman-transveral-mit-0}).
 \begin{figure}[H]
   \centering
   \includegraphics[width=.8\linewidth]{zeeman-transversal-mit-90}
@@ -200,8 +262,60 @@ Die verschiedenen Komponenten können durch Einsatz des Polarisationsfilters her
   \label{fig:zeeman-transveral-mit-0}
 \end{figure}
 Wenn der Filter auf \ang{90} steht, sind wieder nur einzelne Ringe zu sehen, die dem $\pi$-Übergang entsprechen,
-welche Licht mit Polarisation parallel zum Magnetfeld produziert.
+welcher Licht mit Polarisation parallel zum Magnetfeld produziert.
 Steht der Filter auf \ang{0}, gibt es jeweils zwei Ringe, die $\sigma^+$ bzw. $\sigma^-$ entsprechen.
+
+
+\subsubsection{longitudinale Konfiguration}
+Die Magneten mitsamt der Cadmiumlampe werden um \ang{90} gedreht,
+um die Beobachtungen in longitudinaler Konfiguration (Magnetfeld parallel zur optischen Achse bzw. der Beobachtungsrichtung)
+zu wiederholen.
+
+Ohne Magnetfeld ergibt sich das Muster in Abb. \ref{fig:zeeman-longitudinal-ohne-ohne}, was mit der entsprechenden Beobachtung
+bei transversaler Konfiguration übereinstimmt. Da kein Magnetfeld anliegt, können $\pi$ und $\sigma^\pm$-Übergänge nicht unterschieden
+werden alle Betrachtungsrichtungen lassen das gleiche Muster erkennen.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-ohne-ohne}
+  \caption{Interferenzmuster bei longitudinaler Beobachtung ohne Magnetfeld, ohne Polarisationsfilter.}
+  \label{fig:zeeman-longitudinal-ohne-ohne}
+\end{figure}
+
+Wird das Magnetfeld angeschaltet (Abb. \ref{fig:zeeman-longitudinal-mit-ohne}),
+ist eine Aufspaltung eines Rings in jeweils zwei Ringe zu beobachten.
+Diese entsprechen den beiden $\sigma$-Übergängen, während der $\pi$-Übergang aufgrund seiner Abstrahlungscharakteristik
+in longitudinaler Konfiguration nicht zu sehen ist.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-mit-ohne}
+  \caption{Interferenzmuster bei longitudinaler Beobachtung mit Magnetfeld, ohne Polarisationsfilter.}
+  \label{fig:zeeman-longitudinal-mit-ohne}
+\end{figure}
+
+Als nächstes wird zusätzlich eine $\lambda / 4$-Platte in \ang{0}-Stellung in den Strahlengang vor dem
+Polarisationsfilter eingesetzt. 
+
+Mit dem Polarisationsfilter auf \ang{-45} ist in jeder Beugungsordnung statt zwei Ringen nur noch ein Ring stark zu sehen (Abb. \ref{fig:zeeman-longitudinal-mit--45})
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-mit--45}
+  \caption{Interferenzmuster bei longitudinaler Beobachtung mit Magnetfeld, mit Polarisationsfilter.}
+  \label{fig:zeeman-longitudinal-mit--45}
+\end{figure}
+
+Mit dem Polarisationsfilter in \ang{45}-Stellung ist nur der jeweils andere Ring stark zu sehen (Abb. \ref{fig:zeeman-longitudinal-mit-45}).
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-mit-45}
+  \caption{Interferenzmuster bei longitudinaler Beobachtung mit Magnetfeld, mit Polarisationsfilter.}
+  \label{fig:zeeman-longitudinal-mit-45}
+\end{figure}
+
+Dies lässt sich wie folgt erklären: Die $\lambda / 4$-Platte erzeugt aus dem
+rechts- bzw. linkspolarisierte Licht der $\sigma$-Übergänge
+(siehe Abb. \ref{fig:zeeman-abstrahlung}) verschiedene zueinander senkrechte lineare Polarisationsrichtungen,
+von denen dann mit dem Polarisationsfilter jeweils eine ausgewählt wurde.
+
 
 \subsection{Auflösungsvermögen und Finesse}
 
@@ -255,52 +369,6 @@ Dies hier ist bei dem Fall, dass die Cadmiumlampe eine Temperatur
  äußeren Einflüssen wie dem Linsenfehler.
 
 
-\subsubsection{longitudinale Konfiguration}
-Die Magneten mitsamt der Cadmiumlampe werden um \ang{90} gedreht,
-um die Beobachtungen in longitudinaler Konfiguration (Magnetfeld parallel zur optischen Achse bzw. der Beobachtungsrichtung)
-zu wiederholen.
-
-Ohne Magnetfeld ergibt sich das Muster in Abb. \ref{fig:zeeman-longitudinal-ohne-ohne}, was mit der entsprechenden Beobachtung
-bei transversaler Konfiguration übereinstimmt.
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-ohne-ohne}
-  \caption{Interferenzmuster bei longitudinaler Beobachtung ohne Magnetfeld, ohne Polarisationsfilter.}
-  \label{fig:zeeman-longitudinal-ohne-ohne}
-\end{figure}
-
-Wird das Magnetfeld angeschaltet (Abb. \ref{fig:zeeman-longitudinal-mit-ohne}), ist eine Aufspaltung in jeweils zwei Ringe zu beobachten.
-Diese entsprechen den beiden $\sigma$-Übergängen, während der $\pi$-Übergang aufgrund seiner Abstrahlungscharakteristik
-in longitudinaler Konfiguration nicht zu sehen ist.
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-mit-ohne}
-  \caption{Interferenzmuster bei longitudinaler Beobachtung mit Magnetfeld, ohne Polarisationsfilter.}
-  \label{fig:zeeman-longitudinal-mit-ohne}
-\end{figure}
-
-Als nächstes wird zusätzlich eine $\lambda / 4$-Platte in \ang{0}-Stellung in den Strahlengang vor dem
-Polarisationsfilter eingesetzt. Diese dient dazu, das rechts- bzw. linkspolarisierte Licht der $\sigma$-Übergänge
-(siehe Abb. \ref{fig:zeeman-abstrahlung}) zu verschiedenen linearen Polarisationsrichtungen umzuwandeln,
-welche dann mit dem Polarisationsfilter ausgewählt werden können.
-
-Mit dem Polarisationsfilter auf \ang{-45} ist nur noch jeweils ein Ring stark zu sehen (Abb. \ref{fig:zeeman-longitudinal-mit--45})
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-mit--45}
-  \caption{Interferenzmuster bei longitudinaler Beobachtung mit Magnetfeld, mit Polarisationsfilter.}
-  \label{fig:zeeman-longitudinal-mit--45}
-\end{figure}
-
-Mit dem Polarisationsfilter in \ang{45}-Stellung ist nur der jeweils andere Ring stark zu sehen (Abb. \ref{fig:zeeman-longitudinal-mit-45}).
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.8\linewidth]{zeeman-longitudinal-mit-45}
-  \caption{Interferenzmuster bei longitudinaler Beobachtung mit Magnetfeld, mit Polarisationsfilter.}
-  \label{fig:zeeman-longitudinal-mit-45}
-\end{figure}
-
-
 \subsection{Messung des Zeeman-Effekts}
 Es soll nun quantitativ die Stärke der Aufspaltung in Abhängigkeit des anliegenden Magnetfelds gemessen werden,
 mit dem Ziel, das Bohrsche Magneton $\mu_B$ zu bestimmten.
@@ -321,6 +389,8 @@ In Abb. \ref{fig:magnetkalib} sind die Messdaten zusammen mit einem $\chi^2$-Fit
 \]
 dargestellt. Als Fehlerwerte auf $I$ und $B$ wurden dabei $2\%$ des jeweiligen Werts angesetzt,
 wobei Fehlerwerte von $\SI{0.002}{\A}$ und $\SI{0.2}{\mT}$ nicht unterschritten werden dürfen.
+Es ist anzumerken, dass die hier Strommessung mit dem hier verwendeten Cassy-Modul deutlich präzisere Werte liefert,
+als das Netzgerät, welche nur eine Nachkommastelle des Stroms anzeigt.
 
 \begin{figure}[H]
   \centering
@@ -333,9 +403,9 @@ wobei Fehlerwerte von $\SI{0.002}{\A}$ und $\SI{0.2}{\mT}$ nicht unterschritten 
 
 \begin{align*}
   a_1&=\SI{-0.548 \pm 0.025}{\mT},\ b_1=\SI{65.44 \pm 0.16}{\mT\per\A}, \\
-  c_1&=\SI{3.96 \pm 0.065}{\mT\per\A\squared},\ d_1=\SI{-0.5213 \pm 0.0059}{\mT\per\A\cubed} \\
-  a_1&=\SI{-0.104 \pm 0.027}{\mT},\ b_1=\SI{66.20 \pm 0.53}{\mT\per\A}, \\
-  c_1&=\SI{3.97 \pm 0.186}{\mT\per\A\squared},\ d_1=\SI{-0.5361 \pm 0.0152}{\mT\per\A\cubed}
+  c_1&=\SI{3.964 \pm 0.065}{\mT\per\A\squared},\ d_1=\SI{-0.5213 \pm 0.0059}{\mT\per\A\cubed} \\
+  a_2&=\SI{-0.104 \pm 0.027}{\mT},\ b_2=\SI{66.20 \pm 0.53}{\mT\per\A}, \\
+  c_2&=\SI{3.97 \pm 0.19}{\mT\per\A\squared},\ d_2=\SI{-0.536 \pm 0.015}{\mT\per\A\cubed}
 \end{align*}
 
 Diese Werte sind in relativ guter Übereinstimmung miteinander; alle Parameter haben Überschneidungen in ihren Fehlerbereichen.
@@ -347,7 +417,7 @@ Um eine einzelne Kalibrationskurve zu haben, verwenden wir im Folgenden die Mitt
   % i = \frac{i_1+i_2}{2},\enspace \Delta I = \frac{\sqrt{i_1^2 + i_2^2}}{2}
   i &= \frac{i_1+i_2}{2},\enspace i=a,\,b,\,c,\,d \\
   a&=\SI{-0.326 \pm 0.019}{\mT},\ b=\SI{65.82 \pm 0.28}{\mT\per\A}, \\
-  c&=\SI{3.96 \pm 0.099}{\mT\per\A\squared},\ d=\SI{-0.5288 \pm 0.0082}{\mT\per\A\cubed}
+  c&=\SI{3.967 \pm 0.099}{\mT\per\A\squared},\ d=\SI{-0.5288 \pm 0.0082}{\mT\per\A\cubed}
 \end{align*}
 Der Fehler wird dabei mithilfe von Gauß'scher Fehlerfortpflanzung bestimmt.
 
@@ -370,29 +440,28 @@ Dazu wird immer nur der Bereich dieser drei Peaks aus den Daten ausgewählt und 
 \[
   I(\alpha) = B + G(\alpha; a_1, \mu_1, \sigma_1) + G(\alpha; a_2, \mu_2, \sigma_2) + G(\alpha; a_3, \mu_3, \sigma_3)
 \]
-mit drei Überlagerten verallgemeinerten Gauß-Funktionen
+durchgeführt. Dabei wurde auf den Intensitäten ein Fehler von $\Delta I = 1\%$ angenommen.
+Der additive Parameter $B$ ermöglicht die Berücksichtigung einer eventuell vorhanden gleichmäßigen Grundausleuchtung
+und sorgt nach visueller Inspektion erfahrungsgemäß für bessere Anpassung der Gauß-Parameter an die Daten.
+Es werden die verallgemeinerten Gauß-Funktionen
 \[
   G(xg a, \mu, \sigma) = a \exp(\frac{(x-b)^2}{2c^2})
 \]
-durchgeführt. Der additive Parameter $B$ ermöglicht die Berücksichtigung einer eventuell vorhanden gleichmäßigen Grundausleuchtung
-und sorgt nach visueller Inspektion erfahrungsgemäß für bessere Anpassung der Gauß-Parameter an die Daten.
+verwendet. 
 Die Plots mit Fit sind in Abb. \ref{fig:gauss-fit-1} und \ref{fig:gauss-fit-2} gezeigt, die Parameter in Tab. \ref{tab:parameter}.
 
 Für die Energiedifferenz gilt
 \[
   \Delta E_\pm = -\frac{h c}{\lambda_\pi} \frac{\lambda_\sigma - \lambda_\pi}{\lambda_\sigma} \cite{Anleitung}
 \]
-mit $\lambda_pi^0 = \SI{643.8}{\nm}$ \cite{Leybold}. Die Interferenzbedingung des Interferometers lautet
-\[
-  k\lambda = 2d\sqrt{n^2 - \sin^2(\alpha)} \cite{Leybold}
-\].
-Eingesetzt in den Zusammenhang für die Energiedifferenz ergibt sich
+mit $\lambda_pi^0 = \SI{643.8}{\nm}$ \cite{Leybold}.
+Einsetzen der Interferenzbedingung \eqref{eq:fpi-interferenz}
 \[
   \Delta E_\pm = -\frac{h c}{\lambda_\pi} (1 - \frac{\sqrt{n^2-\sin^2(\alpha_\pi)}}{\sqrt{n^2-\sin^2(\alpha_\sigma)}})
 \]
 
 Die Werte, die sich hieraus ergeben, sind, zusammen mit den aus der Kalibrationskurve bestimmten B-Werten, sind in Tab. \ref{tab:zeeman-energies} gezeigt.
-Dabei ist $\Delta E$ jeweils der Mittelwert aus $\Delta E_-$ und $\Delta E_+$.
+Dabei ist $\Delta E$ jeweils der Mittelwert aus $\Delta E_-$ und $\Delta E_+$. Die Fehler wurden mit Gauß'scher Fehlerfortpflanzung berechnet.
 % Die Werte, die sich hieraus ergeben, sind, zusammen mit den aus der Kalibrationskurve bestimmten B-Werten, sind in der untenstehenden Abbildung geplottet.
 
 % Dabei ist $\Delta E$ jeweils der Mittelwert aus $\Delta E_-$ und $\Delta E_+$.
@@ -411,26 +480,26 @@ Dabei ist $\Delta E$ jeweils der Mittelwert aus $\Delta E_-$ und $\Delta E_+$.
     \centering
     \begin{tabular}{cccc}
         \toprule
-        $B$ & $\Delta B$ & $\Delta E$ & $\Delta (\Delta E)$ \\
+        $B/\si{\mT}$ & $\Delta B/\si{\mT}$ & $\Delta E/\si{\J}$ & $\Delta \Delta E/\si{\J}$ \\
         \midrule
-        \num{124.92} & \num{9.82} & \num{9.34e-5} & \num{4.8e-6} \\
-        \num{191.50} & \num{10.03} & \num{9.39e-5} & \num{8.3e-6} \\
-        \num{256.47} & \num{10.08} & \num{8.48e-5} & \num{3.5e-6} \\
-        \num{316.67} & \num{9.95} & \num{8.94e-5} & \num{1.3e-6} \\
-        \num{368.93} & \num{9.66} & \num{9.38e-5} & \num{1.6e-6} \\
-        \num{410.08} & \num{9.21} & \num{9.59e-5} & \num{1.7e-6} \\
-        \num{425.49} & \num{8.92} & \num{9.67e-5} & \num{1.7e-6} \\
-        \num{436.93} & \num{8.59} & \num{9.72e-5} & \num{1.7e-6} \\
-        \num{444.00} & \num{8.21} & \num{9.78e-5} & \num{1.7e-6} \\
-        \num{446.18} & \num{7.71} & \num{9.88e-5} & \num{1.9e-6} \\
+        \num{124.9236} & \num{11.885} & \num{9.338e-5} & \num{4.655e-7} \\
+        \num{191.4964} & \num{12.705} & \num{9.391e-5} & \num{8.974e-7} \\
+        \num{256.4708} & \num{14.110} & \num{8.479e-5} & \num{3.411e-7} \\
+        \num{316.6740} & \num{16.246} & \num{8.945e-5} & \num{1.225e-7} \\
+        \num{368.9332} & \num{19.199} & \num{9.376e-5} & \num{1.565e-7} \\
+        \num{410.0756} & \num{23.002} & \num{9.592e-5} & \num{1.685e-7} \\
+        \num{425.4865} & \num{25.223} & \num{9.666e-5} & \num{1.710e-7} \\
+        \num{436.9284} & \num{27.656} & \num{9.721e-5} & \num{1.734e-7} \\
+        \num{444.0047} & \num{30.300} & \num{9.779e-5} & \num{1.714e-7} \\
+        \num{446.1753} & \num{33.751} & \num{9.883e-5} & \num{1.912e-7} \\
         \bottomrule
     \end{tabular}
-    \caption{Magnetfeldstärken und zugehörige Energiewerte}
+    \caption{Magnetfeldstärken und zugehörige Energieverschiebungen.}
     \label{tab:zeeman-energies}
 \end{table}
 
-Wir tragen $\Delta E$ gegen $B$ auf und passen eine Gerade daran an. Nach \eqref{} (mit $\Delta m_J=1$)
-entspricht die Steigung dieser Geraden dem Bohrschen Magneton $\mu_B$. Wir erhalten die Steigung
+Wir tragen $\Delta E$ gegen $B$ auf und passen eine Gerade daran an. Nach \eqref{eq:delta-e} (mit $\Delta m_J=1$)
+entspricht die Steigung dieser Geraden dem Bohrschen Magneton $\mu_B$.
 
 
 
@@ -438,9 +507,23 @@ entspricht die Steigung dieser Geraden dem Bohrschen Magneton $\mu_B$. Wir erhal
   \centering
   \includegraphics[width=\linewidth]{energy_plot.pdf}
 \end{figure}
-aus einem linearen Fit ergibt sich für die Steigung
-$\mu_B = \SI{1.1\pm 0.313}{\J\per\T}$
+aus einem linearen $\chi^2$-Fit erhalten wir die Gleichung
+\[
+  \Delta E = \SI{1.100\pm 0.050 e-23}{\J} + \SI{1.06\pm 0.13 e-23}{\J\per\T}
+\]
+also ist das Ergebnis $\mu_B = \SI{1.06\pm 0.15e-23}{\J\per\T}$.
 
+Der Literaturwert für das Bohrsche Magneton ist $\SI{0.927e-23}{\J\per\T}$ \cite{bohr-magneton}, was im Fehlerbereich unseres Wertes liegt,
+aber eine relativ große Abweichung von über $10\%$ hat.
+Abweichungen bei dieser Messung lassen sich unter anderem darauf zurückführen, dass der Strom am Netzgerät abgelesen wurde,
+während er zur Magnetfeldkalibierung mit einem zusätzlichen Gerät gemessen wurde. Zwischen diesen beiden Messungen kann
+es Abweichungen geben, und Die Messung des Netzgeräts ist relativ unpräzise (ablesbar ist nur eine Nachkommastelle).
+
+Es fällt außerdem der große Achsenabschnitt der Gerade auf, der dem theoretischen Zusammenhang zufolge eigentlich $0$
+sein sollte. Dieser ließe sich unter anderem durch einen konstanten Offset in der, wie zuvor erwähnt ungenauen, Stromangabe des
+Netzgeräts, erklären. Dieser würde einen konstanten Offset des Magnetfelds hinzufügen,
+würde aber die Abstände zwischen Magnetfeldwerten und damit die errechnete Steigung $\mu_B$
+nicht stark beeinflussen, da die Kalibrationskurve in großen Bereichen linear ist.
 
 
 \clearpage
@@ -890,6 +973,10 @@ fällt auf, dass bei erhöhter Temperatur $T$ und Gegenspannung $U_G$ die Anoden
 \bibitem{einheit}
 \textit{Physics LibreTexts. (n.d.). 4.2: Measuring Motion - the Doppler Shift. , Abruf 05.11.2024}
 \label{einheit}
+
+\bibitem{bohr-magneton}
+NIST, https://physics.nist.gov/cgi-bin/cuu/Value?mub, Abruf 15.11.2024
+
 \end{thebibliography}
 
 
