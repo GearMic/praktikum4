@@ -79,8 +79,7 @@
 \newcommand{\defc}{black}
 \newcommand{\colorT}[2][blue]{\color{#1}{#2}\color{\defc}}
 \newcommand{\redq}{\color{red}(?)\color{\defc}}
-\newcommand{\question}[1]{\colorT[purple]{\textbf{(#1)}}}
-\newcommand{\todo}[1]{\colorT[red]{}
+% \newcommand{\question}[1]{\colorT[purple]{\textbf{(#1)}}}
 \newcommand{\mr}{\mathrm}
 
 %% preparation
@@ -361,7 +360,6 @@ Dabei wird $\alpha$ automatisch aus der Pixel-Position $p$ berechnet nach der Fo
 \[
   \alpha = \arctan(\frac{(1024-p) \cdot \SI{0.014}{\mm}}{f}),\ f=\SI{150}{\mm}\ (\cite{Anleitung}, S.7)
 \]
-\todo{braucht man Seitenangaben?}
 
 Nun wird das Magnetfeld durch Änderung des Stroms variiert und am Computer beobachtet,
 wie sich die Aufspaltung der Linien verändert.
@@ -433,8 +431,6 @@ Dabei ist $\Delta E$ jeweils der Mittelwert aus $\Delta E_-$ und $\Delta E_+$.
 
 Wir tragen $\Delta E$ gegen $B$ auf und passen eine Gerade daran an. Nach \eqref{} (mit $\Delta m_J=1$)
 entspricht die Steigung dieser Geraden dem Bohrschen Magneton $\mu_B$. Wir erhalten die Steigung
-\todo{richtige Gleichung aufschreiben in Theorie}
-\todo{weiter}
 
 
 
@@ -460,9 +456,14 @@ Richtung einer positiv geladenen Anode beschleunigt. Die Beschleunigungsspannung
 und Anode bestimmt die kinetische Energie der Elektronen, bevor sie auf die Quecksilberatome treffen.
 
 Zwischen der Kathode und der Anode befindet sich ein Gitter, das in einigen Konstruktionen mit einem kleinen 
-Gegenfeld ausgestattet ist, um Elektronen, die nach elastische nd inelastische Stößen ihre kinetische Energie 
-verloren haben, daran zu hindern, die Anode zu erreichen. Der Anodenstrom $I_A$
-wird dann in Abhängigkeit von der Spannung $U_B$ gemessen. Bei bestimmten Spannungswerten zeigt der Anodenstrom charakteristische Einbrüche, die auftreten, wenn die Elektronen genau die Energie erreichen, die nötig ist, um ein Quecksilberatom vom Grundzustand (6S) in einen angeregten Zustand (6P) zu heben.
+Gegenfeld ausgestattet ist. Dieses ist dafür verantwortlich, ob ein Elektron bis zum Auffängergitter 
+gestoppt wird oder gelangen wird. Somit dürfen Elektronen, die genaue Energie besitzen
+durch die Gitteranode. 
+\\Der Anodenstrom $I_A$
+wird dann in Abhängigkeit von der Spannung $U_B$ gemessen. Bei bestimmten Spannungswerten zeigt 
+der Anodenstrom charakteristische Einbrüche, die auftreten, wenn die Elektronen genau die Energie 
+erreichen, die nötig ist, um ein Quecksilberatom vom Grundzustand (6S) in einen angeregten 
+Zustand (6P) zu heben.
  Durch diesen inelastischen Stoß verlieren die Elektronen ihre kinetische Energie und tragen dadurch nicht mehr zum Stromfluss bei.
 
 Die Spannungsdifferenz zwischen aufeinanderfolgenden Strommaxima liefert die Energie $\Delta E$, die den 
@@ -511,7 +512,7 @@ sind. Dadurch entsteht eine Gaußkurve, die die Daten im ausgewählten Bereich b
   verschiedenen Temperaturen $T$ und Gegenspannung $U_G$}
 \end{figure}
 
-\subsection*{Bestimmung der $\Delta$Energiedifferenz}
+\subsection*{Bestimmung der Energiedifferenz}
 Um die Eindeutigkeit zu gewährleisten, bezeichnen wir die Peaks bzw. die Erwartungswerte mit $U^i_B$ und 
 fassen alle relevanten Informationen in einer Tabelle zusammen.
 Der Fehler des Mittelwerts wird durch die folgende Formel und in der Tabelle dargestellt:
@@ -568,7 +569,7 @@ Wie man in der Abbildung sich anschauen kann.
 \subsection{Einfluss der Temperatur $T$ und der Gegenspannung $U_2$}
 
 Untersucht man den Zusammenhang zwischen Energiedifferenz und Wirkungsquerschnitt, so 
-stellt man fest, dass die Wechselwirkung ihr Maximum bei $\Delta E = 4{.}9 \, \mathrm{eV}$ 
+stellt man fest, dass die Wechselwirkung ihr Maximum bei $ E = 4{.}9 \, \mathrm{eV}$ 
 erreicht. Dennoch weist der Peak eine Breite auf, was auf die Natur des Triplet-Zustands 
 $6^3P$ zurückzuführen ist, da einige Elektronen mit etwas geringerer oder höherer Energie 
 wechselwirken können.(siehe Abbildung \ref{Wirkungsquerschnitt})
@@ -768,7 +769,7 @@ fällt auf, dass bei erhöhter Temperatur $T$ und Gegenspannung $U_G$ die Anoden
       - & 31.2 & 26.3 & 21.6 & 16.8 & - \\ \hline
   \end{tabular}
   \caption{zugeordnete $U^i_B$}
-  \label{tab:measurements}
+  \label{tab:measurements1}
 \end{table}
 
 \begin{table}[H]
@@ -786,7 +787,7 @@ fällt auf, dass bei erhöhter Temperatur $T$ und Gegenspannung $U_G$ die Anoden
       - & $\pm 0.00694$ & $\pm 0.0095$ & $\pm 0.016$ & $\pm 0.0351$ & - \\ \hline
   \end{tabular}
   \caption{zugeordnete $\delta U^i_B$}
-  \label{tab:measurements}
+  \label{tab:measurements2}
 \end{table}
 
 \end{multicols}

@@ -107,9 +107,595 @@
 
 
 \section{Teil l: Bestimmung des Planckschen Wirkungsquantum}
+  \subsection{Theorie}
+
+    \subsubsection{Photoeffekt}
+    Der Photoeffekt beschreibt, wie Licht auf ein Metall trifft und Elektronen aus dem Metall
+     herauslöst. Ein Photon besitzt eine Energie, die proportional zur Frequenz des Lichts ist, 
+     und diese Energie muss ausreichen, um die Bindungsenergie des Elektrons, die sogenannte 
+     Austrittsarbeit, zu überwinden. Wenn ein Photon auf ein Elektron trifft, wird ein Teil 
+     seiner Energie verwendet, um das Elektron aus dem Metall zu befreien, während der Rest 
+     als kinetische Energie des Elektrons übertragen wird. Die Intensität des
+       Lichts beeinflusst die Anzahl der herausgelösten Elektronen, nicht aber deren Energie.
+       Eine höhere Intensität bedeutet, dass mehr Photonen auf das Metall treffen und somit 
+       mehr Elektronen herausgelöst werden, aber die Energie der Elektronen bleibt gleich, 
+       solange die Frequenz des Lichts konstant bleibt.
+       
+    \subsubsection{Photozelle}
+    Die Photozelle ist ein Gerät, das das Prinzip des Photoeffekts nutzt, um Lichtenergie in 
+    elektrische Energie umzuwandeln. Sie besteht aus zwei Hauptkomponenten: einer Kathode, 
+    die lichtempfindlich ist, und einer Anode. Wenn Licht auf die Kathode trifft, werden 
+    Elektronen aus dem Material herausgelöst. Diese freigesetzten Elektronen bewegen sich 
+    unter dem Einfluss eines elektrischen Feldes zur Anode. Der resultierende Strom, der durch 
+    die Bewegung der Elektronen erzeugt wird, kann genutzt werden, um elektrische Energie zu 
+    liefern. Die Kathode besteht aus einem Material mit geringer Austrittsarbeit, wie 
+    beispielsweise Zink, das die Elektronen leicht freisetzt, wenn es beleuchtet wird. Die 
+    Intensität des Lichts bestimmt dabei, wie viele Elektronen freigesetzt werden, während 
+    die Frequenz des Lichts die Energie der Elektronen beeinflusst. Der erzeugte Strom ist proportional zur Lichtintensität, was 
+    bedeutet, dass bei stärkerem Licht mehr Elektronen freigesetzt werden und somit ein 
+    größerer Strom fließt.
+
+
+    \subsubsection{Gegenfeldmethode}
+    Die Gegenfeldmethode wird häufig verwendet, um die Austrittsarbeit \( W_A \) eines Materials 
+    zu bestimmen. Dabei wird eine gegensätzliche elektrische Spannung in einer Photozelle erzeugt,
+     die das emittierte Elektron ablenkt. Die Spannung, die benötigt wird, um den Elektronenstrom
+      vollständig zu stoppen, ist eine direkte Messung der Austrittsarbeit des Materials. In 
+      einer solchen Messung ist die kinetische Energie des Elektrons gleich der Arbeit, die das
+       elektrische Feld leisten muss, um das Elektron vollständig zum Stillstand zu bringen.
+
+Die Beziehung zwischen der Energie eines Photons \( h \cdot \nu \), der Austrittsarbeit \( W_A \) 
+und der kinetischen Energie des Elektrons \( E_{\text{kin}} \) lässt sich durch die Gleichung 
+\[
+h \cdot \nu = W_A + E_{\text{kin}}
+\]
+beschreiben. In der Gegenfeldmethode wird \( E_{\text{kin}} \) durch die angelegte Gegenspannung
+ \( U_0 \) bestimmt, wobei die kinetische Energie des Elektrons \( E_{\text{kin}} = e \cdot U_0 \)
+  ist, wobei \( e \) die Elementarladung des Elektrons ist.
+
+Die Photozelle ist ein praktisches Gerät, das auf diesem Prinzip beruht. Sie besteht aus einer 
+Elektrode, die mit einem Lichtstrahl bestrahlt wird. Durch den Photoeffekt werden Elektronen 
+freigesetzt, deren Bewegung durch eine angelegte Spannung beeinflusst wird. In Verbindung mit 
+der Gegenfeldmethode kann man so die Energie der freigesetzten Elektronen messen und somit die 
+Austrittsarbeit des Metalls bestimmen.
+
+Zusammengefasst ermöglichen die Messungen des Photoeffekts in einer Photozelle unter 
+Verwendung der Gegenfeldmethode eine präzise Bestimmung der Austrittsarbeit eines Materials 
+sowie der Beziehung zwischen der Lichtfrequenz und der Energie der herausgelösten Elektronen.
+
+    
+\clearpage
+\subsection{Aufbau und Durchführung}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.8\linewidth]{C:/Users/pascu/Desktop/C-Kurs/praktikum4/p402/latex/assets/Aufbau_Wirkugsquantum.png}
+  \caption{Auftragung der ersten Messung für $ \lambda =365nm$}
+  \label{fig:aufbau_wirkungs}
+\end{figure}
+
+In diesem Experiment wird eine Quecksilberdampflampe als Lichtquelle verwendet. Der Lichtstrahl
+ kann mit einer Blende eingegrenzt werden, um die Intensität des einfallenden Lichts zu variieren. Eine Linse wird so ausgerichtet, dass ein scharfes Bild auf der Kathode der Photozelle entsteht. Über ein Filterrad können bestimmte Linien aus dem Spektrum der Lampe isoliert werden. Direkt hinter dem Filterrad befindet sich ein Rohr, das Streulicht minimiert.
+
+Die Photozelle selbst besteht aus einer Ringanode, die aus Platin und Rhodium gefertigt 
+ist, sowie einer Kathode, die mit Kalium beschichtet ist. Beide Komponenten sind von einer 
+Schutzhaube umgeben, um störendes Streulicht abzuhalten. Die Spannungsversorgung erfolgt 
+durch eine regelbare Spannungsquelle im Bereich von 0 V bis 12 V. Die Spannung zwischen 
+Anode und Kathode wird über einen Spannungsteiler abgegriffen, um eine präzise Justierung 
+zu ermöglichen. Zur Messung der Spannung wird ein Multimeter eingesetzt. Der Strom, der 
+an der Anode entsteht, wird über einen Messverstärker in eine dazu proportionale Spannung 
+umgewandelt und anschließend ebenfalls mit einem Multimeter erfasst.
+
+\subsubsection*{Justierung}
+Die Justierung ist prinzipiell einfach zu verstehen. Um die optimal sicherzustellen, ist darauf zu achten, dass alle optischen 
+Komponenten auf derselben Höhe positioniert und senkrecht zum Strahlengang ausgerichtet 
+sind. Dabei können die Reflexionen an der Linse und am Filterrad genutzt werden, um eine 
+präzise Ausrichtung zu erreichen. Die Blenden und die Linse werden so eingestellt, dass ein 
+scharfes Bild der Irisblende entsteht und die Ringanode dabei nicht vom Lichtstrahl getroffen 
+wird.
+
+\subsubsection*{Durchführung}
+Beide schwarzen Kabel der Photozelle (Anodenanschluss) werden mit demselben Ausgang des 
+Netzgerätes verbunden. Dabei ist auf die korrekte Polung zu achten. Der Kathodenanschluss 
+(weißes Kabel mit BNC-Stecker) wird mit dem entsprechenden Anschluss des Messverstärkers 
+verbunden. Ein eventuell vorhandener Offset des Ausgangssignals des Messverstärkers muss 
+beseitigt werden. Weiterhin wird der zweite Ausgang der regelbaren Spannung des Netzgerätes 
+mit dem Masseanschluss des Messverstärkers verbunden. Die Digitalmultimeter sind so 
+anzuschließen, dass sowohl der Photostrom als auch die Gegenspannung gemessen werden können.
+Zunächst wird das Interferenzfilter gewählt, das das energiereichste Licht durchlässt. 
+Die Gegenspannung wird so lange variiert, bis der Photostrom verschwindet. Es kann festgestellt 
+werden, dass die benötigte Gegenspannung deutlich niedriger ist als die vom Netzgerät maximal 
+bereitgestellte Spannung von 12 V.
+
+Aus den vorhandenen Widerständen wird eine sinnvolle Auswahl getroffen, um den Versuchsaufbau
+ um eine Spannungsteilerschaltung zu erweitern, die einen geeigneten Spannungsbereich für die
+  Messungen liefert. Dieser Aufbau wird für die gesamte Messung beibehalten.
+
+Für die Messung wird zunächst eine Wellenlänge mittels des Filterrads ausgewählt. 
+Es wird die größtmögliche Gegenspannung eingestellt, und der Anodenphotostrom $I_0$ 
+wird bestimmt, der aus Elektronen besteht, die aus der Anode gelöst wurden und zur 
+Kathode gelangen. Anschließend wird die Gegenspannung variiert, um grob die Grenzspannung
+ $U_0$ zu bestimmen, bei der der Photostrom verschwindet. Es wird die Kennlinie der 
+ Photozelle aufgenommen, indem die Gegenspannung von $U = 0\,\mathrm{V}$ bis zu einer 
+ Spannung variiert wird, bei der der Photostrom den Wert von $I_0$ erreicht. Dabei 
+ werden Messpunkte in geeigneten Abständen aufgenommen; insbesondere ist darauf zu achten, 
+ dass im quadratischen Bereich der Kennlinie genügend Messpunkte vorliegen.
+Diese Messung wird für alle Wellenlängen durchgeführt ($I_0$, $U_0$, Kennlinie). 
+Die Messungen der Kennlinien werden zweimal wiederholt, da die Intensität der Hg-Lampe schwankt.
+
+Das Interferenzfilter mit der Durchlasswellenlänge $\lambda = 365\,\mathrm{nm}$ wird in den 
+Strahlengang gestellt. Die erste Irisblende wird so angepasst, dass der Photostrom bei 
+$U = 0\,\mathrm{V}$ deutlich größer wird. Führt eine Öffnung der Blende nicht zu einer 
+Erhöhung des Photostroms, wird der Blendendurchmesser so weit verringert, bis eine deutliche 
+Abnahme des Photostroms um $30\%-50\%$ beobachtet werden kann. Die Kennlinie der Photozelle 
+wird für diese Wellenlänge wie zuvor beschrieben bei dieser niedrigeren Intensität aufgenommen.
+
+\subsection{Auswertung}
+Um die Energiebilanz in der Photozelle zu bestimmen, werden die Anoden- und Kathodenmaterialien 
+so gewählt, dass die Austrittsarbeit \( W_A \) der Anode größer ist als die der Kathode. 
+In den Abbildungen [\ref{fig:fermi}] und [\ref{fig:energie}] werden sowohl die Bindungsenergie 
+der äußersten Elektronen als auch die Beziehung zwischen Kathoden- und Anodenmaterialien im 
+Kurzschlusszustand dargestellt.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\linewidth]{C:/Users/pascu/Desktop/C-Kurs/praktikum4/p402/latex/assets/P402_fermi.png}
+  \caption{Auftragung der ersten Messung für $ \lambda =365nm$}
+  \label{fig:fermi}
+\end{figure}
+Wenn beide Materialien in einem Kurzschlusszustand verbunden werden, führen die 
+Veränderungen ihrer Fermi-Niveaus zu einem Stromfluss, bis die Fermi-Niveaus wieder 
+auf derselben Höhe liegen. Dies führt zur Entstehung eines Kontaktpotentials \( U_K \),
+ welches sich aus der Differenz der Austrittsarbeiten der beiden Materialien bestimmen lässt.
+\[
+W_A = W_K + eU_K
+\]
+Anschließend wird eine Spannungsquelle mit einem variablen Potential
+ \( -e \cdot U_G \) eingeführt, wodurch die Fermi-Niveaus um diesen Betrag verschoben werden.
+Im Rahmen des Photoeffekts ergibt sich die vollständige Gleichung wie folgt:
+\begin{equation}
+  E = h \nu = e U_{K} + W_K + e U_G = e U_G + W_A
+\end{equation}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\linewidth]{C:/Users/pascu/Desktop/C-Kurs/praktikum4/p402/latex/assets/P402_energie.png}
+  \caption{Auftragung der ersten Messung für $ \lambda =365nm$}
+  \label{fig:energie}
+\end{figure}
+\newpage
+\subsubsection*{Bestimmung der Grenzspannung $U_0$}
+Nun werden die Photospannungswerte in einer Tabelle hinzugefügt 
+(siehe Beispiel \ref{tab:messung1a}), und der Photostrom wird mithilfe 
+eines Verstärkungsfaktors umgerechnet. Um einen linearen Zusammenhang zu 
+finden, wird der Quadratwurzeloperator angewendet, ebenso wie der Wert des 
+Photostroms bei maximaler Gegenspannung. Der Fehler wird unter Verwendung der bekannten
+ Gaußschen Fehlerfortpflanzung bestimmt.
+
+\begin{table*}[h!]
+  \centering
+  \begin{tabular}{|c|c|}
+      \hline
+      $U_G$ [mV] & $I$ [pA] \\
+      \hline
+      0.5   & 97.5 \\
+      219.9 & 66.1 \\
+      425   & 49.3 \\
+      599   & 36.8 \\
+      798   & 24.0 \\
+      1009  & 16.0 \\
+      1201  & 7.5  \\
+      1414  & 3.0  \\
+      1606  & 0.7  \\
+      1805  & 0.4  \\
+      2092  & 0.3  \\
+      2394  & 0.2  \\
+      2781  & 0.1  \\
+      \hline
+  \end{tabular}
+  \caption{erste Messung bei 365 nm}
+  \label{tab:messung1a}
+\end{table*}
+Der Fehler der gemessen Photostrom wird von uns gewählt und wegen große Schwankungen an der Messgeräte 
+wird zu $10\%$ der gemessen Photostrom $I$.
+Die Werte werden aufgetragen und eine lineare Anpassungsgerade der Form 
+$f(x) = m \cdot x + b $ gelegt. Der ganze Vorgang lässt sich in der Abbildung [\ref*{fig:wellenlaenge_365nm_a}]
+darstellen. 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.5\linewidth]{C:/Users/pascu/Desktop/C-Kurs/praktikum4/p402/latex/assets/402_365nm_a.png}
+  \caption{Auftragung der ersten Messung für $ \lambda =365nm$}
+  \label{fig:wellenlaenge_365nm_a}
+\end{figure}
+\newpage
+
+Zunächst werden alle Parameter der Anpassungsgeraden für alle Wellenlänge in der Tabelle [\ref*{tab:wellenlaengen_trennstrich_m_b_U_gemittelt}]
+hinzugebracht. Diese sind wichtig, denn die Grenzspannung $U_0$ sich damit herausfinden lässt. 
+\\Es gilt also: 
+\begin{equation}
+  U_0 = \abs*{\frac{m}{b}}
+\end{equation}
+\\ Der Fehler $\Delta U_0$ wird wieder mit dem Gaußschen Fehlerfortpflanzung ausgerechnet. 
+$\overline{U_0}$ ist einer gemittelte Parameter aus den 2 Messungen in der gleichen Wellenlänge.
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline
+  $\lambda$ in [nm] & $m \pm \Delta m$ in [$\frac{\sqrt{pA}}{V}$] & $b \pm \Delta b$ in [$\sqrt{pA}$] & $U_0 \pm \Delta U_0$ in [V] &  $\overline{U_0}$ in [V] \\ \hline
+  365 & -5.55 $\pm$ 0.35 & 9.50 $\pm$ 0.37 & 1.71 $\pm$ 0.13 & 1.72 $\pm$ 0.13 \\ \hline
+  - & -5.74 $\pm$ 0.36 & 9.99 $\pm$ 0.37 & 1.74 $\pm$ 0.13 & - \\ \hline
+  405 & 6.34 $\pm$ 0.36 & 8.38 $\pm$ 0.41 & 1.32 $\pm$ 0.10 & 1.32 $\pm$ 0.10 \\ \hline
+  - & -6.33 $\pm$ 0.36 & 8.36 $\pm$ 0.39 & 1.32 $\pm$ 0.10 & - \\ \hline
+  435 & -13.52 $\pm$ 0.51 & 15.96 $\pm$ 0.58 & 1.18 $\pm$ 0.06 & 1.16 $\pm$ 0.06 \\ \hline
+  - & -13.94 $\pm$ 0.54 & 15.70 $\pm$ 0.62 & 1.13 $\pm$ 0.06 & - \\ \hline
+  546 & -28.29 $\pm$ 1.6 & 17.18 $\pm$ 0.97 & 0.61 $\pm$ 0.05 & 0.62 $\pm$ 0.05 \\ \hline
+  - & -26.67 $\pm$ 1.5 & 16.73 $\pm$ 0.91 & 0.63 $\pm$ 0.05 & - \\ \hline
+  578 & -24.56 $\pm$ 1.6 & 11.32 $\pm$ 0.84 & 0.46 $\pm$ 0.05 & 0.46 $\pm$ 0.05 \\ \hline
+  - & -23.79 $\pm$ 2.0 & 10.63 $\pm$ 0.76 & 0.45 $\pm$ 0.05 & - \\ \hline
+  \end{tabular}
+  \caption{Wellenlängen mit den Parameter für $m$, $b$, $U_0$ und  $\overline{U_0}$}
+  \label{tab:wellenlaengen_trennstrich_m_b_U_gemittelt}
+\end{table}
+\clearpage
+\subsubsection*{Bestimmung der Wirkugsquantum $h$ und Austrittsarbeit $W_A$}
+
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.5\linewidth]{C:/Users/pascu/Desktop/C-Kurs/praktikum4/p402/latex/assets/402_wirkung.png}
+  \caption{Auftragung der ersten Messung für $ \lambda =365nm$}
+  \label{fig:wirkungs}
+\end{figure}
+
+\begin{equation}
+  U_0 = \underbrace{\frac{h}{e}}_{\text{Steigung } u} \cdot \nu - \underbrace{\frac{W_A}{e}}_{\text{Achsenabschnitt } c}
+\end{equation}
+Die Parameter sind die Folgende:
+\begin{align}
+  u &= (4.09 \pm 0.30) \times 10^{-15} \, \mathrm{Vs}\\
+  c &= -1.65 \pm 0.18
+\end{align}
+  
+
+\begin{align}
+  h &= (6.55 \pm 0.48) \times 10^{-34} \, \mathrm{Js}\\
+  W_A &=(-2.64 \pm 0.29) \times 10^{-19} \, \mathrm{J}.
+\end{align}
+
+\clearpage
+\subsection{Diskussion}
 
 \clearpage
 \section{Fazit}
+
+
+\clearpage
+\section{Anhang}
+
+% Corrected Table for Messung 1a 365 nm data
+\begin{table*}[h!]
+  \centering
+  \begin{tabular}{|c|c|}
+      \hline
+      $U_0$ [mV] & $I$ [pA] \\
+      \hline
+      0.5   & 97.5 \\
+      219.9 & 66.1 \\
+      425   & 49.3 \\
+      599   & 36.8 \\
+      798   & 24.0 \\
+      1009  & 16.0 \\
+      1201  & 7.5  \\
+      1414  & 3.0  \\
+      1606  & 0.7  \\
+      1805  & 0.4  \\
+      2092  & 0.3  \\
+      2394  & 0.2  \\
+      2781  & 0.1  \\
+      \hline
+  \end{tabular}
+  \caption{Messung 1a bei 365 nm}
+  \label{tab:messung1a}
+\end{table*}
+
+% Corrected Table for Messung 1b 365 nm data
+\begin{table*}[h!]
+  \centering
+  \begin{tabular}{|c|c|}
+      \hline
+      $U_G$ [V] & $I$ [pA] \\
+      \hline
+      0.001  & 104.5 \\
+      0.241  & 75    \\
+      0.523  & 49    \\
+      0.749  & 29    \\
+      1.011  & 14.6  \\
+      1.276  & 7.2   \\
+      1.510  & 2.9   \\
+      1.761  & 1.9   \\
+      1.845  & 1.8   \\
+      2.085  & 1.6   \\
+      2.388  & 1.6   \\
+      2.781  & 1.5   \\
+      \hline
+  \end{tabular}
+  \caption{Messung 1b bei 365 nm}
+  \label{tab:messung1b}
+\end{table*}
+
+% Corrected Table for Messung 2a 405 nm data
+\begin{table*}[h!]
+  \centering
+  \begin{tabular}{|c|c|}
+      \hline
+      $U_G$ [V] & $I$ [pA] \\
+      \hline
+      0.005  & 73.9 \\
+      0.211  & 54.3 \\
+      0.401  & 30.7 \\
+      0.614  & 20.6 \\
+      0.804  & 11.3 \\
+      1.007  & 4.7  \\
+      1.201  & 2.5  \\
+      1.405  & 1.6  \\
+      1.612  & 1.4  \\
+      1.801  & 1.4  \\
+      2.024  & 1.3  \\
+      2.304  & 1.3  \\
+      2.781  & 1.4  \\
+      \hline
+  \end{tabular}
+  \caption{Messung 2a bei 405 nm}
+  \label{tab:messung365}
+\end{table*}
+
+% Corrected Table for Messung 2b 405 nm data
+\begin{table*}[h!]
+  \centering
+  \begin{tabular}{|c|c|}
+      \hline
+      $U_G$ [V] & $I$ [pA] \\
+      \hline
+      0.007  & 69.8 \\
+      0.212  & 53.8 \\
+      0.388  & 38.0 \\
+      0.620  & 19.2 \\
+      0.794  & 10.9 \\
+      1.005  & 5.2  \\
+      1.197  & 2.6  \\
+      1.403  & 1.8  \\
+      1.607  & 1.7  \\
+      1.804  & 1.7  \\
+      2.014  & 1.5  \\
+      2.298  & 1.8  \\
+      2.782  & 1.7  \\
+      \hline
+  \end{tabular}
+  \caption{Messung 2b bei 405 nm}
+  \label{tab:messung405}
+\end{table*}
+
+% Table for Messung 3a 435 nm data
+\begin{table*}[h!]
+  \centering
+  \begin{tabular}{|c|c|}
+      \hline
+      $U_G$ [V] & $I$ [pA] \\
+      \hline
+      0.007 & 273.1 \\
+      0.201 & 174.2 \\
+      0.417 & 102.8 \\
+      0.612 & 54.5  \\
+      0.795 & 20.8  \\
+      1.005 & 2.8   \\
+      1.209 & 0.7   \\
+      1.408 & 0.6   \\
+      1.607 & 0.1   \\
+      1.812 & 0.0   \\
+      2.017 & 0.4   \\
+      2.311 & 0.0   \\
+      2.782 & 0.0   \\
+      \hline
+  \end{tabular}
+  \caption{Messung 3a bei 435 nm}
+  \label{tab:messung3a}
+\end{table*}
+
+% Table for Messung 3b 435 nm data (Messung am nächsten Tag)
+\begin{table*}[h!]
+  \centering
+  \begin{tabular}{|c|c|}
+      \hline
+      $U_G$ [V] & $I$ [pA] \\
+      \hline
+      0.005 & 237.3 \\
+      0.214 & 187.6 \\
+      0.415 & 110.5 \\
+      0.596 & 59.3  \\
+      0.802 & 21.0  \\
+      0.997 & 4.8   \\
+      1.210 & 1.0   \\
+      1.386 & 0.5   \\
+      1.608 & 0.4   \\
+      1.803 & 0.3   \\
+      2.026 & 0.3   \\
+      2.296 & 0.2   \\
+      2.781 & 0.1   \\
+      \hline
+  \end{tabular}
+  \caption{Messung 3b bei 435 nm (Messung am nächsten Tag)}
+  \label{tab:messung3b}
+\end{table*}
+% Table for Messung 4a 546 nm data
+\begin{table*}[h!]
+  \centering
+  \begin{tabular}{|c|c|}
+      \hline
+      $U_G$ [V] & $I$ [pA] \\
+      \hline
+      0.005 & 306.5 \\
+      0.226 & 117.3 \\
+      0.406 & 28.7  \\
+      0.596 & 5.1   \\
+      0.803 & 4.3   \\
+      1.007 & 4.3   \\
+      1.208 & 4.4   \\
+      1.413 & 4.4   \\
+      1.602 & 4.5   \\
+      1.803 & 4.4   \\
+      2.022 & 4.4   \\
+      2.307 & 4.3   \\
+      2.781 & 4.3   \\
+      \hline
+  \end{tabular}
+  \caption{Messung 4a bei 546 nm}
+  \label{tab:messung4a}
+\end{table*}
+
+% Table for Messung 4b 546 nm data
+\begin{table*}[h!]
+  \centering
+  \begin{tabular}{|c|c|}
+      \hline
+      $U_G$ [V] & $I$ [pA] \\
+      \hline
+      0.006 & 296.2 \\
+      0.203 & 126.4 \\
+      0.408 & 27.2  \\
+      0.620 & 4.8   \\
+      0.792 & 4.1   \\
+      1.001 & 4.0   \\
+      1.203 & 3.9   \\
+      1.408 & 3.9   \\
+      1.593 & 4.0   \\
+      1.791 & 4.0   \\
+      2.020 & 4.0   \\
+      2.307 & 4.1   \\
+      2.781 & 3.9   \\
+      \hline
+  \end{tabular}
+  \caption{Messung 4b bei 546 nm}
+  \label{tab:messung4b}
+\end{table*}
+% Table for Messung 5a 578 nm data
+\begin{table*}[h!]
+  \centering
+  \begin{tabular}{|c|c|}
+      \hline
+      $U_G$ [V] & $I$ [pA] \\
+      \hline
+      0.006 & 133.1 \\
+      0.205 & 39.4  \\
+      0.405 & 6.6   \\
+      0.606 & 4.5   \\
+      0.809 & 4.3   \\
+      1.006 & 4.2   \\
+      1.208 & 4.2   \\
+      1.411 & 4.3   \\
+      1.615 & 4.5   \\
+      1.791 & 4.5   \\
+      2.025 & 4.5   \\
+      2.318 & 4.5   \\
+      2.781 & 4.4   \\
+      \hline
+  \end{tabular}
+  \caption{Messung 5a bei 578 nm}
+  \label{tab:messung5a}
+\end{table*}
+
+% Table for Messung 5b 578 nm data
+\begin{table*}[h!]
+  \centering
+  \begin{tabular}{|c|c|}
+      \hline
+      $U_G$ [V] & $I$ [pA] \\
+      \hline
+      0.006 & 120.8 \\
+      0.198 & 32.9  \\
+      0.401 & 6.2   \\
+      0.614 & 4.4   \\
+      0.807 & 4.4   \\
+      1.008 & 4.4   \\
+      1.218 & 4.4   \\
+      1.400 & 4.4   \\
+      1.594 & 4.3   \\
+      1.811 & 4.3   \\
+      2.002 & 4.3   \\
+      2.309 & 4.3   \\
+      2.782 & 4.4   \\
+      \hline
+  \end{tabular}
+  \caption{Messung 5b bei 578 nm}
+  \label{tab:messung5b}
+\end{table*}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.8\linewidth]{C:/Users/pascu/Desktop/C-Kurs/praktikum4/p402/latex/assets/402_365nm_a.png}
+  \caption{Auftragung der ersten Messung für $ \lambda =365nm$}
+  \label{fig:wellenlaenge_365nm_a}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.8\linewidth]{C:/Users/pascu/Desktop/C-Kurs/praktikum4/p402/latex/assets/402_365nm_b.png}
+  \caption{Auftragung der zweite Messung für $\lambda =365nm$}
+  \label{fig:wellenlaenge_365nm_b}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.8\linewidth]{C:/Users/pascu/Desktop/C-Kurs/praktikum4/p402/latex/assets/402_405nm_a.png}
+  \caption{Auftragung der ersten Messung für $ \lambda =405nm$}
+  \label{fig:wellenlaenge_405nm_a}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.8\linewidth]{C:/Users/pascu/Desktop/C-Kurs/praktikum4/p402/latex/assets/402_405nm_b.png}
+  \caption{Auftragung der zweiten Messung für $\lambda =405nm$}
+  \label{fig:wellenlaenge_405nm_b}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.8\linewidth]{C:/Users/pascu/Desktop/C-Kurs/praktikum4/p402/latex/assets/402_435nm_a.png}
+  \caption{Auftragung der ersten Messung für $ \lambda =435nm$}
+  \label{fig:wellenlaenge_435nm_a}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.8\linewidth]{C:/Users/pascu/Desktop/C-Kurs/praktikum4/p402/latex/assets/402_435nm_b.png}
+  \caption{Auftragung der zweiten Messung für $\lambda =435nm$}
+  \label{fig:wellenlaenge_435nm_b}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.8\linewidth]{C:/Users/pascu/Desktop/C-Kurs/praktikum4/p402/latex/assets/402_546nm_a.png}
+  \caption{Auftragung der ersten Messung für $ \lambda =546nm$}
+  \label{fig:wellenlaenge_546nm_a}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.8\linewidth]{C:/Users/pascu/Desktop/C-Kurs/praktikum4/p402/latex/assets/402_546nm_b.png}
+  \caption{Auftragung der zweiten Messung für $\lambda =546nm$}
+  \label{fig:wellenlaenge_546nm_b}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.8\linewidth]{C:/Users/pascu/Desktop/C-Kurs/praktikum4/p402/latex/assets/402_578nm_a.png}
+  \caption{Auftragung der ersten Messung für $ \lambda =578nm$}
+  \label{fig:wellenlaenge_578nm_a}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.8\linewidth]{C:/Users/pascu/Desktop/C-Kurs/praktikum4/p402/latex/assets/402_578nm_b.png}
+  \caption{Auftragung der zweiten Messung für $\lambda =578nm$}
+  \label{fig:wellenlaenge_578nm_b}
+\end{figure}
 
 
 \clearpage
