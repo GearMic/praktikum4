@@ -542,9 +542,14 @@ Richtung einer positiv geladenen Anode beschleunigt. Die Beschleunigungsspannung
 und Anode bestimmt die kinetische Energie der Elektronen, bevor sie auf die Quecksilberatome treffen.
 
 Zwischen der Kathode und der Anode befindet sich ein Gitter, das in einigen Konstruktionen mit einem kleinen 
-Gegenfeld ausgestattet ist, um Elektronen, die nach elastische nd inelastische Stößen ihre kinetische Energie 
-verloren haben, daran zu hindern, die Anode zu erreichen. Der Anodenstrom $I_A$
-wird dann in Abhängigkeit von der Spannung $U_B$ gemessen. Bei bestimmten Spannungswerten zeigt der Anodenstrom charakteristische Einbrüche, die auftreten, wenn die Elektronen genau die Energie erreichen, die nötig ist, um ein Quecksilberatom vom Grundzustand (6S) in einen angeregten Zustand (6P) zu heben.
+Gegenfeld ausgestattet ist. Dieses ist dafür verantwortlich, ob ein Elektron bis zum Auffängergitter 
+gestoppt wird oder gelangen wird. Somit dürfen nur Elektronen, die genaue Energie besitzen
+durch die Gitteranode. 
+\\Der Anodenstrom $I_A$
+wird dann in Abhängigkeit von der Spannung $U_B$ gemessen. Bei bestimmten Spannungswerten zeigt 
+der Anodenstrom charakteristische Einbrüche, die auftreten, wenn die Elektronen genau die Energie 
+erreichen, die nötig ist, um ein Quecksilberatom vom Grundzustand (6S) in einen angeregten 
+Zustand (6P) zu heben.
  Durch diesen inelastischen Stoß verlieren die Elektronen ihre kinetische Energie und tragen dadurch nicht mehr zum Stromfluss bei.
 
 Die Spannungsdifferenz zwischen aufeinanderfolgenden Strommaxima liefert die Energie $\Delta E$, die den 
@@ -577,24 +582,24 @@ sind. Dadurch entsteht eine Gaußkurve, die die Daten im ausgewählten Bereich b
  kein Problem dar, da eine ausreichende Anzahl an Messwerten vorliegt. Zudem wurde in \textit{Fityk} eine 
  Hintergrundfunktion zu den Gauß-Fits hinzugefügt, sodass die Gesamtsumme der Gauß-Peaks eine bessere 
  Übereinstimmung mit den im Experiment beobachteten Peaks aufweist. Unter Berücksichtigung der oben genannten Anpassungen 
- und Messmethoden folgen nun die entsprechenden Graphen. 
+ und Messmethoden folgen nun die entsprechenden Graphen. Die Fits aus Fityk lassen sich im Anhang anschauen. 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.55]{FH_vieleT.png}
-  \caption{Die gemessene Beschleunigungsspannung $U_B$ gegen Anodenspannung $U_A$ bei
+  \caption{Die gemessene  Anodenspannung $U_A$ gegen Beschleunigungsspannung $U_B$ bei
    verschiedene Gegenspannung $T$ und fester Temperatur $U_G$}
 \end{figure}
-\clearpage
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.55]{FH_vieleU.png}
-  \caption{Die gemessene Beschleunigungsspannung $U_B$ gegen Anodenspannung $U_A$ 
+  \caption{Die gemessene Anodenspannung $U_A$ gegen Beschleunigungsspannung $U_B$
   verschiedenen Temperaturen $T$ und Gegenspannung $U_G$}
 \end{figure}
 
-\subsection*{Bestimmung der $\Delta$Energiedifferenz}
-Um die Eindeutigkeit zu gewährleisten, bezeichnen wir die Peaks bzw. die Erwartungswerte mit $U^i_B$ und 
+\subsection*{Bestimmung der Energiedifferenz}
+Zunächst wird aus den Werten der Spannungen $U_B^i$ ausgerechnet. Um die Eindeutigkeit von diesen 
+zu gewährleisten, bezeichnen wir die Peaks bzw. die Erwartungswerte mit $U^i_B$ und 
 fassen alle relevanten Informationen in einer Tabelle zusammen.
 Der Fehler des Mittelwerts wird durch die folgende Formel und in der Tabelle dargestellt:
 \begin{equation*}
@@ -640,21 +645,24 @@ Nun kann man aus den Diferenzen der benachbaren Peaks der Energiedifferenz $\Del
 \end{equation*}
 Das Ergebnis unserer experimentellen Messungen ist äußerst erfreulich und stimmt vollständig 
 mit dem erwarteten theoretischen Wert der Übergang zwischen $6^1 S_o \rightarrow 6^3P_1$ überein. 
-Wie man in der Abbildung sich anschauen kann. 
+Wie man in der Abbildung sich anschauen kann. Es wäre möglicherweise sinnvoller gewesen, zunächst 
+die Energiedifferenzen zu berechnen und anschließend einen Mittelwert zu bilden, da die Positionen 
+der Peaks in der Funktion nicht konstant sind. Da jedoch die Anzahl der Peaks in den verschiedenen 
+Messungen nicht übereinstimmt, erscheint die gewählte Vorgehensweise in diesem Fall besser geeignet.\\
+
+Untersucht man den Zusammenhang zwischen der Energiedifferenz und dem Wirkungsquerschnitt 
+(siehe Abbildung \ref{Wirkungsquerschnitt}), so zeigt sich, dass die Übergangsenergien von 
+1 bis 3 kaum voneinander zu unterscheiden sind. Es wird jedoch deutlich, dass der zweite Übergang wesentlich wahrscheinlicher ist 
+als die anderen, da sein Wirkungsquerschnitt deutlich größer ist als der des ersten Übergangs.
+
+Andere Übergänge können ebenfalls stattfinden, treten jedoch seltener auf. Insbesondere der vierte Übergang ist möglich, 
+kommt jedoch aufgrund des höheren Energiebedarfs deutlich seltener vor.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.45]{Vereinfachtes Hg-Termschema.png}
   \caption{Termschema des Quecksilbers}
 \end{figure}
-\clearpage
-\subsection{Einfluss der Temperatur $T$ und der Gegenspannung $U_2$}
-
-Untersucht man den Zusammenhang zwischen Energiedifferenz und Wirkungsquerschnitt, so 
-stellt man fest, dass die Wechselwirkung ihr Maximum bei $\Delta E = 4{.}9 \, \mathrm{eV}$ 
-erreicht. Dennoch weist der Peak eine Breite auf, was auf die Natur des Triplet-Zustands 
-$6^3P$ zurückzuführen ist, da einige Elektronen mit etwas geringerer oder höherer Energie 
-wechselwirken können.(siehe Abbildung \ref{Wirkungsquerschnitt})
-
+\subsection{Einfluss der Temperatur $T$}
 Zudem erkennt man mithilfe des Anhangs im Praktikumskript, dass der Dampfdruck von 
 Quecksilber stark von der Temperatur abhängt (siehe untenstehende Formel).
 
@@ -664,9 +672,8 @@ Quecksilber stark von der Temperatur abhängt (siehe untenstehende Formel).
 Daraus folgt, dass bei steigender Temperatur vermehrt thermische Stöße zwischen den H
 g-Atomen stattfinden können, was dazu führt, dass weniger Elektronen die notwendige 
 Energie besitzen, um die Anode zu erreichen. Andererseits treten bei niedrigeren 
-Temperaturen weniger Stöße auf, was zur Folge hat, dass nur geringe oder gar keine Peaks 
-beobachtet werden können.
-
+Temperaturen zu weniger inelastische Stöße auf, was zur Folge hat, dass man keine sinnvolle
+Messung bekommt.
 
 \begin{figure}[H]
   \centering
@@ -961,9 +968,60 @@ fällt auf, dass bei erhöhter Temperatur $T$ und Gegenspannung $U_G$ die Anoden
   \caption{Bestimmte Parameter der Intensitätsmaxima für verschiedene Ströme. $\Delta I=\SI{0.2}{\A}$}
   \label{tab:parameter}
 \end{table}
+\clearpage
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.2]{FH_2,7V_165C.png}
+  \caption{Gauß-Fit aus Fityk, Auftragung Anodenspannung $U_A$ gegen Beschleunigungsspannung $U_B$ bei $U_G=2,0$ und $T=165C$. Die gelbe
+  Linie beschriebt die Summe aller Gauß-Fits und die Roten repräsentieren die einzelnen Fits.}
+  \label{FH 2,7V_165C}
+\end{figure}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.2]{FH_2,7V_170C.png}
+  \caption{Gauß-Fit aus Fityk, Auftragung Anodenspannung $U_A$ gegen Beschleunigungsspannung $U_B$ bei $U_G=2,0$ und $T=170C$. Die gelbe
+  Linie beschriebt die Summe aller Gauß-Fits und die Roten repräsentieren die einzelnen Fits.}
+  \label{FH 2,0V_170C}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.2]{FH_2,7V_175C.png}
+  \caption{Gauß-Fit aus Fityk, Auftragung Anodenspannung $U_A$ gegen Beschleunigungsspannung $U_B$ bei $U_G=2,0$ und $T=175C$. Die gelbe
+  Linie beschriebt die Summe aller Gauß-Fits und die Roten repräsentieren die einzelnen Fits.}
+  \label{FH 2,0V_175C}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.2]{FH_2,7V_180C.png}
+  \caption{Gauß-Fit aus Fityk, Auftragung Anodenspannung $U_A$ gegen Beschleunigungsspannung $U_B$ bei $U_G=2,0$ und $T=180C$. Die gelbe
+  Linie beschriebt die Summe aller Gauß-Fits und die Roten repräsentieren die einzelnen Fits.}
+  \label{FH 2,0V_180C}
+\end{figure}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.2]{FH_2,0V_165C.png}
+  \caption{Gauß-Fit aus Fityk, Auftragung Anodenspannung $U_A$ gegen Beschleunigungsspannung $U_B$ bei $U_G=2,0$ und $T=165C$. Die gelbe
+  Linie beschriebt die Summe aller Gauß-Fits und die Roten repräsentieren die einzelnen Fits.}
+  \label{FH 2,7V_165C}
+\end{figure}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.2]{FH_3,4_165C.png}
+  \caption{Gauß-Fit aus Fityk, Auftragung Anodenspannung $U_A$ gegen Beschleunigungsspannung $U_B$ bei $U_G=3,4$ und $T=165C$. Die gelbe
+  Linie beschriebt die Summe aller Gauß-Fits und die Roten repräsentieren die einzelnen Fits.}
+  \label{FH 3,4V_165C}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.2]{FH_4,0V_165C.png}
+  \caption{Gauß-Fit aus Fityk, Auftragung Anodenspannung $U_A$ gegen Beschleunigungsspannung $U_B$ bei $U_G=4,0$ und $T=165C$}
+  \label{FH 4,0V_165C}
+\end{figure}
+\newpage
 \begin{thebibliography}{9}
 
 \bibitem{Anleitung}
