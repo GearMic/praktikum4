@@ -52,7 +52,7 @@ def full_gauss_fit_for_lines():
     # for i in range(9, 10):
         lower, upper = alphaRange[i, 0], alphaRange[i, 1]
 
-        alpha, y, yErr = load_data(inFilenames[i], 0.0001, 0.2)
+        alpha, y, yErr = load_data(inFilenames[i], 0.0001, 0.5)
         rangeMask = (alpha >= np.full_like(alpha, lower)) & (alpha <= np.full_like(alpha, upper))
         alpha, y, yErr = alpha[rangeMask], y[rangeMask], yErr[rangeMask]
 
@@ -61,7 +61,7 @@ def full_gauss_fit_for_lines():
         if doFit[i]:
             param, paramErr = chisq_fit(
                 double_gauss_fn, alpha, y, yErr, p0=p0[i],
-                bounds = (lowerBounds, upperBounds))
+                bounds = (lowerBounds, upperBounds), absolute_sigma=True)
 
             params[i] = param
             paramsErr[i] = paramErr
@@ -74,9 +74,9 @@ def full_gauss_fit_for_lines():
         ax.minorticks_on()
         ax.grid(which='both')
 
-        ax.set_title('Linien bei $\\omega_G=%.1f°$' % omegaG[i])
+        # ax.set_title('Linien bei $\\omega_G=%.1f°$' % omegaG[i])
         ax.set_xlabel(r'Position $\gamma$/°')
-        ax.set_ylabel(r'Intensität $I$/\%')
+        ax.set_ylabel(r'Intensität $I$/%')
         fig.savefig(outFilenames[i])
 
     mu1, mu1Err = params[:, 1], paramsErr[:, 1]

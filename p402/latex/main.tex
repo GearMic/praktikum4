@@ -663,6 +663,7 @@ die Positionen der Maxima sind in Tab. \ref{tab:gauss-parameter} gezeigt.
 Mit den $\delta\beta$-Werten wird weitergerechnet, analog zu der Okular-Messung.
 Die resultierenden Werte sind in Tab. \ref{tab:balmer-aufspaltung-ccd} gezeigt.
 \begin{table}
+  \centering
   \begin{tabular}{rSSSS}
     \toprule
     {$m$} & {$\lambda/\si{\nm}$} & {$\Delta\lambda/\si{\nm}$} & {$\delta\lambda/\si{\nm}$} & {$\Delta\delta\lambda/\si{\nm}$} \\
@@ -696,28 +697,30 @@ Aus den Daten von Tab. \ref{tab:balmer-messung-okular} ergibt sich der $\chi^2$-
 \end{figure}
 und der Zusammenhang
 \[
-  \frac{1}{\lambda} = \frac{\dots}{4} - R_H \frac{1}{m^2} \todo{einfüllen}
+  \frac{1}{\lambda} = \SI{0.2775\pm0.0032e7}{\per\pm} - \SI{1.111\pm0.031}{\per\m} \frac{1}{m^2}
 \]
 Der vierfache Achsenabschnitt und der Betrag der Steitung entsprechen beide der Rydberg-Konstante.
 Der Mittelwert aus diesen beiden Werten ist
 \[
-  R_H = \SI{0e7}{\per\m}\todo{fil in}
+  R_H = \SI{1.1104\pm0.0155e7}{\per\m}
 \]
 Der Literaturwert für die Rydberg-Konstante ist
 \begin{equation}
-  R_H \approx R_\infty = \SI{1.9737e7}{\per\m} \cite{rydberg}
+  R_H \approx R_\infty = \SI{1.0974e7}{\per\m} \cite{rydberg}
 \end{equation}
 Hier wurde näherungsweise wurde die Rydberg-Konstante für $\mu=m_e$ verwendet, da der Unterschied deutlich
-kleiner als unsere Messunsicherheit ist.
-\todo{Diskussion}
+kleiner als unsere Messunsicherheit ist. Der Wert liegt innerhalb des Fehlerbereichs des experimentellen Ergebnis
+und die Abweichung beträgt nur etwa $1\%$.
 
 Aus dem experimentellen Wert für $R_\infty \approx R_H$ berechnen außerdem das Planck'sche Wirkungsquantum.
 Nach \eqref{eq:rydberg-konstante} gilt
 \[
-  h = \sqrt[3]{\frac{m_e e^4}{8c \epsilon_0^2 R_\infty}} = \SI{0}{\J\s} \todo{fill in}
+  h = \sqrt[3]{\frac{m_e e^4}{8c \epsilon_0^2 R_\infty}} = \SI{6.600\pm0.037e-34}{\J\s}
 \]
-Der Literaturwert ist $h = \SI{6.6261}{\J\s}$ \cite{planck-h} und aus der Messung des Photoeffekts wurde
-$h = (6.55 \pm 0.48) \times 10^{-34} \, \mathrm{Js}$
+Der Literaturwert ist $h = \SI{6.626e-34}{\J\s}$ \cite{planck-h} und aus der Messung des Photoeffekts wurde
+$h = (6.55 \pm 0.48) \times 10^{-34} \, \mathrm{Js}$ bestimmt.
+Alle drei Werte stimmen innerhalb der Fehlerbereiche miteinander überein, wobei jedoch das anhand der Balmer-Linien berechnete
+Wirkungsquantum eine deutlich geringere Unsicherheit hat, als der Wert vom Photoeffekt.
 
 
 
