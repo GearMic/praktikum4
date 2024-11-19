@@ -151,6 +151,9 @@ def field_fit_fn(I, a, b, c, d):
 a, b, c, d = -0.326, 56.82, 3.960, -0.5288
 aErr, bErr, cErr, dErr = 0.019, 0.28, 0.099, 0.0082
 
+print('params', params[-1])
+print('paramsErr', paramsErr[-1])
+
 paramsParamsErr = np.zeros((params.shape[0], 1+params.shape[1]+paramsErr.shape[1]))
 paramsParamsErr[:, 0] = I
 paramsParamsErr[:, 1::2] = params

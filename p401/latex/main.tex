@@ -80,6 +80,7 @@
 \newcommand{\colorT}[2][blue]{\color{#1}{#2}\color{\defc}}
 \newcommand{\redq}{\color{red}(?)\color{\defc}}
 % \newcommand{\question}[1]{\colorT[purple]{\textbf{(#1)}}}
+\newcommand{\todo}[1]{\colorT[red]{(#1)}}
 \newcommand{\mr}{\mathrm}
 
 %% preparation
@@ -359,14 +360,16 @@ $B_i$ das doppelte sind. Jedoch sind unsere beiden Werte zu niedrig gefallen und
 könnte an der Messgenauigkeit liegen. 
 
 \subsection{Dopplerverbreiterung}
-Die Dopplerverbreitung der Linien errechnet sich mit der Formel:
-\begin{equation*}
-  \Delta \lambda_D = \frac{\lambda}{A} \approx 112 pm
-\end{equation*}
-Dies hier ist bei dem Fall, dass die Cadmiumlampe eine Temperatur 
-\( T=1000\,K \) hat. Der erwartete Wert aus \cite{einheit}liegt aber bei \( \Delta \lambda_{\text{Doppler}}
- = (1.375 \pm 0.028) \, \text{pm} \). Dies liegt wiederum an der Messgenauigkeit und 
- äußeren Einflüssen wie dem Linsenfehler.
+Für die Dopplerverbreiterung einer Linie durch thermische Bewegung der Atome gilt
+\[
+  \delta\lambda = \frac{2\lambda}{c} \sqrt{\frac{2RT\ln(2)}{M}} \cite[S. 230]{demtröder3}
+\]
+mit der Gaskonstante $R=\SI{8.314}{\J\per\mol\per\K}$ und der molaren Masse von Cadmium $M=\SI{112.414}{\g\per\mol}$ \cite{chemistry}
+Für den $\pi$-Übergang mit $\lambda_pi^0 = \SI{643.8}{\nm}$ und der Annahme einer Temperatur von \SI{1000}{\K} ergibt sich
+\[
+  \delta\lambda = \SI{4.349e-5}{\nm}
+\]
+Die Dopplerverbreiterung ist im Verlgeich zur Wellenlänge also sehr klein.
 
 
 \subsection{Messung des Zeeman-Effekts}
@@ -539,6 +542,7 @@ Richtung einer positiv geladenen Anode beschleunigt. Die Beschleunigungsspannung
 und Anode bestimmt die kinetische Energie der Elektronen, bevor sie auf die Quecksilberatome treffen.
 
 Zwischen der Kathode und der Anode befindet sich ein Gitter, das in einigen Konstruktionen mit einem kleinen 
+<<<<<<< HEAD
 Gegenfeld ausgestattet ist. Dieses ist dafür verantwortlich, ob ein Elektron bis zum Auffängergitter 
 gestoppt wird oder gelangen wird. Somit dürfen nur Elektronen, die genaue Energie besitzen
 durch die Gitteranode. 
@@ -547,6 +551,11 @@ wird dann in Abhängigkeit von der Spannung $U_B$ gemessen. Bei bestimmten Spann
 der Anodenstrom charakteristische Einbrüche, die auftreten, wenn die Elektronen genau die Energie 
 erreichen, die nötig ist, um ein Quecksilberatom vom Grundzustand (6S) in einen angeregten 
 Zustand (6P) zu heben.
+=======
+Gegenfeld ausgestattet ist, um Elektronen, die nach elastische nd inelastische Stößen ihre kinetische Energie 
+verloren haben, daran zu hindern, die Anode zu erreichen. Der Anodenstrom $I_A$
+wird dann in Abhängigkeit von der Spannung $U_B$ gemessen. Bei bestimmten Spannungswerten zeigt der Anodenstrom charakteristische Einbrüche, die auftreten, wenn die Elektronen genau die Energie erreichen, die nötig ist, um ein Quecksilberatom vom Grundzustand (6S) in einen angeregten Zustand (6P) zu heben.
+>>>>>>> main
  Durch diesen inelastischen Stoß verlieren die Elektronen ihre kinetische Energie und tragen dadurch nicht mehr zum Stromfluss bei.
 
 Die Spannungsdifferenz zwischen aufeinanderfolgenden Strommaxima liefert die Energie $\Delta E$, die den 
@@ -594,9 +603,14 @@ sind. Dadurch entsteht eine Gaußkurve, die die Daten im ausgewählten Bereich b
   verschiedenen Temperaturen $T$ und Gegenspannung $U_G$}
 \end{figure}
 
+<<<<<<< HEAD
 \subsection*{Bestimmung der Energiedifferenz}
 Zunächst wird aus den Werten der Spannungen $U_B^i$ ausgerechnet. Um die Eindeutigkeit von diesen 
 zu gewährleisten, bezeichnen wir die Peaks bzw. die Erwartungswerte mit $U^i_B$ und 
+=======
+\subsection*{Bestimmung der $\Delta$Energiedifferenz}
+Um die Eindeutigkeit zu gewährleisten, bezeichnen wir die Peaks bzw. die Erwartungswerte mit $U^i_B$ und 
+>>>>>>> main
 fassen alle relevanten Informationen in einer Tabelle zusammen.
 Der Fehler des Mittelwerts wird durch die folgende Formel und in der Tabelle dargestellt:
 \begin{equation*}
@@ -659,7 +673,19 @@ kommt jedoch aufgrund des höheren Energiebedarfs deutlich seltener vor.
   \includegraphics[scale=0.45]{Vereinfachtes Hg-Termschema.png}
   \caption{Termschema des Quecksilbers}
 \end{figure}
+<<<<<<< HEAD
 \subsection{Einfluss der Temperatur $T$}
+=======
+\clearpage
+\subsection{Einfluss der Temperatur $T$ und der Gegenspannung $U_2$}
+
+Untersucht man den Zusammenhang zwischen Energiedifferenz und Wirkungsquerschnitt, so 
+stellt man fest, dass die Wechselwirkung ihr Maximum bei $\Delta E = 4{.}9 \, \mathrm{eV}$ 
+erreicht. Dennoch weist der Peak eine Breite auf, was auf die Natur des Triplet-Zustands 
+$6^3P$ zurückzuführen ist, da einige Elektronen mit etwas geringerer oder höherer Energie 
+wechselwirken können.(siehe Abbildung \ref{Wirkungsquerschnitt})
+
+>>>>>>> main
 Zudem erkennt man mithilfe des Anhangs im Praktikumskript, dass der Dampfdruck von 
 Quecksilber stark von der Temperatur abhängt (siehe untenstehende Formel).
 
@@ -680,9 +706,13 @@ Messung bekommt.
 \end{figure}
 \clearpage
 \section{Fazit}
-Anhand der Energiedifferenz zwischen verschiedenen Übergängen konnte das Bohrsche Magneton auf $\mu_B = \SI{1.1e-23}{\J\per\T}$ bestimmt
-werden. Dazu wurde ein Fabry-Perot-Etalon verwendet, anhand dessen Interferenzbild die Positionen der Intensitätsmaxima
-bei verschieden starken Magnetfeldern verglichen wurden.
+Anhand der Energiedifferenz zwischen $\pi$- und $\sigma$-Übergängen zwischen dem $^1D_2$ und dem $^1P_1$-Zustand
+von Cadmium konnte das Bohrsche Magneton auf $\mu_B = \SI{1.06\pm 0.15e-23}{\J\per\T}$ bestimmt werden,
+wobei der Literaturwert von $\SI{0.927e-23}{\J\per\T}$ \cite{bohr-magneton} im Fehlerbereich liegt.
+Die relativ große Abweichung von über $10\%$ lässt sich unter anderem durch die ungenaue Strommessung
+des Netzgerätes erklären.
+Zur Interferometrie wurde ein Fabry-Perot-Etalon verwendet, anhand dessen Interferenzbild die Positionen der Intensitätsmaxima
+bei verschieden starken Magnetfeldern verglichen wurden. Die Messung wurde mithilfe einer CCD-Kamera durchgeführt.
 
 Im zweiten Versuchsteil wird der Franck-Hertz-Versuch aufgebaut und untersucht. Dabei 
 wird die Beschleunigungsspannung in Abhängigkeit von der Anodenspannung bei verschiedenen 
@@ -854,7 +884,7 @@ fällt auf, dass bei erhöhter Temperatur $T$ und Gegenspannung $U_G$ die Anoden
       - & 31.2 & 26.3 & 21.6 & 16.8 & - \\ \hline
   \end{tabular}
   \caption{zugeordnete $U^i_B$}
-  \label{tab:measurements1}
+  \label{tab:measurements}
 \end{table}
 
 \begin{table}[H]
@@ -872,7 +902,7 @@ fällt auf, dass bei erhöhter Temperatur $T$ und Gegenspannung $U_G$ die Anoden
       - & $\pm 0.00694$ & $\pm 0.0095$ & $\pm 0.016$ & $\pm 0.0351$ & - \\ \hline
   \end{tabular}
   \caption{zugeordnete $\delta U^i_B$}
-  \label{tab:measurements2}
+  \label{tab:measurements}
 \end{table}
 
 \end{multicols}
@@ -1029,6 +1059,12 @@ fällt auf, dass bei erhöhter Temperatur $T$ und Gegenspannung $U_G$ die Anoden
 
 \bibitem{bohr-magneton}
 NIST, https://physics.nist.gov/cgi-bin/cuu/Value?mub, Abruf 15.11.2024
+
+\bibitem{demtröder3}
+\textit{Experimentalphysik 3 -- Atome, Moleküle, Festkörper}, 5. Auflage, Wolfgang Demtröder, 2016
+
+\bibitem{chemistry}
+\textit{Standard Atomic Weights}, CIAWW, https://www.ciaaw.org/atomic-weights.htm, Abruf 18.11.2024
 
 \end{thebibliography}
 
