@@ -610,7 +610,7 @@ Die resultierenden Werte sind in Tab. \ref{tab:balmer-aufspaltung-okular} gezeig
 
 Bei allen Linien liegt der Literaturwert aus Tab. \ref{tab:balmer-literatur} im Fehlerbereich, die Fehler sind allerdings sehr groß,
 da das Ablesen anhand der Strichskala im Okular schwierig war.
-Um präzisere Messungen zu machen, setzen wir im Folgenden die CCD-Kamera ein.
+Um präzisere Messungen zu machen, setzen wir im Folgenden eine CCD-Kamera anstatt des Okulars ein.
 
 
 \subsubsection{Messung mit CCD-Kamera}
@@ -645,13 +645,13 @@ Daher wurde für diese Messung kein Fit durchgeführt.
 die Positionen der Maxima sind in Tab. \ref{tab:gauss-parameter} gezeigt.
 \begin{table}[h]
   \centering
-  \begin{tabular}{SSSSSSSS}
-    \toprule
-    {$\alpha/°$} & {$\beta/°$} & {$\mu_1/°$} & {$\Delta\mu_1/°$} & {$\mu_2/°$} & {$\Delta\mu_2/°$} & {$\delta\beta/°$} & {$\Delta\delta\beta/°$} \\
-    \midrule
-    18.2 & 58.2 & -0.0307 & \num{0.00026} & \num{0.0012} & \num{0.000054} & 0.03195 & \num{0.00027} \\
-    37.0 & 77.0 & -0.111 &  \num{0.000072} & \num{-0.0078} & \num{0.000020} & 0.104 & \num{0.000075} \\
-    \bottomrule
+  \begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \hline
+    $\alpha/^\circ$ & $\beta/^\circ$ & $\mu_1/^\circ$ & $\Delta\mu_1/^\circ$ & $\mu_2/^\circ$ & $\Delta\mu_2/^\circ$ & $\delta\beta/^\circ$ & $\Delta\delta\beta/^\circ$ \\
+    \hline
+    18.2 & 58.2 & -0.03073 & 0.00065 & 0.00122 & 0.00013 & 0.03196 & 0.00066 \\
+    37.0 & 77.0 & -0.11131 & 0.00018 & -0.00780 & \num{5.1e-05} & 0.10352 & 0.00019 \\
+    \hline
   \end{tabular}
   \caption{
     gemessene Winkelpositionen der aufgespaltenen Balmer-Linien.
@@ -668,13 +668,19 @@ Die resultierenden Werte sind in Tab. \ref{tab:balmer-aufspaltung-ccd} gezeigt.
     \toprule
     {$m$} & {$\lambda/\si{\nm}$} & {$\Delta\lambda/\si{\nm}$} & {$\delta\lambda/\si{\nm}$} & {$\Delta\delta\lambda/\si{\nm}$} \\
     \midrule
-    4 & 478.8 & 5.1362 & 0.12 & 0.0023 \\
-    3 & 649.3 & 4.5762 & 0.17 & 0.0076 \\
+    4 & 478.8 & 5.1 & 0.1210 & 0.0033 \\
+    3 & 649.3 & 4.6 & 0.1674 & 0.0076 \\
     \bottomrule
   \end{tabular}
   \caption{mit der CCD-Kamera gemessene Isotopieaufspaltung der Balmer-Linien.}
   \label{tab:balmer-aufspaltung-ccd}
 \end{table}
+
+Keiner der Werte stimmt innerhalb des Fehlerbereichs mit den Werten aus Tab. \ref{tab:balmer-literatur} überein,
+jedoch ist die Abweichung bei beiden geringer als $10\%$. 
+Wir konnten an der CCD-Kamera teils eine ungleichmäßige Grundausleuchtung beobachten, welche zu Verschiebung der Peaks führen würde.
+Eine weitere Quelle der Abweichung könnte von der Position der Abbildungslinse kommen,
+die nicht genau im Abstand ihrer Brennweite vor der Kamera aufgestellt war, da die Abbildung so schärfer erschien.
 
 
 \subsection{Rydberg-Konstante und Wirkungsquantum}
@@ -723,9 +729,60 @@ Alle drei Werte stimmen innerhalb der Fehlerbereiche miteinander überein, wobei
 Wirkungsquantum eine deutlich geringere Unsicherheit hat, als der Wert vom Photoeffekt.
 
 
+\subsection{weitere Überlegungen}
+\paragraph{Weitere Linien} Im Spektrum der Balmer-Lampe sind zusätzliche Linien zu erkennen, die nicht zur Balmer-Serie gehören.
+Darunter z.B. die violette Linie, der kein $m$ zugeordnet werden konnte. Es gibt verschiedene mögliche Quellen dieser Übergänge.
+Die Balmer-Lampe enthält nicht Wasserstoff und Deuterium, sondern Wasser und deuteriertes Wasser,
+also sind auch Sauerstoff-Atome vorhanden.
+Außerdem können beim Herstellungsprozess zusätzliche Verungreinigungen in der Reaktionskammer eingeschlossen worden sein.
+
+\paragraph{Dopplerverbreiterung}
+Für die Dopplerverbreiterung einer Linie durch thermische Bewegung der Atome gilt
+\[
+  \delta\lambda = \frac{2\lambda}{c} \sqrt{\frac{2RT\ln(2)}{M}} \cite[S. 230]{demtröder3}
+\]
+mit der Gaskonstante $R=\SI{8.314}{\J\per\mol\per\K}$ und der molaren Masse von Wasserstoff (Protium) $M=\SI{1}{\g\per\mol}$ \cite{chemistry}
+Mit der Annahme einer Temperatur der Lampe von \SI{1000}{\K} ergeben sich die Verbreiterung in Tab. \ref{tab:balmer-doppler}
+\begin{table}[h]
+  \centering  
+  \begin{tabular}{c||c|c}
+    Bezeichung & $\lambda/\si{\nm}$ & $\delta\lambda_\mr{doppler}/\si{\nm}$ \\\hline
+    H$_\alpha$ & 656 & \num{4.70e-4} \\
+    H$_\beta$  & 486 & \num{3.48e-4} \\
+    H$_\gamma$ & 434 & \num{3.10e-4} \\
+    H$_\delta$ & 410 & \num{2.93e-4} 
+  \end{tabular}
+  \caption{Dopplerverbreiterungen der Balmer-Linien.}
+  \label{tab:balmer-doppler}
+\end{table}
+
+\paragraph{Auflösungsvermögen des Gitters}
+Das Interferenzgitter ist \SI{25}{\mm} breit \cite{Anleitung}. Es hat also
+\[
+  N = \frac{\SI{25}{\mm}}{\SI{411.9}{\nm}} \approx 60694 
+\]
+Linien. Das spektrale Auflösungsvermögen in erster Ordnung ($k=1$) ist damit
+\[
+  A = \frac{\lambda}{\delta\lambda} = kN = 60694
+\]
+Für die Isotopieaufspaltung der Balmer-Linien gilt $\frac{\lambda}{\delta\lambda} = 3670$,
+also ist das Auflösungsvermögen des Gitters ausreichend für die hier gemachten Messungen.
+
 
 \clearpage
 \section{Fazit}
+
+
+Im zweiten Versuchsteil wurden mithilfe eines Interferenzgitters die Wellenlängen der Balmer-Serie von Wasserstoff und Deuterium
+durchmessen. Sowohl bei Beobachtung mit einem Okular als auch der Messung mithilfe einer CCD-Kamera wurde die Isotopieaufspaltung
+berechnet. Die Ergebnisse der Okular-Messung sind kompatibel mit Literaturwerten, haben jedoch eine hohe Messunsicherheit.
+Mit der CCD-Kamera konnte die Unsicherheit prinzipiell verringert werden, jedoch scheint es hier eine andere
+Quelle von Verfälschungen zu geben, denn die Ergebnisse stimmen nicht mit den erwarteten Werten überein.
+
+Mithilfe einer Geradenanpassung konnten außerdem die Rydberg-Konstante auf $R_H = \SI{1.1104\pm0.0155e7}{\per\m}$,
+das Plancksche Wirkungsquantum auf $h = \SI{6.600\pm0.037e-34}{\J\s}$ bestimmt werden. Beide Werte stimmen mit der Literatur
+überein und das Wirkungsquantum ist ebenfalls kompatibel mit der vorigen Messung aus dem Photoeffekt.
+
 
 
 \clearpage
@@ -1103,6 +1160,9 @@ Wikipedia-Autoren, \textit{Elementarladung -- Wikipedia}, \url{https://de.wikipe
 
 \bibitem{planck-h}
 \textit{The NIST Reference on Constants, Units, and Uncertainty}, NIST, https://physics.nist.gov/cgi-bin/cuu/Value?h, Abruf 19.11.2024
+
+\bibitem{chemistry}
+\textit{Standard Atomic Weights}, CIAWW, https://www.ciaaw.org/atomic-weights.htm, Abruf 18.11.2024
 
 \end{thebibliography}
 

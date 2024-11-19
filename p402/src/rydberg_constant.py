@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from scipy.constants import h, c, e, epsilon_0, m_e
+from scipy.constants import h, c, e, epsilon_0, m_e, R
 from lattice_constant import get_lattice_constant
 from gauss_fit import full_gauss_fit_for_lines
 from helpers import *
@@ -107,3 +107,10 @@ lbda, lbdaErr = calc_lbda(g, alpha, beta, gErr, alphaErr, betaErr)
 isotropyDataCCD = get_isotropy_data(beta, betaErr, deltaBeta, m[mask], lbda, lbdaErr, deltaBetaErr)
 isotropyDataCCD.to_csv('p402/data/isotropy_CCD.csv', index=False)
 
+# calculate doppler splittung
+lbda = np.array((656.28, 486.13, 434.05, 410.17))/1e9
+T = 1000
+M = 1
+print(R)
+dopplerLbda = 2*lbda/c * np.sqrt(2*R*T*np.log(2)/M)
+print(np.array((lbda, dopplerLbda)).T)
