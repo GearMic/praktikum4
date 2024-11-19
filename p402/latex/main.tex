@@ -257,6 +257,7 @@ Anschließend wird eine Spannungsquelle mit einem variablen Potential
 Im Rahmen des Photoeffekts ergibt sich die vollständige Gleichung wie folgt:
 \begin{equation}
   E = h \nu = e U_{K} + W_K + e U_G = e U_G + W_A
+  \label{eq:energie}
 \end{equation}
 \begin{figure}[h!]
   \centering
@@ -267,7 +268,7 @@ Im Rahmen des Photoeffekts ergibt sich die vollständige Gleichung wie folgt:
 \newpage
 \subsubsection*{Bestimmung der Grenzspannung $U_0$}
 Nun werden die Photospannungswerte in einer Tabelle hinzugefügt 
-(siehe Beispiel \ref{tab:messung1a}), und der Photostrom wird mithilfe 
+(siehe Beispiel [\ref{tab:messung1a_in_main}]), und der Photostrom wird mithilfe 
 eines Verstärkungsfaktors umgerechnet. Um einen linearen Zusammenhang zu 
 finden, wird der Quadratwurzeloperator angewendet, ebenso wie der Wert des 
 Photostroms bei maximaler Gegenspannung. Der Fehler wird unter Verwendung der bekannten
@@ -295,18 +296,18 @@ Photostroms bei maximaler Gegenspannung. Der Fehler wird unter Verwendung der be
       \hline
   \end{tabular}
   \caption{erste Messung bei 365 nm}
-  \label{tab:messung1a}
+  \label{tab:messung1a_in_main}
 \end{table*}
 Der Fehler der gemessen Photostrom wird von uns gewählt und wegen große Schwankungen an der Messgeräte 
 wird zu $10\%$ der gemessen Photostrom $I$.
 Die Werte werden aufgetragen und eine lineare Anpassungsgerade der Form 
-$f(x) = m \cdot x + b $ gelegt. Der ganze Vorgang lässt sich in der Abbildung [\ref*{fig:wellenlaenge_365nm_a}]
+$f(x) = m \cdot x + b $ gelegt. Der ganze Vorgang lässt sich in einer Abbildung [\ref*{fig:wellenlaenge_365nm_a_in_main}]
 darstellen. 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=.5\linewidth]{402_365nm_a}
   \caption{Auftragung der ersten Messung für $ \lambda =365nm$}
-  \label{fig:wellenlaenge_365nm_a}
+  \label{fig:wellenlaenge_365nm_a_in_main}
 \end{figure}
 \newpage
 
@@ -339,34 +340,67 @@ $\overline{U_0}$ ist einer gemittelte Parameter aus den 2 Messungen in der gleic
 \end{table}
 \clearpage
 \subsubsection*{Bestimmung der Wirkugsquantum $h$ und Austrittsarbeit $W_A$}
-
-
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=.5\linewidth]{402_wirkung}
-  \caption{Auftragung der ersten Messung für $ \lambda =365nm$}
-  \label{fig:wirkungs}
-\end{figure}
+Nun wollen wir mithilfe der zuvor bestimmten Grenzspannung \( U_0 \) das Plancksche Wirkungsquantum \( h \) 
+sowie die Austrittsarbeit \( W_A \) bestimmen. Dazu wird der lineare Zusammenhang zwischen der Frequenz \( \nu \) und der 
+Grenzspannung \( U_0 \) genutzt (siehe Gleichung~\ref*{eq:energie}). Es gilt:
 
 \begin{equation}
   U_0 = \underbrace{\frac{h}{e}}_{\text{Steigung } u} \cdot \nu - \underbrace{\frac{W_A}{e}}_{\text{Achsenabschnitt } c}
 \end{equation}
-Die Parameter sind die Folgende:
+trägt man die Werte aus der Tabelle [\ref*{tab:wellenlaengen_trennstrich_m_b_U_gemittelt}] für die Grenzspannung und Frequenz auf 
+und erhält man die folgende Abbildung.\\
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.5\linewidth]{402_wirkung}
+  \caption{Auftragung der Grenzspannung $U_0$ gegen der Frequenz $\mu$}
+  \label{fig:wirkungs}
+\end{figure}
+\\ Zunächst lässt sich aus den Parameter der Steigung $u$ und Achsenabschnitt $c$ das
+ Wirkugsquantum $h$ bestimmen. Aus Abbildung finden sich die folgenden Parameter: 
 \begin{align}
   u &= (4.09 \pm 0.30) \times 10^{-15} \, \mathrm{Vs}\\
   c &= -1.65 \pm 0.18
 \end{align}
-  
+Jetzt mit dem Literaturwert der Elementarladung  
+\[
+e = 1{,}602\,176\,634 \cdot 10^{-19}\,\mathrm{C},
+\]  
+entnommen aus Wikipedia \cite{elementarladung}. Für den Fehler gilt:  
+\[
+\Delta h = e \cdot \Delta u
+\]
+und  
+\[
+W_A = e \cdot \Delta c.
+\]
+Daraus ergeben sich die experimentellen Werte:
+
 
 \begin{align}
   h &= (6.55 \pm 0.48) \times 10^{-34} \, \mathrm{Js}\\
   W_A &=(-2.64 \pm 0.29) \times 10^{-19} \, \mathrm{J}.
 \end{align}
+Der experimentelle Wert ergibt Sinn und ist innerhalb der Fehlerbalken des 
+ Literaturwertes der Wirkugsquantum 
+ ${\displaystyle h_{theo}=6{,}626\,070\,15\cdot 10^{-34}\;\mathrm {Js} }$.(Aus Wikipedia \cite{planckkonstante})
 
 \clearpage
-\subsection{Diskussion}
+\subsubsection*{Einfluss der unterschiedlichen Intensitäten bei $\lambda = 365nm$}
+Durch die Änderung des Durchmessers der Irisblende konnte der Zusammenhang zwischen
+ der Lichtintensität und dem Photostrom beobachtet werden. Historisch wurde angenommen,
+  dass die Energie der Elektronen von der Intensität des Lichts abhängen würde.\\
+Diese Annahme wurde jedoch durch experimentelle Untersuchungen widerlegt.
+ Es wurde beobachtet, dass eine höhere Lichtintensität zu einem stärkeren Photostrom führt,
+  während bei geringerer Intensität ein schwächerer Photostrom resultiert.\\
+Diese Beobachtung lässt sich quantenmechanisch erklären: Bei höherer Lichtintensität 
+treffen mehr Photonen auf das Material, wodurch mehr Elektronen aus der Metalloberfläche 
+herausgelöst werden.
 
+
+
+
+\subsection{Diskussion}
+\clearpage
 \section{Balmer-Serie}
 Es soll anhand einer Balmer-Lampe die Balmer-Serie von Spektrallinien des Wasserstoffs beobachtet und aus den Ergebnissen
 die Rydberg-Konstante sowie das Plank'sche Wirkungsquantum bestimmt werden. Außerdem wird die Isotopieaufspaltung zwischen Wasserstoff und Deuterium quantifiziert.
@@ -886,6 +920,13 @@ Die resultierenden Werte sind in Tab. \ref{tab:balmer-aufspaltung-okular} gezeig
 
 \bibitem{leybold-balmer}
 \textit{Balmer-Serie des Wasserstoff}, Leybold Didactic, Abruf 17.11.2024
+
+\bibitem{elementarladung}
+Wikipedia-Autoren, \textit{Elementarladung -- Wikipedia}, \url{https://de.wikipedia.org/wiki/Elementarladung}, Abruf 19.11.2024
+
+\bibitem{planckkonstante}
+Wikipedia-Autoren, \textit{Planck-Konstante -- Wikipedia}, \url{https://de.wikipedia.org/wiki/Planck-Konstante}, Abruf 19.11.2024
+
 
 \end{thebibliography}
 
