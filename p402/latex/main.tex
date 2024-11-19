@@ -35,6 +35,7 @@
 \usepackage{gensymb} % add \degree in math mode?
 \usepackage{newunicodechar} % define custom unicode characters
 \usepackage{booktabs}
+\usepackage{subcaption}
 
 % \sisetup{
 %   scientific-notation = auto,  % Automatically use scientific notation for large/small numbers
@@ -114,8 +115,14 @@
 
 \section*{Einleitung}
 
-
-\section{Teil l: Bestimmung des Planckschen Wirkungsquantum}
+In diesem Versuchteil werden sowohl der Photoeffekt als auch die Quantelung von Energie untersucht, um wichtige
+ physikalische Konzepte zu verstehen und zu verifizieren. Zu Beginn wird mithilfe einer Photozelle 
+ die Quantelung der Lichtenergie und die Abhängigkeit der Energie des Lichts von der Frequenz 
+ analysiert. Hierbei wird das Plancksche Wirkungsquantum und die Austrittsarbeit des 
+ Anodenmaterials bestimmt. Der Zusammenhang zwischen der Frequenz des Lichts und der Energie des 
+ Photoeffekts wird experimentell ermittelt, und auf dieser Basis wird das Plancksche Wirkungsquantum 
+ berechnet sowie die Austrittsarbeit des Materials geschätzt.
+\section{Bestimmung des Planckschen Wirkungsquantum}
   \subsection{Theorie}
 
     \subsubsection{Photoeffekt}
@@ -124,11 +131,7 @@
      und diese Energie muss ausreichen, um die Bindungsenergie des Elektrons, die sogenannte 
      Austrittsarbeit, zu überwinden. Wenn ein Photon auf ein Elektron trifft, wird ein Teil 
      seiner Energie verwendet, um das Elektron aus dem Metall zu befreien, während der Rest 
-     als kinetische Energie des Elektrons übertragen wird. Die Intensität des
-       Lichts beeinflusst die Anzahl der herausgelösten Elektronen, nicht aber deren Energie.
-       Eine höhere Intensität bedeutet, dass mehr Photonen auf das Metall treffen und somit 
-       mehr Elektronen herausgelöst werden, aber die Energie der Elektronen bleibt gleich, 
-       solange die Frequenz des Lichts konstant bleibt.
+     als kinetische Energie des Elektrons übertragen wird. 
        
     \subsubsection{Photozelle}
     Die Photozelle ist ein Gerät, das das Prinzip des Photoeffekts nutzt, um Lichtenergie in 
@@ -140,13 +143,17 @@
     liefern. Die Kathode besteht aus einem Material mit geringer Austrittsarbeit, wie 
     beispielsweise Zink, das die Elektronen leicht freisetzt, wenn es beleuchtet wird. Die 
     Intensität des Lichts bestimmt dabei, wie viele Elektronen freigesetzt werden, während 
-    die Frequenz des Lichts die Energie der Elektronen beeinflusst. Der erzeugte Strom ist proportional zur Lichtintensität, was 
-    bedeutet, dass bei stärkerem Licht mehr Elektronen freigesetzt werden und somit ein 
-    größerer Strom fließt.
+    die Frequenz des Lichts die Energie der Elektronen beeinflusst. (siehe Abbildung [\ref*{fig:photozelle}])
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=.25\linewidth]{Photozelle.jpg}
+      \caption{Photozelle}
+      \label{fig:photozelle}
+    \end{figure}
 
 
     \subsubsection{Gegenfeldmethode}
-    Die Gegenfeldmethode wird häufig verwendet, um die Austrittsarbeit \( W_A \) eines Materials 
+    Die Gegenfeldmethode wird heute verwendet, um die Austrittsarbeit \( W_A \) eines Materials 
     zu bestimmen. Dabei wird eine gegensätzliche elektrische Spannung in einer Photozelle erzeugt,
      die das emittierte Elektron ablenkt. Die Spannung, die benötigt wird, um den Elektronenstrom
       vollständig zu stoppen, ist eine direkte Messung der Austrittsarbeit des Materials. In 
@@ -172,13 +179,11 @@ Zusammengefasst ermöglichen die Messungen des Photoeffekts in einer Photozelle 
 Verwendung der Gegenfeldmethode eine präzise Bestimmung der Austrittsarbeit eines Materials 
 sowie der Beziehung zwischen der Lichtfrequenz und der Energie der herausgelösten Elektronen.
 
-    
-\clearpage
 \subsection{Aufbau und Durchführung}
 \begin{figure}[h!]
   \centering
   \includegraphics[width=.8\linewidth]{Aufbau_Wirkugsquantum}
-  \caption{Auftragung der ersten Messung für $ \lambda =365nm$}
+  \caption{Aufbau der Photoelektrische Bestimmung des Planckschen Wirkungsquantum}
   \label{fig:aufbau_wirkungs}
 \end{figure}
 
@@ -203,13 +208,7 @@ scharfes Bild der Irisblende entsteht und die Ringanode dabei nicht vom Lichtstr
 wird.
 
 \subsubsection*{Durchführung}
-Beide schwarzen Kabel der Photozelle (Anodenanschluss) werden mit demselben Ausgang des 
-Netzgerätes verbunden. Dabei ist auf die korrekte Polung zu achten. Der Kathodenanschluss 
-(weißes Kabel mit BNC-Stecker) wird mit dem entsprechenden Anschluss des Messverstärkers 
-verbunden. Ein eventuell vorhandener Offset des Ausgangssignals des Messverstärkers muss 
-beseitigt werden. Weiterhin wird der zweite Ausgang der regelbaren Spannung des Netzgerätes 
-mit dem Masseanschluss des Messverstärkers verbunden. Die Digitalmultimeter sind so 
-anzuschließen, dass sowohl der Photostrom als auch die Gegenspannung gemessen werden können.
+Die Digitalmultimeter sind nun so anzuschließen, dass sowohl der Photostrom als auch die Gegenspannung gemessen werden können.
 Zunächst wird das Interferenzfilter gewählt, das das energiereichste Licht durchlässt. 
 Die Gegenspannung wird so lange variiert, bis der Photostrom verschwindet. Es kann festgestellt 
 werden, dass die benötigte Gegenspannung deutlich niedriger ist als die vom Netzgerät maximal 
@@ -217,7 +216,7 @@ bereitgestellte Spannung von 12 V.
 
 Aus den vorhandenen Widerständen wird eine sinnvolle Auswahl getroffen, um den Versuchsaufbau
  um eine Spannungsteilerschaltung zu erweitern, die einen geeigneten Spannungsbereich für die
-  Messungen liefert. Dieser Aufbau wird für die gesamte Messung beibehalten.
+  Messungen liefert. Nun ist die maximale Spannung 2.8 V und bleibt so für den ganzen Versuch.
 
 Für die Messung wird zunächst eine Wellenlänge mittels des Filterrads ausgewählt. 
 Es wird die größtmögliche Gegenspannung eingestellt, und der Anodenphotostrom $I_0$ 
@@ -226,17 +225,9 @@ Kathode gelangen. Anschließend wird die Gegenspannung variiert, um grob die Gre
  $U_0$ zu bestimmen, bei der der Photostrom verschwindet. Es wird die Kennlinie der 
  Photozelle aufgenommen, indem die Gegenspannung von $U = 0\,\mathrm{V}$ bis zu einer 
  Spannung variiert wird, bei der der Photostrom den Wert von $I_0$ erreicht. Dabei 
- werden Messpunkte in geeigneten Abständen aufgenommen; insbesondere ist darauf zu achten, 
+ werden Messpunkte in geeigneten Abständen (200mV-Schritte) aufgenommen; insbesondere ist darauf zu achten, 
  dass im quadratischen Bereich der Kennlinie genügend Messpunkte vorliegen.
-Diese Messung wird für alle Wellenlängen durchgeführt ($I_0$, $U_0$, Kennlinie). 
 Die Messungen der Kennlinien werden zweimal wiederholt, da die Intensität der Hg-Lampe schwankt.
-
-Das Interferenzfilter mit der Durchlasswellenlänge $\lambda = 365\,\mathrm{nm}$ wird in den 
-Strahlengang gestellt. Die erste Irisblende wird so angepasst, dass der Photostrom bei 
-$U = 0\,\mathrm{V}$ deutlich größer wird. Führt eine Öffnung der Blende nicht zu einer 
-Erhöhung des Photostroms, wird der Blendendurchmesser so weit verringert, bis eine deutliche 
-Abnahme des Photostroms um $30\%-50\%$ beobachtet werden kann. Die Kennlinie der Photozelle 
-wird für diese Wellenlänge wie zuvor beschrieben bei dieser niedrigeren Intensität aufgenommen.
 
 \subsection{Auswertung}
 Um die Energiebilanz in der Photozelle zu bestimmen, werden die Anoden- und Kathodenmaterialien 
@@ -247,7 +238,7 @@ Kurzschlusszustand dargestellt.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=.4\linewidth]{P402_fermi}
-  \caption{Auftragung der ersten Messung für $ \lambda =365nm$}
+  \caption{Gemeinsames Bänderschema von Kathode und Anode mit Fermi-Niveaus und Austrittsarbeiten \cite{Anleitung}}
   \label{fig:fermi}
 \end{figure}
 Wenn beide Materialien in einem Kurzschlusszustand verbunden werden, führen die 
@@ -267,7 +258,8 @@ Im Rahmen des Photoeffekts ergibt sich die vollständige Gleichung wie folgt:
 \begin{figure}[h!]
   \centering
   \includegraphics[width=.4\linewidth]{P402_energie}
-  \caption{Auftragung der ersten Messung für $ \lambda =365nm$}
+  \caption{Bänderschema von Kathode und Anode bei Anlegen einer äußeren Spannung.
+  Der Potentialunterschied steigt. \cite{Anleitung}}
   \label{fig:energie}
 \end{figure}
 \newpage
@@ -401,14 +393,34 @@ Diese Beobachtung lässt sich quantenmechanisch erklären: Bei höherer Lichtint
 treffen mehr Photonen auf das Material, wodurch mehr Elektronen aus der Metalloberfläche 
 herausgelöst werden.
 
-
-
-
 \subsection{Diskussion}
+
+Die Untersuchung der Photoeffekts wurde experimentell erfolgreich durchgeführt. Unser
+Messergebnis für den Wirkungsquantum $h$ lag nah und stimmt innerhalb der Literaturwert $h_{theo}$ 
+überrein.
+
+\begin{align}
+  h_{exp} &= (6.55 \pm 0.48) \times 10^{-34} \, \mathrm{Js}\\
+  \displaystyle h_{theo} &= 6{,}626\,070\,15\cdot 10^{-34}\;\mathrm {Js} 
+\end{align}
+Noch dazu wurde die Austrittsarbeit $W_A$ mit dem Literaturwert aus Quelle \cite{surface-science}
+\begin{align}
+  \abs*{W_A (\text{Pt-Rh})}_{exp} = (2.64 \pm 0.29) \times 10^{-19}\text{J} \\
+  W_A (\text{Pt-Rh})_{theo} = (8.17 \pm 1.60) \times 10^{-19} \, \text{J} 
+\end{align}
+Dieser Wert lag deutlich von dem erwarteten Wert ab. Die Messungenauigkeit kann jedoch 
+mehrere Ursachen haben. Möglicherweise waren die Justierung der Messgeräte und die 
+Dunkelheit im Experimentierraum nur einige der Gründe. Ein weiteres bedeutendes Problem 
+war die Sensibilität der Messgeräte. Es wurde experimentell beobachtet, dass bereits eine 
+leichte Berührung des Anodenanschlusses zum Netzgerät oder der Schlüssel der beiden 
+Digitalmultimeter zu großen Schwankungen führte, was unser Ergebnis sicherlich 
+beeinflusst haben könnte.
+\\ Außerdem wurde die Abhängigkeit der Intensität und Photostrom diskutiert. 
+
 \clearpage
 \section{Balmer-Serie}
 Es soll anhand einer Balmer-Lampe die Balmer-Serie von Spektrallinien des Wasserstoffs beobachtet und aus den Ergebnissen
-die Rydberg-Konstante sowie das Plank'sche Wirkungsquantum bestimmt werden. Außerdem wird die Isotopieaufspaltung zwischen Wasserstoff und Deuterium quantifiziert.
+die Rydberg-Konstante sowie das Plancksche Wirkungsquantum bestimmt werden. Außerdem wird die Isotopieaufspaltung zwischen Wasserstoff und Deuterium quantifiziert.
 
 Als Balmer-Serie bezeichnet man eine bestimmte Reihe von Spektrallinien des Wasserstoffatoms, die besonders gut mit dem bloßen Auge zu sehen sind
 und 1885 von Johann Jakob Balmer untersucht wurden \cite[S. 99]{demtröder3}. Sie werden i.d.R. mit griechischen Buchstaben bezeichnet (siehe Tab. \ref{tab:balmer-literatur})
@@ -594,14 +606,15 @@ der Winkelabstand $\delta \beta$ mithilfe von \eqref{eq:winkelunterschied}.
 Die Aufspaltung $\delta \lambda$ der Wellenlängen folgt dann aus \eqref{eq:balmer-aufspaltung}.
 Die resultierenden Werte sind in Tab. \ref{tab:balmer-aufspaltung-okular} gezeigt.
 \begin{table}
+  \centering
   \begin{tabular}{rSSSS}
     \toprule
     {$m$} & {$\lambda/\si{\nm}$} & {$\Delta\lambda/\si{\nm}$} & {$\delta\lambda/\si{\nm}$} & {$\Delta\delta\lambda/\si{\nm}$} \\
     \midrule
-    5 & 430.7 & 5.2552 & 0.08 & 0.11 \\
-    0 & 431.8 & 5.2526 & 0.08 & 0.11 \\
-    4 & 478.8 & 5.1362 & 0.14 & 0.10 \\
-    3 & 649.3 & 4.5762 & 0.22 & 0.04 \\
+    5 & 430.7 & 5.3 & 0.08 & 0.11 \\
+    0 & 431.8 & 5.3 & 0.08 & 0.11 \\
+    4 & 478.8 & 5.2 & 0.14 & 0.10 \\
+    3 & 649.3 & 4.6 & 0.22 & 0.04 \\
     \bottomrule
   \end{tabular}
   \caption{mit dem Okular gemessene Isotopieaufspaltung der Balmer-Linien.}
@@ -771,8 +784,24 @@ also ist das Auflösungsvermögen des Gitters ausreichend für die hier gemachte
 
 \clearpage
 \section{Fazit}
-
-
+Im ersten Versuchteil wurde durch quantitative Vermessung die Quantelung von Energie sowie 
+Photoeffekt gezeigt. Dazu wurde eine Proportionalität zwischen Frequenz und Grenzspannung
+verifizieren, wobei das Plancksche Wirkungsquantum und Austrittsarbeit der Anode 
+bestimmt wurden. 
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{|c|c|c|}
+  \hline
+  \textbf{Parameter} & \textbf{Experimentell (exp)} & \textbf{Theoretisch (theo)} \\
+  \hline
+  \( h \) (Plancksches Wirkungsquantum) & \( (6.55 \pm 0.48) \times 10^{-34} \, \text{Js} \) & \( 6{,}626\,070\,15 \times 10^{-34} \, \text{Js} \) \\
+  \hline
+  \( W_A (\text{Pt-Rh}) \) (Austrittsarbeit) & \( (2.64 \pm 0.29) \times 10^{-19} \, \text{J} \) & \( (8.17 \pm 1.60) \times 10^{-19} \, \text{J} \) \\
+  \hline
+  \end{tabular}
+  \label{tab:vergleich}
+  \end{table}
+  
 Im zweiten Versuchsteil wurden mithilfe eines Interferenzgitters die Wellenlängen der Balmer-Serie von Wasserstoff und Deuterium
 durchmessen. Sowohl bei Beobachtung mit einem Okular als auch der Messung mithilfe einer CCD-Kamera wurde die Isotopieaufspaltung
 berechnet. Die Ergebnisse der Okular-Messung sind kompatibel mit Literaturwerten, haben jedoch eine hohe Messunsicherheit.
@@ -782,7 +811,6 @@ Quelle von Verfälschungen zu geben, denn die Ergebnisse stimmen nicht mit den e
 Mithilfe einer Geradenanpassung konnten außerdem die Rydberg-Konstante auf $R_H = \SI{1.1104\pm0.0155e7}{\per\m}$,
 das Plancksche Wirkungsquantum auf $h = \SI{6.600\pm0.037e-34}{\J\s}$ bestimmt werden. Beide Werte stimmen mit der Literatur
 überein und das Wirkungsquantum ist ebenfalls kompatibel mit der vorigen Messung aus dem Photoeffekt.
-
 
 
 \clearpage
@@ -1121,21 +1149,21 @@ das Plancksche Wirkungsquantum auf $h = \SI{6.600\pm0.037e-34}{\J\s}$ bestimmt w
 \subsection{Balmer-Serie}
 \begin{figure}[h!]
   \centering
-  \begin{minipage}{0.49\textwidth}
+  \begin{subfigure}{0.49\textwidth}
     \includegraphics[width=\textwidth]{line13.8.pdf}
     \caption{CCD-Bild der Linie bei $\alpha=\ang{13.8}$.}
-  \end{minipage}
+  \end{subfigure}
   \hfill
-  \begin{minipage}{0.49\textwidth}
+  \begin{subfigure}{0.49\textwidth}
     \includegraphics[width=\textwidth]{line18.2.pdf}
     \caption{CCD-Bild der Linie bei $\alpha=\ang{18.2}$ mit Fit.}
-  \end{minipage}
+  \end{subfigure}
 
-  \begin{minipage}{0.49\textwidth}
+  \begin{subfigure}{0.49\textwidth}
     \includegraphics[width=\textwidth]{line37.0.pdf}
     \caption{CCD-Bild der Linie bei $\alpha=\ang{37.0}$ mit Fit.}
-  \end{minipage}
-
+  \end{subfigure}
+  \caption{CCD-Bild der Linie bei $\alpha=\ang{37.0}$ mit Fit.}
   \label{fig:gauss-fit}
 \end{figure}
 
@@ -1163,6 +1191,9 @@ Wikipedia-Autoren, \textit{Elementarladung -- Wikipedia}, \url{https://de.wikipe
 
 \bibitem{chemistry}
 \textit{Standard Atomic Weights}, CIAWW, https://www.ciaaw.org/atomic-weights.htm, Abruf 18.11.2024
+
+\bibitem{surface-science}
+Kittel, C., \textit{Introduction to Solid State Physics}, 8th Edition, Wiley, 2004, p. 156.
 
 \end{thebibliography}
 
