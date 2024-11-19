@@ -23,14 +23,14 @@ def calc_lbdarec(lbda, lbdaErr):
     lbdarecErr = lbdaErr/lbda**2
     return lbdarec, lbdarecErr
 
-def calc_delta_lbda(beta, betaErr, deltaBeta):
+def calc_delta_lbda(beta, betaErr, deltaBeta, deltaBetaErr):
     # calculate Aufspaltung
     deltaLambda = g * np.cos(beta) * deltaBeta
-    deltaLambdaErr = deltaBeta * np.sqrt((gErr*np.cos(beta))**2 + (g*np.sin(beta)*betaErr)**2)
+    deltaLambdaErr = np.sqrt((deltaBetaErr*g*np.cos(beta))**2 + (deltaBeta*gErr*np.cos(beta))**2 + (deltaBeta*g*np.sin(beta)*betaErr)**2)
     return deltaLambda, deltaLambdaErr
 
-def get_isotropy_data(beta, betaErr, deltaBeta, m, lbda, lbdaErr):
-    deltaLbda, deltaLbdaErr = calc_delta_lbda(beta, betaErr, deltaBeta)
+def get_isotropy_data(beta, betaErr, deltaBeta, m, lbda, lbdaErr, deltaBetaErr):
+    deltaLbda, deltaLbdaErr = calc_delta_lbda(beta, betaErr, deltaBeta, deltaBetaErr)
 
     isotropyData = pd.DataFrame({
         r'$m$': m, r'$\lambda/\si{\nm}$': lbda*1e9, r'$\Delta\lambda/\si{\nm}$': lbdaErr*1e9,
@@ -42,12 +42,12 @@ def get_isotropy_data(beta, betaErr, deltaBeta, m, lbda, lbdaErr):
 g, gErr = get_lattice_constant('p402/data/balmer_Hg.csv', 'p402/data/balmer_Hg_analysis.csv', 'p402/plot/fit-gitterkonstante.pdf')
 
 data = pd.read_csv('p402/data/balmer_H.csv', sep=r',\s+', engine='python')
-omegaG = np.array(data[r'\omega_G/°'])
+omegaG = np.array(data[r'$\omega_G/°$'])
 omegaGerr = 0.6
-d = (np.array(data[r'd/\si{\mm}'])-5) / 1e3
+d = (np.array(data[r'$d/\si{\mm}$'])-5) / 1e3
 dErr = 0.1 / 1e3
 omegaB = 140
-m = np.array(data['m'])
+m = np.array(data['$m$'])
 
 f = 0.3
 alpha = np.deg2rad(omegaG)
@@ -57,6 +57,7 @@ betaErr = alphaErr
 
 # reshape data
 deltaBeta = (d[1::2] - d[::2])/f
+deltaBetaErr = dErr*np.sqrt(2)/f
 slicer = slice(None, None, 2)
 alpha, beta, m = alpha[slicer], beta[slicer], m[slicer]
 lbda, lbdaErr = calc_lbda(g, alpha, beta, gErr, alphaErr, betaErr)
@@ -84,12 +85,12 @@ fig.savefig('p402/plot/rydberg_fit.pdf')
 
 
 # get wavelengths and splitting for ocular data
-isotropyDataOcular = get_isotropy_data(beta, betaErr, deltaBeta, m, lbda, lbdaErr)
+isotropyDataOcular = get_isotropy_data(beta, betaErr, deltaBeta, m, lbda, lbdaErr, deltaBetaErr)
 isotropyDataOcular.to_csv('p402/data/isotropy_ocular.csv', index=False)
 
 alpha, beta, deltaBeta, betaErr, deltaBetaErr, gaussFrame = full_gauss_fit_for_lines()
 alphaErr = betaErr
 lbda, lbdaErr = calc_lbda(g, alpha, beta, gErr, alphaErr, betaErr)
-isotropyDataCCD = get_isotropy_data(beta, betaErr, deltaBeta, m[mask], lbda, lbdaErr)
+isotropyDataCCD = get_isotropy_data(beta, betaErr, deltaBeta, m[mask], lbda, lbdaErr, deltaBetaErr)
 isotropyDataCCD.to_csv('p402/data/isotropy_CCD.csv', index=False)
 

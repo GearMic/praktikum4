@@ -425,7 +425,7 @@ Die Gittergleichung für konstruktive Interferenz lautet
 wobei hier immer die erste Ordnung mit $k=1$ beobachtet wird. $g$ ist die sogenannte Gitterkonstante,
 die experimentell anhand des bekannten Spektrums von Quecksilber bestimmt werden soll.
 
-\begin{figure}{h}
+\begin{figure}[h]
   \centering
   \includegraphics[width=0.5\textwidth]{balmer-winkel}
   \caption{Winkel bei der Messung der Balmer-Serie.}
@@ -504,7 +504,8 @@ Winkelaufspaltung $\delta\beta$ mithilfe der ersten Ableitung der Gittergleichun
 \end{equation}
 Die nach der Literatur erwarteten Wellenlängen und Aufspaltungen der Linien sind in Tab. \ref{tab:balmer-literatur} gezeigt.
 
-\begin{table}
+\begin{table}[h]
+  \centering
   \begin{tabular}{c||c|c|c}
     Bezeichung & $m$ & $\lambda/\si{nm}$ (bei Wasserstoff) & $\delta \lambda/\si{nm}$ \\ \hline
     H$_\alpha$ & 3 & \SI{656.28}{\nm} & \SI{0.179}{\nm} \\
@@ -525,8 +526,8 @@ gezeigt. Die Mitte der Strichskala liegt bei $d = \SI{5}{\mm}$.
   \caption{Messung der Balmer-Linien mit einem Okular, mit zugeordneter Quantenzahl $m$.
   $m=0$ bedeutet, dass wir diese Linie nicht zum Balmer-Spektrum zuordnen konnten.
   Jede Linie ist zweimal aufgeführt, für die zwei aufgespaltenen sichtbaren Peaks, die sich in ihrer Position entlang der Strichskala $d$ unterscheiden.
-  $\Delta \omega_G=\ang{0.6}$, $\Delta d=\SI{0.1}{\mm}$}
-  \label{tab:balmer-linien-okular}
+  $\Delta \omega_G=\ang{0.6}$, $\Delta d=\SI{0.1}{\mm}$.}
+  \label{tab:balmer-messung-okular}
 \end{table}
 
 Für jede der Linien wird der Abstand $\delta d$ der Peaks berechnet und daraus
@@ -534,9 +535,40 @@ der Winkelabstand $\delta \beta$ mithilfe von \eqref{eq:winkelunterschied}.
 Die Aufspaltung $\delta \lambda$ der Wellenlängen folgt dann aus \eqref{eq:balmer-aufspaltung}.
 Die resultierenden Werte sind in Tab. \ref{tab:balmer-aufspaltung-okular} gezeigt.
 \begin{table}
-  \caption{mit dem Okular gemessene Isotopieaufspaltung der Balmer-Linien}
+  \caption{mit dem Okular gemessene Isotopieaufspaltung der Balmer-Linien.}
   \label{tab:balmer-aufspaltung-okular}
 \end{table}
+
+Bei allen Linien liegt der Literaturwert im Fehlerbereich, die Fehler sind allerdings sehr groß,
+da das Ablesen anhand der Strichskala im Okular schwierig war.
+Um präzisere Messungen zu machen, setzen wir im Folgenden die CCD-Kamera ein.
+
+
+\subsubsection{Messung mit CCD-Kamera}
+wir ersetzen dem Versuchsaufbau (Abb. \ref{fig:balmer-aufbau}) das Okular mit der CCD-Kamera,
+welche über USB an einen Computer angeschlossen und dort mit einer speziellen Software ausgelesen werden kann. 
+dort lässt sich die Messung in Echtzeit Beobachten und auch die Belichtungszeit justieren.
+Die Software berechnet in Abhängigkeit der Pixel-Koordinate $p$ ($2048$ Pixel insgesamt) den Winkel $\gamma$ zur optischen Achse
+und trägt die Intensität $I/\%$ gegen $\gamma/°$ auf.
+\[
+  \gamma = \arctan\left( \frac{(1024-p)\cdot \SI{0.014}{\nm}}{f} \right)\ \cite{Anleitung}
+\]
+Dabei ist $f=\SI{300}{\mm}$ die Brennweite der Abbildungslinse.
+
+Um aus den CCD-Bildern die Positionen der sichtbaren Peaks zu extrahieren, wurde die an den Daten einen Fit der Form
+\[
+  I(\alpha) = B + G(\alpha; a_1, \mu_1, \sigma_1) + G(\alpha; a_2, \mu_2, \sigma_2)
+\]
+durchgeführt. Dabei wurde auf den Intensitäten ein Fehler von $\Delta I = 0.2\%$ angenommen.
+Der additive Parameter $B$ ermöglicht die Berücksichtigung einer eventuell vorhanden gleichmäßigen Grundausleuchtung
+und sorgt nach visueller Inspektion erfahrungsgemäß für bessere Anpassung der Gauß-Parameter an die Daten.
+Es werden die verallgemeinerten Gauß-Funktionen
+\[
+  G(xg a, \mu, \sigma) = a \exp(\frac{(x-b)^2}{2c^2})
+\]
+verwendet. 
+Die Plots mit Fit sind in Abb. \ref{fig:gauss-fit} gezeigt, die Parameter in Tab. \ref{tab:parameter}.
+
 
 
 
