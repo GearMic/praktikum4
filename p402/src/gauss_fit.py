@@ -41,8 +41,11 @@ def full_gauss_fit_for_lines():
     omegaG = np.array((13.8, 18.2, 37.0))
     alphaRange = np.array(((-0.5, 0.9), (-0.06, 0.04), (-0.2, 0.1)))
     p0 = ((20, -0.02, 0.05, 20, 0, 0.05, 40), (10, -0.03, 0.01, 20, 0, 0.02, 5), (20, -0.1, 0.02, 80, 0, 0.02, 5))
+    doFit = (False, True, True)
     inFilenames = tuple('p402/data/ccd/line%.1f.txt' % omega for omega in omegaG)
     outFilenames = tuple('p402/plot/line%.1f.pdf' % omega for omega in omegaG)
+    lowerBounds = np.array((0, -np.inf, 0, 0, -np.inf, 0, 0))
+    upperBounds = np.array((np.inf, np.inf, np.inf, np.inf, np.inf, np.inf, np.inf))
 
     params, paramsErr = np.zeros((len(omegaG), 7)), np.zeros((len(omegaG), 7))
     for i in range(len(inFilenames)):
@@ -54,14 +57,15 @@ def full_gauss_fit_for_lines():
         alpha, y, yErr = alpha[rangeMask], y[rangeMask], yErr[rangeMask]
 
         # fit data
-        lowerBounds = np.array((0, -np.inf, 0, 0, -np.inf, 0, 0))
-        upperBounds = np.array((np.inf, np.inf, np.inf, np.inf, np.inf, np.inf, np.inf))
-        param, paramErr = chisq_fit(
-            double_gauss_fn, alpha, y, yErr, p0=p0[i],
-            bounds = (lowerBounds, upperBounds))
+        param, paramErr = None, None
+        if doFit[i]:
+            param, paramErr = chisq_fit(
+                double_gauss_fn, alpha, y, yErr, p0=p0[i],
+                bounds = (lowerBounds, upperBounds))
 
-        params[i] = param
-        paramsErr[i] = paramErr
+            params[i] = param
+            paramsErr[i] = paramErr
+        
 
         fig, ax = plt.subplots()
 
@@ -71,8 +75,8 @@ def full_gauss_fit_for_lines():
         ax.grid(which='both')
 
         ax.set_title('Linien bei $\\omega_G=%.1f°$' % omegaG[i])
-        ax.set_xlabel('Position $\\alpha$/°')
-        ax.set_ylabel('Intensität $I$/%')
+        ax.set_xlabel(r'Position $\gamma$/°')
+        ax.set_ylabel(r'Intensität $I$/\%')
         fig.savefig(outFilenames[i])
 
     mu1, mu1Err = params[:, 1], paramsErr[:, 1]
@@ -88,7 +92,7 @@ def full_gauss_fit_for_lines():
     paramsFrame = pd.DataFrame({
         r'$\alpha/°$': alpha, r'$\beta/°$': beta,
         r'$\mu_1/°$': mu1, r'$\Delta\mu_1/°$': mu1Err, r'$\mu_2/°$': mu2, r'$\Delta\mu_2/°$': mu2Err,
-        r'\delta\beta/°': deltaBeta, r'\Delta\delta\beta/°': deltaBetaErr, 
+        r'$\delta\beta/°$': deltaBeta, r'$\Delta\delta\beta/°$': deltaBetaErr, 
     })
     paramsFrame.to_csv('p402/data/balmer_gauss_fit.csv', index=False)
 

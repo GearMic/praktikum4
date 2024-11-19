@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from scipy.constants import h, c, e
+from scipy.constants import h, c, e, epsilon0, m_e
 from lattice_constant import get_lattice_constant
 from gauss_fit import full_gauss_fit_for_lines
 from helpers import *
@@ -38,6 +38,12 @@ def get_isotropy_data(beta, betaErr, deltaBeta, m, lbda, lbdaErr, deltaBetaErr):
     })
     return isotropyData
 
+def calc_h_from_ryd(R, Rerr):
+    gamma = (m_e*e**4/(8*c*epsilon0**2))**(1/3)
+    h = gamma / R**(1/3)
+    hErr = h/3/R*Rerr
+    return h, hErr
+
 
 g, gErr = get_lattice_constant('p402/data/balmer_Hg.csv', 'p402/data/balmer_Hg_analysis.csv', 'p402/plot/fit-gitterkonstante.pdf')
 
@@ -72,6 +78,10 @@ mask = m!=0
 y, yErr, x = y[mask], yErr[mask], x[mask]
 
 params, paramsErr = chisq_fit(linear_fn, x, y, yErr)
+rydbergMean, rydbergMeanErr = mean_mean_err(params[0]*4, np.abs(params[1]), paramsErr[0]*4, paramsErr[1])
+print('rydberg fit /1e7:', params/1e7, paramsErr/1e7)
+print('rydberg mean /1e7', rydbergMean/1e7, rydbergMeanErr/1e7)
+print('h', 'asdf')
 
 fig, ax = plt.subplots()
 ax.errorbar(x, y, yErr, fmt='x', color='xkcd:blue', label='Messdaten')
@@ -81,6 +91,7 @@ ax.plot(xFit, yFit, color='xkcd:red', label='Ausgleichsgerade')
 
 ax.set_xlabel(r'$1/m^2$')
 ax.set_ylabel(r'$\frac{1}{\lambda}\,/\,\frac{1}{\mathrm{m}}$')
+ax.grid()
 fig.savefig('p402/plot/rydberg_fit.pdf')
 
 
