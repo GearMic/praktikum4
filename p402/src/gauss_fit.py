@@ -96,4 +96,5 @@ def full_gauss_fit_for_lines():
     })
     paramsFrame.to_csv('p402/data/balmer_gauss_fit.csv', index=False)
 
-    return alpha, beta, deltaBeta, betaErr, deltaBetaErr, paramsFrame
+    # return alpha, beta, deltaBeta, betaErr, deltaBetaErr, paramsFrame
+    return np.deg2rad(alpha), np.deg2rad(beta), np.deg2rad(deltaBeta), np.deg2rad(betaErr), np.deg2rad(deltaBetaErr), paramsFrame
