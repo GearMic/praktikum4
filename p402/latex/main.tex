@@ -109,7 +109,13 @@
 
 \section*{Einleitung}
 
-
+In diesem Versuchteil werden sowohl der Photoeffekt als auch die Quantelung von Energie untersucht, um wichtige
+ physikalische Konzepte zu verstehen und zu verifizieren. Zu Beginn wird mithilfe einer Photozelle 
+ die Quantelung der Lichtenergie und die Abhängigkeit der Energie des Lichts von der Frequenz 
+ analysiert. Hierbei wird das Plancksche Wirkungsquantum und die Austrittsarbeit des 
+ Anodenmaterials bestimmt. Der Zusammenhang zwischen der Frequenz des Lichts und der Energie des 
+ Photoeffekts wird experimentell ermittelt, und auf dieser Basis wird das Plancksche Wirkungsquantum 
+ berechnet sowie die Austrittsarbeit des Materials geschätzt.
 \section{Teil l: Bestimmung des Planckschen Wirkungsquantum}
   \subsection{Theorie}
 
@@ -119,11 +125,7 @@
      und diese Energie muss ausreichen, um die Bindungsenergie des Elektrons, die sogenannte 
      Austrittsarbeit, zu überwinden. Wenn ein Photon auf ein Elektron trifft, wird ein Teil 
      seiner Energie verwendet, um das Elektron aus dem Metall zu befreien, während der Rest 
-     als kinetische Energie des Elektrons übertragen wird. Die Intensität des
-       Lichts beeinflusst die Anzahl der herausgelösten Elektronen, nicht aber deren Energie.
-       Eine höhere Intensität bedeutet, dass mehr Photonen auf das Metall treffen und somit 
-       mehr Elektronen herausgelöst werden, aber die Energie der Elektronen bleibt gleich, 
-       solange die Frequenz des Lichts konstant bleibt.
+     als kinetische Energie des Elektrons übertragen wird. 
        
     \subsubsection{Photozelle}
     Die Photozelle ist ein Gerät, das das Prinzip des Photoeffekts nutzt, um Lichtenergie in 
@@ -135,13 +137,17 @@
     liefern. Die Kathode besteht aus einem Material mit geringer Austrittsarbeit, wie 
     beispielsweise Zink, das die Elektronen leicht freisetzt, wenn es beleuchtet wird. Die 
     Intensität des Lichts bestimmt dabei, wie viele Elektronen freigesetzt werden, während 
-    die Frequenz des Lichts die Energie der Elektronen beeinflusst. Der erzeugte Strom ist proportional zur Lichtintensität, was 
-    bedeutet, dass bei stärkerem Licht mehr Elektronen freigesetzt werden und somit ein 
-    größerer Strom fließt.
+    die Frequenz des Lichts die Energie der Elektronen beeinflusst. (siehe Abbildung [\ref*{fig:photozelle}])
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=.25\linewidth]{Photozelle.jpg}
+      \caption{Photozelle}
+      \label{fig:photozelle}
+    \end{figure}
 
 
     \subsubsection{Gegenfeldmethode}
-    Die Gegenfeldmethode wird häufig verwendet, um die Austrittsarbeit \( W_A \) eines Materials 
+    Die Gegenfeldmethode wird heute verwendet, um die Austrittsarbeit \( W_A \) eines Materials 
     zu bestimmen. Dabei wird eine gegensätzliche elektrische Spannung in einer Photozelle erzeugt,
      die das emittierte Elektron ablenkt. Die Spannung, die benötigt wird, um den Elektronenstrom
       vollständig zu stoppen, ist eine direkte Messung der Austrittsarbeit des Materials. In 
@@ -167,13 +173,11 @@ Zusammengefasst ermöglichen die Messungen des Photoeffekts in einer Photozelle 
 Verwendung der Gegenfeldmethode eine präzise Bestimmung der Austrittsarbeit eines Materials 
 sowie der Beziehung zwischen der Lichtfrequenz und der Energie der herausgelösten Elektronen.
 
-    
-\clearpage
 \subsection{Aufbau und Durchführung}
 \begin{figure}[h!]
   \centering
   \includegraphics[width=.8\linewidth]{Aufbau_Wirkugsquantum}
-  \caption{Auftragung der ersten Messung für $ \lambda =365nm$}
+  \caption{Aufbau der Photoelektrische Bestimmung des Planckschen Wirkungsquantum}
   \label{fig:aufbau_wirkungs}
 \end{figure}
 
@@ -198,13 +202,7 @@ scharfes Bild der Irisblende entsteht und die Ringanode dabei nicht vom Lichtstr
 wird.
 
 \subsubsection*{Durchführung}
-Beide schwarzen Kabel der Photozelle (Anodenanschluss) werden mit demselben Ausgang des 
-Netzgerätes verbunden. Dabei ist auf die korrekte Polung zu achten. Der Kathodenanschluss 
-(weißes Kabel mit BNC-Stecker) wird mit dem entsprechenden Anschluss des Messverstärkers 
-verbunden. Ein eventuell vorhandener Offset des Ausgangssignals des Messverstärkers muss 
-beseitigt werden. Weiterhin wird der zweite Ausgang der regelbaren Spannung des Netzgerätes 
-mit dem Masseanschluss des Messverstärkers verbunden. Die Digitalmultimeter sind so 
-anzuschließen, dass sowohl der Photostrom als auch die Gegenspannung gemessen werden können.
+Die Digitalmultimeter sind nun so anzuschließen, dass sowohl der Photostrom als auch die Gegenspannung gemessen werden können.
 Zunächst wird das Interferenzfilter gewählt, das das energiereichste Licht durchlässt. 
 Die Gegenspannung wird so lange variiert, bis der Photostrom verschwindet. Es kann festgestellt 
 werden, dass die benötigte Gegenspannung deutlich niedriger ist als die vom Netzgerät maximal 
@@ -212,7 +210,7 @@ bereitgestellte Spannung von 12 V.
 
 Aus den vorhandenen Widerständen wird eine sinnvolle Auswahl getroffen, um den Versuchsaufbau
  um eine Spannungsteilerschaltung zu erweitern, die einen geeigneten Spannungsbereich für die
-  Messungen liefert. Dieser Aufbau wird für die gesamte Messung beibehalten.
+  Messungen liefert. Nun ist die maximale Spannung 2.8 V und bleibt so für den ganzen Versuch.
 
 Für die Messung wird zunächst eine Wellenlänge mittels des Filterrads ausgewählt. 
 Es wird die größtmögliche Gegenspannung eingestellt, und der Anodenphotostrom $I_0$ 
@@ -221,17 +219,9 @@ Kathode gelangen. Anschließend wird die Gegenspannung variiert, um grob die Gre
  $U_0$ zu bestimmen, bei der der Photostrom verschwindet. Es wird die Kennlinie der 
  Photozelle aufgenommen, indem die Gegenspannung von $U = 0\,\mathrm{V}$ bis zu einer 
  Spannung variiert wird, bei der der Photostrom den Wert von $I_0$ erreicht. Dabei 
- werden Messpunkte in geeigneten Abständen aufgenommen; insbesondere ist darauf zu achten, 
+ werden Messpunkte in geeigneten Abständen (200mV-Schritte) aufgenommen; insbesondere ist darauf zu achten, 
  dass im quadratischen Bereich der Kennlinie genügend Messpunkte vorliegen.
-Diese Messung wird für alle Wellenlängen durchgeführt ($I_0$, $U_0$, Kennlinie). 
 Die Messungen der Kennlinien werden zweimal wiederholt, da die Intensität der Hg-Lampe schwankt.
-
-Das Interferenzfilter mit der Durchlasswellenlänge $\lambda = 365\,\mathrm{nm}$ wird in den 
-Strahlengang gestellt. Die erste Irisblende wird so angepasst, dass der Photostrom bei 
-$U = 0\,\mathrm{V}$ deutlich größer wird. Führt eine Öffnung der Blende nicht zu einer 
-Erhöhung des Photostroms, wird der Blendendurchmesser so weit verringert, bis eine deutliche 
-Abnahme des Photostroms um $30\%-50\%$ beobachtet werden kann. Die Kennlinie der Photozelle 
-wird für diese Wellenlänge wie zuvor beschrieben bei dieser niedrigeren Intensität aufgenommen.
 
 \subsection{Auswertung}
 Um die Energiebilanz in der Photozelle zu bestimmen, werden die Anoden- und Kathodenmaterialien 
@@ -396,10 +386,30 @@ Diese Beobachtung lässt sich quantenmechanisch erklären: Bei höherer Lichtint
 treffen mehr Photonen auf das Material, wodurch mehr Elektronen aus der Metalloberfläche 
 herausgelöst werden.
 
-
-
-
 \subsection{Diskussion}
+
+Die Untersuchung der Photoeffekts wurde experimentell erfolgreich durchgeführt. Unser
+Messergebnis für den Wirkungsquantum $h$ lag nah und stimmt innerhalb der Literaturwert $h_{theo}$ 
+überrein.
+
+\begin{align}
+  h_{exp} &= (6.55 \pm 0.48) \times 10^{-34} \, \mathrm{Js}\\
+  \displaystyle h_{theo} &= 6{,}626\,070\,15\cdot 10^{-34}\;\mathrm {Js} 
+\end{align}
+Noch dazu wurde die Austrittsarbeit $W_A$ mit dem Literaturwert aus Quelle \cite{surface-science}
+\begin{align}
+  \abs*{W_A (\text{Pt-Rh})}_{exp} = (2.64 \pm 0.29) \times 10^{-19}\text{J} \\
+  W_A (\text{Pt-Rh})_{theo} = (8.17 \pm 1.60) \times 10^{-19} \, \text{J} 
+\end{align}
+Dieser Wert lag deutlich von dem erwarteten Wert ab. Die Messungenauigkeit kann jedoch 
+mehrere Ursachen haben. Möglicherweise waren die Justierung der Messgeräte und die 
+Dunkelheit im Experimentierraum nur einige der Gründe. Ein weiteres bedeutendes Problem 
+war die Sensibilität der Messgeräte. Es wurde experimentell beobachtet, dass bereits eine 
+leichte Berührung des Anodenanschlusses zum Netzgerät oder der Schlüssel der beiden 
+Digitalmultimeter zu großen Schwankungen führte, was unser Ergebnis sicherlich 
+beeinflusst haben könnte.
+\\ Außerdem wurde die Abhängigkeit der Intensität und Photostrom diskutiert. 
+
 \clearpage
 \section{Balmer-Serie}
 Es soll anhand einer Balmer-Lampe die Balmer-Serie von Spektrallinien des Wasserstoffs beobachtet und aus den Ergebnissen
@@ -576,8 +586,24 @@ Die resultierenden Werte sind in Tab. \ref{tab:balmer-aufspaltung-okular} gezeig
 
 \clearpage
 \section{Fazit}
-
-
+Im ersten Versuchteil wurde durch quantitative Vermessung die Quantelung von Energie sowie 
+Photoeffekt gezeigt. Dazu wurde eine Proportionalität zwischen Frequenz und Grenzspannung
+verifizieren, wobei das Plancksche Wirkungsquantum und Austrittsarbeit der Anode 
+bestimmt wurden. 
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{|c|c|c|}
+  \hline
+  \textbf{Parameter} & \textbf{Experimentell (exp)} & \textbf{Theoretisch (theo)} \\
+  \hline
+  \( h \) (Plancksches Wirkungsquantum) & \( (6.55 \pm 0.48) \times 10^{-34} \, \text{Js} \) & \( 6{,}626\,070\,15 \times 10^{-34} \, \text{Js} \) \\
+  \hline
+  \( W_A (\text{Pt-Rh}) \) (Austrittsarbeit) & \( (2.64 \pm 0.29) \times 10^{-19} \, \text{J} \) & \( (8.17 \pm 1.60) \times 10^{-19} \, \text{J} \) \\
+  \hline
+  \end{tabular}
+  \label{tab:vergleich}
+  \end{table}
+  
 \clearpage
 \section{Anhang}
 
@@ -927,6 +953,8 @@ Wikipedia-Autoren, \textit{Elementarladung -- Wikipedia}, \url{https://de.wikipe
 \bibitem{planckkonstante}
 Wikipedia-Autoren, \textit{Planck-Konstante -- Wikipedia}, \url{https://de.wikipedia.org/wiki/Planck-Konstante}, Abruf 19.11.2024
 
+\bibitem{surface-science}
+Kittel, C., \textit{Introduction to Solid State Physics}, 8th Edition, Wiley, 2004, p. 156.
 
 \end{thebibliography}
 
