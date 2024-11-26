@@ -1,0 +1,965 @@
+[DataSet]
+Version=2
+GroupCount=2
+Gr0-Name=Scan forward
+Gr0-ID=0
+Gr0-Count=8
+Gr1-Name=Scan backward
+Gr1-ID=0
+Gr1-Count=8
+Gr0-Ch0=DataSet-0:0
+Gr0-Ch1=DataSet-0:1
+Gr1-Ch0=DataSet-1:0
+Gr1-Ch1=DataSet-1:1
+SetInfos=DataSet-Info
+InfoSetCount=3
+InfoSet0=DataSetInfos
+InfoSet1=Calibration
+InfoSet2=Parameters
+
+[DataSet-Info]
+-- Scan --=--------
+Image size=4nm
+Scan direction=Up
+Time/Line=25,7ms
+Points=128 
+Lines=128 
+X-Slope=0 б╟
+Y-Slope=0 б╟
+Rotation=0 б╟
+X-Pos=-10,5nm
+Y-Pos=33,6nm
+Z-Plane=0 m
+Line mode=Standard
+Date=21-11-2024
+Time=12:56:28
+-- Approach --=--------
+Setpoint=1nA
+P-Gain=0 
+I-Gain=4 
+D-Gain=0 
+P-Gain2=0 
+I-Gain2=0 
+D-Gain2=0 
+Tip voltage=200mV
+Feedback mode=Free
+Feedback algo.=Adaptive PID
+Error range=200nA
+Ampl. Ctrl. mode=Const. Drive
+-- Global --=--------
+Op. mode=STM
+Head type=STM
+Scan head=61-16-138.hed
+Software ver.=3.8.8.4
+Firmware ver.=3.8.1.0
+Controller S/N=061-16-138
+-- Module --=--------
+Controller Board=2
+USB Module=4
+
+[DataSet\DataSetInfos]
+SubSectionCount=4
+SubSection0=Scan
+SubSection1=Approach
+SubSection2=Global
+SubSection3=Module
+
+[DataSet\DataSetInfos\Scan]
+SubSectionCount=0
+Image size=4nm
+Scan direction=Up
+Time/Line=25,7ms
+Points=128 
+Lines=128 
+X-Slope=0 б╟
+Y-Slope=0 б╟
+Rotation=0 б╟
+X-Pos=-10,5nm
+Y-Pos=33,6nm
+Z-Plane=0 m
+Line mode=Standard
+Date=21-11-2024
+Time=12:56:28
+
+[DataSet\DataSetInfos\Approach]
+SubSectionCount=0
+Setpoint=1nA
+P-Gain=0 
+I-Gain=4 
+D-Gain=0 
+P-Gain2=0 
+I-Gain2=0 
+D-Gain2=0 
+Tip voltage=200mV
+Feedback mode=Free
+Feedback algo.=Adaptive PID
+Error range=200nA
+Ampl. Ctrl. mode=Const. Drive
+
+[DataSet\DataSetInfos\Global]
+SubSectionCount=0
+Op. mode=STM
+Head type=STM
+Scan head=61-16-138.hed
+Software ver.=3.8.8.4
+Firmware ver.=3.8.1.0
+Controller S/N=061-16-138
+
+[DataSet\DataSetInfos\Module]
+SubSectionCount=0
+Controller Board=2
+USB Module=4
+
+[DataSet\Calibration]
+SubSectionCount=2
+SubSection0=Scanhead
+SubSection1=Cantilever
+
+[DataSet\Calibration\Scanhead]
+SubSectionCount=0
+Version=6
+HeadTyp=STM
+SerialNo=uncal STM
+RevisionNo=1
+ScanFit=None
+CtrlInPol=Positiv
+Main1InPol=Positiv
+Main2InPol=Positiv
+SignalUserADC0Pol=Positiv
+SignalUserADC1Pol=Positiv
+SignalUserADC2Pol=Positiv
+AnalogOut2Pol=Negativ
+AnalogOut3Pol=Negativ
+XAxisPol=Positiv
+YAxisPol=Positiv
+ZAxisPol=Positiv
+ZAxisAnalogOut2Pol=Negativ
+ZAxisAnalogOut3Pol=Negativ
+Ch0Corr=Sub
+SetPointCheck=Equal
+InCount=24
+In0=0,Channel0,Tip Current,A,1e-07,0
+In1=1,Channel1,Z-Axis,m,1e-07,0
+In2=2,Channel2,Not defined,V,35,0
+In3=3,Channel3,Not defined 1,V,10,0
+In4=4,Channel4,Not defined,V,10,0
+In5=5,TipSignalDC,Tip Current,A,1e-07,0
+In6=6,TipSignalAC,Not defined,V,10,0
+In7=7,TipPhase,Not defined,V,90,0
+In8=8,Lever Current,Not defined,V,10,0
+In9=9,User Input0,User input 1,V,10,0
+In10=10,User Input1,User input 2,V,10,0
+In11=11,HeadSig2,Not defined 1,V,10,0
+In12=12,Channel5,User input 1,V,10,0
+In13=13,Channel6,User input 2,V,10,0
+In14=15,Dissipation,Dissipation,V,5,0
+In15=16,TipSignalDC1,Deflection,V,10,0
+In16=17,TipSignalDC2,Deflection,N,1,0
+In17=18,SensorSignal1,SensorSignal,W,0.005,0
+In18=19,SensorSignal2,SensorSignal,A,0.0005,0
+In19=20,Channel7,Z-Axis,m,1e-07,0
+In20=21,XAxisSensor,X-Axis Sensor,m,0.0001,0
+In21=22,YAxisSensor,Y-Axis Sensor,m,0.0001,0
+In22=23,ZAxisSensor,Z-Axis Sensor,m,1e-05,0
+In23=24,User Input2,User In A,V,10,0
+OutCount=9
+Out0=0,ScanAxis0,X-Axis,m,2.875e-07,0
+Out1=1,ScanAxis1,Y-Axis,m,2.9e-07,0
+Out2=2,ScanAxis2,Z-Axis,m,1e-07,0
+Out3=4,AnalogOut0,Tip voltage,V,10,0
+Out4=5,AnalogOut1,Not defined,V,10,0
+Out5=6,AnalogOut2,User Output 1,V,10,0
+Out6=7,AnalogOut3,User Output 2,V,10,0
+Out7=8,DriveAmp,Not defined,V,1,0
+Out8=9,MixedOut4,User Output C,V,10,0
+ScanCorrCount=1
+ScanCorrA=0
+ScanCorrB=0
+ScanCorrC=0
+ScanCorrD=0
+ScanCorrE=0
+ScanCorrF=0
+ScanCorrG=0
+ScanCorrH=0
+ScanCorrI=0
+ScanCorrJ=0
+ScanCorrK=0
+ScanCorrL=0
+ScanCorrM=0
+ScanCorrN=0
+ScanCorrO=0
+ScanCorrTableRot=0
+ScanCorrRotX=0
+ScanCorrRotY=0
+ScanScaleZ=3276.8
+ScanScaleXY=256
+ZRangeFit=None
+ZRangeCorrCount=1
+ZRangeCorrA=1
+ZRangeCorrB=0
+ZRangeCorrC=0
+ZRangeCorrD=0
+ApproachStartPos=-1
+MaxApproachSpeed=0.65
+ManualMoveSpeed=1
+DefaultDynRefAmp=0.05
+DefaultDynRefAmpLiquid=0.2
+DefaultDynRefAmpVacuum=0.005
+DefaultForceModRefAmp=1
+DetectorABGainAC=3.5
+CompDcSourceWithX=0
+CompDcWithX=0
+CompDcSourceWithY=0
+CompDcWithY=0
+CompDcSourceWithZ=0
+CompDcWithZ=0
+VideoSupport=1
+HasLaserOnOffCtrl=0
+XYCLPIDGainsX=1.000000;1.000000;1.000000
+XYCLPIDGainsY=1.000000;1.000000;1.000000
+XZeroVoltage=0
+YZeroVoltage=0
+ZZeroVoltage=0
+ScanAxis0FilterCoeff0=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis0FilterCoeff1=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis0FilterCoeff2=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis0FilterCoeff3=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis1FilterCoeff0=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis1FilterCoeff1=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis1FilterCoeff2=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis1FilterCoeff3=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis2FilterCoeff0=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis2FilterCoeff1=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis2FilterCoeff2=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis2FilterCoeff3=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+HasXPositionSensor=0
+XPositionSensorPol=Negativ
+HasYPositionSensor=0
+YPositionSensorPol=Negativ
+HasZPositionSensor=0
+ZPositionSensorPol=Negativ
+ApproachStatusMode=1
+ApproachStatusPol=Positiv
+ApproachStatusMeterRange=-1;-0.9;0.9;1
+SensorStatusMode=1
+SensorStatusPol=Negativ
+SensorStatusMeterRange=0.0866142;0.102362;0.102362;0.811024;0.811024;0.913386
+LaserWavelength=0
+
+[DataSet\Calibration\Cantilever]
+SubSectionCount=0
+Version=2
+GUID={7C725C17-AB98-465d-AADA-D6D453C769DA}
+Manufacturer=STM Tip
+PropCount=14
+Prop0=D[0]*[N/m]
+Prop1=D[0]*[Hz]
+Prop2=D[0]*[m]
+Prop3=D[0]*[m]
+Prop4=D[0]*[]
+Prop5=D[0]*[Hz]
+Prop6=D[0]*[]
+Prop7=D[0]*[]
+Prop8=D[0]*[б╟]
+Prop9=D[0]*[m]
+Prop10=D[0]*[]
+Prop11=D[0]*[Hz]
+Prop12=D[0.3]*[]
+Prop13=D[1]*[]
+
+[DataSet\Parameters]
+SubSectionCount=7
+SubSection0=Approach
+SubSection1=ZFeedback
+SubSection2=Lithography
+SubSection3=Imaging
+SubSection4=SignalIO
+SubSection5=Spectroscopy
+SubSection6=SPMSystem
+
+[DataSet\Parameters\Approach]
+SubSectionCount=0
+ApproachSteps=L[10000]*[]
+WithdrawSteps=L[20]*[]
+AutoPeriode=D[0]*[s]
+MovePeriode=D[0]*[s]
+StepSlope=L[6]*[]
+AutoStartScan=B[0]*[]
+ApproachSpeed=D[0.700122]*[%]
+AFMApproachMode=L[0]*[]
+AFMMotorSource=L[0]*[]
+AFMStepByStepSpeed=D[1]*[]
+AFMStepByStepSlope=D[1e-06]*[m/s]
+AFMStepByStepFineStepSizePercentage=D[5]*[%]
+AFMStepByStepCoarseStepSizePercentage=D[90]*[%]
+AFMStepByStepMode=D[0]*[]
+
+[DataSet\Parameters\ZFeedback]
+SubSectionCount=0
+PGain=L[0]*[]
+IGain=L[4]*[]
+DGain=L[0]*[]
+PGain2=L[0]*[]
+IGain2=L[0]*[]
+DGain2=L[0]*[]
+SetPoint=D[1.00101e-09]*[A]
+SetPointForce=D[2e-08]*[N]
+SetPointDC=D[1.00101e-09]*[A]
+SetPointAmp=D[50]*[%]
+SetPointPhase=D[1]*[V]
+SetPointForceUnitMode=L[2]*[]
+SetPointForce_V=D[2e-07]*[]
+SetPointForce_m=D[2e-15]*[]
+SetPointForce_N=D[2e-08]*[]
+SetPointDeltaF_Hz=D[0]*[Hz]
+SetPointUserDefined=D[0]*[A]
+ChGainRegError=L[0]*[]
+FeedbackMode=L[0]*[]
+Algorithm=L[1]*[]
+RefFrq=D[170000]*[Hz]
+RefAmplitude=D[0.0499893]*[V]
+RefPhase=D[90.022]*[]
+CoarseSweepStartFrq=D[350]*[Hz]
+CoarseSweepEndFrq=D[650]*[Hz]
+CoarseSweepStepFrq=D[100.002]*[Hz]
+FineSweepStartFrq=D[130000]*[Hz]
+FineSweepEndFrq=D[210000]*[Hz]
+FineSweepStepFrq=D[100]*[Hz]
+ManualSweepStartFrq=D[130000]*[Hz]
+ManualSweepEndFrq=D[210000]*[Hz]
+ManualSweepStepFrq=D[100]*[Hz]
+AutoCalFrqPeak=B[1]*[]
+AutoCalPhase=B[1]*[]
+DynamicAmp=D[0.199744]*[V]
+CalRefPlotGraph=B[0]*[]
+ForceModFrq=D[20000]*[Hz]
+ForceModAmp=D[0.800012]*[V]
+AutoFrqSweepRange=B[1]*[]
+AmpCtrlMode=L[0]*[]
+FrqPeakReduceAir=D[20]*[%]
+FrqPeakUpperSideAir=B[1]*[]
+FrqPeakReduceLiquid=D[5]*[%]
+FrqPeakUpperSideLiquid=B[0]*[]
+FrqPeakReduceVacuum=D[20]*[%]
+FrqPeakUpperSideVacuum=B[1]*[]
+RegMoveMode=L[0]*[]
+DynamicMeasureBW=L[9]*[]
+RegOutputSel=L[0]*[]
+UserOpModeInputSel=L[3]*[]
+UserOpModeInputPol=L[0]*[]
+UserOpModePIDGainCorr=D[1]*[]
+UserOpModeDCOffsetMode=L[0]*[]
+UserOpModeDCOffsetAutoGain=D[10000]*[]
+CantileverExcitationMode=L[0]*[]
+
+[DataSet\Parameters\Lithography]
+SubSectionCount=0
+ModuleLevel=L[0]*[]
+OpMode=L[1]*[]
+InactivePenMode=L[0]*[]
+AutoChartSettings=B[1]*[]
+AutoCapture=B[1]*[]
+XYMoveSpeed=D[1e-05]*[m/s]
+ZMoveSpeed=D[1e-06]*[m/s]
+LiftTipAbsZPos=D[0]*[m]
+
+[DataSet\Parameters\Imaging]
+SubSectionCount=0
+ModuleLevel=L[1]*[]
+ScanRange=V[4e-09,4e-09,0]*[m,m,m]
+ScanOffset=V[-1.05469e-08,3.35938e-08,0]*[m,m,m]
+ScanRotation=V[0,0,0]*[б╟,б╟,б╟]
+ScanTime=V[0.025654,0.025654,0]*[s,s,s]
+Datapoints=V[128,128,0]*[,,]
+ScanMode=L[0]*[]
+OverScanSize=D[0]*[%]
+FirstScanlineRep=L[1]*[]
+SyncOutMode=L[0]*[]
+LineScanning=L[0]*[]
+RelTipPos=D[5e-09]*[m]
+ContourEnabled=B[0]*[]
+AutoReadjustProbeEnabled=B[0]*[]
+ReadjustLiftHeight=D[0]*[m]
+SndScanDynamicAmplitude=D[0]*[V]
+SndScanDynamicAmplitudeEnabled=B[0]*[]
+SndScanForceModulationAmplitude=D[0]*[V]
+SndScanForceModulationAmplitudeEnabled=B[0]*[]
+SndScanEnableDarkMode=B[0]*[]
+SndScanEnableKPFM=B[0]*[]
+SndScanSndLockInExcitationAmplitude=D[0]*[]
+SndScanSndLockInExcitationAmplitudeEnabled=B[0]*[]
+XYMoveSpeed=D[5e-05]*[m/s]
+AutoSlopeCorrection=B[0]*[]
+AutoDeleteBuffer=B[1]*[]
+AutoChartSettings=B[1]*[]
+AutoCapture=B[1]*[]
+SpikeGuardEnable=B[0]*[]
+PrescanSpeedup=L[0]*[]
+
+[DataSet\Parameters\SignalIO]
+SubSectionCount=0
+UserDAC0=D[0]*[V]
+UserDAC1=D[0]*[V]
+EnableUserADC0=B[0]*[]
+EnableUserADC1=B[0]*[]
+EnableUserADC2=B[0]*[]
+TipSignalMode=L[0]*[]
+ExcitationMode=L[0]*[]
+MonitorOut0=L[0]*[]
+MonitorOut1=L[0]*[]
+EnableUserADC1ZSensor=B[0]*[]
+User0CtrlMode=L[0]*[]
+User0InputPol=L[0]*[]
+User0OutputFlag=L[0]*[]
+User0SetPoint=D[0]*[V]
+User0IGain=L[1000]*[]
+
+[DataSet\Parameters\Spectroscopy]
+SubSectionCount=0
+ModuleLevel=L[0]*[]
+OutputType=L[0]*[]
+Repetition=L[1]*[]
+RepetitionMode=L[0]*[]
+FwModTime=D[12.7996]*[s]
+BwModTime=D[6.5532]*[s]
+ModRelValue=B[1]*[]
+FwModDatapoints=L[32767]*[]
+BwModDatapoints=L[256]*[]
+SyncOutMode=L[0]*[]
+FeedbackActive=B[0]*[]
+AutoChartSettings=B[1]*[]
+AutoCapture=B[1]*[]
+SpecEndMode=L[1]*[]
+FwModRange=D[1.27996e-07]*[m]
+BwModRange=D[-1e-08]*[m]
+XYMoveSpeed=D[1e-05]*[m/s]
+StartOffset=D[-1e-08]*[m]
+StartOffsetMoveSpeed=D[2e-08]*[m/s]
+FwModMode=L[0]*[]
+BwModMode=L[0]*[]
+FwModStopValue=D[5.00504e-09]*[A]
+BwModStopValue=D[0]*[A]
+FwModStopMode=L[1]*[]
+BwModStopMode=L[1]*[]
+FwPauseTime=D[0]*[s]
+BwPauseTime=D[0]*[s]
+FwPauseDatapoints=L[0]*[]
+BwPauseDatapoints=L[0]*[]
+FwPauseMode=L[0]*[]
+BwPauseMode=L[0]*[]
+AutoRecalibrateProbeInterval=L[0]*[]
+PressurePulseValue=D[0]*[bar]
+PressurePulseDuration=D[0]*[s]
+PressurePulseRelative=B[0]*[]
+PressurePulseActive=B[0]*[]
+PressureActionId=L[0]*[]
+ModulationStopValueBandwidth=L[0]*[]
+
+[DataSet\Parameters\SPMSystem]
+SubSectionCount=0
+AOut0=D[0.199896]*[V]
+AOut1=D[0]*[V]
+SPMMode=L[1]*[]
+VideoFPSControlValueMin=D[1.5]*[]
+VideoFPSControlWindowSize=L[5]*[]
+VideoTopLight=D[100]*[%]
+VideoSideLight=D[100]*[%]
+VideoTopBrightness=D[80]*[]
+VideoSideBrightness=D[80]*[]
+VideoTopContrast=D[70]*[]
+VideoSideContrast=D[70]*[]
+FlexVideoTopExpTime=L[60]*[]
+FlexVideoSideExpTime=L[60]*[]
+FlexVideoTopGain=L[8]*[]
+FlexVideoSideGain=L[8]*[]
+FlexVideoTopADCLevel=L[2]*[]
+FlexVideoSideADCLevel=L[2]*[]
+FlexVideoTopRatioR=D[1]*[]
+FlexVideoSideRatioR=D[1]*[]
+FlexVideoTopRatioG=D[1]*[]
+FlexVideoSideRatioG=D[1]*[]
+FlexVideoTopRatioB=D[1]*[]
+FlexVideoSideRatioB=D[1]*[]
+FlexVideoTopRatioGamma=D[1]*[]
+FlexVideoSideRatioGamma=D[1]*[]
+FlexVideoTopAutoLevels=B[1]*[]
+FlexVideoSideAutoLevels=B[1]*[]
+FlexVideoTopFRTPointerX=D[0]*[]
+FlexVideoSideFRTPointerX=D[0]*[]
+FlexVideoTopFRTPointerY=D[0]*[]
+FlexVideoSideFRTPointerY=D[0]*[]
+HighResVideoTopExpTime=L[60]*[]
+HighResVideoSideExpTime=L[60]*[]
+HighResVideoTopGain=L[25]*[]
+HighResVideoSideGain=L[8]*[]
+HighResVideoSideADCLevel=L[2]*[]
+HighResVideoTopRatioR=D[1]*[]
+HighResVideoSideRatioR=D[1]*[]
+HighResVideoTopRatioG=D[0.8]*[]
+HighResVideoSideRatioG=D[1]*[]
+HighResVideoTopRatioB=D[0.8]*[]
+HighResVideoSideRatioB=D[1]*[]
+HighResVideoTopRatioGamma=D[0.9]*[]
+HighResVideoSideRatioGamma=D[1]*[]
+HighResVideoTopAutoLevels=B[1]*[]
+HighResVideoSideAutoLevels=B[1]*[]
+HighResVideoTopADCLevel=L[2]*[]
+HighResVideoTopFRTPointerX=D[0]*[]
+HighResVideoSideFRTPointerX=D[0]*[]
+HighResVideoTopFRTPointerY=D[0]*[]
+HighResVideoSideFRTPointerY=D[0]*[]
+ImSoVideoTVConfiguration=S[]*[]
+ImSoVideoSVConfiguration=S[]*[]
+ActiveSensorByGUID=S[{7C725C17-AB98-465d-AADA-D6D453C769DA}]*[]
+MeasEnv=L[0]*[]
+SystemStateIdleZAxisMode=L[0]*[]
+SystemStateIdleMixOut4Mode=L[3]*[]
+SystemStateIdleXYAxisMode=L[0]*[]
+SystemStateIdleZAxisValue=D[0]*[m]
+SndOpModeEnabled=B[0]*[]
+SndOpMode=L[0]*[]
+ZClosedLoopMode=L[0]*[]
+ZClosedLoopSpeed=D[1000]*[]
+XYClosedLoopEnabled=B[0]*[]
+XYClosedLoopSpeed=D[1000]*[]
+
+[DataSet-0:0]
+Version=2
+Points=128
+Lines=128
+Frame=Scan forward
+CurLine=127
+Dim0Name=X*
+Dim0Unit=m
+Dim0Range=4e-09
+Dim0Min=0
+Dim1Name=Y*
+Dim1Unit=m
+Dim1Range=4e-09
+Dim1Min=0
+Dim2Name=Tip Current
+Dim2Unit=A
+Dim2Range=2e-07
+Dim2Min=-1e-07
+SaveMode=Binary
+SaveBits=16
+SaveSign=Signed
+SaveOrder=Intel
+
+[DataSet-0:1]
+Version=2
+Points=128
+Lines=128
+Frame=Scan forward
+CurLine=127
+Dim0Name=X*
+Dim0Unit=m
+Dim0Range=4e-09
+Dim0Min=0
+Dim1Name=Y*
+Dim1Unit=m
+Dim1Range=4e-09
+Dim1Min=0
+Dim2Name=Z-Axis
+Dim2Unit=m
+Dim2Range=2e-07
+Dim2Min=-1e-07
+SaveMode=Binary
+SaveBits=16
+SaveSign=Signed
+SaveOrder=Intel
+
+[DataSet-1:0]
+Version=2
+Points=128
+Lines=128
+Frame=Scan backward
+CurLine=127
+Dim0Unit=m
+Dim0Range=4e-09
+Dim0Min=0
+Dim1Unit=m
+Dim1Range=4e-09
+Dim1Min=0
+Dim2Name=Tip Current
+Dim2Unit=A
+Dim2Range=2e-07
+Dim2Min=-1e-07
+SaveMode=Binary
+SaveBits=16
+SaveSign=Signed
+SaveOrder=Intel
+
+[DataSet-1:1]
+Version=2
+Points=128
+Lines=128
+Frame=Scan backward
+CurLine=127
+Dim0Unit=m
+Dim0Range=4e-09
+Dim0Min=0
+Dim1Unit=m
+Dim1Range=4e-09
+Dim1Min=0
+Dim2Name=Z-Axis
+Dim2Unit=m
+Dim2Range=2e-07
+Dim2Min=-1e-07
+SaveMode=Binary
+SaveBits=16
+SaveSign=Signed
+SaveOrder=Intel
+
+[SetView]
+ViewWidth=638
+ViewHeight=526
+ViewCount=4
+View0=SetView-View0
+View1=SetView-View1
+View2=SetView-View2
+View3=SetView-View3
+
+[SetView-View0]
+ViewTyp=1
+LineOp=2
+Channel=1
+Frame=0
+ViewSize=256
+ViewMode=0
+GraphMode=1
+AspectRatio=0
+AutoZRange=1
+ZRange=-1,0
+ParCount=6
+Par0=1,Shading,0
+Par1=1,DeltaGain,5
+Par2=1,Smooth,0
+Par3=1,DriverInstanceNo,0
+Par4=1,RangeMin,0
+Par5=1,RangeMax,95
+
+[SetView-View1]
+ViewTyp=0
+LineOp=1
+Channel=1
+Frame=0
+ViewSize=256
+ViewMode=0
+GraphMode=1
+AspectRatio=0
+AutoZRange=1
+ZRange=-6,602
+ParCount=3
+Par0=0,ReverseLine,1
+Par1=0,XAxisMin,0
+Par2=0,XAxisMax,4e-09
+
+[SetView-View2]
+ViewTyp=1
+LineOp=2
+Channel=0
+Frame=0
+ViewSize=256
+ViewMode=0
+GraphMode=1
+AspectRatio=0
+AutoZRange=1
+ZRange=-86,78
+ParCount=6
+Par0=1,Shading,0
+Par1=1,DeltaGain,5
+Par2=1,Smooth,0
+Par3=1,DriverInstanceNo,0
+Par4=1,RangeMin,0
+Par5=1,RangeMax,95
+
+[SetView-View3]
+ViewTyp=0
+LineOp=1
+Channel=0
+Frame=0
+ViewSize=256
+ViewMode=0
+GraphMode=1
+AspectRatio=0
+AutoZRange=1
+ZRange=-269,545
+ParCount=3
+Par0=0,ReverseLine,1
+Par1=0,XAxisMin,0
+Par2=0,XAxisMax,4e-09
+
+[ProcessorSet]
+ProcessorCount=0
+
+
+#!Zi^├√√}p░╢чн≤gXk┴⌡÷≈═╥ЕФ╛┤ld}╕╙√▀ ёц╒u^dr²╜²|lw▄°├eTx▒╜╜o^Wy▒ut`v⌡╫√bC6Pd┐_QXn■²vI2(5O]XZcy~b9,=Jc╔е╪м╣╪ю╠° |u┬▀┼∙⌡xT7$>O@!2pffq┘╗╖≤≤╬БЙа{UYh≈°├▐╙ал╗oNX[├╘▓xlw┘▒pPE\}≤≥jOKQj]F5Lg⌠█aH/5DWJ5CXz{e2/=<.)0Yu[5 +<8-2PUQ4!-4%& $Ъ +NH!С Й TNOZ~▀▓├≈═ба╒uVKm▀ ┴}■░╠╘xXJ\▐÷≤}llk▀z_]b╓╢╓tOMVXu\:b└╓╒oG20=KD@RWx├R4&AaR>8E_^I+#.@Vhva|AD=4'+4Prp>/#)93$-Ebsa4#1.$.PQV9Ж lskq⌡╥╣╖╢аэБю┘rd}╒╢╒u⌠╓╗wcf│╜╞╟h_buplat▓╟л╒lOJacpdd|┬╒▄P=0NVUW{umrhG#,4TVJGNTOG7+,;b\T:71/<1.6M┐┴jD.0HD5:_┘t9.KF@4<S\K$(t┬╕╩Нг┘│┬⌡╣╚≤≈╜╬щь║un|÷╒┼≈°ф
+ы╒rlld┐≤┌──╒╘■oW[c|▌y│▀√■≤n]ar╠╖▀kbm┌└yPAPv└mQ<4EFA:(7W{ng0!%2><3AO┐lAЪ Щ $1,DG=О С Т !О з ч К Z╗┘vql╠╝ z^73[SB' В П л а п я р э Ю ж ж х ╚ ╕ ≤ ▐ ┼ ░ ■ √ ÷ ° ÷ ▌ ┼ t u ` Z P J D D @ 0 ( $ # " ! "                                                                Ёо╨├o▐╔╣╜╜╡╤÷©╞╒дГЭЮи╓∙░╓╪┘├┌└┴▌╠÷┬°╜╛ |uqWu┤wjdg┬═╗░┐ro|┌mqcy▒|╡▓nq]\TJS^`pl`K<>XqN>KFZZ0;12sg/j<oV2<5$-8^_aff^>(С  32ь .	
+'Э Ц У 	 ,Ч 	+Э Д Ь Г Щ Ф Ф Г У 1@-7U.&Н &'0 >!Щ  )!+!З -В rF?2.>maWy?[>З *0*K?X2Ш  Щ +#Щ "Э ┐z┼▀°c:g▐ ∙▌├rxtw∙≤╩≤|└~g─ke░p⌠▌UhkfsbWe`ttip^hgLOOCXgtl[FKVJPdSX\ES"Щ Ъ 4,;u[[[OaM'MA4WH1>k;80FWJC8JNP427GG>;'3:E>1//7A9%53.<<<1√[└║m├юя╛{spSRJco┘esvOFC&KV└╛S*G^<GHWfVYUF2B&4J1AT:M4 3"O01>?5O%$='*1##-('%$=?(Ь 6I┌-1+3A4/!>)Т В Ш М Ь Ц Г Н Щ Д 8f(W[*?3п %,Й ▄:й П А Х 
+╧ Д л э с р Й Я Р О М щ С У Й Т И А М ф е ╧ ь Е Д О ф ÷ Ё ║ ║ в ц ╪ и г ╙ д ╨ ё ╝ ╜ ╜ м ╧ ╥ в б л э ц Ф С е Н Е ю Х к и О К Ю С в Я з Ж Н &Э "Я Й +П 
+Ч (Ш  Я Ш М М )у э ,р ?3W}{d4│/f *~c!├0az%─V3⌠2M`'╗cK;aH:PDo|X#Ё GsП qV 0"lА ?8p$8Й ?LЙ '!щ fС Cж 3#ж YЛ П 9╦ A;ф aЕ Г B╢ .т <е 
+%² .ш Ё 6╚ П ┴ л ⌡ *▒ Г ┤ ш ╤ ╕ э Н ≤ &(77H!<G/4@Ъ %'F00"1#Ш Я Я G@(2+!LЩ 4Г (yKIA-	I=VO.[8,@1XA Ч .,R#.O:[:: aJ}┴X\3A"RU5\WQ45Gl+:$+: 0"-Q@$-П Ь ■╒▐~beq▀■│┬w▄|ltk┤⌡┴⌠┐∙▄▌┬}jj{{┌█zso\Ti^pp{pnd_kjtklfw┐{ll]hsksja}┐┐zkfd]eemrnsbZN<DNJ`Rbjfd]LT<M\co`WWK^R>OQNRNORFP/CUMSQK]0d^░fScPb°E{╣F▓╔|W+╗PF DfT`gJNQhcbl'UPeЁ$_cЯ jLebCv@&_4*r[9cP8l,!c%N└<`P\=%gIaeX^1&&Y_Of6;T	.Dbj*n:;"'XBYh5QK(@:AUA2;+5N:N8▄└bvcErt}▀{jql│┤hRudb─fs▒└░xz|>uWBoP^|Dhi6g.7bD`VUWCZQ?HBScSOA6:DWaS7,.&357S^RlMMH#FF,;'4K+:%5$+?Ж )-,01
+Щ (-1
+Р Н Щ Xu²█uxv{■▐╫╝[w` *&Ы "В % HH,D6G##*?:G3-1=\OBUT\RKC19T─vmf\70@(11'GE<=%13F;08-A08AGG11!?*"61.BЗ Э У И Ш 4!,*"-0PD=4$0$/0$ .$0(# Ъ -%$
+&В Н К Э Ш  Ы  Ш Н Ч Н А И Е Я Ь Э З щ Т  Э Ш Е Л Ь Ь   Ж Я Е ш Ю Ф В Э Ъ Я С У Ь Ч Н э у я ь А Е rztdX[^inukh\a|┐│mNJVY_aXTWq}nPEQ^TC8.=MsZ@2(=<13(8PN^R66.=6$!0DECL7@7//"9HIM@3DG=H'#G=K:**),1#%'%0* Ш Э  ,0!╗]┬┤Ov_h≈pnX─k{┐P`]▌[l\A▐c^≈>buB│cRxDavJ┤VAzCdV8j>┤I?n'XX(M14\+XR,U*DP!5595=%.E 59.6	(Ь З ((" Щ Х Щ Ю Ь ъ 'ъ Ь о zVtaO`bVYVVWIHNPML[ROWHPGAJIKKGEJBQA?73K:55#',(6/ ,(('*&%'!# 
+
+Щ Э 
+Щ Ж Щ Ь В Н Л Х И З С У Ь Х О Р Я ┬└┌┐pef─u_neZV]^\G;Ff|hbX[^XYT<CPSqc\^WeaGTBIXPW@>@MRKLEUbdce+:CQc[SBDQJI2&?G\dSJLFAD, "(6/5&#,*$-#Ы Ь  ej┼olW@S\m~allftJH;JXZUEJcZp^478YKY>;H7UG@?,;0+3,>JI='D<XN%"8S=gaZ[6,*#1')2, Т   
+Ъ И В ъ Ж Ь Ш Ж Е Н ч я Ж Ъ Ч Э П Н 	У Щ 	ъ Щ К ж ┌▀█░yc_etj^_cjwjUABbbbd^QX_jYN@;HUWFAJTXV@CA5==CA9<BPO<G><G61')+3B'1.--"%#"/$%! !$"%#&Э Ь Ж  DGNPV?,-3>FOQCB;60"+9BBC<<;26"*$/861215%%#$"&)4- !#$07,'(*%&/-%'*%%!&(*/$#"#*&З Ч Ш Э Ъ wz┴ tXM]s~▄─x}┘└sbSg{─▄njorwzjfb_pcfSKcpvadns┌z_PM^ipsmrwvqeOJMa|vumuz┌nNJVedkagcfkh[R\jk[A<@L^dYS__`XN0,3LWW[PNIOH1(0BUSSECMIag`mzeSHRgku]Q]\bgMIKOdYICGKU_VFD@CMHC8?DIF358<F>%54;?247@:'"$011$Щ Ь В 	 Ш  Щ Ь 	
+С Й Л Ш Ч ┬┘~┐{chckj{°v{▌┬└x[S]z┬█hc^[]g[MV]cshWABMpr`ZppnfF/2Q\kVQKLPQE70=M]^]PMLPMD9U_neV;B?CMQLGHJE3(#-=IIGBJ]QB($1>NO??L81!+AG=<;DB╩ ╦ ╬ б ╫ ╥ ╬ д я у ш ь т э Ц Б Е ж р о ч Х Ь Ч #&4CME@1<Dbuz┐√╘╤╦╥╨мшКРЛБчЪ5KXcYSgduup▀╖цАте╢÷⌡═╪шмхмМВДын╫гъПк╬╦ЁЖшус╠·ок╜╙╟╟╗▒█▒▒|c[UR[iR>T                                                                                                                                                     	 
+  
+            & ( 4 Q d \ u v ─ ┬ ▒ √ ё ╡ м э Н Ъ 
+Ь Л Л Ж Ш 
+,%(<7$!dnrLJ\d┌┴╒╤е╪е╦швфЗПХДNЩшщГ<#ПДОЫВЬщзВОБпогх╞≤ 
+     
+         
+ 
+    
+   
+   
+  
+ 
+  
+ 	    	  	     
+ 
+ 
+  
+    	       	    	                                                           
+    	 
+        "   !    " & $ # # $ ( + ' & ( + 1 1 3 8 9 ? @ D A = = 8 ; @ A B D I J L J H I B B A A @ ? C E F H L N J O ^ j q k b b d _ a ` k u q o g k \ f m c g ` \ Y ` h g e ` a g f j ` b ` b ] f j h c ] ^ a f d c ] _ X P X Y ` ^ T U V U X Z W ^ [ ` X S P K P " ! # % $ $ ' ' ' ' ' ' % + - - + , * + 2 2 1 4 = < 7 ; 5 0 0 1 A ? < ; < ? A H H M O M L M C A B F L J K Q P R P H F C B F E B ? A G J C > = ? 9 6 / / 0 ) ) + * ' " $ $ # " # $ # $ " !                              
+ 	     	 ▄ ┐ | } z e V S T Q S U R N K T U M ? 5 6 0 3 . %                                   
+ 	 
+  
+ 
+   
+  
+   
+       
+  	  
+  
+ 
+ 	 	         	    
+ 
+  
+ 
+  
+ 
+ 
+       
+   
+   
+ 
+     ║ ё ÷ · ▄ ▐ ┤ ┬ ▐ ║ ║ ╜ ╛ ╞ Ё ю ² ° ∙ ÷ ё ° ё ╒ ╞ ╒ ╦ х м ╦ ╖ ╘ ╖ ╖ ё ≤ ╛ ╥ ╬ г х д ╩ ╦ ╧ р э ц ╫ ╠ ╤ ╦ ╡ ╦ ю ╢ ╠ ╠ Ё ║ ° ⌡ ° ё ² ≥ ╒ ╕ ё ║ ║ ² √ ÷ ╗ ≤ ≤ ё ■ ▐ ░ · ║ ┼ ┐ x ┘ █ ░ ┬ ┤ ├ ┤ █   ⌠ ┐  ~ ─ ⌠ ² ┴ } s r | z s j i g o s u h d l o q m e ` c j t o c Э   Ь П Д Й Р М О Е Ц И Л Р Ц щ я л н Б Д т п к р т я о ю ╬ н о с г ц ц е й й е ╝ ║ ═ ё ╛ ╡ ╟ ╕ ╛ ╞ ╞ ╛ ╓ ° · ╒ ╓ ╛ ╘ ╔ ╓ ╔ ═ ╞ ═ √ ■ ≤ ╓ ╛ ÷ █     ≈ ≤ ё ≥ ° ╒ ╕ ╔ · ░ ┘ ┤ } │ ≤ ∙ ┴ ┌ │ ┤ ░ │ ~ v } w y v t w ┐ ┘ ┼  ─ │ ~ u q s h f c d ^ ` Y V R S ^ b ] у р Е Я 
+	&**С З $"З У Л Я $..,.
+Щ М Р Ы З 
+78#+05QS:Д Я FN."	С Е Й э У З Ж .E=Э Ь Р Н Г П О У Ч 
+&
+#Т Д М Ж Я У Л Ц Ю Ю Я Ш П И Х К Х Й Л Ы 
+╡║╟╜═vVEL^Wb|█ё╒·┬ykWJUNQw▄▓≤└{y█mT@<K_knd_bvllO3%8AOKMl{}fI+#$4R\Z@Р Л Ч Ч П $ Д ъ Н Ю щ Л М Р Я э л ю ц ю ╛ ╛ ╥ б б м е ю ╜ ╔ ╒ ╔ · ≥ ▒ ▓ ⌠ ▌ ┬ ┤ ▌ ░ ■ ≈ ⌠ ┤ Ж VN>4&0"2Ч П  З Л п ф к б д ц а а ╫ г ╩ ║ ≤ ░ ■ ° ≥ °   ÷ ≥ ═ ╓ ≈ ─ x ─ z z | w q s u  | n f l p n f b ` ` ] ^ a b c a d a ` c d d ] e k f _ m h o i m z s e a a d h ` a ` e c f m j k q z s o k g i u  ~ ┌ y │ ─ ┴ ├ z ЦгЕХо╠┼▀≤▒≈■²╦н╣²l│█│~jm⌡╛╢╖а╔╚▒┬▄░└┐²°╔╜╜бХЪрйю╡н╨ю╤©Йсцот╩╟йЁмг╔÷│├╫╡╛╝╟ем╚░≤≤╙╒■⌡ё╛╜╨ц╓~@Qh⌠┐v}┐╖╖qoq}▌∙·²╘╧╢╕┴┐├²╓═Гё`_|.,uwszB&)>/,6AhSM@=2&9++:NR\kWhwMU4&6=>A;=EPkt▀┌CC@9A7U18SVl?;IAA47If─²⌡l{u─}q─■┌{│┤┼∙═▄■vb⌠k_Vev▒╜╔╔└~{z~┐▒▌│}ou≤к╚░<=a}фо∙XfG*2A=;38GJA# 6GvkE8C?:CA>V^┐▀YB,1=(728MeWC/:gAZ=8G\QI,838MA'#3B2,0791#3"$+F?F/-%-1/%Ш 
+&36
+-В Ч  У IF@;IWX_╣╠╓²╞╩Z;3GP^IHbr┬∙gZAJNVU]Z`UQS@I>;nTFa|mJ=1Щ Р Ч 0.CE41"&' 
+ Ж Ш Т З  %M2$С Б щ Б К П Г Ш Р Л з т Н "IJ(+	T%ЭБРДСшзЛФумшЪМОрсДВОэмыАЖвй╬фвжн╦╤╔╩ц╥√▀ °ёг÷~n~░└wUYm██J0#$8;60>TN[Щ Я Н Г э Г Щ 		П Я Ь Й У С з е ╝ Ё ╪ ╬ ╡ ╟ ╠ ╤ ° ░ ╖ ╨ ╨ ╢ ╥ ╩ ╦ ╦ ╗ ° ≤ ╞ Ё ╗ BAGSJ'#.-%'*9D5*Ш Э Э Щ  Ъ Щ Ч Ь Н Ъ Н Г Ь Щ Я Т Й Ф  Ъ 7'-16HN'%1Р М Л Ш Д в щ Ж Р Х ы У 3'З П С Э З Э П Н  &+",%%й Я С Л п ь я я ъ ОщЪ3A<<@@MI& ЩН <T.,Жщэ9?:"Ь ЯАшоМЦФОИ╫╗╙╙╧╚╖┬┴²╨Ю²┬v}┘▀vbhh│ztU?=5GT,Э Щ Ъ +2Ф с х Б ь Е Ц к Л О  Г р ╬ ╢ ╜ ╕ ° ╦ ≤ ┬ ║ ° ═ ÷ ° ° ⌡ ▄ ┤ ~ ┘ ▌ ┐ ─ v q j ` ` ::; $+%$"Э Ь Ч Т 
+!  З П К Л А з з С б ь н д в Л 	д ц м щ у р п м ╤ ╣ ╦ ╦ ╞ ╚ ╘ ╔ ╚ ю ╜ ═ ⌡ ≤   ═   °   · ╕ ╜ ∙ ┤ ┐ | { ▌ ▄ ▄ ▄ ┬ ┐ ┘ │ ~ | v q  ─ ┌ ┤ ▓ ≥ ╙ ╧ ╡ ╖ ▌ ┼ ▀ ║ ╩ · ⌡ ╒ ╦ ╙ ╝ ╜   ° ∙ ╝ ╜ ╞ √ √ ≤ ╔ Ё ╬ ╣ ╣ SdLMB=@Sl~cOJdc;<>AYm▀iG/8E34=MWe[B;839:H6GOX`VZLJKdqjdWZ\ezn`F[`WQ:-=2;8BNVZPJE:611,1SXMU]A.:4PQDL?B=0	(((+%!>'3XS>=&qq▐√sq█╓╣█┬┤─╔г╤╙`px▄┴v~}l└~ddAJu√┼▓▒∙╪┼╗ocu▀▓╟╦╥╣╝╛╥┐tmv┼≈┘■│|╙╚≤░]VlёdTNW|⌠╒░~┼√╓■~k]Hhqbkt≤≥█o33Sb▓╤≥╥╪хщлЁ■}▄÷╦╝∙tpw┤├├xz■╖⌠█√╓x│уБфop°╠╡∙qc[i┬┼}r─≈╖╦╙}a`p┼▌ru┘⌡╦а╢┐SL]gxad·│{KGCLMMpX4;Ul]CFPed_H('>KJUMLUlpL8$,KВ $("В П Н У  Ш Ъ В М У  Ц л в в щ Х П Г Р Ш Я Ф о Ог÷┼⌡мумф╤▓╢╩╗░▓░═²°░├└╗²{gok▒⌡╡─jmhu├c@[VdfTJ1CJ4NJCPfvO501YbMJ,/<>4#Э У Ч 
+ В Д Я У Щ 
+ В  Ф я Ф щ К Б Б ж т ъ Х ь л б ╬ © ╫ ╤ ╢ ╢ ╖ ╞ ╜ ² ё dfX7!#!%(=X(+@9("9EW2/A0$.З -T@	%Ъ Г Ф Й Э В ь А Б Д Г Ю ч Ц П Ы Ч К м р ъ С Ш Ф М Щ Э Щ С п о ц й р я л р у Е с у н й й ъ Й У з о я я у ╬ х б р э Ф ъ е ю б х й й м д п в Б Л ж w▐∙▐qNIFhy█hb|╤╪╚p`c┴╙╦╕╜╩©╩Ё`Vuму╦≈▌┴·╛╙╨елъ╡╓╚╠рэьс╬■√Zii░╚╢©²┘÷ца║∙≤═ад╫╣÷√╣╛▐■²╢п╬▓zgH^~ypm─u{┬fSJFE_ejehX@+!!2FU<6*#Ж ┌▄jUdVZfv{─ysn]GDLhua┐t}eM:J(;*6>77%:З З  Ъ З К ч П Ч 
+,+Щ Й Я О Э Ж 21%Щ Ь М В З Щ 2
+ 349Ъ Ж  ,%),/PGKj┬─▀╟ЙЫш╝╒╦х°┤h^r╒╜{VOhigqbg|╓╢█]W`fr▄─┬√╝╞║qk┼╫яй╜ё╩ъаж╥²⌡├ ═∙{╗┌═ ≤▄█╗╟╪▐uZBIRpqqexnQA5ELm|whgkhiTS=4F`_\bk┼▀paXTieXRRdxpmTуш╪▀ajp└│W7Tt╓г²vjr°≤uI3+/Detlw┘°▐kF&+/CKL_─]?0+?2D0%TU?$ З 3+	0]?!GJD$.QW`ZZddL0 #%5$&@Rw┐[)!8]SC63H6>$В Ь П Д Ъ Ш  уъ╝·┤·╛╩╠┬jr▐иэм═²═╫х╕qof┌²╖║░┬·╗╚▐qlt┬═╔∙┴▀╔╣°nea┐▓▀fXm}╕▀QQ8H[_Q$4A*/?E0 5(%.5A<Э Ю Х О Ь З 2Р А Д Н Ъ Ь 	0)Ч    Х Ф Н АМы╡║≈·©╪√tqw°ё╖┘{▐╚ц╠┐qs┐▒²▓vhx║╕√v`Han{Z[b│▌xSC@Te_L@B]nuYUTKQTP5+! NSJEMlnb7!"IghW@So}|E#,+0*?S6 "&Ч З Ш  
+53!Й э ч Н ▄│≥юб╤╦эНЦю╙▀▌╤ЙЬэлнДв╧╟╤йСшв©яешМКгфшЗ Ць╛╥кБЮХьЖЭЕЮ©═╫рЖЛцьПЛэн╚╝╡ННммзИю╚╒╝╚атеё≤⌡╦б╩∙╒╢щКЦ╪╥╝╙╣²░≈╔╫╓▌}a`o│~ljn┤┬zcSBPbtr{┐r_j√∙rLKKY~▐oep┌┬⌠╖}┴|▌═▄s─√╒~╥ё█x▄°≤vn▄╔╝²┴÷ёnE`tm≈▀ck│▒┌}MMH_ka_eu▓·sW*GkkMP`g┌s6&.L]\E!MceD#+>+$&Ь Е Р П ╡≈}n?^`h┬G3<gT?G&0HIoB&M0on>M<Qp`kG4T(KfШ С =#Ъ >Х П ф Я Ъ Л "Щ  Е с Е о Л Ч З О Е Ь ъ Е й к з щ Х Р С И К В В Т в Я м Л Ы ы Х ъ Г Г м С Е М а у ь о  А ь Л ╦ з ъ г в ╡ ╙ ф д Р .=:;&38D&'>94GBC&$"B- 7*4%
+Е в Й Ф (
+Ч Л Ф ы ы з У Э Л А Ф ж с Я й н ш ш Я Г Й э э С Ъ Ю щ р е р т л л г л с Й Ы Ю д ╩ ╫ й е ╥ ╡ ╜ ё ╫ о ч т г ╩ ╗ ╦ х а ╞ ╔ ╖ ╢ н х л ╣ ╜ ╢ ╦ ╩ ╟ ё ╕ ╥ й в SSe^F;N]ZQ57MUU2$>XN1@LMaM ,"8#3#!О HI:/,H/*-4М З #Ч 2 (+ 9'(0Щ *,'BJdR2#>@91BFgmcBGYO`I,&('6(/6ЕЧЬ╣▀m┌╨л╣░Y}ав╔fIARp∙÷█syy√┴ca[m░²░v▒╠а╤▒┐z▄╔╨Ё~≤╒·╟┤u─┐▓╓mv^Xa─├█┼╛фл▄cOREd}├⌠ ╕  ▀zaew│|{ry┴rdli|cpS??BlsR?>UbQ0 @sW5317H.ЩХщБ
+#.ЖФСЫK1РСЪ!▓pVz⌠r\@U]H├≥└aPj┌∙i!<Znc!ЩВC#,TP8ЬЕСЧ";N─Ё}Сдс<OыЙ"ю╞╝аЮВЛБКФ╦╡╚рКОп╧Ф
+ЖЬРз
+Хясш╬пю╬╥╩@\ME.1Эд╜║╤нФАо╠╣гл╫²· ╚╥©б╔≤▄▄▀┐|│┌▐Ё╔ ╞░√╚⌡kko|▒┼db]j√ё`hemzyvXSHWrtl3/KZNG3%4=-%2#&&"&
+Э М Ф Б ж ь н р Г Д Ц Г Г р в п г н я -,+%* ,2##З 
+	 !
+ Ч В З З Ь Э З Щ Н Л З Ш Н Д Ф П Ч Э П П Х Ф Ф ь э О М Л У Л Е в я к р п ь Б щ Й ч н а © к з Д А Б Д у ч у ц ╪ ╩ г у у н м н а ╤ ╤ ╦ ╟ ╜ ╩ ╩ п п е ╤ ╒ ║ ё ╔ ╓ В У Э Ч Т О С М М З Щ У У Т П Э Э  Я Е э ш Й Г Ц М Ф Д ь Ю ч ч ь р щ в А Ф ж к д а х д г й м я э з п т ь т к у с с ь Г Ф А э р э Ю ь т о о т ж Ю ч Д в а л р п р р й д й м ф ц ╩ б п ъ ъ ь н ю ╩ д е © ф х з ч Е Л щ н х л р ж ж ь щ Г Г М Д т к н Ю Ф Г └xwxzuqrvx─b\┤╤╓⌠▒┘┘░├sjv▀√▓┬}~▐░o}▓▐╒■⌠√²╣÷ё÷√▀юнм╗┌|■░║╚≈t─┤┬wh^l┌┴▐≈└nk^WZkk┐░p_XhmaELKqqat──y▐╓┘z}└▒▓▐naca▄]\HW`LyXE+G^E!Щ шрышЮШи╓юЛЩлtu├─~p[?De─█├vouzbbUW_t}wwxdudT<GdvpOLRWPE714Ld[G@IaedICDLNH;/0LZZVKLBG(4%&=3."1-%*=&+<+*tr▀┬┘~hbmiTGP`u┌┌┌o_cUNI@BL_bWHINRW>:HTKLJ<ALIbC::?JI7*"'+ECA;:BN9!&3;hVB2+/LM(/1NXE;5# ,"'"/5+ 1&8,I4B1MSXJQnFB>4-4?░√╒║▄em}▐°┼│|┘▄■▌b_Wd|├█z{~├─pNWXgw┐wmp}oMEV\qxhJTQU\EEReol]D57RW@7DPZWA 0>4642<IA0%=G3.&-8;Ъ '5)(!10?(!#%$Ш Р Н Ъ Я └┘│┘√╡╙╥Ёё┐aVRgjv┬⌠╒√┌^FJNRZ▄┌f▀slT/'>M;[D;FEFG=??TX4!&4З ,1%;=D3
+/2B:Ч Ъ Ъ .Ъ М Т В  Ш З Щ З П В В Я В О Ш Ж Ч 	ё≈╞вАг╣┼xq─▒╖⌡ё╫зЦ╬┤yw▄╛╬╦═°╠╦╒┬rlr■╠╫╙°░▐▐┴─}┬╦вю┬lR\d_dmz ▓{c]@CWeLTWy ²kV0$3PYW]f}}\</3CU_\VkrtdM62DoymVPLU;0%,SipXM5*/,)7E┬▒╖цой╙xfV~├▀└┬▓÷√▓|gi┬╗ |ry~wulNDls÷╚∙│nVbSO_^v█~vhFFNNXb]{■█tPH/5UR>GIaoJ;"H.CD'BFOB%$
+FNW└spdl~┌3D5-PYnoI(!#R<К Б Ц С П С Ч ж ╙ю√÷s]ay≤╖█└■∙╝╞┌gNs┼▒ё ─▒°╥╥|nNKh┘▌ruu■╩≈QXOTo└db÷╓┤Kf`l═mMSe┬⌡─wO[⌠hdIBK:CbNU^X]FF:,M>VWK^gk`<EKHdTLHEJM8t:1D(SJ@4!41(#?,@ivfgpun^]q╜╕▀ocv⌡▀reg▄╔╝▀hK:5F?HSbn{└tI.+3LTSX_lueEB?ZdjdVKSJ;KP+1ffNMD;4+(<RJ=21,-%&'47-Щ Ч $Ж Ь Е т ж э ж ъ л К Ф й ╙ · ╢ ╔ ╗ ╚ н Е WWQXlsK2 @WdMIFLGH826?QvuO3259>=AGWng[C
+$+8=D8E=&
+G3#-(0
+Щ 2;+-03$)(73<+&(!
+Jmn/$Ч Ъ Ш '$'.'  Ъ В 	 4 !!bervqtYSWS{ ┼|j[^\hjnm{┐▀z]I:0agk{v┌|}rM9 +?ojogVdS7C=,;`tfflM5C08vUUUDQ@Jhsjy`dLC<*$*OH<3<;/:%'>E;<8/%5.@1(/+ !)!#64)!mtgVUTah{∙╘╝Ё⌡└\QRb┬√⌡▄▄≈╝ё└cVf▐╜╬╜sv│┤∙}■╞ке═°┘─√╔╢l╦ТУх═▌└├∙╣гсврЙэеЁ├v┐╥КЬ╪╕║╠╤н╝ш'я·─┼╙╦е╙луря╙┐─x┤╘╡│tnnvt`KNc├├}rm^aQM█▐┘└⌠■≥Ё═▒▌╛йю╟═╠╩йф ┘┤┼≥┤t░╪пюа╔²├vt|├≈╣╩╫╣═u{▌²°╙╛╬дю÷÷ё╢╥╔─w┘└zqfm|■╗▄eVSccafdk▒▀▀dPIRQNdtdx│jH839-.HQ\bWQ9/*-:PRBKkpcQ2$5VnbR\├═░─nr∙uL:IA^w─gTU^]gO=15Qe^X>FWuZ6%@f┘┬c@;HQH3"/?YkU76C^d[G=KMQ:Ъ /<(2Ж П Э .2#щ в ъ Ч Ъ Р И Ц О О Р л л о И Щ Щ ч я й ш Е Ц т ╩ ╩ с К Ф ф х BG1%%DduL:6EkQ+%?d`>7@JN?"U|raB3GMM1'AdrQ5+1N?A6QfI'=1+%G2 PV=-='&$JkX*!(DIQE+-UhG5855BLC55AWS0;/,NbLA4/=@<>"-DhTJKBLXI  Bl∙┌aRPa[QK?Rp⌠≤xgUL`aXEWr▌║▀H-;BLQ`YUUef5!,={▒eUL[sd@'Bw▒vQ@Dmwi;*>Um┤M8;IPK3--:JV[32@P-"(;RSA	 )JsNR12F8%mfY*2f═╔VCKXgT'0S▌╟⌡SHQ^fN65Rr≈q0-JH7//=T┘x.LS7'4ID"8Z^%0Ж Ш 'JF$'Э О Э BW1Ч Я Т -4.*#Я З 	"=Х ш Х %Ч Л Е Ь Э Ь Д Д Ю Ъ З З  В А п Ю Ъ Я Т ы в Ь Н я п Г Я К щ п э К М ъ й п Р В р м А М Л р ъ Л Ш А р к Р Ч Ж Е к х щ Л Н щ к м Г Я П Н Ъ О Б Ц П (4Ъ Ж У Ю Д С *!У Б Ю М О Щ Ш Э О ,0
+Р Н В Ъ Щ Й Ю Й Ч Э Ffh4+0(>XK1%)G9%LV0>\YK& "5=,&KZF!(</Т Я  BIЗ У #Ж (<20 Ь С Ш '!*1H4В 
+$-Ъ 0GS!Т Ж 'DL.
+В )(.Ь 0QJ*Ч ('.-OM
+4@7&>J4.KB3"!&7;?26YleQ/%/B:**7N_f5$;'"2F\]X1)?_~eB)*2;C41<n√═├G48C@/"+ZurV8'8D7)<PdN/@C(                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+ 
+   
+       	 
+   
+  	  	    	 
+       	    	  	                                                                                                                                
+ 
+ 
+ 
+  
+   
+     
+  	 	 	 	 	      	     
+  	   
+     	 
+   	    	                        	                                                                                          
+                                          & & & ) & ! $ # & % ' #   " " $ ( % & ' & * - , ' & " $ ' ( ( ' ' & , ' ( % # $ & & ' ' % * + , . , ( ' ( , 0 , + , , . 3 5 3 6 9 : : ; 6 1 2 4 5 3 8 5 6 7 8 6 1 1 . 1 3 4 6 9 5 9 < ; ; 9 4 0 1 5 5 2 1 2 4 6 7 4 6 8 8 6 3 0 . 1 4 4 1 0 0 4 7 4 0 1 - - - , }  ┘ ▐ ▀ ┘ ▐ ▒ ≤ ▌ ▄ ─ s q p w x ~ ┌ ┌ ▄ ∙ ▐ ┬  y w | } } z ┌ ┬ ▓ ≤ ■ █  w {  └ ~ | x z  ┐ { u r m m l p r o q p g f _ Z \ \ [ P Q N M P R O N H G E G J H E G L L F H J ? A B A ? : 8 6 8 7 4 4 4 : 7 9 1 . . , - , 0 1 . - 0 , ' $ $ $ % # $ # $ # # "  б д с я н © ╜ ╔     ╛ Ё ╚   ╓ ╕ ╗ ╕ ╒ · ° ё · ё ÷ ° ■ ⌠ ░ ⌠ █ ┤ │ ┤ █ ┬ ├ ┬ │ ┘ ▄ ░ ∙ ⌠ ≤ ⌠ ° ÷ ■ ▌ ┘ ├ ▄ ≤ √ ▓ ≤ ▌ ▄ ▐ ┤ ┬ ├ │ ▀ ■ ■ █ ║ √ ²   ≤ ╓ ║ √ ═ ╘ ╜ ╣ ╖ ▓ ▓ ⌠ ≤ ╘ ╟ ╖ ╔ ╔ ё ║ ≤ ┬ ▒ ÷ ² ║ ║ ╖ ╖ ╔ ё ² ■ ░ ▐   ё ╒ · ² ё · ═   ° ⌡ ╜ ╖ ╞ ╛ ╖ ≤ · ║ ╖ · $$П Ю Д Э Щ Э Э Ь Ы  О Х Е ь ъ Б Л ъ А О Щ Э  Й Ц з м л к м ж А С Т Х Ц в р х н п н к у у К Б п й л © ╪ ╣ ╠ ╛ ╜ а е ╬ ╬ ╧ ╢ ╦ ╕ ╚ ё ═ ÷ ÷ ² ║ ё ё ² ⌡ ╕ ° ▓ ▀ ▌ ▒ √ ≈ ■ ≥ ⌡ ° ║   √ ▓ ∙ ⌠ ▀ ▐ ▄ █ ▀ ⌠ ≈ ≥ ≥ ▄ ▀ ┬ ┌ s j g u t w │ ├ ┐  ~ }ugJ3(2:5*(1MbUM1М Я Э &+	Ш Р Я У ъ з ь Ц Л  З М Г Д К э п м ф н я ш ь и м п ш э т г х н и х л з у Б Е Г щ м ╩ ╖ ╒ ╛ ╨ ╨ ╢ ╢ © л ю Ё ╝ ╙ Ё ╛ ╕ ÷ ╔ ╚ ╙ ║ ═ ╔ ╚ ╕ ╜ ╝ ╣ ╜ ╕ ╘ ╒ ⌠ ≤ ⌡ · ╕ ╞ ╨ ╫ ╢ ╜ ╓ ≈ ■ ⌡ · ═ ё ╡ а к и ╬ IGL]m─~■▀tYESE8?Ic▐╓╖·─w^OQPL[│╤╡║▌gZF8I9/%3^ssO42@DA%BBPG14,:>-'06>RF;,+.DOdG+BR:%	П Ь 4D$
+В Ш Н Ж 	3$Йр╙рщ #Уб╫╘■▌┘─║╥ ые╣╠≤┐hgw╤эДэд╥╚═≈└s▄╗╚╟шчях╨│gVV]`k┬▀rhY┼∙hL3$3<K>BSkn?/!0'%F`sW8 %<;%
+Ы Ь Щ Щ С Й Й  /Ь К М Ф Д ъ Е Р  ┘▌┌≈▐·цэВФ╢·ё²▐│═╙~╕╢°~▐ЁmQD@H~╢╫÷┴▒┌wiVXgwkywrkk}▄≥┐saUd┤▄|p─`swoe░÷▀rXZos▐▄┌bB8244/9W^_XL>'<*PXA2.-1C07)В Х Л Н Л ъ у Г Э Ч fw|┘┘┬┌┐zeQ]ZM>Z_{o├▌┬├jL7&%:>F]leP7&Ъ (ENX[OA! +DOPO<В Ж У Э Ш У Ь С Ф я к о ч ъ Н э с м К Й Ш Г ь п н г н г м Ф Ф Ц у г ╨ ╤ ╨ ╧ ╬ г к с ь н osnxb\e|≈▐}pbR5,1LGb{┌░|pQH9:76'Ensq^C5 +Ч GOIG0Ь  Ы  5*Ш А Ц ъ Ц Ц У Ч О Ш Ч  Э Р Ж Я Г С 
+	Щ У Й К Ю т у р Ю З Ж 	Щ С э Ю п п в р Ф ъ П М Д Ф О Ц ы м ю я б х Х П И Ца╝Ё╕╚╜Х-Хп©╞ ▀vwx√╞╜╝╚║▒zaX[[\qkk┐y~┴fZE6;<IISWk_KC=6;.%3AOCE<:/83.З В $%10*Ж У П У 
+A/2' Р Я А Ф Г Й Ъ З Р М К О Ж С Т Ж Ы 
+Щ Н Т Ь Г Б Х Г Ц Х ╠╣╖⌡p√╢т 5ДЕлц╤╔÷┴▓╝кув╙∙▐▒┌rbTWqm├²█╖╨м╘tbbSwe┤²юц╙┘veGA4ELd▌╣╩▓xXE7-564Is ╗|J@870/!%0h^PFMDA@,#"*8PbI;?)	/HM4З Х ╡╦╛┬py┴▄╗н╓╝е╡░▐⌠┘├╝╨╬╦╔÷═÷∙░}klol~xz|}~sQILYWgXjdqzqlZSK>:CTXNlp\) %&*GNO:' З Э $83#С Ж Я У У 52(Я Й Ц ъ у ы Ю Д  Ь Ь э Р Ъ Ш О В С Н Z─meg_MW▐г╖≈├rmdn`=Em└m[ganK77&1CRXONLL>-$%!7DSB2!$	*CUH9;2/'AW_X>A;14$2AS`K=+Щ (&$+DXW'Ж Ь 0GE1!Л Х ┤▀┐pWeV[s┌xw░≈ ░▄}mgv{├n╔чъТс╒▄─gHLUKWw·д╤┼zzm~tW▓╞╬Тощъе╤╘▐xfnmr┘■°┐v▌┌hVON^q~─r┘╒╥╟·{caTEE?[{ё█▄~░]VPI-1>q⌠┬j^KB6( %%CxjL>1╤╞ё▐■▌▐▐√▓░■╔╬цдб╪╓█─rv└°╖бьщи╚▌vh[G[┘╞ра╞╗▒~dWONXz≤хс╠∙▒┤┌mnn┼╓╒░■⌠~tu{rbeoad}▄─sprXM?:6)'Gh|▌°└l^R;6>DYs⌠ёz`WD5+%Ch~tTMI;8
+ЬсфДДПД
+СКЬзр╦юцгащДППЩЮ©╥╙Ёё⌠≤╤зЙВЛш╖x~db└÷╪р╨÷uqg`Y_e┤╡╜╗▀eRQP7:V^B0($*2B$Э  Э Э О Й О Ж Э У Е Е Й Ю л л х й д н к ╬ ╧ ╩ ╣ ╞ └}┐┤xiTeQp│┼|▐√²·▄rjt}wkbf▀▓▐■▀┬geZNH7C_w┬└│wcUYLEA^}╕╦╗░▄|┌~rl\frtb|os┤██┌ngl^MGZw▀▐█ykfXVFGMf┬ё╦ {jb_@0*3EPxzfYb_LTC@@CIIFWQSK╒⌠≥°⌡▐}gh||\NTk▄²⌠zZKHUK=@Qr┘≈┘dKB38-&8G]nl]L840' >JF."Ь В У Ж  Э Э Ж О О Ю Б э А Н Ь П Х Т Ж Я Х щ ч м ф ю и ъ К В Э  М з у г е ф х с р Ф Ж Т Х у п х б ю ю ф в Щ В Я П П OKbd]NB7>LaQXge⌠┬aHA@/E=9?^┐·│eH-$'
+$:LFH>;;5., :ZXIFAXke^EDHMXPECP_uzaUZUH?(1CFYx├imqhgd_Vahz┘t_]nw}vgk_baSGKd~░├lXVOC;?Gf┐╝╖оA$ьйпЕИКЯКП"ВЕэчИХи╞·╜ЕПХАи╞≥█╔е Оышчг╚┐┐▄л ЦнеЁ╤╦╔qdb█цб╠╜▒┐┤{pneu▄┴─xpuqz┐[ZPZ`TBE[dz┘┐nk]UBE=G\jW__C&Щ Ъ (}t─≈Ёвм╞╕²╖╖⌡┌t┼ ÷╔╝╕╛╙▌┬~rgl─▀w}├═ё∙▄zwoomddm▒╙ё⌡VNBE49H=ct}w]JG0--1HhcXE;8/#!2,($Ъ 
+	 Ш В П Н ь ъ ж в ч Ж Ч Ъ Ь С Х п я ц ю к я ъ Х e÷n}▓█⌠┐\аn┐╤Btm~l}└V╞▓c≤QhnIjJPPF┐┘NuD9-"-NN}_QO!-Ы 	7BPG=3'+(-GKE;=*>&($<:/(1:E0'#Я Ш Ж  <1З Н Ю П Л  	 Й Ю Ф И Я С MU\│├└▐░┘╖∙≤⌠kp]afMr║╔╨╛∙≤bUPCMOJ~╗╪╥²⌠lPG8HCLf╓╡▐}sep\TPSQakn~tqnr[HLFDEB8=QVLd]82!&7Wd[J4 Ч 
+ <^SE3Ъ '5?1,Ш 
+
+ээб╓ё╕╓╬эФНрёё╓■▓²╩нЧРэ╪╢╠╗≤≤╓Ёе╩фиерму©╡÷·√■k≤╜ююЁ╖√xkc[Fg▄═пш╥╒p_TH44e{█⌠▀ooVAF;1A]y┤└rU;+)4,'(Ik├n`</ #$;DXE/Ж Ъ WXDSipv{~w┌uab5>@7.IHc╕ ⌠~mE620/>^z▓░h\sjQ=857Cdto^nu_P8(7CHZQVf`XYSELH7.,/3G^tzrTP?B81?Kdv■R^fVJC@;B8/,30FPLDOWQ9 ('G;M|clnbaD4ГЮжц╤╦╦╢пЙ&0#ш╨©╬··╡цС(9УКжм╦пцхеНЪШЮе╦╠╕·▐╡╟лНЩР╨╠·⌡w~w▀╝ЦЫМАг≤▓|zsr■²∙╚≤▒wfjhwworeX{wzl\acdTGMQ@\c\dWjfI$,LMGV[GKяхй╛╔═√■▄█²цлп╬╝°≤∙─utWg└▄░│┐x{pd\Wg_cS`rqxwibJ:/3.5NOQLCB!Ъ ;IMDB7%#7AP<6)Ч Ь В %73*!"Ш С Н Л О Р Л К Щ Ч У Ь Я Ф ч э с с ж п в Г П П Х Ц ъ щ в х ▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▌с√с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с■с■с■с■с■с■с■с■с■с■с■с■с■с■с■с■с■с■с■с■с■с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▐с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с░с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с░с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с█с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▀с▀с▀с▀с▀с▀с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с├с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┤с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с├с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┘с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с│с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│сс─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с}с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{сzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсxсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсwсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсvсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyс⌡с╜с╜с╜с╜с╜с╜с╜с╜с╜с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╖с╖с╖с╖с╖с╖с╖с╖с╖с╖с╖с╖с╖с╖с╖с╖с╖сЗсУсУсУсУсУсУсУсТсТсТсТсТсТсТсТсТсТсТсТсТсТсТсТсТсТсТсТсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсСсТсТсТсТсТсТсТсТсТсТсТсЙсЕсЕсЕсЕсЕсЕсЕсЕсЕсЕсЕсЕсЕсДсДсДсДсДсДсДсДсДсДсДсДсДсДсДсДсДсДсДсДсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсБсБсБсБсБсБсБсБсБсБсБсБсБсБсБсБсБсБсБсБсАсАсАсАсАсАсАсАсАсАсАсАсАсАсАсАсАсАсАсАсАсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсъсъсъсъсъсъсъсъсъсъсъсъсуспспспспспспсосососососососососососососососососососососососнснснснснснснснснснснснснснснснснснснснснснснснснсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмслслслслслслслслслслслслслслслслслслслслслслслслслслслслслсксксксксксксксксксксксксксксксксас╪с╪с╪с╪с╪с╪с╪с╪с╪с╪с╪с╪с╪с╪с╪с╪с╪с╪с╩с╩с╩с╩с╩с╩с╩с╩с╩с╩с╩с╩с╩с╩с╩с╩с╩с╩с╩с╩с╩с╩с╩с╩с╨с╨с╨с╨с╨с╨с╨с╨с╨с╨с╨с╨с╨с╨с╨с╨с╨с╨с╨с╨с╨с╨с╨с╨с╨с╧с╧с╧с╧с╧с╧с╧с╧с╧с╧с╧с╧с╧с╧с╧с╧с╧с╧с╧с╧с╧с╧с╧с╦с╦с╦с╦с╦с╦с╦с╦с╦с╦с╦с╦с╦с╦с╦с╦с╦с╦с╦с╦с╦с╦с╥с╥с╥с╥с╥с╥с╥с╥с╥с╥с╥с╥с╥с╥с╥с╟с╠с╠с╠с╠с╠с╠с╠с╠с╠с╠с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╝с╝с╝с╝с╝с╝с╝с╝с╝с╝с╝с╝с╝с╝с╝с╝с╝с╝с╝с╝с╜с╜с╜с╜с╜с╜с╜с╜с╜с╜с╜с╜с╜с╜с╜с╜с╜с╜с╜с╜с╜с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╒с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с°с°с°с°с°с°с°с°с°с°с°с°с°с°с°с∙с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с░с░с░с░с░с░с░с▀с┼с┼с┼с┼с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с│с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┐с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с─с─с}с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~сссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссс─с─с─с─с─с─с─с─с─с─с─с─с─с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с|с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{сyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсxсxсxсxсxсxсxсxсxсxсxсuсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсuсuсuсuсuсuсuсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсsсsсsсsсsсsсsсsсsсsсsсsсpсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсtсtсtсtсtсtсtсtсtсtсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсrсoсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсmсmсmсmсmсmсmсmсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсnсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсmсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсpсpсpсpсpсpсpсpсpсpсmсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсkсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсmсnсnсnсnсnсnсnсnсnсnсnсnсnсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсnсnсnсnсoсoсoсoсoсoсoсoсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсmсnсnсnсnсnсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсqсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсrсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсpсpсpсpсpсpсpсpсpсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсrсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсtсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсyсyсyсuсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzс{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{сzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсqсqсqсqсqсqсqсqсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсmсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсmсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсoсoсoсoсoсoсoсoсpсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсuсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсsсsсsсsсsсsсsсsсsсsсsсsсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсuсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсvсvсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсuсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсsсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсqсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсnсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсlсlсlсlсlсlсlсlсlсlсlсlсlсjсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiсiс┘стттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттeт`т`т_т_т_т_т_т_т_т_т_т_т_т_т_т_т_т_т_т_т_т_т^т^т^т^т^т^т^т^т^т^т^т^т^т^т^т^т^т^т^т^т]т]т]т]т]т]т]т]т]т]т]т]т]т]т]т]т]т]т]т]т\т\т\т\т\т\т\т\т\т\т\т\т\т\т\т\т\т\т\т\т[т[т[т[т[т[т[т[т[т[т[т[т[т[т[т[т[т[т[т[т[тZтZтZтZтZтZтZтZтZтZтZтZтZтZтZтZтZтZтZтZтYтYтYтYтNтIтIтIтIтIтIтIтIтIтIтIтIтIтIтIтIтIтHтHтHтHтHтHтHтHтHтHтHтHтHтHтHтHтHтHтHтHтGтGтGтGтGтGтGтGтGтGтGтGтGтGтGтGтGтGтGтGтFтFтFтFтFтFтFтFтFтFтFтFтFтFтFтFтFтFтFтFтEтEтEтEтEтEтEтEтEтEтEтEтEтEтEтEтEтEтEтEтDтDтDтDтDтDтDтDтDтDтDтDтDтDтDтDтDтDтDтDтDтCтCтCтCтCтCтCтCтCт8т3т3т3т3т3т3т3т2т2т2т2т2т2т2т2т2т2т2т2т2т2т2т2т2т2т2т2т1т1т1т1т1т1т1т1т1т1т1т1т1т1т1т1т1т1т1т1т0т0т0т0т0т0т0т0т0т0т0т0т0т0т0т0т0т0т0т0т/т/т/т/т/т/т/т/т/т/т/т/т/т/т/т/т/т/т/т/т/т.т.т.т.т.т.т.т.т.т.т.т.т.т.т.т.т.т.т.т.т-т-т-т-т-т-т-т-т-т-т-т-т-т-т-т-т-т-т-т!тттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттт т т т т т т т т т т т т т т т т т тТсОсОсОсОсОсОсОсОсОсОсОсОсОсОсОсОсОсОсОсНсНсНсНсНсНсНсНсНсНсНсНсНсНсНсНсНсНсНсНсМсМсМсМсМсМсМсМсМсМсМсМсМсМсМсМсМсМсМсМсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсКсКсКсКсКсКсКсКсКсКсКсКсКсКсКсКсКсКсКсКсЙсЙсЙсЙсЙсЙсЙсЙсЙсЙсЙсЙсЙсЙсЙсЙсЙсЙсЙсЙсИсИсИсИсИсИсИсчсысысысысысысысысысысысьсьсьсьсьсьсьсьсьсьсьсьсьсьсьсьсьсьсьсьсвсвсвсвсвсвсвсвсвсвсвсвсвсвсвсвсвсвсвсвсжсжсжсжсжсжсжсжсжсжсжсжсжсжсжсжсжсжсжсжсусусусусусусусусусусусусусусусусусусусусустстстстстстстстстстстстстстстстстстстстсссссссссссссссссссссссссссссссхсцсцсцсцсцсцсбсбсбсбсбсбсбсбсбсбсбсбсбсбсбсбсбсбсбсбсасасасасасасасасасасасасасасасасасасасасюсюсюсюсюсюсюсюсюсюсюсюсюсюсюсюсюсюсюсюсюс©с©с©с©с©с©с©с©с©с©с©с©с©с©с©с©с©с©с©с©с╬с╬с╬с╬с╬с╬с╬с╬с╬с╬с╬с╬с╬с╬с╬с╬с╬с╬с╬с╬с╬с╫с╫с╫с╫с╫с╫с╫с╫с╫с╫с╫с╫с╫с╫с╫с╫с╫с╫с╫с╠с╜с╜с╜с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╛с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╚с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╙с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╘с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╗с╖с╖с╖с╖с╖с╖с╖с╖с╖с╖с╖с╖с╖с╖с╖с╖с╖с╖с╖с╖с°с≈с≈с≈с≈с≈с≈с≈с≈с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с■с■с■с■с■с■с■с■с■с■с■с■с■с■с■с■с■с■с■с■с■с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с⌠с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с┤с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─ссссссссссссссссссссссссс~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}сsсpсpсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсkсkсkсkсkсkсkсkсkсkсkсkсeсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсcсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсbсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaсaс`с`с`с`с`с`с`с`с`с`с`с`с`с`с`с`с`с[сZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсZсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсYсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсXсWсWсWсWсWсTсUсUсUсUсUсUсUсUсUсUсUсUсUсUсUсUсUсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсRсRсRсRсRсRсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсKсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсIсIсIсIсIсIсIсIсIсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсGсGсGсGсGсGсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсEсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсEсFсFсFсFсFсFсFсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсFсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсIсIсHсHсHсHсIсIсIсIсIсIсIсIсIсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсFсFсFсFсFсFсFсFсFсFсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсCсCсCсCсCсCсCсCсCсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсFсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсHсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсIсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсJсJсJсJсJсJсJсJсJсJсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсLсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсNсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсMсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсLсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсMсMсMсLсLсLсLсLсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсKсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсKсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсLсLсLсLсLсLсLсLсLсяв╫╚гТБ÷├═дг╦╗©тжи═ws┐╙╙╛▌┼├√╔▀k_┘■╒⌡d\uw─┌oV_n═√Z>AQedcKC─⌡▓eB1->SH3/Gfni=!'B(25!-Eld;Ъ .%IOdeX)Щ З  
+*)'Ш С Ь -< !╓┼∙═оВг╞}dVt╒╡▀|┘≤÷²vSYc░╝≥▐▒∙╔┤dENt║·┼mUMK=H==Jd├|jJ23MdRNYp┘░└QM6@NN>RahwkP4-CSNE=CLL?#3IX]E,%&1,3TO8)!%/4^5LkT0$*╜рд╡етсКб≈w▒Ёдм╩╨■⌡╥≤┐r═у╙┤vq┴▒▒us⌡╠й═dR`Xn|gm~╔╩╞▀YCAe┤|pj┘∙■┼V16RddQUf\bQB-<X_\<'3@B@$5Qf>," *AA!В Ь 
+D: Ь П Ш 0OQDTdmkQ3*7A=@TdbS-#%DD7((1>60XhG(!
+,XU?В П Щ  3+hbOЪ ш Е Р #%Т Д С @Э AL0!
+С IC(Ь В 
+"
+-1)Р О -#Sa@Ю©гзПнцьКРё╞x■╖≤┬}÷сзкx<?<GPA6MPnf0
+ #!!%>B&Ъ С :SOVde]G==B !'.$+#
+$2/
+У В С Щ Щ Н 		Ъ 
+Ъ ч К З Ш М Т $$
+Э 84%49Ъ 5PLA+/;MH0&7\mY5@HdtvTO_}┘~PBZr▓╟┴g_u▒°░rrv ╗≤wpr²г╦▀√╖фэк⌡┌m▀фФе╛╖÷╔╠ю╖██·ц╜┴qm└╓д╚▌}t┤≈├`TUj█∙tacaS|b ≥p≥╜©╤Ёл÷║х╝Е·≈╩╠╫═ею╗Жн╤≥|╛╜╛╢кХХн⌡▌⌡╤жом╠пФЭП█ё╜▀ЦЖеё░╢в°≈ё⌠╝tгЁpydj╔ю╠]╙▄┐▐@L0Jzr┐┬Z~rCo.@dkRQc-HA[/pJ7+[/bV)bт©u⌡▌vYHMO]`KQ`rucWKDeS@A4qG^_HoO<:')I&8=.@2GiGL0,G+<>$+>R>9, 056!#A31A!T.&&-8%E2Q#?E8B-Ч П &2!=H:X) Э &:Р dU`l\NL;><NTThUQQCE/1IGPA8:0.1($%'0?5&%!"1&7.7=%(;"!
+PNC-1%04.+++,'+*4(#Gc`√┐╒ ≤⌠┼▓├░██░▌^<)0A'5C1]РЧХъ╦ЁНтз;&Ьнд╫░▄е╘цУ┬≥╙w▓÷k╣ |╢√▄zf⌠sj┬├pyed├┐_²|°чMMPEKG,,+OWм╥j~?2@.2≤%&IЯ Ъ П 	Н Э Г К в ь Е Ш Е Д В Ш Ж Р Ь З ь ф О Х А К О Ы .-щ п т л о ф д А а М П Э В В Ф В Б х Ц д Б Т ь 
+Г Э У М М Г ш С Н н Ц ъ ╨ Т э ╫ к т а Ю ╞ Ж Й ╡ Й ╬ ╚ ш ╚ л о й ж п ╬ к ╪ © е я ч п ш г в ф ╪ у ╢ д з ╥ Ж ю щ ╡ д ц ╣ у Щ ╖ ╚ ╨ ÷ ф т ╬ е Б ╥ ╛ в ╡ ╗ Ы ╬ Л ═ Н А { "Г ╕ ╨ Х Iр /Wь =LF(8lGM2`L=7Sf0└/.V)73B*BzSy8?3&Н jB)2:HЬ OE)1О =$9 3П 0 7]У 3AС 
+М R<Vj*!Bр a-У Ж К VЮ Л ;р +Б Б +Oя CЭ е Bе к 2Н Ф 8╩ г pb[Q`iUmbwPJP^qkV^JLfl┼t[WX=# " ."-#Т У ;7.0 И 
+Т Я П Ф З Г Ш Р Ч Ч Ш Р М у т ь Р Ф Е К у Ш Х ч О р ╥ л к Д Ц с У Ю Л У Ц з т о Ж з С Т с Т Д Б к о у д Ё в к ч ┤╜■≤хa ╤nд╕f╓f{╫e╨~|═U}bTv_\l[V\hSaL3n@QёUqs:nSG┬Ap▌B░`?nQnq>┘u'┬KT▄8Jd'm^pCN┌C90%1"UB9D%% 57(WG7Q(1<DCA3A+>+.F7Z- _f_pvxxp──g]I8GTh┌g_ufq_PBHUddZ@VSBk-+b[s2Z@Nm1]d+g\KT528CHB^KM^C>C,7>EtI5^LX`$/9"CP\IOHQ_H1?,1a?<E8DM<<>4BT0*#	9%0д╩╚╚╤╔╤╓hd_\`\kifZaTPXHSQJKV1NO.27Nh>3J/<8-%;-:=<7Ч !75>FC(5#)=-44 "$#6*!14* .
+2Щ Р Т Ж 
+Э А Х Л Н  с э М Ы Б Ф З Й Ъ Э З Л '#,,7?=2$'1 # *"/0-&(1!&&$#'&#$&  4/AE@6Ш Ы 
+Э Н Ч М Я Т Ч Щ Ш Я Ф ш ж з Ю ъ Е М Я Н Л Ф ъ ж г н в й р я з ъ т з з н ц ╦ ╧ х с ж Б в з ь WFNRZcPR8CPBF@>PMQUT?5B8+/)<C@DC4B=@:$  09BB8+/4<,*::/(%,@7--% #) -$
+!Щ Щ Ъ Ы З Щ Щ Э Ы Ь Ы  Ь Х П Й З Ф Х Д Ц Л 1BQ*\=,ULP"O+)GC1HFU =D'+Ш I)(W;@!F!3>2 >!'!(#Щ /#.%	!"З %.4% (!.##!Р Ъ  Ч Ш С Ч ON=dQJb>QhIfPG]7GX>]]OeGRP@aTF^<FK5L71B'@:6W.;<)D&:($"1&*Ъ 	
+Ъ  
+
+Ж Л Б А Я Ь с Ш Г Б ж Б Ф б Р ъ о ж Г я Е е П а Ф К я В с э И 21AETaTLFPZL;*CBC:*8527!1,88088G>/&2*5*';141&(&8!"1)-22: *%$  "++ $:
+*!Ы С В Щ Ш В nUa}u┌┤zux∙│qcN`hn┌l^uv┐wMWRZha[ZJflq_PRVZjPHCMUfmYKS_Y8125JB@C?NWN@ !-;>E7ABAF, *0,1,(*1'#%.-# "%Щ Ь З Т Й gXSjtm┬{s█┘▄fjdduhhiptd^L1UWatgX^^d_X]Fb[P[QJZ_jlQXTZihc^MIQSWZQVg_L>$4KTVPLLUKB7''77=0.;/4*% "(/!56- -(60 %Щ ■wot┤█÷°≈║╡©╖√{~∙╚╨╤ё··╞╙⌡═║╔╜╖÷░┤■╒╛╖╕⌡√·°⌠─t|┬▌▒▌┐√≤≈┐rbRXor▄┬}vqxta]_q~urmm|┐t_^^f]^XKQM_cRXDOXTM8.:<>UII?7C7% #11!(,$-"dXKHPdg\dbbq`I7-:LQXBBJRRD743>LJE>INLN=/-3;G>/03?@:+&2DA+*;I<)1CIL' ,7+".382 !-+$138, (2BE*(587=>,./371&A<5(/151_H;BMdkcQT[\ZF54CLRHFR^ZZD89@EEJDAHXa\VG?0<93'%*7;13-+01(*+ Ь Р У Ш Й Я 	Ъ 	Э Ь Ж Щ  Э О О У o_POUn┘│lrqxoXPSdlqdIJ]ha\T[aqqeODFW_omgdegdTEFS`ejd`fogL=11?KOPFIMC=@56>GPC6<DKE@<7<:,-?M=4E3@?910*0:B57>?C5&%(+2+"0477"█ze`q┼≈▌totsvuf`lnj`WTXfacTLS[jaG4?DPZPLMdaM<))3P]WWRZ_WA'!06?>=908," -$*%*-/-$З Щ 
+Ш Й П Ь 
+Ч Э Ь ╔ф$с&ПхУ│^uйг┼┘╢╕]:² Ч71─≈ТяТ
+╩)к	2	?	Л		2	 ▐РТAНфЛЦ⌠?"©╨▄▐л╤╥÷w6ВЯ╜≈╠╖┤uuI НщяАд╙²≈°≤⌠▀┘tonlW8%7;4)0 ХХЙМЕЙлц╦╪мд╣╥╗╔║╒                                   
+      * 7 S c r ▓ ╞ я в Р ▌⌡уЪDёЗY⌡≈м√З	▓МБ5╝ШwЪ м ╟hХв│  ╟#м╕!#Р%k#Щ╖ !╖&(<$/▌╞л!CХа■хN╕Q▒G≤╨'э=хйm                                                                                                                                                                               
+ 	  
+ 	 
+ 	      
+                          " # # $ " " # ! $ * ' ' ' ( & ' & % # # $ ( - 0 + + * ( $ ' ' & ( ( ' ( ) * * , , 0 - . A ? B C F A E @ C ; ; 8 5 5 6 : C > ; 9 0 / . - * , . , ) & & % " # !   "                             
+   
+      
+ 
+ 	   
+ 
+ 
+ 
+ 
+  
+   
+ 
+    	 
+  	 	   
+ 
+ 	 
+   
+ 	 	   
+    
+     
+     
+  КвпвСК язьфа╦Ё╤юхи╬╦╤Ё╣╨╙²~─⌠░≈╗╒yjL>^`O\`I?-Э Я Я Г ш р Х И Л в й ╤ ╥ и ю ═ ╕ ⌡   ≤ ° ° ▒ ░ ░ | p Y X \ [ V O @ 3 4 4 3 0 - , & % " # ! !                                  ² ║ ■ ╥ © ╦ ╝ ° ▀ ▓ · ╓ ╚ ╓ · ▀ ▄ ▓   ╒ · √ ■ ⌠ ▀ ┬ ▌ ∙ ° ≥ ∙ ∙ ² ╓ ╓ ÷ ═ ² ² ² ⌠ ░ ┴ ┌ ▀ ▓   ≈ ▓ ⌠ ≈ ∙   ░ ┘ ┼ ┤ ┐ } x m w { ~ z z p e ` j g j q z a h e d _ _ _ ] c h h b a [ [ W Z ] c Z Z ^ ^ a a W P N N S S W U X Q T T O O M K N P L J E G H L J E D E D т ╬ ╥ ш Л К щ г ╤ ╥ ╦ а ╫ ╩ ╢ ╠ ╜ ╤ ╩ ╟ ╞ ╔ ╞ ╔ ∙ | x } ┤ ▐ ▐   ▒ ▐ ⌡ ║ ╖ ÷ █ │ ┼   √ ⌠   ▐ ▀ █ ▄  x s v s }  └ │ q u u w p k l f m u { m n o j l o m m t k m ^ g ` a c f k l h n o q q k d a _ a m j m t v n h \ U Z ^ h o b k g e i e ` ] W X _ d k s p e f У Ь М ч Ф Щ И Л Г О К Е ь р у т ч Ю Б Ю ь Б щ у у э з А Ф Ф Х А э ш р ь ъ Ц П Г Х Р С Н Х щ Д Л Р Й Б Ю О Ф Б Ц Х О К ч н д ╩ ф г е е ы Й У М А ы п з т 
+'E/Ж Г Б Б ш м т а ф н э ч п е и г ╨ г б ╢ ╠ ╡ д г ю ╨ Ё ╠ ╩ © ╬ ╘ ║ ╞ ╚ ╙ ╖ ╘ ╕ ╓ ё ╒ ² ÷ ≤ ░ ┬ ∙ Г Я С П Т Ь Щ Е ш с п з ь п к ю ю ц т ь ж о ╨ ╨ д ю ╬ ╡ ╓ ╚ ╟ д т д ╦ ╗ ё ╠ ╡ ╣ ╧ Ё ╛ ╡ ╞ ╕ ╓ ╒ ╡ ╗ ■ ° √ ▒ ▄ │ ─ ■ ═ ╓     └ ╖ ⌡ ─ ⌠ ⌡   ⌠ ▌ ▄ ║ ║ ² ÷ █ ▄ ├ ⌠ ² ² ° ╓   ≤ · · ╒ ÷ ║ ⌡     · ⌡ · ║ ╔ ╝ ╤ ╬ ╥ ╛ ╝ ╝ ╢ ╞ ╚ ╤ Ё ╞ ╪ ╩ ╥ ╪ ╬ д б ╡ ╧ ╞ ╠ ╬ ╤ ╢ ╨ GРчЦ:D7@;XGT3БКс&AGOF+пЁ╬тЕРЦ#DрЬРюудqSa▌хх■▌▓╚╡╒╓∙╙╢╔╔аО·hg1bEE┌qcA%3ToW558M1"К Э Я Х Ш Ш  с у о х ╛ ╝ ╔ ╞ Ё ╣ ╜ ╗ ╖ █ ▄ █ ┌ ▌ ▀ ┤ █ ░ ┴ └ ┌ w s t У 5+
+А К Ы 
+Ъ В 51
+П  
+2LE7Ъ П С Ь Р С Ц Б 4 Ц в ф м Х   1%Ц П 	 "5DVPЗ З Э В 'ZeVSUE0"D5+FBH<IK]< С  ".-Ш в х Ё ╣ Z@;IVMOJr▄▄■fRA&+0>B\t└╒▄gZ-.;12>Td^hcbSVWT&::@X\bW[{╔√|`@/1PDCLbp|mN@AA:;:\w▄z|_TPODH?1K_aQFFLTLM>0,-GH>+:DJE1$
+Э У р Г а ю ╫ ╜ ╗ к а ф м ь а ╜ ╖ ╘ ╡ ╙ ╡ ╞ ╝ ≤ ° ≥ ║ ÷ ≤ ≤ ║ ⌠ ░ ░ ╓ ╛ ╣ ╤ ╢ ╨ ╛ ╞   ■ ё ╔ ╚ ╚ ╥ ╕ ² ⌡ ■ ╒ ∙ ╔ ╝ Ё ╦ ╣ ╩ ж П Н Л О ъ у о я у г ф л т э Б р ж ш ч Т Ж Б Я Р Й Л Ь Р % #!Я Д М У Г Г "</$2/./*/VWHЭ Щ 1<122+(*1?0)%9XL&-0=;PD!/8FMOT`^Z=	:JA +1Ж  	1( М З  -+Ф В !$ Р Щ У #1,Р М Т Т Й л Ю П   )Ы р щ Й  Н ┘{▓▐└egw▓═╔p[bk{PHLWawf]POn─kQ?I[lTC$&Ж Н 	5HK,#5Q!М Н Х 	Э О Х Б  Н К Ш © ÷ ц Х ч Д Ц о л м ╩ р д а и п ч м к ю ю д д б ╢ ╖ ╜ ╣ ╥ ╦ © ╣ ╗ ╥ ╧ ╙ ╞ ╒ ≥ ▓ √ ▒ ░ ┴ √ ⌡ ² ≤ ▐ ┬ ∙ ║ ╛ ┤ ws}q}┬▓ё·▒▒┌why║≤╢╡╥╘▐├┘▐{└╔╫х╦ё╒░zlako▓╙╖·╒▀q`Xn─┬r]A8(VB725CRN)С Ш Ы В Х К А щ А Б Х В З Щ Н Г ч х о у я т з Й у е ц ╫ ╤ ю ╥ ╩ ╬ х с т б ╝ ║ ё ² ² ÷ ╕ █ ├ ├ ┼ ² ё ╝ ╫ д dm▀╣╔iZIY*Wb	7NУ Ч 08*(К Ю з т в г а ъ 	
+Ф И э б а с д ю ╪ © д н ъ щ С А н ф п г д ╧ ╦ л ж и е х х ╫ й к © ц й ж У Н Д Д ж с х ь э А Щ Х н с ╪ ╨ ц я Р Щ Ж Щ К ж в Ю щ э к м о я т р э Б й ╞ ╢ ю г ж у щ О С Л Г З О Де© jmg⌡тЪПЫыы√ё▀┐╙Ё╤╪╩²┐╤хбОПГНЮт©мня╧╥╟лЕКч╝÷┼~╗═┘t┼┤√╔°─bv3PO~o&Cpsl`fnr^D+0LNI8)02Щ Ч В Я М Р С Н з у у т й ю © ╡ ╦ ю а ю ╜ ⌡ ═ ≈ ≈ ■ ° ≤ █ ≈ ≤ ▐ { } ─ rd┘x≥м╘■▄║ kfjv█╘■{ljed┌÷░s∙╔╣÷~s≈ё╜╗≤┴▒▄▐≤≈wu┼╥в©╩╝╣╚╛╛╥÷═╖╣╗es_jcVHfLab┌┬m²┬║╚╚|▄┬░≈▌]┌{r╗ф╗pafry┌█▒▄┬▒╖█rjtqTPHQW_ZWeUMC?<DJhx⌡{F/:e²laxm▀pmlX_█td-!!8LX]U^{tT<5K⌡╫╟°╛╪dw─Il÷╓═╧тХ╧]F*=p⌠ XFIEdbO@Wd┴▓}[DNGskco█⌠─N$;IwttjZB	*?OTIN>cLL:!$,3<%+0#
+Г Ю ш Л Ж 
+В Т В Ъ 	У Т Р Я З З Ъ Ъ Ш Р Щ М И О В У С П В Ш Щ 
+О Щ З Ж Ж И К Ы Ш О П Щ Ч Ч З 1
++#"!Ш Т Г З C62:GNJ(&J?31@;╢уФЧД╬╜йРЖс ─├┤■╪╔▓p╒╙▓uNelp}■kGv┤}lm2D-ui[MRccG+I8S_RL@17TG*;1XG=/Ь  'Ж Н ч щ Я В А Х Щ 	У О О Л Т Э Щ Ъ Ж Ъ Я Р  !Э Ш  С О П Ь Ы ▒_`u┌├∙рФц╝Wbe░┼│}┌╦к╢u^ZneUTFONr─dJCSajY9+,6:@.!=HRB.1-2FN\PNRF+!$%2* +4('&А ш щ З Э ш д ╩ а н д ╥ Ё ╧ ╜ а ╩ ╓ · ╕ ц ╪ ╒ ╓ ╔ ╗ ╙ ╩ ╟ · ▓ ∙ √ ▓ Ъ (С Ф В %В Н У Р З 1-П Л Ш .8#:KFВ У Ь Ш  ж т С  Ж Ь Ш Х Й  A@(Ь М Ь -7.)07&Ж К Й 2C, ,OU3"-(>;VO Я Ж Ь З 
+#$;0	М Д В З $&.@a}sAЬ Я Ж ВНТЕ▓▓⌠╚╬═▄|qu╞НвПщТФ÷╘гРР  ЬС╦√▓╟╪╨▐│t║■≈vz▓∙┬≤d╛рю╔°╔╙╫иэ╖▀[A?Xh\AU][hfF'>C850$4М "Ш .?Ш Ш В ч Р ,!Щ Н Ш Г Ж Ц к м х W/$<`shYVl°tQ\DG]t┤┌└▌╣╔░eW]_h▓┘\a~╛·rQABNKC"Э З FU\dtOH4)C55Ibj(В 27&D3N0:%#Ь #"! &<J=40-$&5'04:/ 0#(6/4>0(E0K[RH\┤°tOSb▄║}C1<SntA)7U┼W4%8OD"
+>_U.0>E& П З  2,#$;O0
+Ш У '/,\JЯ П #Щ Ь &Ш Ж Ъ Р щ э Й 
+У Ж (Т ъ ф м А Н Ъ  У Э в р г л Д 
+В Т Ю Ю Р Д т х р э QORVW<4.3OngUS\q\,"$?UJ<RqU)
+(DEPCFahS ';N7&&9VnO4B.7731(9NldJQTmp_4Ч *D88DRSHУ Г У %,e_Р Ц Й Ь  2#82	!Ь Ж ╨╖йУЧ╫╕■·гСЦфблАЯч╕│|⌠гЮ©╘ЁхАа÷⌡╓ ╪гю÷╓ЁФв═█┌┤≤╞°┘}⌠╬ц░└└▓⌡╔√┘r┬╖╚╠√▌░╗╡≤┐─}≤║▓≤∙²Ёме│TDH[qqZEBVwyXL:>PiT+$>PEBNTlb02=2*/3Ь Ш И 		Ь Э +#Т В )471В /CI)06%"/@0'$@J<'3;4 'CMN@'Т !525#
+!С Д К У Э Ш +
+7:Ъ &╚wev▒┬hV[{zsnfp▒█~nMQWq┌jF=Y─wU@7IWbE218LZ:)63BI030!8*Щ Ь ".4/Ъ Д Б С Ъ Г И Р В В Я А в ж Л Ь  М ш с ъ ж я я м д Ю ш Ф Ф г ц ╫ к в щ ь р м ш Щ М г ╘ ╝ ╓ ╓ ╨ р о к к н ╟╛╢ДВц╚⌠⌠╓╩╪░┘▌╜гяЁ┤~▄╚╕≈l┌╚ ∙▌xdk╒б╗╜}┘{u█|▄≤²╕┌TNSb└▐├TSgagOA<LP┌└▀vSFCOC8 75NIK:-I74$$F'Х $Ш Э !Т о ш А Э  Я М Ы Р Ъ Т ж б я ╦ а ╥ © п у т bgy▌╜^mlG÷·sXF\┤▐▌bj▐·≈nMXU┌╛▓├r┤╝└┐E0bIqyaZ_t≈▒z[Tww▐tAW]u┬WQ[Mu┘J>-_VshHpMSGDL7PJBYDE_AD'".N$82;\dzJ/1?Э !!О 	Щ опчЙЧФЪЗ╦╠я║МЮФйуХУ
+м╬	КпйФЖ*ЭЪA!ь╔wu▀╕Ё≤▌√╘х╢▌tWe▀д╥▐r╓╥ц·TVR|█UQPs▄█~\8E8^wPFCXxuxT/BD`A04.Hw┬VCbctc4=@N∙uVTE`M1!З Щ ╗gd┤█╜≈√╒Ёфа┘mbb┬▄■²═ё╔²²UO=t√▌rco▐⌡▀jTm└⌡╗▄└x ╧╟╒┬┐ ╓Ё~^bj┤∙▓▐■╗╖|VEX└ √ ─tu└c;17En┬{iXmt}eTGThpoFDJh{{vu┼■ ecLK\w▒⌠┘q▄o┌H*330/;L_."$1$AM* *=.
+0CMB;77GA>ZE14Cn|R#%2R7;MeVACAKJ0%<PdX6?UbL#*##;MU56E_oH/LECI=-'3P^VNS[`P2' 1OlQ@7:SbB7+$#(#у╤ё╞ЛУСРКБЮт╓u^|╡╩г╫╤■{dQ09Jdw▄m_YLJ7Ъ Ш  +NI2 $&Щ з ш з Р Ы М Щ Л Б ф г ╛ ╚ б © ╨ ╡ ╞ ╠ ╛ ╕ √ ▓ ⌠ ▐ ■ ║ ╖ ║ ∙ ░ ▓ █ ┌ w v v } v v z t q t v r k k k v | r v s m m k l k k g n [ ^ V U Y ] ^dpb`Uq┐°╙°m^XjrSSnXVTJY<JeRW:5?P@E@/'$216DA(&Ч Ч Э Й ч Д Ц М Ф ч А К П М ы л н с А Ф Ю в у ь Ф Ю ы ю ╣ ╬ ю л й ╫ ╣ г п ж с ╩ Ё ╜ ╜ ╧ ╧ ╤ ╗ ╢ ю ф ц ╠   ⌡ ■ ≥ ╗ ╒ ═ ² ╕ ╗ ╠ ╡ ┼┌|ux||zux∙∙▀~jTJSnoruz┘┴┼─rjovnib^v┘vur~fgermhfdfkotuusmh_WVXbafcrtzmi[YT\__SV`a]YerTQPD?ABBDCBDBA1 Ь Ъ Э Ь Н Б ч #*1@;2#/*
+
+З Т С В Ь Ж П Ш ,С Ц Е Й И Н Ь Ы З Я Р Я У Ъ  
+
+ Э  
+' У В Ч 	 ($!$',% #&Ы %$"/*$ 
+c│─▄|faT[}}xxjmmkcK?Jb}g[SPPC?..?YomkozufU=8E60<KH>F2=<$'3B 
+Ъ 
+В Ъ Щ С Р В Ж М Ж С Г Д Б Д Б э ш А К Н У Ф ж к х в Ю ъ п р ы Б Ц ш х ╥ ╠ ю и с х б и с з в г ╢ ╜ ╤ ц н л г г г б ?;BPTOEFN\WSPBOKE1!5D_XH@:) $@MO:+!/<52/2#! 
+!"%	Ъ Щ Ъ  
+Ъ Ш О Т Ъ Ъ  Э З З К С П О Э П Р С В С Л ч ь Ц Р Ч З Н Б Д Ь П ч Д Р О \Tba_dPU_dqeQ=EQSQHALXaXA'.BSZ?CINTQ@*5KQWP25CJH>%#2HSZ=8?CBJ.#/;FMTHE3;C/$4A>.!,/<C/"154'@<&&"% "5+"-?(
+Ъ Ъ 81ьтсЩоЛщЛШтссесжБДЦОЩРк╝╫╥╢ояХК"╫╕⌡╒╗ёг©жАрДг╚▓▐▀█║╡╗╚╝╧ц°r■═╠╛·╨√√▀tifd▒╜≈rS_djr`_n─█caPJ\gcKAJJLC.-=BA;/(1IWL4!#$2( ≈╦╜⌡vbg^AKZd▀╡═▄yux┘sjh│·╡·~k░╗╟╨кр╫╒uhv≤╤╬юааеихxlv²╢х╜÷≤╒╠╣╚▀▀÷ажх╫▒┌└░▓┤▀Ё╡╒eTu┐├▌▄░≈∙≤├■█tTu┼╖╠⌠≤╠©╦÷nbpkXd}┐┘└~▐qCB*>5K`GJQБп╫┬km|▀╞╣╟⌡÷÷▀shw√░▄│\ejqhab┘i┘▄naLJL6<EPh▐°kZBAK^fX\qzpM;?SRKJGISaZM2**>8HID^X>?2A_iUH1=X^3=7@8NK<5Ч 70'
+$6:E74∙■═╦з╪╟дкЮ	К╢{┘≈╣©елфхшш╬─t┘║╔╦л╨╫аед┐p▄╚б╥Ьзё╗╔▒▄k┘╒╣н╒╒╤ютГ╞╡╤╞лз÷zz╓нхг╙╚лжи╠{─{▌╓л©╣иувеёzs}░╖╢ю╡╞бк═xig▀√║▐÷┘·╞с░]aKdatJ\D╔°e,%4\╒uWcuxxdh}Qk├udYS_SJ@0Gouve[@CF]ns≈░▒≈фа┬zpmz≤·▄{Olog▄|UGNy┴░N12A74XXFJT7#*+1>-(;-#%,>;2G>aTT;$-#DM:SK5-%0L`EB?Ck^L?M▄╚■|XGDFRE:eprtmP=,'3/!GI]%У З ! 
+И Ч "!8- %Щ М "/	Т Т 
+Н М П 
+М в п ь Э Ы О Х Ч Т щ г ю о в Л ъ Ф ы ч С Щ Ш Й к а А з э П А у п Ц Е Р П п д и у Д ╨ ╩ ╠ ╤ ╬ ц х ╫ 41 Ь $&2&"$
+Ч З <>UA@,%'"'5=5#+$ $BMF2(-5$*,-===#*Э *	У П М Р Э - Й П В 
+  Э П А Л И Е Ф ├┤░╚≥≤╓╦тчЦЁ█j`|≤═╡ё≤`s∙mMV~∙{÷╫╛╧■·∙kq╒╤╛╖▌╧╥  ╖∙┘■Юс├p{x ≥▒~╞ю╣┤PSdn░║≤·╕╠╥|_KSkn░╛╙╒ ╙╟═┴y┬▒╚╝▌vbduzz~√Ёзж⌡─un{≈═╚╗╘пь╪┘_VYc:3$%*;OL3#8SD2 *61>GA Э У Э Ж Ъ 0*Э Ь Ч -1*#%
+
+В ./07Ъ %$!*	Р Ж .4 ' 	Ч 	(E13Э 
+  U┐·░a]e▒≤┘17BhwgPEHPP;.DH/.0П Т 7C#%Ы Д Ш %PS	Ь Я Ь ы Б Ж 
+В ы с з К К Ю я к ш Р Е м ч ъ Н Д с ч Ю М Г ш й ж ы э з л ╤ ╬ п Е Ф п г Ю ш Н Ю т х щ щ щ м б ╫ л в ж л ╬ ╨ ю д у р т s▒░{}lwugkNG}vkh~x|eYReqim^_VY_bUae└▐}┌nn▄▄r[>GLtvl─▀rpw_VTWLU=@6.?@DAF7<E.' /7@DA)HD7Ь Ч 9;<BC4.&Э Щ Ь 15,)2Ж М Л П Ч !$#'Ш У Щ У ъ Ф Ш Ф Н Г Э Ч А з Ф ш в Б П Ъ Э Ю г п О У м з Д Т П р ф р М 
+Э ч з Б В П ь ы э О щ Г Ь Ъ Ш В Э Ю Е У *У Ш Т Х К <B'	Э Ч - %A7Э %<<>2+38У 7SV*,U▌|BCNc]S%]▒░E.?aW?>e²┤7(2S`D-(>Pj]X$GmoCAC^aA4#,Un^8''7;,LnV,.B+*JeZ&"7A#72'8ZJ"!!-=/Ч П Щ %CZH!2(Ь Р 
+ 8CLQ├╡я²[TQva\W~²╥╣b5=cdo<FMz╨╙p86Kg}k:34JbcLD=SwtK*8>KP&#:^`H#9/Э Щ .E>#(+Т ,L:М Н Щ О В .,Я И С Щ У Й Щ Щ С х с Ф Х В Й Ц ч Х Т П 1T@-E\Р 
+-AB&П 1V[1))Н Ш ?LL3>-#7DN.37;HdP?&GQQ8MbR"'+6,4\V,=E@5)Bjqh%*Mub:'2OV7Э 4e\C$<9:"$Р .Ш Ж  Н З '7
+ Ь П У .=5"Ч И Н  .9Н М Щ ъ у Б С П О %В О Э Ь Ж Я Б Ф "т Ю Е Л Ш У А Ц Ь *А Х Ш Щ ъ т э Л Ъ Е Ц Ь Ъ Ж Л У Ш З Э Ъ ( Й Л С Ж О Ф А Х Ь Ч ,KAg?<ж>C>'6f'$┌!2Й⌠	т╚\┴©┬
+■fГ~╓▓hFЗxlV├k\v▄°eЫЕМВКОЮН'+"ы▓° ≤═└ku■ХщёXI`hz`5*Nq▄F#&8B0Ш 54=Т З  Ж К П Р т щ С В Э Г н А И Ч е о ц а в э ж ю ╝ х э с                           + > C T p √ ╢ Й #a C{н_ь>j1`╒├╟	2ъbАЬ▐Ю■xМЫ╔дl⌠хGwЧ┌ /$Р%y%┤$г&≈)┬-*-p(²#=t#П&В'(б&S'-─10q)U$R!*!≤%∙*,┘)i(+`,С(,%Д ┴О`#^&╛&З!w╛2ц_];─M&_ВМ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                	 	   	    
+    
+                                                                                                                    
+ 
+                      
+   
+ 	   
+       
+   
+     
+   	 
+ 
+ 
+ 	 
+           	                                                                                                                                                                   
+ 
+      
+  	    
+   	  
+  	  
+ 	  
+  	   
+ 7 : 9 : = > 6 3 2 4 8 7 6 6 7 < : ? < 6 4 6 6 4 3 1 2 5 9 8 6 4 5 ; 4 7 0 0 1 4 5 3 1 2 4 6 8 4 2 - ) + . . 4 2 1 2 2 4 2 2 / . . . / - ) . 0 0 1 0 3 1 - + ( ' % ) % & # $ % , , . , ( %   ! # $ "                              ? < = @ ? : : 9 7 6 3 2 5 7 6 6 4 4 3 1 - . / / / / 2 0 . / 0 + ' ( * * + 0 / / - - / * & % ( ) ( + + ) ( * ( * ) ' + ( + * % & ' % * + * , + , & $ ' & ' ( % ' % ) ( ' ( $ ! # % % $ $ % % # $ % " " ! # % & $   ! $ & ' % # ! % # !    # * / + , , + ) & & 4@QlttgF/4:F=7>G\V{smZUP>A>.2L\bcXF/0)%ZmaE81 '16;1Щ О Х Ц Ю ъ К Г Д К Й Н Х А Ю А и ╥ ╤ ╬ ╡ ╜ ╓ ╛ ╞ ╚ ° ▐ ├ ~ u t │ ┤ { | ┤ ┐ ─ s n f o h n o h t x u p f Z T Q T V R H R X X R O R ч ь Ю ж Ю п ж з в з Ю Б ш ь ъ Ю с к н и л и о х п ш о ж щ к ю е б ╪ ╪ д о м э А щ с й ф © ╧ Ё ╞ ╙ ю р п э з п л ц б е ╩ ╠ ╢ ю ╪ © ╬ ╠ ╢ ╜ ╕ ╚ ё ÷ · ╒ ⌡ ═ ² ╒ ÷ ╕ ° √ ■ √ ⌠ ≈ ░ ▌ ▐ ⌠ ° · ² ё ╕   ⌡ ║ ═ ∙ ▄ └ ┌ ┘ ⌠ ÷ ╔ ÷ ╔ ╔ ╕ ² ▐ ┴ ┬ ░ ⌠ ≤ ║ ╔ ╓ ╖ ÷ ⌠ ▓ ▓ ░ ╛нзн╩┘ga`]]vx┌╛бё┐X7;KRN**ddm┌]a[F;F:JY┐nL:<E=+$  Ш З Ч В  Ъ Ч Ш Ч Ш Л Г э ы п у ч Ж Й Ф Е П Т Н ч я д н у л д б ж Й М Ю щ т ц ╡ ╢ б © ╦ х п р х б ю ю ╩ ╞ ё ё ╖ ╣ б л з л й б ╫ ╚ ╝  У П Ж У Ш  *+Ы М М ч ь ч Д М Ъ У 	
+У Е Ю Д Е э щ ж Ф  Р Д Ю Б Н Ц у п и я с ь ъ Ф Ф Х С Ж Й щ у м ц с о э В #
+Щ Н ж х ю ц ц © е з Ф А ь ъ ь л а б п п н р в Ф П Е Х Н Б В Ц й х ф ф в у ъ Е Т В щ в м и у я й п Ю Г О Г ъ ш в ы ш Щ Т !A>1Щ Ъ 
+У К Х Щ !#З Э Щ Н Ц ч О Э Э Ь О К Н Ж Л Д с у з Ц Й Д э щ Г С Ш К ы д ╬ ╬ ╫ б ╩ б ь ч Г Х ж й ╨ ╢ ╨ ╬ ╪ ╪ а п Ф щ ж и ╨ ╠ ╚ ╛ ╞ ╞ Ё ╤ ╛ Ё ╪ а ╬ © ╫ ╥ ╜ ╜ ╣ ╠ ╠ ╕ ╖ ╣ б ю д н г х а д ╣ ╣ ╨ ╣ ╦ ╪ ф г к ь ы к © ю ╪ © =&#$:@.2/$3>0Ч , #E7(У Т Ь  
+ !0
+З И Ф О Г Х Я .& П Ц в т ч в у К К И Т З ъ А ч ъ К У Ж Ж Л Л М К в д е х с в ш Е щ Ю Ь Ц ш т г б б и о н ж Л Й Б у ф к © ╨ ╤ ╦ ╥ ╩ н Ф Ш Я в и н р р 0r█≈≈rijBISSc|┤╩н╠▓┘fbRIIYw╒╚ё▌s_IBI/I]l┤upbLIL8<?CLILKZkOOK<1$#0N0$>DC4$ Т Х В М Е Я Ф З Ь Й П Х Ю й о е ш ш Ц П Ь Ч Т щ о ц ╟ ╡ ╣ ╗ ╡ б ь Й Е ь х ╫ б ╝ ╔╝юппзФЬшяж╤═╨б╤╫гуВВГАЦвме╝ ═█╝ДЮУьт╟╚▌v{≤╡юХзё▐█─vl``s■╝бц╞▄─pV]VTNa┘∙uVCX>1=daUT:1"	Ч Ш  Ч С Т Р О Е Ю Ы 
+Н К Е Д ш ъ ж р я в м у ь р ╪л╡мФЮЁ≤▐}lpm║гп╫╣■oahdd┘╚╠░ ┤┐qpbd`_hlbdufdh[TNF3EHTt``\OH@=5:7(&I\dd_@;":JRQP;/У (40&Т Ж Р С 
+	$ В Л Ь У О Х П Я Ш Ъ Ч Щ Vw╖ие╚╜▓`R\PVl▄а╫тх╪б▀─┘tu{┴╗║■▓┘z▐∙▌uC52?I[m⌠÷÷⌠┬spbgF@\v·еымр╠∙▒zela~■┤╫Ре·┌d[KJXeU[vt▀▀│iT@3:<C:;Zxu²┘v{mbRA((Knp┘s__KBAQ-.=1┬░≈ежнх╦╟╜╧╞▀▒÷йд╫╚╣а╠╟╤╒√ ╔╔°╥∙╤╞╓▌▄qeWZ[\QZg^kdV<,,
+	Щ %:GD2- В Ъ ,::'
+Э Щ П Г Ц Б М 	 Ч П Г Ц Ю Ц ъ Е  Ш П П Н Б щ в я у ч М Я М Ж Ь В С Ф А Ю ъ Д ч в я о ж ъ Б .ANg▌─j─pY=7DN\vns_R\cd\G><=6../DTTK@@LJE;-(=?VA,-4*%5D[L2"!$$COE71'$*235&	 ,
+ $%С А ж о г я щ Ц %& 2COHAK0&HcnwaE3#Щ Э Ч 3HKN@72' Ш .KPJ=6' **'	Ъ У Ь +M<Э У Ф Ц Т Ч 1?.%	 1(1' Ъ !.45
+О С Г З  '+2r└╓ё≈q^aF1.+DVavaIME8*%"8[aF=:+/,)"5(Э З  Э .9D>- 
+Ъ И Д Д +FF3'Ч Э С Й К Е Ж Ч З У Ф Ц Ф Й К Ч В Ф з т Ц М Ю щ Б Г У Ь П Г э р к л е б б к ╙═²©я
+ЩЦюе╠╡∙═╕йл╬ю╨ё╕╞╟╝╖⌠░ё÷▓≈∙▒╕╨╢═▐┐┤▓xn─┼╕╨╔|fWGHN4*d}▌rX2. 0JXVK=1'! '+)1+!21%$
+('+
+.ET`U6'ШЩМрешлцрХ *:ЛЦд╟▒·ь#_nW"Щэп╡гАЭ$376	ЧПУФАшЮХебЪEP3ЧНш╡╝╪уМ<}u]6Ца╝▐▓═о 7?#Хж©╝ё╔╠╠╠╡эрпд╣╜╛║▒⌠▐∙╓╔╢╡Ё╝ ├mjtj_9=DKB%"Гщо·°╘■─r█╝Ёфа╛─l[Tiwl{√╗ое╝√∙▓|]VXdq█x├ynaXLQND>Z_b[NTQOA0-20021<@NNI;,$)#%@G@2#Ч Т С Щ 
+$071#Ш Ы Н щ М Я  % Ж О Н Г Х У 	 Ш У Ь Я Л П ╥≈░┴■ ■┤┼▐╞╬ьл╪√²╖°⌠└┤∙лХЭи·┤┐┌sZPVv╘╗ss_TL^O;@I}└└vrv└√²┐laYUF[`o²©©⌠|mVRUGLX{═ёёe4BU\J544N\D>KLUQN7%')4<4<P^njoN6.Ы Ч @Q^RLFjlP=@EGPLAFGLJ<9)&"#4UUTC-.KPC8'В Н Х Г Ш )&Ч Щ С Л Д Д Й Ж В З 
+
+Ч Ъ Щ З 
+#
+Ч Щ Ы О Й Ъ "52-Щ Ъ )/$! &
+	 .66=FВяю╔▄▐█▐√╪ЕЪзЁ╠║═╒∙▌x▐╨г╒▒▌╝╓∙{wqb`J_W┘∙▌~jXID0'4_i~vhUP@;+,&*CVq|jZ8/&!	#:==:!()Ч Ь Я Л Ь Т Ж Ь Ш Э Р Х щ ь с з Ц Д Л Ь Щ Щ фр╡Ё~tfO~ffn└tq▓ d└┤PnNHP8.?]s`g|5F, 	4+]J5NП Ш Р Ж  $3F$Я Б т Б щ Г 5З А Ю о т э у О С П и я о г Ю м Ю Ф Ц Л Ф в Ц я т Б н у х © к ╩ м т ж Ю с ч ь р м ╬ ╥ Ё ╜ ╫ б п т к ч ж х ╡╨▓┴gNS7D>Mfp┼v√√lfhSaNBUXah┘║{┘⌡ffNHSFFem│{┘\C6/8F`nmhLC3+JMTRQ0&/# -%#&;)?*&+Р Э #32M4М Щ Т А Ш  464Ч Я Ы Ф К Ш %" #░гбё█zvilu█{x▌┐uxwhL?NQKHnupv{jU>4*7B:HZhnpaI7&(F]qhVE,
+5QPO?#
+//5&%.#Ч О Я У Ъ #$"+#Щ У П Н Н  "7<&З К ъ Ф Х Г  *LQOn▐╒⌠▄}bdG'&0:_└√┌tfB50Ih├┌x_F+CSQFC+	 ->3966
+	%'#В Т Г в Б Ы З Ь Д в н п я ш Х Щ М Ц н ц б е к ъ Я Ш В Ж щ г © ╩ ╦ ╨ ╤ ╣ д ж Л О ч }⌡°≤tX[GI@@8Q>5[lgWE:.*JZaOK8"З О С О С 
+'+М Б Д Ф О Ж &У Ф Е Б А Ц з Й  Ъ К Л Р К Ю ч А Е ы Е Ь Э Л ч э Е Д ы в Ц С У  Ч Я Й Ф э ч Б Г З /!Ь Ъ 
+┐oj~gw▄² ┘┤dRUKKUc}▒ ┤r^K:9+408X[]J2+#
+
+$3//З Ы У ч Л Л Д О Х Х О Г Э Р Ц М А э у я н п ч Н  Ж Ы И ч ж с п к ю х ж Х Ф Л Й Х Б я ю ╩ ╣ ╫ ю ф ш Й У М щ у е ╢ ╪ ╣ ╤ ╬ ф и з т в й й а ╢ ╥ ╝ ╒ ╒ ╒ ╔ ╠ ╩ 
+-#3D/&Щ ;;EH"%J\aO=$%$!(% &37=>/:BHD@/'#CYcgvdK5#!'9Q`pp^H?7*!+>=HLE1%Щ %+*$Ж Р Ш П Ч $,=(#	Ъ Р █с█с█с█с█с█с█с█с█с█с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с█с▌с▌с▌с▌с▌с▌с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▐с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с⌠с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▓с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с▓с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с▒с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с░с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с▒с░с░с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▒с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с█с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▌с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с▐с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с▀с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┬с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┬с┬с┬с┬с┬с┬с┬с┬с┬с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┬с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с┬с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┌с┐ссссссс─сс─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с│с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с─с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с|с|с|с|с|с|с|с|с|с|с|с|с|с|с|с|с}сzсzсzсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzс{сxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсzсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсyсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсyсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсyсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсwсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсwс с≥с≤с≈с≈с√с√с∙с■с⌠с⌠с▓с▒с░с░с▐с▌с▌с█с▄с▀с▀с┼с┴с┬с┬с┤с├с├с┘с┘с┘с└с└с└с┐с┐с┐с┌с┌с┌с│с│с│с│с─с─с─с─с─сссссссс~с~с~с~с~с~с~с}с}с}с}с}с}с}с}с}с}с}с|с|с|с|с|с|с|с|с|с|с|с|с|с|с|с|с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{с{сzсzсzсyсЗсЗсЗсЗсЗсЗсЗсЗсЗсЗсЗсЗсЗсЗсШсШсШсШсШсШсШсШсШсШсШсШсШсШсШсШсШсШсШсШсЭсЭсЭсЭсЭсЭсЭсЭсЭсЭсЭсЭсЭсЭсЭсЭсЭсЭсЭсЭсЭсЭсЭсЭсЭсЭсЭсЭсШсШсШсШсЗсЗсЫсЫсЬсЬсВсЖсЖсУсТсСсРсЯсПсПсОсНсМсЛсКсЙсИсХсФсЕсДсЦсАсЮсъсщсэсшсзсьсвсжсустсрсяспсоснсмслсксйсисхсхсгсесесдсцсбсюс©с╬с╖сЙсЙсЙсЙсЙсЙсЙсЙсЙсКсКсКсКсКсКсКсКсКсКсКсКсКсКсКсКсКсКсКсКсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсЛсМсМсМсМсМсМсМсМсМсМсМсМсМсМсМсМсМсМсМсМсНсНсНсНсНсНсНсНсНсНсНсНсНсНсНсНсНсНсНсНсОсОсОсОсОсОсОсОсОсОсОсОсОсОсОсОсОсОсОсОсОсПсПсПсПсПсПсПсПсПсПсПсПсПсПсПсПсПсТсусусусусусусусусусусусусусусусусусусжсжсжсжсжсжсжсжсжсжсжсжсжсжсжсжсжсжсжсжсжсвсвсвсвсвсвсвсвсвсвсвсвсвсвсвсвсвсвсвсвсьсьсьсьсьсьсьсьсьсьсьсьсьсьсьсьсьсьсьсьсьсысысысысысысысысысысысысысысысысысысысысысысзсзсзсзсзсзсзсзсзсзсзсзсзсзсзсзсзсзсзсзсзсзсзсшсшсъсасасасасасасасасасасасасасасасасасасасасасасасбсбсбсбсбсбсбсбсбсбсбсбсбсбсбсбсбсбсбсбсбсбсцсцсцсцсцсцсцсцсцсцсцсцсцсцсцсцсцсцсцсцсцсдсдсдсдсдсдсдсдсдсдсдсдсдсдсдсдсдсдсдсдсесесесесесесесесесесесесесесесесесесесесесфсфсфсфсфсфсфсфсфсфсфсфсфсфсфсфсфсфсфсфскс╟с╟с╟с╟с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╞с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╟с╠с╠с╠с╠с╠с╠с╠с╠с╠с╠с╠с╠с╠с╠с╠с╠с╠с╠с╠с╠с╠с╠с╡с╡с╡с╡с╡с╡с╡с╡с╡с╥с╒с╒сёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёсёс╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╓с╔с╔с╔с╔с╔с╔с╔с╔с╔с╔с╔с╔с╔с╔с╔с╔с╔с╔с╔с╔с╔с╔с╔с╔с╔с╔с╔с╔с╕с╕с╕с╕с╕с╕с╕с╕с╕с╕с╕с╕с╕с╕с╕с╕с╕с╕с╕с╕с╕с╕с╕с╕с╕с╕с╚с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с∙с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с√с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≈с≤с≤с≤с≤с≤с≤с≤с≤с≤с≤с≤с≤с≤с≤с≤с≤с≤с≤с≤с≤с≤с≤с≤с≤с≤с≤с≤с°с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с█с█с█с█с█с█с█с█с█с█с█с█с░с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с└с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с┘с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с├с┤с┤с┤с┤с┬с│с│с│с│с│с│с│с│с│с│с│с│с│с│с│с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─сссссссссссссссссссссссссссссс─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с─с└с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с─с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с─с|с|с|с|с|с|с|с|с|с|с|с|с|с|с|с|с|с|с|с|с|с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с}с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~с~сyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсyсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzсzс{сuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсwсwсwсwсwсwсwсwсwсwсwсxсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсxсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсsсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсrсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсmсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсoсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсnсnсnсnсnсnсnсnсnсpсjсjсjсjсjсjсjсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсmсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсkсkсkсkсkсkсkсkсkсkсkсkсlсlсlсlсlсkсkсkсkсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсlсmсmсmсmсmсmсmсmсmсmсmсmсlсmсmсmсlсlсlсlсlсlсlсlсlсlсlсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсnсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсnсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсoсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсrсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсsсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсrсrсrсrсrсrсrсrсrсrсrсrсsсrсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсsсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсpсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсwсwсyсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсzсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсuсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсqсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсpсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсoсoсoсoсoсoсoсoсoсpсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсmсnсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсsсsсsсsсsсsсsсsсsсsсsсtсxсxсxсxсxсxсxсxсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсxсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсxсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсsсsсsсsсsсsсsсsсsсtсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсxсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсtсtсtсtсtсtсtсtсtсtсtсtсtсtсuсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсsсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсrсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсpсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсqсrсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсnсoсoсoсnсnсnсoсoсoсoсnсnсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсoсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсjсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсkсlс┌с─с}с{сxсvсtсrсqсpсoсnсmсlсkсkсjсjсjсjсjсiсiсiсiсiсiсiсiсiсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсgсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсhсiсeтeтeтeтeтeтeтeтeтeтeтeтeтeтeтeтeтeтfтfтfтfтfтfтfтfтfтfтfтfтfтfтfтfтfтfтfтfтfтfтfтfтfтfтeтeтeтeтdтdтdтcтcтbтbтaтaт`т_т^т^т]т\т[тZтYтXтXтWтUтTтSтRтQтPтNтMтLтJтHтFтEтCтBт@т?т>т<т;т9т8т7т5т3т1т0т.т-т,т*т)т'т%т$т"т!тттттттттттттттттттттттNтNтNтOтOтOтOтOтOтOтOтOтOтOтOтOтOтOтOтOтOтOтOтPтPтPтPтPтPтPтPтPтPтPтPтPтPтPтPтPтPтPтPтPтQтQтQтQтQтQтQтQтQтQтQтQтQтQтQтQтQтQтQтQтRтRтRтRтRтRтRтRтRтRтRтRтRтRтRтRтRтRтRтRтSтSтSтSтSтSтSтSтSтSтSтSтSтSтSтSтSтSтSтSтTтTтTтTтTтTтTтTтTтTтTтTтTтTтTтTтTтTтTтTтUтUтUтYт8т8т8т8т8т8т8т8т8т8т8т8т8т9т9т9т9т9т9т9т9т9т9т9т9т9т9т9т9т9т9т9т9т:т:т:т:т:т:т:т:т:т:т:т:т:т:т:т:т:т:т:т:т;т;т;т;т;т;т;т;т;т;т;т;т;т;т;т;т;т;т;т;т;т<т<т<т<т<т<т<т<т<т<т<т<т<т<т<т<т<т<т<т=т=т=т=т=т=т=т=т=т=т=т=т=т=т=т=т=т=т=т=т=т>т>т>т>т>т>т>т>т>т>т>т>т>тCт!т!т"т"т"т"т"т"т"т"т"т"т"т"т"т"т"т"т"т"т"т"т"т#т#т#т#т#т#т#т#т#т#т#т#т#т#т#т#т#т#т#т#т$т$т$т$т$т$т$т$т$т$т$т$т$т$т$т$т$т$т$т$т%т%т%т%т%т%т%т%т%т%т%т%т%т%т%т%т%т%т%т%т&т&т&т&т&т&т&т&т&т&т&т&т&т&т&т&т&т&т&т&т'т'т'т'т'т'т'т'т'т'т'т'т'т'т'т'т'т'т'т'т(т(т(т(т-тттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттттТсУсУсУсУсУсУсУсУсУсУсУсУсУсУсУсУсУсУсУсУсЖсЖсЖсЖсЖсЖсЖсЖсЖсЖсЖсЖсЖсЖсЖсЖсЖсЖсЖсЖсЖсВсВсВсВсВсВсВсВсВсВсВсВсВсВсВсВсВсВсВсВсЬсЬсЬсЬсЬсЬсЬсЬсЬсЬсЬсЬсЬсЬсЬсЬсЬсЬсЬсЬсЫсЫсЫсЫсЫсЫсЫсЫсЫсЫсЫсЫсЫсЫсЫсЫсЫсЫсЫсЫсЗсЗсЗсЗсЗсЗсЗсЗсЗсЗсЗсЗсЗсЗсЗсЗсЗсЗсЗсЗсШсШсШсШсШс тчсчсчсчсчсчсчсчсчсчсъсъсъсъсъсъсъсъсъсъсъсъсъсъсъсъсъсъсъсъсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсЮсАсАсАсАсАсАсАсАсАсАсАсАсАсАсАсАсАсАсАсАсАсБсБсБсБсБсБсБсБсБсБсБсБсБсБсБсБсБсБсБсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсЦсДсДсДсДсДсДсДсДсДсДсДсДсДсДсДсДсИсхсхсхсхсхсхсхсхсхсхсхсхсхсхсхсхсхсхсисисисисисисисисисисисисисисисисисисисисйсйсйсйсйсйсйсйсйсйсйсйсйсйсйсйсйсйсйсйскскскскскскскскскскскскскскскскскскскскскслслслслслслслслслслслслслслслслслслслслсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмсмснснснснснснснснссс╠с╡с╡с╡с╡с╡с╡с╡с╡с╡с╡с╡с╡с╡с╡с╡с╡с╡с╡с╡с╡с╡сЁсЁсЁсЁсЁсЁсЁсЁсЁсЁсЁсЁсЁсЁсЁсЁсЁсЁсЁсЁс╢с╢с╢с╢с╢с╢с╢с╢с╢с╢с╢с╢с╢с╢с╢с╢с╢с╢с╢с╢с╢с╣с╣с╣с╣с╣с╣с╣с╣с╣с╣с╣с╣с╣с╣с╣с╣с╣с╣с╣с╣с╤с╤с╤с╤с╤с╤с╤с╤с╤с╤с╤с╤с╤с╤с╤с╤с╤с╤с╤с╤с╥с╥с╥с╥с╥с╥с╥с╥с╥с╥с╥с╥с╥с╥с╥с╥с╥с╥с╥с╥с╥с╦с╦с╦с╪с°с°с°с°с°с°с°с°с°с°с°с°с°с°с°с°с°с°с°с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с²с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с·с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с÷с═с═с═с═с═с═с═с═с═с═с═с═с═с═с═с═с═с═с═с═с═с║с║с║с║с║с║с║с║с║с║с║с║с║с║с║с║с║с║с║с║с╒с╒с╒с╒с╕с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┤с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┬с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┴с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с┼с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▀с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▄с▒сsсsсsсsсsсsсsсsсsсsсsсsсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсtсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсuсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсvсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсwсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсxсyсyс}сeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсeсfсfсfсfсfсfсfсfсfсfсfсfсfсfсfсfсfсfсfсfсfсfсfсfсfсfсfсfсfсgсgсkс[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с[с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с\с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с]с^с^с^с`сTсTсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсSсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсTсUсUсUсWсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсOсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсPсQсQсQсQсQсQсQсQсQсQсQсQсQсQсQсQсQсQсQсQсQсQсQсQсQсQсQсRсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсOсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсLсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсHсHсHсHсJсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсEсEсEсEсEсEсEсGсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсHсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсGсGсHсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсEсFсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсEсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсDсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсCсDсDсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсHсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсGсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсFсEсEсEсEсEсEсEсEсEсEсEсEсGсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсIсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсKсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсOсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсNсPсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсNсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсMсMсMсMсMсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсMсOсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсMсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсLсNсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсJсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсKсLс

@@ -1,0 +1,734 @@
+[DataSet]
+Version=2
+GroupCount=2
+Gr0-Name=Scan forward
+Gr0-ID=0
+Gr0-Count=8
+Gr1-Name=Scan backward
+Gr1-ID=0
+Gr1-Count=8
+Gr0-Ch0=DataSet-0:0
+Gr0-Ch1=DataSet-0:1
+Gr1-Ch0=DataSet-1:0
+Gr1-Ch1=DataSet-1:1
+SetInfos=DataSet-Info
+InfoSetCount=3
+InfoSet0=DataSetInfos
+InfoSet1=Calibration
+InfoSet2=Parameters
+
+[DataSet-Info]
+-- Scan --=--------
+Image size=4nm
+Scan direction=Down
+Time/Line=25,7ms
+Points=128 
+Lines=128 
+X-Slope=0 ¬∞
+Y-Slope=0 ¬∞
+Rotation=0 ¬∞
+X-Pos=-57,6nm
+Y-Pos=83,2nm
+Z-Plane=0 m
+Line mode=Standard
+Date=21-11-2024
+Time=15:04:11
+-- Approach --=--------
+Setpoint=1nA
+P-Gain=0 
+I-Gain=4 
+D-Gain=0 
+P-Gain2=0 
+I-Gain2=0 
+D-Gain2=0 
+Tip voltage=100mV
+Feedback mode=Free
+Feedback algo.=Adaptive PID
+Error range=200nA
+Ampl. Ctrl. mode=Const. Drive
+-- Global --=--------
+Op. mode=STM
+Head type=STM
+Scan head=61-16-138.hed
+Software ver.=3.8.8.4
+Firmware ver.=3.8.1.0
+Controller S/N=061-16-138
+-- Module --=--------
+Controller Board=2
+USB Module=4
+
+[DataSet\DataSetInfos]
+SubSectionCount=4
+SubSection0=Scan
+SubSection1=Approach
+SubSection2=Global
+SubSection3=Module
+
+[DataSet\DataSetInfos\Scan]
+SubSectionCount=0
+Image size=4nm
+Scan direction=Down
+Time/Line=25,7ms
+Points=128 
+Lines=128 
+X-Slope=0 ¬∞
+Y-Slope=0 ¬∞
+Rotation=0 ¬∞
+X-Pos=-57,6nm
+Y-Pos=83,2nm
+Z-Plane=0 m
+Line mode=Standard
+Date=21-11-2024
+Time=15:04:11
+
+[DataSet\DataSetInfos\Approach]
+SubSectionCount=0
+Setpoint=1nA
+P-Gain=0 
+I-Gain=4 
+D-Gain=0 
+P-Gain2=0 
+I-Gain2=0 
+D-Gain2=0 
+Tip voltage=100mV
+Feedback mode=Free
+Feedback algo.=Adaptive PID
+Error range=200nA
+Ampl. Ctrl. mode=Const. Drive
+
+[DataSet\DataSetInfos\Global]
+SubSectionCount=0
+Op. mode=STM
+Head type=STM
+Scan head=61-16-138.hed
+Software ver.=3.8.8.4
+Firmware ver.=3.8.1.0
+Controller S/N=061-16-138
+
+[DataSet\DataSetInfos\Module]
+SubSectionCount=0
+Controller Board=2
+USB Module=4
+
+[DataSet\Calibration]
+SubSectionCount=2
+SubSection0=Scanhead
+SubSection1=Cantilever
+
+[DataSet\Calibration\Scanhead]
+SubSectionCount=0
+Version=6
+HeadTyp=STM
+SerialNo=uncal STM
+RevisionNo=1
+ScanFit=None
+CtrlInPol=Positiv
+Main1InPol=Positiv
+Main2InPol=Positiv
+SignalUserADC0Pol=Positiv
+SignalUserADC1Pol=Positiv
+SignalUserADC2Pol=Positiv
+AnalogOut2Pol=Negativ
+AnalogOut3Pol=Negativ
+XAxisPol=Positiv
+YAxisPol=Positiv
+ZAxisPol=Positiv
+ZAxisAnalogOut2Pol=Negativ
+ZAxisAnalogOut3Pol=Negativ
+Ch0Corr=Sub
+SetPointCheck=Equal
+InCount=24
+In0=0,Channel0,Tip Current,A,1e-07,0
+In1=1,Channel1,Z-Axis,m,1e-07,0
+In2=2,Channel2,Not defined,V,35,0
+In3=3,Channel3,Not defined 1,V,10,0
+In4=4,Channel4,Not defined,V,10,0
+In5=5,TipSignalDC,Tip Current,A,1e-07,0
+In6=6,TipSignalAC,Not defined,V,10,0
+In7=7,TipPhase,Not defined,V,90,0
+In8=8,Lever Current,Not defined,V,10,0
+In9=9,User Input0,User input 1,V,10,0
+In10=10,User Input1,User input 2,V,10,0
+In11=11,HeadSig2,Not defined 1,V,10,0
+In12=12,Channel5,User input 1,V,10,0
+In13=13,Channel6,User input 2,V,10,0
+In14=15,Dissipation,Dissipation,V,5,0
+In15=16,TipSignalDC1,Deflection,V,10,0
+In16=17,TipSignalDC2,Deflection,N,1,0
+In17=18,SensorSignal1,SensorSignal,W,0.005,0
+In18=19,SensorSignal2,SensorSignal,A,0.0005,0
+In19=20,Channel7,Z-Axis,m,1e-07,0
+In20=21,XAxisSensor,X-Axis Sensor,m,0.0001,0
+In21=22,YAxisSensor,Y-Axis Sensor,m,0.0001,0
+In22=23,ZAxisSensor,Z-Axis Sensor,m,1e-05,0
+In23=24,User Input2,User In A,V,10,0
+OutCount=9
+Out0=0,ScanAxis0,X-Axis,m,2.875e-07,0
+Out1=1,ScanAxis1,Y-Axis,m,2.9e-07,0
+Out2=2,ScanAxis2,Z-Axis,m,1e-07,0
+Out3=4,AnalogOut0,Tip voltage,V,10,0
+Out4=5,AnalogOut1,Not defined,V,10,0
+Out5=6,AnalogOut2,User Output 1,V,10,0
+Out6=7,AnalogOut3,User Output 2,V,10,0
+Out7=8,DriveAmp,Not defined,V,1,0
+Out8=9,MixedOut4,User Output C,V,10,0
+ScanCorrCount=1
+ScanCorrA=0
+ScanCorrB=0
+ScanCorrC=0
+ScanCorrD=0
+ScanCorrE=0
+ScanCorrF=0
+ScanCorrG=0
+ScanCorrH=0
+ScanCorrI=0
+ScanCorrJ=0
+ScanCorrK=0
+ScanCorrL=0
+ScanCorrM=0
+ScanCorrN=0
+ScanCorrO=0
+ScanCorrTableRot=0
+ScanCorrRotX=0
+ScanCorrRotY=0
+ScanScaleZ=3276.8
+ScanScaleXY=256
+ZRangeFit=None
+ZRangeCorrCount=1
+ZRangeCorrA=1
+ZRangeCorrB=0
+ZRangeCorrC=0
+ZRangeCorrD=0
+ApproachStartPos=-1
+MaxApproachSpeed=0.65
+ManualMoveSpeed=1
+DefaultDynRefAmp=0.05
+DefaultDynRefAmpLiquid=0.2
+DefaultDynRefAmpVacuum=0.005
+DefaultForceModRefAmp=1
+DetectorABGainAC=3.5
+CompDcSourceWithX=0
+CompDcWithX=0
+CompDcSourceWithY=0
+CompDcWithY=0
+CompDcSourceWithZ=0
+CompDcWithZ=0
+VideoSupport=1
+HasLaserOnOffCtrl=0
+XYCLPIDGainsX=1.000000;1.000000;1.000000
+XYCLPIDGainsY=1.000000;1.000000;1.000000
+XZeroVoltage=0
+YZeroVoltage=0
+ZZeroVoltage=0
+ScanAxis0FilterCoeff0=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis0FilterCoeff1=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis0FilterCoeff2=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis0FilterCoeff3=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis1FilterCoeff0=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis1FilterCoeff1=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis1FilterCoeff2=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis1FilterCoeff3=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis2FilterCoeff0=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis2FilterCoeff1=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis2FilterCoeff2=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+ScanAxis2FilterCoeff3=1.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+HasXPositionSensor=0
+XPositionSensorPol=Negativ
+HasYPositionSensor=0
+YPositionSensorPol=Negativ
+HasZPositionSensor=0
+ZPositionSensorPol=Negativ
+ApproachStatusMode=1
+ApproachStatusPol=Positiv
+ApproachStatusMeterRange=-1;-0.9;0.9;1
+SensorStatusMode=1
+SensorStatusPol=Negativ
+SensorStatusMeterRange=0.0866142;0.102362;0.102362;0.811024;0.811024;0.913386
+LaserWavelength=0
+
+[DataSet\Calibration\Cantilever]
+SubSectionCount=0
+Version=2
+GUID={7C725C17-AB98-465d-AADA-D6D453C769DA}
+Manufacturer=STM Tip
+PropCount=14
+Prop0=D[0]*[N/m]
+Prop1=D[0]*[Hz]
+Prop2=D[0]*[m]
+Prop3=D[0]*[m]
+Prop4=D[0]*[]
+Prop5=D[0]*[Hz]
+Prop6=D[0]*[]
+Prop7=D[0]*[]
+Prop8=D[0]*[¬∞]
+Prop9=D[0]*[m]
+Prop10=D[0]*[]
+Prop11=D[0]*[Hz]
+Prop12=D[0.3]*[]
+Prop13=D[1]*[]
+
+[DataSet\Parameters]
+SubSectionCount=7
+SubSection0=Approach
+SubSection1=ZFeedback
+SubSection2=Lithography
+SubSection3=Imaging
+SubSection4=SignalIO
+SubSection5=Spectroscopy
+SubSection6=SPMSystem
+
+[DataSet\Parameters\Approach]
+SubSectionCount=0
+ApproachSteps=L[10000]*[]
+WithdrawSteps=L[20]*[]
+AutoPeriode=D[0]*[s]
+MovePeriode=D[0]*[s]
+StepSlope=L[6]*[]
+AutoStartScan=B[0]*[]
+ApproachSpeed=D[0.700122]*[%]
+AFMApproachMode=L[0]*[]
+AFMMotorSource=L[0]*[]
+AFMStepByStepSpeed=D[1]*[]
+AFMStepByStepSlope=D[1e-06]*[m/s]
+AFMStepByStepFineStepSizePercentage=D[5]*[%]
+AFMStepByStepCoarseStepSizePercentage=D[90]*[%]
+AFMStepByStepMode=D[0]*[]
+
+[DataSet\Parameters\ZFeedback]
+SubSectionCount=0
+PGain=L[0]*[]
+IGain=L[4]*[]
+DGain=L[0]*[]
+PGain2=L[0]*[]
+IGain2=L[0]*[]
+DGain2=L[0]*[]
+SetPoint=D[1.00406e-09]*[A]
+SetPointForce=D[2e-08]*[N]
+SetPointDC=D[1.00406e-09]*[A]
+SetPointAmp=D[50]*[%]
+SetPointPhase=D[1]*[V]
+SetPointForceUnitMode=L[2]*[]
+SetPointForce_V=D[2e-07]*[]
+SetPointForce_m=D[2e-15]*[]
+SetPointForce_N=D[2e-08]*[]
+SetPointDeltaF_Hz=D[0]*[Hz]
+SetPointUserDefined=D[0]*[A]
+ChGainRegError=L[0]*[]
+FeedbackMode=L[0]*[]
+Algorithm=L[1]*[]
+RefFrq=D[170000]*[Hz]
+RefAmplitude=D[0.0499893]*[V]
+RefPhase=D[90.022]*[]
+CoarseSweepStartFrq=D[350]*[Hz]
+CoarseSweepEndFrq=D[650]*[Hz]
+CoarseSweepStepFrq=D[100.002]*[Hz]
+FineSweepStartFrq=D[130000]*[Hz]
+FineSweepEndFrq=D[210000]*[Hz]
+FineSweepStepFrq=D[100]*[Hz]
+ManualSweepStartFrq=D[130000]*[Hz]
+ManualSweepEndFrq=D[210000]*[Hz]
+ManualSweepStepFrq=D[100]*[Hz]
+AutoCalFrqPeak=B[1]*[]
+AutoCalPhase=B[1]*[]
+DynamicAmp=D[0.199744]*[V]
+CalRefPlotGraph=B[0]*[]
+ForceModFrq=D[20000]*[Hz]
+ForceModAmp=D[0.800012]*[V]
+AutoFrqSweepRange=B[1]*[]
+AmpCtrlMode=L[0]*[]
+FrqPeakReduceAir=D[20]*[%]
+FrqPeakUpperSideAir=B[1]*[]
+FrqPeakReduceLiquid=D[5]*[%]
+FrqPeakUpperSideLiquid=B[0]*[]
+FrqPeakReduceVacuum=D[20]*[%]
+FrqPeakUpperSideVacuum=B[1]*[]
+RegMoveMode=L[0]*[]
+DynamicMeasureBW=L[9]*[]
+RegOutputSel=L[0]*[]
+UserOpModeInputSel=L[3]*[]
+UserOpModeInputPol=L[0]*[]
+UserOpModePIDGainCorr=D[1]*[]
+UserOpModeDCOffsetMode=L[0]*[]
+UserOpModeDCOffsetAutoGain=D[10000]*[]
+CantileverExcitationMode=L[0]*[]
+
+[DataSet\Parameters\Lithography]
+SubSectionCount=0
+ModuleLevel=L[0]*[]
+OpMode=L[1]*[]
+InactivePenMode=L[0]*[]
+AutoChartSettings=B[1]*[]
+AutoCapture=B[1]*[]
+XYMoveSpeed=D[1e-05]*[m/s]
+ZMoveSpeed=D[1e-06]*[m/s]
+LiftTipAbsZPos=D[0]*[m]
+
+[DataSet\Parameters\Imaging]
+SubSectionCount=0
+ModuleLevel=L[1]*[]
+ScanRange=V[4e-09,4e-09,0]*[m,m,m]
+ScanOffset=V[-5.76265e-08,8.32173e-08,0]*[m,m,m]
+ScanRotation=V[0,0,0]*[¬∞,¬∞,¬∞]
+ScanTime=V[0.025654,0.025654,0]*[s,s,s]
+Datapoints=V[128,128,0]*[,,]
+ScanMode=L[0]*[]
+OverScanSize=D[0]*[%]
+FirstScanlineRep=L[1]*[]
+SyncOutMode=L[0]*[]
+LineScanning=L[0]*[]
+RelTipPos=D[5e-09]*[m]
+ContourEnabled=B[0]*[]
+AutoReadjustProbeEnabled=B[0]*[]
+ReadjustLiftHeight=D[0]*[m]
+SndScanDynamicAmplitude=D[0]*[V]
+SndScanDynamicAmplitudeEnabled=B[0]*[]
+SndScanForceModulationAmplitude=D[0]*[V]
+SndScanForceModulationAmplitudeEnabled=B[0]*[]
+SndScanEnableDarkMode=B[0]*[]
+SndScanEnableKPFM=B[0]*[]
+SndScanSndLockInExcitationAmplitude=D[0]*[]
+SndScanSndLockInExcitationAmplitudeEnabled=B[0]*[]
+XYMoveSpeed=D[5e-05]*[m/s]
+AutoSlopeCorrection=B[0]*[]
+AutoDeleteBuffer=B[1]*[]
+AutoChartSettings=B[1]*[]
+AutoCapture=B[1]*[]
+SpikeGuardEnable=B[0]*[]
+PrescanSpeedup=L[0]*[]
+
+[DataSet\Parameters\SignalIO]
+SubSectionCount=0
+UserDAC0=D[0]*[V]
+UserDAC1=D[0]*[V]
+EnableUserADC0=B[0]*[]
+EnableUserADC1=B[0]*[]
+EnableUserADC2=B[0]*[]
+TipSignalMode=L[0]*[]
+ExcitationMode=L[0]*[]
+MonitorOut0=L[0]*[]
+MonitorOut1=L[0]*[]
+EnableUserADC1ZSensor=B[0]*[]
+User0CtrlMode=L[0]*[]
+User0InputPol=L[0]*[]
+User0OutputFlag=L[0]*[]
+User0SetPoint=D[0]*[V]
+User0IGain=L[1000]*[]
+
+[DataSet\Parameters\Spectroscopy]
+SubSectionCount=0
+ModuleLevel=L[0]*[]
+OutputType=L[0]*[]
+Repetition=L[1]*[]
+RepetitionMode=L[0]*[]
+FwModTime=D[12.7996]*[s]
+BwModTime=D[6.5532]*[s]
+ModRelValue=B[1]*[]
+FwModDatapoints=L[32767]*[]
+BwModDatapoints=L[256]*[]
+SyncOutMode=L[0]*[]
+FeedbackActive=B[0]*[]
+AutoChartSettings=B[1]*[]
+AutoCapture=B[1]*[]
+SpecEndMode=L[1]*[]
+FwModRange=D[1.27996e-07]*[m]
+BwModRange=D[-1e-08]*[m]
+XYMoveSpeed=D[1e-05]*[m/s]
+StartOffset=D[-1e-08]*[m]
+StartOffsetMoveSpeed=D[2e-08]*[m/s]
+FwModMode=L[0]*[]
+BwModMode=L[0]*[]
+FwModStopValue=D[5.00504e-09]*[A]
+BwModStopValue=D[0]*[A]
+FwModStopMode=L[1]*[]
+BwModStopMode=L[1]*[]
+FwPauseTime=D[0]*[s]
+BwPauseTime=D[0]*[s]
+FwPauseDatapoints=L[0]*[]
+BwPauseDatapoints=L[0]*[]
+FwPauseMode=L[0]*[]
+BwPauseMode=L[0]*[]
+AutoRecalibrateProbeInterval=L[0]*[]
+PressurePulseValue=D[0]*[bar]
+PressurePulseDuration=D[0]*[s]
+PressurePulseRelative=B[0]*[]
+PressurePulseActive=B[0]*[]
+PressureActionId=L[0]*[]
+ModulationStopValueBandwidth=L[0]*[]
+
+[DataSet\Parameters\SPMSystem]
+SubSectionCount=0
+AOut0=D[0.100101]*[V]
+AOut1=D[0]*[V]
+SPMMode=L[1]*[]
+VideoFPSControlValueMin=D[1.5]*[]
+VideoFPSControlWindowSize=L[5]*[]
+VideoTopLight=D[100]*[%]
+VideoSideLight=D[100]*[%]
+VideoTopBrightness=D[80]*[]
+VideoSideBrightness=D[80]*[]
+VideoTopContrast=D[70]*[]
+VideoSideContrast=D[70]*[]
+FlexVideoTopExpTime=L[60]*[]
+FlexVideoSideExpTime=L[60]*[]
+FlexVideoTopGain=L[8]*[]
+FlexVideoSideGain=L[8]*[]
+FlexVideoTopADCLevel=L[2]*[]
+FlexVideoSideADCLevel=L[2]*[]
+FlexVideoTopRatioR=D[1]*[]
+FlexVideoSideRatioR=D[1]*[]
+FlexVideoTopRatioG=D[1]*[]
+FlexVideoSideRatioG=D[1]*[]
+FlexVideoTopRatioB=D[1]*[]
+FlexVideoSideRatioB=D[1]*[]
+FlexVideoTopRatioGamma=D[1]*[]
+FlexVideoSideRatioGamma=D[1]*[]
+FlexVideoTopAutoLevels=B[1]*[]
+FlexVideoSideAutoLevels=B[1]*[]
+FlexVideoTopFRTPointerX=D[0]*[]
+FlexVideoSideFRTPointerX=D[0]*[]
+FlexVideoTopFRTPointerY=D[0]*[]
+FlexVideoSideFRTPointerY=D[0]*[]
+HighResVideoTopExpTime=L[60]*[]
+HighResVideoSideExpTime=L[60]*[]
+HighResVideoTopGain=L[25]*[]
+HighResVideoSideGain=L[8]*[]
+HighResVideoSideADCLevel=L[2]*[]
+HighResVideoTopRatioR=D[1]*[]
+HighResVideoSideRatioR=D[1]*[]
+HighResVideoTopRatioG=D[0.8]*[]
+HighResVideoSideRatioG=D[1]*[]
+HighResVideoTopRatioB=D[0.8]*[]
+HighResVideoSideRatioB=D[1]*[]
+HighResVideoTopRatioGamma=D[0.9]*[]
+HighResVideoSideRatioGamma=D[1]*[]
+HighResVideoTopAutoLevels=B[1]*[]
+HighResVideoSideAutoLevels=B[1]*[]
+HighResVideoTopADCLevel=L[2]*[]
+HighResVideoTopFRTPointerX=D[0]*[]
+HighResVideoSideFRTPointerX=D[0]*[]
+HighResVideoTopFRTPointerY=D[0]*[]
+HighResVideoSideFRTPointerY=D[0]*[]
+ImSoVideoTVConfiguration=S[]*[]
+ImSoVideoSVConfiguration=S[]*[]
+ActiveSensorByGUID=S[{7C725C17-AB98-465d-AADA-D6D453C769DA}]*[]
+MeasEnv=L[0]*[]
+SystemStateIdleZAxisMode=L[0]*[]
+SystemStateIdleMixOut4Mode=L[3]*[]
+SystemStateIdleXYAxisMode=L[0]*[]
+SystemStateIdleZAxisValue=D[0]*[m]
+SndOpModeEnabled=B[0]*[]
+SndOpMode=L[0]*[]
+ZClosedLoopMode=L[0]*[]
+ZClosedLoopSpeed=D[1000]*[]
+XYClosedLoopEnabled=B[0]*[]
+XYClosedLoopSpeed=D[1000]*[]
+
+[DataSet-0:0]
+Version=2
+Points=128
+Lines=128
+Frame=Scan forward
+CurLine=0
+Dim0Name=X*
+Dim0Unit=m
+Dim0Range=4e-09
+Dim0Min=0
+Dim1Name=Y*
+Dim1Unit=m
+Dim1Range=4e-09
+Dim1Min=0
+Dim2Name=Tip Current
+Dim2Unit=A
+Dim2Range=2e-07
+Dim2Min=-1e-07
+SaveMode=Binary
+SaveBits=16
+SaveSign=Signed
+SaveOrder=Intel
+
+[DataSet-0:1]
+Version=2
+Points=128
+Lines=128
+Frame=Scan forward
+CurLine=0
+Dim0Name=X*
+Dim0Unit=m
+Dim0Range=4e-09
+Dim0Min=0
+Dim1Name=Y*
+Dim1Unit=m
+Dim1Range=4e-09
+Dim1Min=0
+Dim2Name=Z-Axis
+Dim2Unit=m
+Dim2Range=2e-07
+Dim2Min=-1e-07
+SaveMode=Binary
+SaveBits=16
+SaveSign=Signed
+SaveOrder=Intel
+
+[DataSet-1:0]
+Version=2
+Points=128
+Lines=128
+Frame=Scan backward
+CurLine=0
+Dim0Unit=m
+Dim0Range=4e-09
+Dim0Min=0
+Dim1Unit=m
+Dim1Range=4e-09
+Dim1Min=0
+Dim2Name=Tip Current
+Dim2Unit=A
+Dim2Range=2e-07
+Dim2Min=-1e-07
+SaveMode=Binary
+SaveBits=16
+SaveSign=Signed
+SaveOrder=Intel
+
+[DataSet-1:1]
+Version=2
+Points=128
+Lines=128
+Frame=Scan backward
+CurLine=0
+Dim0Unit=m
+Dim0Range=4e-09
+Dim0Min=0
+Dim1Unit=m
+Dim1Range=4e-09
+Dim1Min=0
+Dim2Name=Z-Axis
+Dim2Unit=m
+Dim2Range=2e-07
+Dim2Min=-1e-07
+SaveMode=Binary
+SaveBits=16
+SaveSign=Signed
+SaveOrder=Intel
+
+[SetView]
+ViewWidth=638
+ViewHeight=526
+ViewCount=4
+View0=SetView-View0
+View1=SetView-View1
+View2=SetView-View2
+View3=SetView-View3
+
+[SetView-View0]
+ViewTyp=1
+LineOp=2
+Channel=1
+Frame=0
+ViewSize=256
+ViewMode=0
+GraphMode=1
+AspectRatio=0
+AutoZRange=1
+ZRange=-1,0
+ParCount=6
+Par0=1,Shading,0
+Par1=1,DeltaGain,5
+Par2=1,Smooth,0
+Par3=1,DriverInstanceNo,0
+Par4=1,RangeMin,0
+Par5=1,RangeMax,95
+
+[SetView-View1]
+ViewTyp=0
+LineOp=1
+Channel=1
+Frame=0
+ViewSize=256
+ViewMode=0
+GraphMode=1
+AspectRatio=0
+AutoZRange=1
+ZRange=-6,1
+ParCount=3
+Par0=0,ReverseLine,1
+Par1=0,XAxisMin,0
+Par2=0,XAxisMax,4e-09
+
+[SetView-View2]
+ViewTyp=1
+LineOp=2
+Channel=0
+Frame=0
+ViewSize=256
+ViewMode=0
+GraphMode=1
+AspectRatio=0
+AutoZRange=1
+ZRange=-86,91
+ParCount=6
+Par0=1,Shading,0
+Par1=1,DeltaGain,5
+Par2=1,Smooth,0
+Par3=1,DriverInstanceNo,0
+Par4=1,RangeMin,0
+Par5=1,RangeMax,95
+
+[SetView-View3]
+ViewTyp=0
+LineOp=1
+Channel=0
+Frame=0
+ViewSize=256
+ViewMode=0
+GraphMode=1
+AspectRatio=0
+AutoZRange=1
+ZRange=-80,130
+ParCount=3
+Par0=0,ReverseLine,1
+Par1=0,XAxisMin,0
+Par2=0,XAxisMax,4e-09
+
+[ProcessorSet]
+ProcessorCount=0
+
+
+#!?7F7CKWR((FS_FECKUIIHCba_6%IJ253:@H_WG;LB6')20?UaSR/03@0!-,'+36 &EIM(&629?17=@N@43<LB,23!&8E0IMJ<GE;8A7.;5>HCFD1(  #()2C0<?KIVQGIJaa;4CKQ_MKPMJ]N=6@G7'-0*2<@<>JRS::1APWB3BAF@JXPSI584@IC3DHL\Q?AOX=8094?B<48?H4'+=;3&22FA;36FJ;13AGB73)-6?<7@LS1#%5EAFJC>EK[SKEWTQ1%,2:@-.B<5<3?LUNC;9HB=A@56@?@AB9<DG724338==89EC%"0:BWH75;@JH<ROM>1'.*1D?0+AMG=GJLL.&023>064BCC0%&3=&! )(&.411)2,"%+(89(56FRT<E?@KQD&'-)1),BAD&928A5!$"4==HMF@%,$)B5"4=GG7.5>tS1+")6.>?9KNWJS`O@9:$,;<2187?B(<B@9<AHABABBBH',/8=>MBQCHHJ3)&*(30!-,./4:=FE (,)$<;BJB'$$")'-:07)7BIO/$738=048C?D88BR^>25>PAF?<DJQ)*.A<13##0><;8BOM=2/5;>656BFL:.BGRFI8) /(%5;4JIMQM<--('0>HbMLOU``HE\amLGC=>FRNIY]L.-0/FDF<<?GOYRJRY<%"-:.,/4/6?079;3*(+,1..56G8=,,* #( 0( 	'(0- ?C?@=DJW_F()1.2'O=AKV`KMNB...01?9EDQTTG@SPQC()1DFGFECNL6;47B8-+;.@9967BD-.$(('0*#)(,,39C-5(#&$A691*!"%/( %.+*&'15<)]ecb]aoaWeqyÄnrfgaeveadf`RGJVc_YUWeeqfaprqf[Yhkpcbdqq\u`\aXB9K\[]\U]UX[d`>37J`B2*109557<<@+" 4E;" +A21824, ;5*9>?D@$+W[WcbnbeddTKE2=QV]^Z\Y]VB<JTPQ\[VY[]VM?F;AB3E;:@><8MJIDDK6$7CM@PA?IMV]]M<6FFE>;DJB>C@JSR>5ES[E8=544=2@AHUYWB%8./&$92)),(1A@A:$ CTR`WZZef^W_vY?<11=B;I6>QX=7:IA44!?I\g[TcX^ICHgppxomu|tàÅwsecK^aOTUHUaeWOIAJÅ_I1,8DLk^AE44B=A3IAD-,028ALTLAB4?<3'.,48% '˘ )âáâáéÅÜõúêìñpi_fpÉ~ÇÑíë§~çùëêÇÜ|rufèÉuw}bP][oà~z}yxwÑåÖé§ÉWS]ïêïërxt}çí{`?DF6JGQU\NMNXNWC?v}kfE@cUUYáµ†ãèôêéà§~JFGJGç´ÑÜõØÑR`e\KIMOSedNF^|wmjguXeJC<;I:)/15D%(#$+7KPOEAXNPLM`aGDGNOX_FKFD\X>VYqlKG@5=@332782.7AEOE0+/3B=8;DC0)-39CA(  5+%-.3..?K3256F8-27CX_kxÄngghae[YJNO`k[G=Lf^PLLFTP;681U^V:OL9=LNSPXM20,6Q\E8IKF?JDIS7#1B8/A98G9CC=<B!!))-++$(12CB<.666232)706B?:0<$"62(&+47A]YmásLMJQNNUnÇmrtåáS?<PgYOO\esyfeepyf9?Q^mXaX_VpV^lu~h?DKQeeUU^daLTVÄàédXKXZcVW]aG8HYfnqN=H]djd`^l|YQT\g]HDRW[cfYmqprhIS^cUIPekSFCDO]vçqh_fjÜswÑod?A?guxgH<R`baWXlZ-8>J^gOBDIGYN?GS^sA)?:BG<@L;C2+!XSaN;5DI^Wdqqil>34ZaC7ALMX89FSURG<:CVeaKV\WWYcklmLEAE@030CNVdhVXYOJIFRacgfYnóöaR\uê|]F>FTXàé†ÄèÖoA2<WuTOFI]XO\^agmK?>KMGDDNQi``UatÑwNJX^k_ee^cJJ`am~dQNJMVSPKNap_U\TlqR026>RIDELXHA=BMTMHKLTÀ¡»≈ƒ»‘÷’‘¬·¸ 	˘˙Â‰ıÍ‰ı(ÛÌ÷‘Û	ÌıÚı˘6,
+˙Áı ˆ˝4. –◊˛Á‰ÊÔ	¸˜›√—∆‘„˚Â‚ÔÊÈ—∫“ˆ˜ÙˇÛ€‰“≈æ≤òßÆ¢£ûï†úïüùü§±´∞}ï†âé}rëû™‰“€ﬁÊÎıª‚˚˘˘‡ﬂ€¬¥°≠«ƒµ¢åô∞≠íàÜ§æ£©´¢¶§éxÉêàåávlÅ|Ü{Åå≥ÑrrÑâíô^{ß£íïeHiÅ}Å^=WkKed[hàeDIMMH^PFWjcàÑë}dYà}]CIDNZWep]aD6==FILZrRKYLGMLSR056>IB6>BCOJOHHISJ-/.:=5>FINQ]VCP`\CD@@GHGBDMU`KFPTR>7<CHDTK<9C<$'DQ860,6BPF:M?01*1*8814:@C//6@M@.,+1:=422A;>/(+)'! &,.<?=DJJ[S27MG<4,24BGBUU_gJ=C@@E7CMISbÅU;bÖomrÅÖ©ú}èÜsÉlew~X\BFEUY[R-/)&=B7IHeQ0./@C99EUl\6)'DL0D5MYVUWSXNR,/4FNF9<=1/6Ja[O[H>58>;35MJ_^TBV_XA=2>LM[SQX\]8'0<Q]V8@JhWa`Zlel@440BG.0$%PQ@>LfV?4AA41@54AGUU=?NXT%"$.FPYJ@ /A9"'#+5?=<%)5 .5@@BBCPM30@KPC>9?II]XKNL6637EHSWEKFGO@FIN4*;5659L>=GKQQ</DI02>IXbQF=D8=P<B<5;%*>A<>?D((//" ($#((%0)/#	(6eaXfgbimmgaP=EHPLaYN\bafrcYW^e]YARUbepb^cc@<<EVI?JPONHKNW]48>;8A3,<5@IV98ETF1'&/1#"'5JG:,888*2??)7-/CG(-6.% #)&)$635?-%.0.NYYbgcÄâ{lu{V;.-4.5DLKX]pYX_qk_QRcSVPGNC]c?$5OWK<45F6?T[_oiC>3EQ>!7FMMROFFQVO:<?EUYLIc\ay_[ntqKCCESOF;MHScL)?KLFCB@GGH:>C>&3>@OJD\\_jz•hX_PU`VHN]kaH8;=tf=AamrFJ]yÜëÇìj]\kc\cÇéÑxA\gheÄ{ÉéàgaiikeT?bVLC?KF4+ $'18YOafp~}qVGCA?$1C<,1(,??E1 #(6C*!(.,@@CWV0&6>ECCGH@ACOyâÑÇwÜãñÄwv}Ç|KHEBNh.%.KNYIMJMWgfÖç`,766MJ;BhOmÑ}Ñy|ÉÖ?19EE@EQRea?OGHa?%/3%&.5%,@H[f]FG^IA+,4B`K.&,LSA9]f[~R9DQh.2+5<8D:DRYhbWQRVNO?),K^YONTXegJCV\VNIG`^dROWQ_K7*(343;=:DFB;JS_^=92ER=<<FURe^>MRSU?@CIMCDEP_A ,0EMZOE7GLAJ@IGQE.(,6601734JCFGIL:4./16FWGAG`cjte`gfiDAC@EOB@IO\VOHUZcFJCLQSC456>D?1:MQFAD;ELHHMVd]B?DGKH9LWSDRGFKKN02?IF>.)<1B>6=HNM='87DFCECJEL9#&.6+('55>83@MY'$"#3=NQ>DJKQR>=BNB?,9EK83>HMH>AFT;&5IH716B?4.52KJ 69L88CKO[H/DOaJ,24C2=?1:DL9,6PVO;1-6=6+%/EG8=/3@65,)60="%3(˙  "(& !%'+.9AUGVbk`h]WX@<9:=8'3:?=SD362@>=>F6GJ?;1EKF,$)"(!'4AABC-+%46+;;FNRRK/.P3,8JU[J9EF;;-38FK6,0(*  #%0?5(((/< /&:44->4-&-6054?=D>I2COOI%#84&*43A@??A 08=B20;C7AO^bYfx\AJMPSRXTOVVWHKXc]G6=ABGOKOHGA59QWG2:?CCTS^U[g^T==JC<*(03=DN?9AA!  !'& &)4".06A585-7CECScf/""$!'&'*5DHUM9	
+)%3KEAJVXXB3&*3>WRLFGY*!,"!((6/9JF=B?A",&+/::=F4(50>0'06<>9@==6@/0/+''/-30/?>4?/(7D?8GHNeV\RRbU417Q:<8;i][^STqzSFMUVbtigptr{tst^330354JDEHKP; ;@C<=L[FJQOEcc< !.DA6.&41-2<" 12.2=G:=5:/0$"''&/6??-2137>/;8<DH^msi}ulYcbE8=_nthgxuop]B9;LFJJ06JNF_U^cdT22GIYBGSTeVLJRVTC.25féá|RITTN;EJFD4=.0?,0GDBJ8$4/2001/.<?0177E$,5$%?9@YXNRZQO[mkr^PS\_ir]SVPSF?06HHK]U`]cJ@LLSQM;:=<=4@UFZL141/.$2./3L=HTDFPDJ8BWU2@B=UAP\YQ>)!.4-,(>9EeTC>M`]O2.//7;?8?9F\XX`_=4"%#AFDKQTQRVaaK<Bbmt|ok|wp_DCO_cRFBELCMXR]d[DCDNLDNFAUcWCG@L;9>CF?RBA7@OK5CICB=?6NKVOHGJ[m:5+4HD>=B7>WR?JSaO2"($*42/5QZHPH\ETI/-ASQ`ORCSY]Zba[cTIKVQVXM_^m~vVROaf[VSXTbYIIRTOLEQZkNCA15?KFJK[[9&5<;9.5<<H@7>SSUB.2.8IF;7]eÅkB7**./;#-5)/)1=1'!.') 0./9>"jpÑâw|ÅynmwóÜqw\\eo|vsüu`_s{ÄhdU^V_mcXUcQ/++-FS=A:8I\HXohV?8IKKNH@IRTNEINeWI?CC5FEDDOXM??JbmV=E`Sctv\QLabsgrvV6,@KA4/ftwv_SLVa`JMHKRVSJEIZngDBD?AAK@L>HRO@@HFA0&2954?8==B0@*!,10$11:<,16.+(-%0,"#+(&'0>5
+22&=.#8+" /1/000Dzzsáàç{f`ngvfWX_eoqlfgtP]RNeYF(/)D<AD>;F?FE<6MS=0=JHQS235;57MOQWf\LBSJ:C>B@HK0! 6CL#$68481DJH?<G>M^2LOYT<>EIVWD4=CEBH9?USTLK:4902?;/55.$!3GD"(%)%$%')+4JQYF-5CD2&+//17GNDDB-#&+;HENMI<KGGLL[W9;29?E?=IDFH8>DRJ'==GDEIWB+APD44?F91N'.//QC;>H"-0<6?0(2,$2<? !#"55#3-6>,1<JUH,$..54!'-7ETF6=FL6"$3>A)!0==G:?UXQ6/:@EJ,.?GI+,6?PO@110;=21<A8- !,21'4=D82AKL!,7@((&3@QV51;D<())8>A.3/5;97BE[igM@FPV_]LDIOX:)9T_c_D6DMOaNKYjiDHPZPSWUTUVZNJTL^L6;<@CESYljá~eRD4& 07?89JKGD8/1<G-34>>=6=<EGB(,583)&/1+139?6" /9-R<]?88905<KD.3'26314A=>QL?5<?I%!.00EAB=9=HA&-49))+21DE*6=CCB!-26G3,52:@74HON?107.(&)025;7*-:>7!))+3<6/9DDKB9<A4.452.>)&189=,$0,8;.(>@ELUU[]n{ZQVYbSJW[`iiSONcc8;MON[OMW`clhOY]`_LIQTdZHVfrikMDQbeU^bh\bXZ[Sc=8<=>=A;FO[gWPlW_N8/1:GFBAADG:CLNMH63;>8=24?HVWD/89?-1;TOMPdLTYntF9:<2=9CKRAOFGM\Z9?A031ABFHYT@EB?KYE4::8E3NaT\GDV^XACKE9?NGPPYS78B@IKMMX_]XcbmsqF=58VLF;;DY_GHOI\;3?8=?9D>>MOJ65DM5,7HFFKQ]YfntdTVUjqahckmd_^kjmtU_b^[QWX]lqafenlzdMS[m{bTV^`olReeulPOQYVPTZ\hqlX]bI88NVfc=B<KUUcE>EI>7AHMRNC?TPIE;=M^_HKH<EOI;<;C?67¡§õµ∞µ{ft|Öccmu}RLTYTceYb|Ç[LLUcv]olhtry]bwos[OQYeSRT[[RZbJOcRVPELVUQCIQ[nOHeeWICCGNOU[NR^^VQW^NPX[ehje`XUbehNAMP?>D=DFQGFHT\A>GBKACA>EIbRFFPF=68571EE9AOTO<8BCQA2667NK67DMQ&*,-6,39>BPB=IFTF"*9?558BGNUbZMQYV<-07;F<@KLPf\986<'.18=OKC=BDFK,$&7+#'=<8?4</@E5/4AA5<?CCKRGFMYU1BIBB@8<<AJU^jaWA::7EXYUGOT\_RU]TFHM>EJ674=;B>/*,9C<63BCC>9DEJK30*%/)-4,136330ED+1(.,)',/??@VXdUV0)&,25;H@>?F#6;0$5-/??;=;NKA=C<
+91,31AE3=236%',1.%)(!" #&=$#%!&,0*)(.-818$!&)#.4;E #!!-&%30-,5.)!"+/4/.2"C52/8'/B94H8FRI=6DVe[>.8>6LFAGSPQ<Igg@-3-5BCFA?IM_\;33DF;BGIP=5./-F]<'$&%'4,CC6FBEH=04,%3/62?@5;;8)/EN9630%!43587'Ù *^ZLP>ORSMPYbeXMUY`VUUemQHVX_bw|v|}•wtrÉqQ:CYih|uÖéÖåìhfzÜ©Åv|uo~Ñ_gméçxâÜéukqo]Wréåtwt}lXoyebb`Yap^TPKUNA8:??sâisto}ng[ysaFBFW^âì|âóuáqQQUQa]cdfwsä|uçpT_b^em|`bntÅ|Ålforgeaceciekc|uokqlblhvì∑àa[u~|lh~sppvw|åÉsnm}~rvÖá}kfnoÄÅxp|mRao`trKWcuÅélVUUEWegWg^aj[syv{hQUnzcEEEQ]YORUh[U@>B>A>GDA=Ra\c]cfRKVUJa[SaRVWNCKYcPa\PXTTdW]Z[P?PWbXUJL^VWUR`iÉâaPROA?>GMV\DHcYWF7--/HC9/88ORBFA?0'%!\V_^dflåÖxynXV]f_owvcQTfgzêÉqvKDFEXZaVXTY\cqPUVfXK`glwiRPaYkbDAÅÄIDBOV`ukgnqg|VUQe]TSS_lmlY[inUYT_TubV_WmXGNRZ[C6DJXf]GKWKMBDERunPVF>KKYnYIH`^>4ESZfGBBEJFCEGV^9/IK?IC=I`SF?MWYS\VD6<LYVOFB:IH6=G)*1CVV`sUU^m;$$.&4DBG?:FAI5$7?:5++40?UCBXaP6,DaLYE@;;@EA24./(0BA=BGNGKGJPE48@JIO?`C5>LHEIR^O/2,085AGT]WSRYW9//=F6/29GFC>CKQR 17K=6=DJ<9<?F>* +0<5-3DED,LLYJ,' !295/5<D6-'('(4>?2""+<9&"%$+,+.C@ 3E9475:>GH><===HX326>) '16')4FFO<-:@# &$.1IGBD4,%5AEGVG<0$( #%"!'-;F9'+(474>=0#/&	2&!))$ &.;;+2/<@('$)C5$$./-27'##47A-,/4?9(/3($$$-5$#*1-%%*2&28.%% ((2$5.$)$'&(44 # $&%0?;5:BFKOVQKI& 11#!'6HH76:MJTK392:K@37BWW94BEJ042A860.)78FE&2=H@;8C850K?A<B$('(1B73<15-2/(##&42,-'"#&/..5/1DE
+)@((-" &(44'<=96 ,-+ -8F.' #-:)%5:A<"$'/ ".10+&.?G6#""2 (('+/.7,""%-1ˇ 1"$)(
+.).+wntqàgWNGNM[T_EN_mÉhm^n}ÅhvgY__X>^kcNDAD@M?9CVdupHAARQOPKS]Y@?;DK@DAHTQI,@'<=7569B@55>JILLinrráÉxjDD-=81%:(4<1/%&;5A $*# Äy|zsqÄrvn{äsd_ilpaU|}ív^[]huu_\Wps}_PX`gd_\\ioxkfbeOF=?JVd^]mhro]ifg{cih~rbmmnkhfnYNY`gXQ^bahb^`aiD,P\\rqdY]meb]^cjndTJOT^UTR>}ÖçÖÄ|ysqprvmzÉäúÄltoãátiliz{yq{âÖpifgivpj_n}ÇmeypÅ|lZWqymztlÉxva_fmmfXYouvr`empwccbithhils|Éoxcim|fb`_teT^VT]geedfebXXgmRIDBSQniej]hef\ivkuwÖÜÜâroráqgfÄ{eitäñéy`a_`mé}tihmpzwtkaVnÜïñå¢´¢∞®±∑¡´ò`	
+^xp{vqPtt~yÅxåìá{skW_ook`aem`pkY!*/"/M]W[QNMW_cèâÄÖ~ÑàêÖáååìëñß™íwÜóü¬©é{ûñ£Œ÷«›‡‡¢ÑäèÉáìÄÄÉô§âÖ¢Ø∫∑Õ—¨ÅÇóôú∂™¬øµ•Æ≤∏áçüêòís|ÑÜÉkrfÜãy`b_bf~|qoum[]diÅÑoVdgrc69>?+,2JUmmL,61q{txnk|wuÄâçíûüü≤òêú¢úñíåÖçäã~èô¶ùÅÅâéêíëóõü†öüòòêÇpnuÖèêïêñìåyusããÇÉÖvÅéçàÖÜÉ~áäãäìxeeluääáÜçàâÇzàÄÇ|~~váââÖÜàÅÜçptqvmvneqoxàvlqt~~|ÑåÇáóïùû†•ëïîêëurÅÖêèñéãäÑó°ï{éçÅ{}|ÖôôêññùñãÉÉéîÑyÖâÜÖëêëppgagheptwÜÇ}Åà}àkfdnlvnnp_yÖïzwàwh_TW^OUaYWew}XY]kc]TY_bm_xpw|sntlvàèÜêì£îñõççë°ëèÇçñùìúôìù†ÖonvÄ~ÉyÅäõ¢éëÜçñÅmÅèöîíÜíìüûèáëìòÉoun~äwssÜäìèáãèéámfkmÇÄ{Ñ|v}ãÑÖÅÜÑÅlÅáuàÜrvgmÄ^}{Äçypc`åsonvuv}Çâï£ò¢ù£∞≠§úóîúîÅ~ÄèëàáyyÅÇÖÄÑù§†ÅÅÉzÜí~yâàó£áv|éÜxtts~áÑ{àééìówn{âÑj~yplgÇ~áàÖârnihqpnlsry~ÄÇÜyeeqvy}vzÑ~wY_iarvvmiYhxxóãáçàÄàÇéòçØôèì™®õ©¨À»¢£••≤∑∏©∏¡≈Ωºóí§Æû£è§¶¨¡•ó°£ÆíáíïáÄÑ~Ñìåôûúôü¨µöãçéêôóåïùôëüöîûßåÅÖçàâèÑÄÜí•õáì}c]_\_cezjl~áwaQR^]stpnfnliêóëá|~tvq~|ÖsÜåï§èîìëÑÅÄÉÅ~Åâñåàëùôúõõüöû§åâáì†õçóòûâyÑçâxÉÉàq~ÅáìëççíxlqvrtwxÄÑ~x|ÅtfkkkoÄäÖ{Öããèîèâvyvrmvmb}}xws]8/GG<NYY`_UWä~ut{zvyÇÜÉéëâììò°ôíû•ö}qntÇíéòöêññòòã±óÉÑ}Éx|xjowvÖeVY`h[cdfqy~ttÑêôàunein^ednÑâyÅzãÖnaiiquuyyyÑÑÜÖäÄsnwwÉÖãéÜ~Ü~uxwÅÜultnqu|xAA7CBKJVURPsèßávÑÄÅâàêípbmÅ|}àut|{bI--BF1+:92:C=?C=a`3(52!(,14N>>KIHGE((4'-+,3,/3BKRKG7'Ie~wpr{uásÅãÅä|b]aprnmcnkw~g`oozaWWY^aMQLNOIUYptfcdlnv{vvw|ÖÉVRkzuuhgcpfuöèÜáég]tÜìõûê£¢∫¢tevibZWaMQUXOGO_^eWLLYOHG;>F9BCYcW`KXPPUUQMX^_aT^\^`V;2659841;<9MBAANL2"(PI^ãñÖzepïôèf^kíåicV`lä~máíèüÉal]ñ¨Æ°ü©îÖÉiryÇyqhkfmk_aruxietÉP<E;N_âÉÑêìò£áUehlvveerÑç}ÇÖùàeYDaIPNQUNEHSXYBNI1,FF<3IK\VWC#$$.,!/(66&&&)6?.,56154CU`gU*'$/69093559DQYL""('.64+1987#.0E(!.8/=CRXB3?B-4AEMTIJP\V]MP`K!0/-6BJYN<8HP&$"1583%1D>A<(38cpmhe`esf`enkvÅXVOR[TV\Ze_kX_]\saC?I\XTWUSYe`em}wVNURM^_MBUSkdVckdNPRSQ\aVZOKW<88?RF?HD?HKG`WTL??-,/<7<7B9932@CD(!%)7,,1DIGFAJPYMTMJWOKIAHEIME5BEAAHALPKHAEKIHWMCS`H@I_snUdKNTGVGJTUC/ShUF@CJHTgrlhV_^VDQUWC784<B9EK1/O=<1&'3*($!.5>()1?B-")!$4=9>)3?KSGQMTNR[XU[dRJQMX[gb~Ä\GKTV_TKNJCCRC5;CH>;<AGO?=;>OhPOZK8/AKKaYEGNNYI;BF9JECJqx~uqoZfSOPSG9<?G`gkUfk]UYXTDQ`KRagqbYQA1&23/;>6-0580DAUSUNR]`hkYistrrgsoáfO_STk_W]qâ|]itknuQNYhii`flyÉZEEBUePTZncsiqmqp]ETTfs]MGUUaPLYfmYRTY\l`^VWVXcLGL\W@818>FBHKYHVTa`aiZ<:359046``òox}i[WSbottéwv~Äâwp{Ñåi\W]^kÜÉisvc`?;A.41':@HJSP_|wïô8&.=@=/.88;B8DSOP4'%!*30>>CCHG8HN, !%(B>?GNHCH (,;F"/1;?DL]SI>0383.'|tá¢ÄÄfeq~âüü¨®Ø≤´™íïéè•êííêü¢òûÆç°ìÖçíó†~pgeuêáÑáëçüöçÄÅÑëáèÉçèüå|çórgt}~xnryo|ÄÑÄx|ëáhnhtcei\UjesmxmdÉai_btv|qqvv}``enfon[YwnntkÄáÖnx|zäërillitnecisk^[Tdxáru{qmurdthWeb^dyu`ffvåqecc[R^`do~Y]ch_eg~|èw\frhÇéÄ{íïlgfwxjpitw}wpÄuÅoYYbivuwxxeoufhoks_CV[bm^ebeeluÅu[NVbdbgW\fhniqmgqoWDEJTJHLZU[X_`uxkC>MOJRS@NQWVeaWUYWJJK\bgck`qgleY]RLFMTRRSQT]eniHOOSV]SR]alxi\cWlURWTf`bonvtmfdki}\_kONTW]TPCH<<CLXTf_aoyqishXT,%$44G4>VgHLC1-,9=.'++164960<C@3;=67316@OREHABF:.30;041,1/9<7415/&.-1,310/9A??8>UZJJ@K@*-+21018/<?( !eq\HW]_t{vn\bcR^SG_bxâÅå}r{sUMUgl_hcfdaX@??FPSTNL@Wmkoufkfag[_imvxxéngcgcRW]i^S9EECCBJK62##3'08-15ECH[YgfdlQAGKRTQRbfcZQUaeXP79_hkcequåv`c_g``VXbe_]Wekhrn9CO_lP[a_enifmV`nf_SUW^U[caaYUTT[\O?.:W\IEFKNP`UEIJG3'+/4))5=FQUFOJRM1%*/>;)"+&	,)'$5((2+8.<KC4VYT\k`chnp~sÇoPP@IOXX_oqvYD?LO_bPKTSV[jegv]SIDCKNVYOe}yÑ}ÉçlKOIWMLKCLHHOIKUX]XJ@MTIKUSF=WRVQPYC?9OTM:<DFGG[`VSRTM??5?<?BC=PO;24Éfbi[OI`bP:9F[`eXUDJQYPdcVepevyqbNRS`]XVbkidkGK[`V9<@C^]WTa_e\@REPL`ahasnTccouUSH_Qs_^YKT[YWWfn^VKWRdUcVWXb_M9GFC8=JNQbB]SVdP[`\ëñx}êçû§öìí©°£©Äáüïõ±ã~{Ö£ó®wãöΩñçè•õùµôññßì≤©í≥…Øõïù¥æ µìû£ß≠¢éà°ÆúâÑÑ°ù¿¢Üïëù≠èçõä∂ëx{~ÉíãÑÉ}íë}mfãúqnm|Å||fWa]N[Q]ékJ8R[Ub^OÅ|q{yz}|vmir{èåàsittcqemmhoibjnÄÑvvmqymk^^Oa}qeopi`\^ZehjpwlrmRT\dnY`dnnh`_c``kYVf`ic``VRX[P_cuÇtcfdstusem~ìbfyèÜÉàäæÕ…≈µπ•uî†óû¨£dûq^KTUVi`hoacodcbeQEUL9NaPPK98;A>FQbaosjve[^PF4.05RUXymaeTFCGUPQhe\GOJKKMKUpVPB=>=0:@3851==:J5%")$ +4./.88=3(%&-9IJ>8;<B/'  #$/)41# !  .* +,5(-/-:%"',2  !!#3.!# /1!*)'(% &'60VQTPC=K@NAFCLHBA6HNQG9C9CC//26ELZKKM[\0!,13+59<<G?@FHUI2203?E>;BNH=B:I_D>B<9<DD86BG13-(/;50<;4DKGQUVLE20;B=CAIIEE>IT]JBN9<7?KMSUYKPKG<>@>CKMPO=AEMX[OJ=B:9;DOCUFD?HLRKWMA):57DC5MN4B?2JWYJ?QS^g]_XfTgYJ>?4'0#$1,&:F3(4:PE>?))*FIANF%'('/<-<1,7CBE>ACFC/:78@*;B95=8DKM@DI9EBA?GQMSP );-,)'-+1;65JB &,1'&0,0%+;CB(4&329)4&%(0,/7.+23&-, ( "'&%/5! "* *((.(',p_\ÉvOIMWX1GT1,;1(4G=CJGFJTT80/472LF?;=4M3 $(-'/$6.*554/9*,(3(""'1A7<A5N`VIF7iI88JSY}A/IDNQC,03,%:3)JM=GE@=;7&%,/7@CGI+1>17$`_VT^l]aeH3(()05HU]TPaEYplqdbfflr|~Çá~É}wvnrfWOWQ[\YckunÖÜuOa`ZZR_VNR[Ngf^P>A96CLF<C?EEKGU[V;5=@DD:53FGKC:LW\M5:5398 !+)(6 owo{rkngbyqiSfmut^U[]_WRXPKIPVTTRVRTE4HR]_PO]aheHiLHCCPQOJQTWRYH,),#07@>=7BFE8DFE&.#!///8JSMHONL' .%340.*7:;$@-'$6+2:1)a^[[TXY_^clbcdgqUQFNURJEHTX^USW^íiNJLXUOAFO[c`RGLpÉaEBHS[N]oxqnXDFS_dMHKAFI5IPROA</3E>767<BK?B?OQ<C?6<A<8?=QME<<<CID7<8BFK>9?ORJbYYXKMJIGKJGBHESS?69<?F?E=@FHKFGHEM01408;3<<9EKEDOPaE6F@BHCBCGQF:<>CnL;9=FLBCDEDN.&'Ba_UVceU[OQNQK/&19C5;BCHH36-22(/,2<;9/4333/(WQHMG?DA<9;DDD@BF`HCG>C>@KNHWWQbm{ÇVdd^fgdTMT>GSSICRK;<>HMDJIMKUKDOUTG@>7<FEKPGXRAK=KFG9EOJLJRON[aC<18734DJH_Ä}|xÜra]bhieJLCHIKF_[YXXX_dwtchtáàs`cchocYQY\^dY`engYY]fkeRQGVNWf_Z`fkNMFLMQDAJSPW;=EOM..079?K/52=MK;.4=33769CHPBDEEMB(&/>70, !*0;38>D+ ! &1)#00?KQGJEF>ACBFFYY\OScbKISNGESEK`cd[Xah[SUSSVQGNPXfXW\iP?@9DGK;BLHUadRNO^QF?JH]WEGHYcpRT\T@C=4>BRU[ZPitáhaYX>H?DHDUA;;LEG5AGHC>HBLOMC4JLMHTD>MMLOU]\YXGMVh`TWWQa`eQNL][`WRF@HLHG_SRXNLSLM?LGDNQGCLR_^QYXlR;>HLIN@IHAGJA?EW@-34@HH?9<C<^]?@EB;1.9=KVDBGKO965@G36/80.F=CRTWRPOPEMULARV_YD=MakÄRIMV`]cSP\U_CISWXLEHT\XncTdnMAFDHQOAGKOQOQIVYX4)12131-6ADORLHMU@35+=B7FE8K[B159MQ88815>@>>EPG-%%?G5(".39;2HJQMLKM[YQPVWY[^}çéehqÉX]]ãtHHR]yvhzèôdZOQTeg]XT\^frkenKADBGPSTXQYh`YQS]QNJNLKKLVTVo\I;BO_X?=EDbrklrk~eUVTP]LDIMV`YVaknL;958BSL?JNIVOWPlaLYSM^na_olG;<HJM`\PKQY]iWU`gqQCFKOMWIKENXQNUVlpHGQNT^^PPV^mdPCS`iR?EOX]C?FPUYA?DO]K>>GLOOIJI\a>644@I;??>>;KBCPY:-432;H3|wyÉåïquqâÜgb]et{syyÜëôÖgmoâÑ]gcgkgicfqrpPSTe{l]Ujeno]ek\WL^abe^]\cjqmd`eyTNSUb|XITfvmQctÇwhhdggSWXdsn][[ctMCEMVc]DJKT_M>>BdnKS</*&+,2;2.44<;56=G85'(,KQCCLPJ:BEKQ`X:8AQ]NXdhkQHC<HQT<HFee_\dlpZXNJRS?BM\_TQVY^PT]_^mXabll]WYQ]XFYZd}kSIJV^9>79HQK<FCJL913HJ, 0é~yw~Ä}twÑÑu|é∑¶ómÇÜâ£†~ntÑÖtebcgc[efnpvgiinfyba^_ih\]\^hp[QWeg\RLIQahZLR_gOBELGaiNCEM]oQST^iOFIOS\7/1>HM>>JPY`=55CUKJJIUY[XDTAsdf`_ibemqlWRXQLC>f|wjèêntgm~ikçì¶ëmeo§4”éÑçèòåàåâéì•ãâõëêíùï©©≥ùï§¢§çuÑÅçù¶ìÑÑëéunrÅêÅÑÉÉâêÅ~u}àÅr}~yñåvÑè´ùÑåô|ÉôÖsâÑ¢õÄÅÑÑb[_bcdd\_lYDDSW]gHPVbbQLBKUmdVa]dowfW[XQORX]`OK=EDNXHIBHPIGQW^L649:DXOBHPaFCdXbT>B<=EFWPS[[DD:@HVXB<E=PHORY_MCJKNOUNQJJHWUVUO`YDMKR^`mbahdoyefdZNOMNXaefVS]_kvq^atfKITV\``msÉ]`_cnfORRTbhT^YVWHRLXan_LGICRJM\ffS?CALRQFFT\YbRMHMGC=6Qy^OKOEID.-/,9J)3=ACJL@QACEC;8:@JVRJABBUZRUQY]LKJPS[p_XPY\^B>@Ve_OEOSZPPT]bPFDKVhUDHKN^VRYP\XLLEOVlL=IFVOH[SWg[HLUkfRQP^baHPO\UGDDIMQJKLPT=8;?PU7342C>FH@KVietépgdYZ\nc{sbfxÉ~mqááåiYY]gfsyyêïêeOPTW|{i]f]ypnkxîã`WZkÇÅw|mvÄ_Tlqtma^YgwufxkÄ{LY^imupe_XWXGL]elUFCDM^YVKSNXJAM[c@:?IJLMMWUe§•®õÅÇymnllybYVS[xyÅÉÑôüsb[RQ`mVVV^qbY]^gY?ADIMYcU_Y[GJJFUsX]^TP\ccV\YsCDUZb]SPWQVYeVbÅÅYFNR\eojhgopnvkàã|EGHJd_QVYl]G4<7GHFVYd|vçâ]GGYU^X\gfeleyqqpÇÑWYeYXWHEFTdggiqvÄn]YX`oq[[R^_`htvãìS?IV`oioixsURWPWMJINTYqqWdfubLL]Wr_HRRX`hZQ\klA>@Sf=8GO]_OJXUXaYCGIU`XTT_qxcYYbemf`VV^fnuÉÖÄÇbDFSWtmKJFTcdakjqw|xe[_grÄwÄíèlRO[r[WZVU_ntÜÄÄÑcJNSfpLSRerÖpuzxWQPYWT[Oe[gyemlâçeMWdmg`QMUeedgk}~TTNPhvtqxyunZ]hsqqstÑqèê~Ñ}ïgevoyneoq}w|ÑÑÇÜåyX\c_dginkikahicisctbivfb]da`mtc[_amWRPYfg[<FOPbUNWVhnQTö¢sVRJPd`REEDIFC?HLJHIFFITS:?.1t]VUberiEGSP]SONKSY_i]bdwYQPUV]IUTdglc\YaNOEJM]gc_ZfoÖggg^SDCKQJLTHVSN]jG;LneHKOl{jVXeciLCL^W^QYXY[bNIT\^PNEAPXK@?DXeh^YUm{gIOIB>:5<AILS[OB58PXF9C>=FMKMJXS6751FL89?>DVVNPOMA69:7;16;<3HCIFLT80+,'5B8058@;;CPWG/-13=E9<CHSI1<BEK2+$)046645/(+4<8@=-(.-<436;;*('-EVTPACDAOOA<=HX9/545A73>BGCE@:IQB89@@;8=99DHUP7<>J712>;?<@.BHRSAIKVHCHPSb`EJBS\8?@/?33=?CA>9=NQ<,)=C7=>=>SG;BGI8$&)52*1=DH)&6=?9MG?CE>7=AY\bO691>SSIFH@B06AUVMH5E?Fe]E5FC8'.9KE7-+1BTdVW]T7/#4CJH?3-158B49  CN<;AA<>JSaidM;HICMG;GP\rqgWXXK/,38C)$%0<0.(6,-%!'&23))/889#+#HM9-18;LC@BQkb.().6&!'0/8C=;HVs^$!:5(CB0"'/<7>F&&,40-01>JF9)78@3 &)!#)KJ36<46.#!&#+3#!,39	%) $$WVTTOKKKTTjQKQMa]sh]stnVDNR\mUFVY`a]DXT`XCA>CMQAJKS^^LMIY`<3<?PPODQRgI5><MagOINXTABO_bM0+6NalLQRVcVDOXcYG?ARb_LCPY[MBDAMNN5,8HPF<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*A*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*D*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*B*B*B*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*H*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*J*J*J*J*J*J*J*J*J*J*J*J*J*J*K*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*J*J*J*J*J*I*I*I*I*I*I*I*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*J*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*J*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*I*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*C*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*@*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*J*J*J*J*J*J*J*J*J*J*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*P*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*R*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*U*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Z*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*[*[*[*[*[*[*[*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*[*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*[*[*Z*Z*[*[*[*[*[*[*[*[*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*d*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*e*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*h*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*i*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*m*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*p*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*n*n*n*n*n*n*n*n*n*n*n*n*n*n*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*q*q*q*q*q*q*q*q*q*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*v*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*w*s*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*q*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*p*p*p*p*p*p*p*p*p*p*o*o*o*o*o*o*o*o*o*o*o*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*l*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*h*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*e*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*b*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*_*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*`*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*\*\*\*\*\*\*\*\*\*\*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*X*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*U*U*U*U*U*U*U*U*U*U*U*U*U*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*R*R*R*R*R*R*R*R*R*R*R*R*R*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*S*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*S*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*S*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*S*S*O*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*J*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*G*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*I*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*P*P*P*P*P*P*P*P*P*P*P*P*P*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*Q*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*P*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*P*P*P*P*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*M*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*L*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*K*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*I*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*G*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*H*H*H*G*G*G*G*G*G*H*H*H*G*G*G*H*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*H*H*H*H*H*H*H*H*I*I*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*'0#233531@4!)(4/A3.$!'26<+*((0488: $("%! )(1E9	!$,¸ ˛ ˝   &!(&!=/66:79?B?7?4551!)  .&'3#!??5)!:3&&(>37()2@KPLI=/20 NB99,2.3?8-C813#30*.A<1/34+-+)! %39;4=AVMLB85.$%62393/1>=6//(&"!')7,%2(9==;33'((4# 0& $&&,,3CO=A;MG99>;:DJBCF;KXYRG6=629KYOPSTV]YESPJP?6M^UOPVXUQM[KL\QQS]ev`aYUTW\PS`E<;D?EQbT[?0%./.=HOL=@F<CI>3?>66415,219CKEGD95JCC>2/,2&&493+241.KFHD57PgME<?4)+&#653)'("$ !,#!622/++(142-
+"!$˘ ˛ ˝ Û ¯ Ù ¯ Ú 			$" " ˚   B3/#2.#71'//% &&$&
+,#&($+.)$$""& #341#,$/"!4	#% ˝ ˛ 632,)$//03.,$&$<1.'%$$.166, &$'%%($$#"# %#$& ',+)%$&%$+"#!,40A4$# ,&.*+)0!$95+69/..&"."	
+& !3;(>.-/E;4(-2<IK93?50,*.;/56,0 %*+%4-346;GC1.' 30 && ! DCFQ@.!*1+!08B@Pt^b][Zq;%  +60$!""%244;(!2?FJ7!/>,.$.'!!#'56<RNKN2>U?:6/:;!'",)%)	   5B.	 ı ˝ ˙ ˇ 
+˝ ˆ ¸ $-:KJ<MKI3C@S939I?U}|lkfbhzyxgie_Q<GRxn\PYT[prsW9;3?QPB757>,&,1?/AA2CHF>@AEMN>,'!EW'(+.-,-(95601E90%
+59;3,,  $"%(11HM>FHE<A3'/51498-*2;6,1)(,%1./)%$#!78,AKB=@B007$'!˚ ˛ "%"#˝ !˜  4728ZkUdJ6( MGC@G;YUWL^^Y`lywññweMnätêâÉvÇÖâÉ~yvleJI?;@e]YVrvtd27RPSajj_IWSaVMC-9DI@MebeVK_xS1/.7(%0E10>evq|yn^YO;6645MQ=;0(# 1=3'/01535@<>XYcUHQQTYVUNcgWbgsurrd`d`tghcgKGEOQ89AB44.,,BG<80+,0>,:;8)1/%/AA710CQCG<PaP>&5/65#/7(&#!%!,''1&!#
+,<"eZMITKH0.AUJ@5+(?K@9EHGB?=1D>"0B=;;31.&&3BB80,'+(*0-<3-%21)*!%<> 6=130%-K?A41637.08=--!;BTK-):,+&(142.1&?@$#"&($+_VFGGOYOIOFB032>NQ^LDBE=ECWXJF;7OeMFQJLQ=*.HaG;(+-6>WYJLU^MB3JPD683%*6BFDJK;# 2>1:362*55.2%""%,B+('($1(!(=("@2";A6.32<,5OSITX[^ge`dOAA7ArqjWVWfh`:6>5AQ,?dRdh_]c[LOCfQHCJ@KagWeaPRJJKKlNMJ@FJM52;:H8A:3BSOGMQTTK1A5:582,*?E>664203&,!-)#!1.45"$+!-1&;#P>ADdhcYXPHLEEe_b\[SJXfPOSfnC6@^w^XYOPT_b^qutjgpOhbvZVnYXWBO\OJ.38WXDD@HWNFAK_SB>@8BID;07BB:11,;B<@CC=1471?B;525/CE<,=F]W/3<3.(äã~àß£âuÇÇ{é¢õòézxÇõÅ¢“ÿÕ∆”∂óÜûëíïò†≠π¬ëô’∂îôíåïåtzíûûïçÑóÆêÑåîü£ëqÄâ§ßßê††wrx~ïïÜtáôû©¨oÄnàüû°éì¥±ââçóûúål{nëîÉÑàò´sYgÑÇäâéû°íouÄíÉÄyyèûìknrzÇÉ[QhnlTendhu]íàqm]}}WYÄäÜwuwå~Öê∞x~ppxwwpbwuncqgbeLWJR\]nmdegiUSXXJMD?>P]S<?53=''%'#,E>3.)$&/2)+&%(( 1-3+H=6=A'.HWd]TDK9!%@JRKATUOFFGI=3=8DCC@CG@748C:49@(.97/28BCE!C'#("-KH98JQQH@$,51;FF;D9:47<=<@83AF>/&.%35698E6,23;D9=),BhHO9BTa[W]60.DD:;><6(.2==E/1T]W;)*+)$42+)/2,1%-0124+*(+/3:-!'+&/-1'-"*63&1/9/&+-,.,2=I>/15OJ:304/<9@BEK@3;8=3+"-3-+"0-3>:>=8ALQOK0;?4=6AHIQ:?590.-14<AC=D";8/*'33(42,I;6KIIA%!,4/3"".25=>3%+6=+50@FJRS6&%$%#"#5;08AG>A&)46(3+0=33@HKB##&#$ &(*.1"9FIMRT>CRVNA21FRG77&;%-0-7>6;../$0*/)&$4>7#$()#).2/(-#%)%"")'0340-')64>:(%%')$#- '%:&---2,$%,&!" #''58?78@ADIBAA;F5LC<A= 
+ !+'-977298/(+97$+).A@B.008TF;# ')!	#%+/("!(	Ù ˙ ˇ ˚ ˘ ı  ˙ 0,%802<:?>AD@AKD0)97@870/567DAE;39,$,$..@>A;-00--/'17/=0(8>:E7>+2-=KF<CA(2("".6;%!.I]JFLJQ@A14:4., 04+"	#54-&>J`gC1)"3EI>6<-.*!>0)#$=C0,,'02!)'%'2<a^`Ys|q`[RMB5N[]UTX3'%)6MJB=157#--/&+32,!!$&./1/-;1>F=E>C612)7+'/,! -0 $$'óêulXÄöõ…∆≠úìíù±¿ôSA@@IS9?a_irg©≥ΩπvxlfOKNVfrlo\ZI>A:(/6%!($CuthTVKDHbOKJ?EHFUd^aZBBACU<27H@/6?2\?@D>.2-321;ZdBOMN\pîõÜif]edVF;<qUsSbO5<E^bbVKlrlNZrg\HRQ9FGFS[`MN]MIaVH.034;??:5@B118?G7/*-*4A<;8;=PQD0<66'/5-@0%=@@>@,"+35-2%,!-0-* #!0%,"%˝ ˆ meTNKMeXSTJ4.06=BFRVDEKP=8?@;93<*1:85<92)+0/%%--89045 &" '()(').!" &/256'(2'".& %&! +(! !&"###"
+˜ %"˝ Û ˜ #2/9&
+$3 !#3:1# $ 	
+#&%!%#$+)$ .%&-2'!)3"4-("#	!
+	¯ ¸  ˘ ˘ ˜ ¯ 	/("%/,!	˝ Ú ˙ ˚  ".32<8.2)'!!",#6=&456;2/C(%# 58#%%.# ¯ ˆ ¯ ˘ !	˙ ¸ Ú ˆ 	# ' %#+-)/$,.490)#()/70,9775)5572()3<8<==@90- $23/.%"
+($"(6.5.%% /&,%	ˇ ¯ ˜ Ó Ó ¸ 	*#<5!ˆ Û Î Î ˝ (*& 
+!&"		!%. $*49,ˇ !		42-##Ò  Ò ¸ ˜ ˆ ˛ $2?@>FDGEA?9-<KG966,!'%0330--$+=?:70>B/)08%%'$$0	+326/)!$+!%9A:*'%3/#+#&,,.5:530.((6,')'$)?>)!)-,)39<2+5?JY^efi`"17(A?=53B?5=++2', /1),&$)&)$1-(* !.(#3+,$55,;82944449LG@3,'$:DEE30/"ˇ ˛  &#<CHNVYU>)(3&.+&(9=CCAMHBQFB=752=;;87?<0:07-,4EB609>/ !,:0,+70#"#$4360-(?=2;AC;<=14,13%$'03)1,(&%52%$<?<AH=909@64-3510,0>GC@2!%303@M5&%)3!%>972&+:.><De4))#&+2/=86-38;?8E?5654-;A1',,00˝   ˇ &%˛ ˚ ˝ ˆ ˝ 
+¸ ˝ ¸ )22! ;KB70/&4.57657;C<CRDMDO@@DB<ML94+$)$.>SUQSSU[daaaVFJJPIKFD8<3DH:=DIA.! #'110/5=A)>HF,=/*=MLG963?=<<C7'8OC6EH6?@4-)))452:99/B="8%#"0/+2676E7Maptod[C><>A67=<DWIYiS ,,!!"!%<1357-
+		˝ ˝ 	
+Ì Í 
+ ˘ ˘ 
+			 	˙ ¸ )$1!ˇ ˇ 
+ .36;1+/#.;4<=5741 !274?1/&++(1'$,)<+68<03,.-.:%' 4/! ,% 0 %67/0)0?8=50(($! !+,,6A4)!'%!-)!$&/!))-.DGFK98589153:04//0))980#'/)-&".5,A;8"'00-.'"48-46!%!%,-41 	'Ù Ù ˇ 	2%&/--˛ ˝ ˛ ) *&'0(,".31 ¯ ˜ ¸ Q89646;38FJ@;'-'7I=A=8.=A7.3<=' + %C(&)+&6&"&,:=) +!!!(4024( %$(&$%"!		%%"%#$),),(1+-0$ #QFC@97=D>;FROD;&/72;B.9?892'.48",'6>;&,.038AD@T@C93('%-??9:CPQOMB<CB7($  "#+'!!& 1=!#.(+)4;,#+0!(+2625'-4.+/3-)(*-<7:3656)&88&(/,89?11 -) +5822+')!&2"(,&# #$ '!%,2($(+4,0)28<><EPU'$$ )5632142/1"2G.))*)44//55/&#./7'8/87<53170*#%(6220/;=<=><7))%%,/8BFHSW\WV`cD9)+62F8;;CLAQV\D87785>M@>MA296806M.-4<:?KYgfmk+&/4:A<DCEAHIDDH8*1%)+((0%!+-5("(2'&'(A5.-2+"&(6-(3>CD1,59GF<@>?D5+(@F<;MA5(˝ ,56EI6>@(&6)<9M@"ˇ *! $$0'1KH=6FLTNHQSPOLDEDK>/+12<@;/3;8M07+$$)>/)DEJKN81FWJGG71:<5:5/4=72.51,(+" (/5-+-3'&4B=1529;8?948)!&/80#%1-33/2;I8)(,9765,+&]TKBIf`[[XXKTIHSZY\K=:IG=@<<GOIJB8<31).4@?=6;<0CMPCLMIMBCEDHID>DD8,+./1<86;MXLGGMC=4>HG1+)))%856)0)$($)(%'"./.1,1?0#(+*?RYOJJùbdl©sTZNSHQXEEGGLQEENOHJBEFNOQ>JGWK*/@ußîÅín]eiwÖîºÅãéÅh267Iéi88;($(84$(+8-,/59$# ** %''( %%(.((60.35/>('-(++84-<@B0)6L5974CWFDL[UVUJ<<RHDM?9OOQOAEB=E34FURPODLRQWeeK<:24>F::D==A473@D0,)$'48=@CEIJ>2.9:%%$$,3<1,(*).$$ !',%$,-*! .-2(81958?CI796:>?9>3EX<6@GHI;6;;1<===96=54:0=K52EA;<,6?F2/(#,&2, &')04::9/,*".%%"%&,66,'%)+/-0' ˛ Ú 
+*/490GIPW_c]@3:,=Ja[`_VhbX`re9@#1+-, $21==8A@2/2=FG55aX6+0* ".60*')&3-6<9887E6.1+*/47QK8(1&&%"! (# #% (6,#&&'456(AIRhXMRGJLS,(@M>>HXNdOdfgbh\QRXmhde\YnkZomkfcYSY]iifsa]etoSZN?NLL3]pupm}h?8IT|eJtç^fíòv`ULaVMA=7BINWhbhaSuåòëáÉíñåëùê~X^TOVSJWBFHTHIQXciSftli`PORWb`^blnil{i`jiPknbryikftlhalzsuRYSMaxyecUSNMQRaI]RMKJKJRbQKR=,/A<>KGHQKPVRR\XMQSOQQQIGKLNQJHFHURSKJTVTKNMOSO^UcT@>;DVe{âcAMTaJC:3><<CBO]lV>FK,>B>C@HIJBF<SYVQK=;2G@C<=>4.3R8.*(8;/12(#%%(37- "//%03660+,3#41'&5200	',2/02!$<3+WSHYQBANBO\VWRC431$,33;=A7;JR>FBMC?9:6:>1,'%+,7.4>74'#0==;509A39<3.$ '0.-3/+2/#01/=6-60110#'/%(%&079841649lgF%,%)C)VUPdYG<E<;AJG@38DF;2;?`FFRONaVTC4EC>A796:/;DBAY_YMOMFEBCJFQK7$ $!-XUF:5"',((,/76 &364&)'*-1-2+3')."'.))%164A3>"'FIPSHCEJ3&3JJM<<:6AA?F:63#%(.2303<6:9>:6201$''.,.-,)&) 	&2%%(	%('&
+$<4?>92(!#&%$"'-/1..$$"$,.A>8,536600(',00(!%$%&% '	 &)&#˛ ˜ Ó  ˆ ˘ ˝ ˝ ˚ ˝ ˆ 	
+">SJG9<(&.>5:?;71.18?<>;99DJJ2?5'&/4=88<8<0A>B8500$$%! ()&))###&¯ ˝  ˇ 	Ï È ı ˙ Ù ¸ ˛ ˝ ˇ ˛ -.'!&% )%')0"&'%#&0&!" (3C)	!$%')!!"#$"" +$
+  Ù Ì .(*1$4>/$/DOI.!˚ 	˛ ˆ ˆ ı  ¯ ˆ Û ˚ Û Û ˙  ˛  ˛ ˘ ¸ Ï Ê ˝ ˝ ˝ ˆ  ˛ ˝ ¸  ˝ ˝ Ó ˝ 	
+¸ ˜ Ô Û ˙ ˝  	˝ ˇ 	¸ Ì Ò ı ı ı ˝ 
+	().0"C/28**E9+59CM_^ÜSE'%,%L83(,($9-)950%/1(0 '&
+ˇ ¸ ¯  È ˜ ˙ Û ˜ ı  	
+		˛ ',L	˛ ¯ ¯ ¸ ¸ ˆ ˜ ˝ ˇ ˝ ¸ ¸ ˝   ˛ ≤√…®‚ÕøŒ®¨Æπæ∂ìïè°ôí®ë¢ô´Ω¬Œ…¬øæ∞±ÑE[cvvâxÅ´≥√∆˚ÚÎ∆Ωƒ≈∆ø®¨≤∂•ñ¢©Ω¿√ºæ∏ƒ±¥æ”Èƒ∏®≠¶ö≥£û´¥©æ‚‹›ıŸ˝¡ùØŸ∏≠ßûå∞©ìPcé}N=B1Kmüñtfl\JAA2zxpfgquvs~ldWe{sco|}w|{~qtzui^Z_klnmhemooiiephgcYquzqhigmdmge_a^_PE]eeaWQTMTV_qj[Ye_bRXRRMPIFPOMNddXRGILTOGQD[RN]ggdX^V]`WSc]cPXvrrÅåÖÉÖuvli[etoccfesÇuãmmqÉêíÑççxqôÉ{mowmmknqÇ|qojgqÖ|vvqlneauÇxuhhcega^TW_aaWbq~{uxggffXPdnk^XW^dmeedgqe^XUfmdGChqwqpulmtÄëggiot\ZYgoJSazntfdPepqeum[Q<GBV2Ic`nb;/G@'&0165234:DMP_c 3 8o{{}l^bcb[TUhlgdÇ~xf`YYk}fmj`ÑÅpâèà|ebKfyrnåëÉt}ÄÑÜwsvÜåí¶ùùâåúô˝˜Ï÷ÀÕØª∑ïçœ—…æèVsí°òçâÄtxÉ{ááÜy}wrechn~âÜ}Çws|~}tup\LX\ab]]fafU?4AXgknd\OY[]WPW]gb`grvtl|sjqstsvp`[hqfqachrWax}up}}ÑzrlcfÄ}xwk~äòìòîÅëÅåâééÉâwdaahegxtorrmkxylnrda\\ZprnxrtgntÇ}xrmklfm}áãÇsnt|Åunppacfrxueka_kgm`XfOV\TfvrnpqvWVKOM[`\]f`mxgqpÖÄkf`^Åzîïë†ëõò~w}ÜñçêáãìòìâÖÖèívxuqÅz||vãôçÖr{quYVXW\c]^\`gvuÑ}seMSSNdudbd_]nrqvvkb]\W]iqopnlqwu~xl_]`eafli]X^bYJSXqsnp[_[gqslna]htxnh|çÜ~tpÑáàáÖåÅwo}à{ââãâÖ{êïïïåÉÉuÖÜïèéÜàásSQYa}Äx{Ç{uunLOi}lco\R[Å}ÅÜâåÑâèÜÖssvqhnZ19.-.;3+/'$>CFJ?BKPGFQTMJCAAC>?CQFCOX[`_uòíÜ{Ä}yzÑÜ~otz~wÇìçáåâÉâàáÑÑÖÉjrtwûóÖíùèypqztêçÜãÜhÅêâëìÑkkdb^bÄâ~É~f{ÇbcxtfmrfâàÇÖàÑáÅvÅÅwx}{|Åxáçç}xu|}tsÉãéáÉÄÖÅáurusxuÑÇ}{éíãìêñêéêáÉÅy}}xÇêëêïåçéáÅmutytzàèé°†úïñârsos}âêïàëèëèáí®üåvq|~|ÑÜçããèóÅÉéôá|qYYlpÜóü°≤ê£¥¶≤ü~usldkÄoxzÄ~oirlmtxpokms}~|um~zyxwkuá{{qv}ÑãááçâsnnmquxqÅ||}|rnÅmhhfpÇvu{Åvksed_\inekro|xqnxtvleknussx|~yÜynagabeh}ÇÉÑÄ|{v}vvvwÅv|ÄszãÑ{bk_mjoetqv}~~éârx{ms|ÇâÜÜ~}Åèàíçíúù¥Æô†ñëîõüüåáÅêíåe]]snt|||u~vv|}kxÉ~worvt~~ÅÑx~Çpg^bfiàÖquvxÇÉxuokgi`cd}oimopá®≤†û}ÄÅÑïòû¨§§ûàÅÑä~}ñàûãâüóüû§¢´ú£üuyåêìxÜòúõóåÑÅxgÜuÑÖêàqtäùüùòôåÇÖëôù•º¥ΩÆ≠ª∞†sáîósngngelcWZNJOSTKDMID7AFDE?@Q<HCTalr_UR\bYYQQSRIDKIKN`F>>95@JGI;U1 3B6=>=?('(JFNQELLSNEFC???959AF8;518.2.0751&'%/.4?1423<2=43),&*235+2.26;<FB>>-"/94ED.%2*.!:=IPC75ABRK^B8%7COUTtYB..446-<BQW\TE6L;HXF3Nf]cXTD9:D1/-;)9BLBCG4?A89968-)40-10.""(817//$#.-7B1+34,B6$,)!)$'9./59/+,)6.&,")09:@A<92%/'
+ O_]UG=/"((*092;?CAC@JF?1 $/<7=42AB;I?/45-,6/:-%4/81! .-)0)8'(.+*#("#%!"!,*!""˛ 
+		 _ÜÜÅÇQHNYm`L<DCITSV[USHHNYSbXQ^WVn\PIKJOLLST]^RTUWSLMLFQLJG@JKRLE><9L?=CT]MFF=BMEMMFMSTKB8FG@D@?>KMVLKNL>927IJIECHJDGQQRLHH==B`dfupehOUe[VUV]PNQNGMFZ`NA@>QL]l]VX]a`VOBJN</0+193GMBC8173,;>@3247;@GC9+CD;8IB;.95@I6.$-%$'4/3-00%&1'*. #!#&,0+,<?" >6878BC:8<3AFCDHPU>3202668:>KJKH88F<4EH>CFCHbUVJFGTTDVXWPTDIFOQ^RTXW^aSKF;N76F`US^YRSQUPLGEHZG?FNWISKQPR]WYGLMECEDGPQPPTLJFHRILPnbYWK^ZVFHH<:3;TXRBA>J[c[k_XUJHHUVRIPWVafe``_RUROL[URVONK=413LK=EIAEKMTOKP269@=C:498ACC7====7EJHJKD>FNBD7+".%,-0,2J580;DIGNfbfbfLT^fscd_bklXIG^aYM97Hc]e`e_WLD8BVQNgSQcx^`PViQJJ/=DNSIURWciif\KGJB=JgaWFQWWONC>AFDIJO[]xa\Y^NLFF>AKFLP\cbbbW^YJ@<@DNMKPNMUSNIiif]aQHAU[ZYUa\cXPLPqllg``smk^_]SNMVQfiUWTXesvmkXMB96BbcUDHDJSFMHGEACB/9@AFGGFKURLV@6B7D`TSQIJHD?:>JJNHNJXXcmci]YVV]X]RJGMNX_cdb^@1+1FCYI8>7>>9:IHT]U3,.:CV=>LLCAF11><-# "2<LV8((,HH5%2#$35@8+$!&5'&04+ $,7/+'28$82*"%1,+.'&.,23'.(
+ "(($ MPUeuwthuqhoyÅydXVWWP_[U`\c\TceYSD5CTS[]YO[_d^cfgVBD=<56CGKNMIFG9GIRQ[WWWN\deVcWLXMH.5CLcbQ_mj|ih\MURIU]Y\V_\KMLTRY[TWYUXTVTURGYOVMHYWaW`hlbjdbbVPTMST`_\PIGGMDDG@FBAHKPYJ>?>D4A==7.1/8>CA*440/6<EG/0((3@@GG8<9823.035@153:=FA)0.21/*/>4BGFX\VYQC53>+<:4=83%/<.SPB7UhFMKOWei`STA>NT\i_DA<BEERbY>KEC=@KSOP[QK^PV`TQJJBFHNGGGLSVUcUOSW[TLKPFE;5FJ6,3,6<),"$:;&,-+)# '52&!31DLJB7;==?</800/.&( K@>FVL>BSKPMPC@JLKQUKOKMHMMIB?@KQ@./0,((1.83>@A@A>?B=+484BF=317AHG@6<75&-.6R\CQCBMcXC;=(#95E=;>B?G84868@L9EE?9>ADJ<==A?<969;?C=C\UOJGQEBAHJUWMRHSPMefY]XXMFDBLlaOESKBAF<B:5<2.AXJ-,,12,+40=2168EVQ@?3571>N>39B=LnNEE0$&1.+E=ELEHOI=50& &!1=>(2.08>DHFRNBéáú©ªû§xyld]ugtrhhr|âÑâàÅhya^`RRca^fnÅm]th{q}{ÑÄ|yÅz}o^kmpÖÜçÄjf^Ç}xf^[mdbeiowÄiqo\^\WifddkgtetvygfglsqÄyÖsw^ibáéh[]iwgmYÉxåàÅsrÅzoqlr^ha[rcsàì»°ëÄÇz~wytÇâùÑÑlbgs{y|ÄÇ}sÇ|nÉÜ{}àÇ~Üçê{hkory}okgxrm_^_\U_\VUa>@NH_RAC?J[MG?IKKFUXKQLGNC?LLR>,04?=83"*$'3CA?uwmid^MSUTLZmubfdiimgckpk\jvmitpurrfo]eb`ageigSUf`dZ[^SHOTQRPA7<>=CTLGC26EQA9.0@QGJJPMFE<0.+?=:CE?;L@LOF;E?=GC?EB935.'0-'>B23;goÅáuojsè~}íÄÇrvhyuÜéè~yrqkcqêóí}||w~sdQ;GMMfe``ZYOSXYQ>&6'!-&=X6$$("&-20/"MR734=7+-13B91( );2-.#/=!	 '=<5?_c[W`KS^W[XbUK<L`=[~]P]\ecETH>JFFFFHRC<CA>22)>73,,,ALSI@=H;59)<B<BAF;DB?>8<AB5*9IGHDDH@KFA;SOHB>?AEH?E?;@C72aYGI@/>T]N>--445*BWgFL<ACEUTDUiV?50$>LCVPJP\NQTT=3-03HEEPKSW_g_WE<@<.9=/=GA??YI94<J90*%0@B4,(+$-++ (#26/1'.+*%+$$.(( &:0.604.&,987;<953FFRSL]PQTYolooe^C151/T]ZURUWiofnwY=785?C?=/37=AGG>+-6/$5/(,% -&';=FJc`lrhTG5'%1NNfeaXdä{e[_aWXJIGRjdg\Z]Ñ}mHAJHHA04;RC9!-'$63798/6M@0)24B4)(0?B<<176@CFC)5%?J-30,-,B@@2??)$'&A>5&',C9540(#)%- 20((&!'   #'"	!DOGFJACE=5539F`^XK>;A;@35=<?86BG:;>GB(,('/-=7./0?>C9)20',+)2425-3<1)$&(%#(/%&""#!%"%%&(0	 A?KL&:ocF&(<82/,!+0!#$*/&!#-;2/(!%%$!*35B>D95?TMND8:F- ++052>6&	!+'5 *$"*'5$*<;:;88/-"(33#	˛ ˛ OPKPI<DYe[tTfdeaYQZLVWGEFPJQ<><GH?=?>C4.-5;CF=113HE<@47GE9>ALQLC6><BF74'0-%&(-0$#!1+,5<4,0*%9>F:5;.5/20+1..28*),=439/$ # ! !H=FD]OK2B`FEC<D^VQBECBCNVRKQB854;LE@>69:..-DT>EG=G]NJ@?EB4//8LGG>>=NCAG9>403/).0.###=65*!++/,)/<:71)+4A966>7//610HA+%.46+1725,/JKOJUVPOYgcAOQR\COHLGVaFOWLLFBKWMOF>BFE<@GUQP@<?FIC>?>KKJ9>HLFLNPNOMMPIHA159;CKE6F6LHLFPhYK9$(6C89B.;@@6WUXCUXVJ>FK>C?9=17=8BG;<JTXb_mkc_WYX[pnlclgmäzkb^eKSHMNEV{dEHGC=<PNCE88<DGFGLXVHGFL]QLHELXURPJLMHMEGWÜí}jqsynr{dOLIH7>NN=:FJ\YKS`M78953NVLY`fbéâèÇsu|âáPS]apcehgUVL]kcW\]Z_m`bqÇ`GOHKO^\Y]`jVI?PQfNE?5;OROKABHF94';>5=@D?9;?9FG;42.5BC>=9;7HA=@C</,@>9CA=8N9DDJELB3%#/81$52,.@041032<618KJA><GJI:CPMG9FMK_eYZU@?:;:GEGB<B7IRKD7DG9D0>MJK;>3>UNFNOA=C:.921"1.8KCBBF>B@53BJRC63;6368ZH<,/.11@9/155%0/)6=42*$,MTE;?@J=GH54D9=?BEDHE?BBB=821EHCCC:9824<JI7.02=B@A<C1,156><C693336=<=>8814;I>6<>@58?2<8./,'2;466:3.@E=BA1#"$"'60+"!"'&','(!!!' "$3<EB7ngWKOUJL\XV]TGEKOEKCEJP9,+=BFM?B;CNAKC521769D=CQT]LB<>VHFF?C2A<@?@1)$,0/;&,.(,).941;<A75-:GLJBGCORC9;HE81747803>=3+01)5I6216956/%EC@C9=I\ZFA?AFFN^bSJHE?;85MMN?613@>>>B4=BPD<AFOOKDGRQFKHKGI@?;IO@74,".F=72(731;<T><41.7TM<20)5($%%!&# 4+-7H==>70&..3+9.'65?=DKIGHLF@IBAHaVD4@=BE4549FD=:6?I=6.;>813;>A413/5;DG>D61/))2A6+$&6B<,/,%%'(38450;813,162=/26/;?3'""!'($(%#)+0*,8--/24D5'$2.228@KNOA;857JEAAB=H>3<JFGA=>4=XHA72,#&.%6=GROO^]aYSKHIFBEFWLLMMQRbOL<JI;;<>LYQaR4>QKA=;K?9<8<A77, 0'"0''<5;2056427?ECGO?MJGB<ECJX_NITJRO@>R[PIIIXh_\MJFC@ERPIFFHOTJJLPH?56>HMIMGIKV`ZPNOHA;>CKPGDJBPUMND6C?@79MMDC?<@?LKB=>1*&0-?B88.47CJ1/.422<;74<8=DJgck}m\qlgYY[_e`d]vwskn]^[OMHAO`sl]clos}hYe|fh\_fyávret`WW\_olURQLVUYefk`SRS\`]PPTMO[T_`_hWRDGNJmXQNRVvu`RPMLJMJRTHDADMWJJINTMV_UT_TLXQe^aV]UWcf`djreRD=?YZF6BA<?WTOQ\UF=+1AaaUEFJD80)6^ZFCDKEUKLDJJHF5:Jp`IA357EhRKSIGC;9:CLFIB?922D@@FB;>95'BFH<0>D%02@DPACDE++ofm{Ösmjpbmmriwtxli]kusgLTVXJHLi`ZVMHIE>;BXO9KFISacPJQ^^PGH?d_TZE7IgOEFHD7.413I<>68.72$($"30021:XTP@;GEGR<7QFPFTMBARLHHCB@?&//)/QOJKEJ^^SJWRLBLWgcU_^gWF?AADHEMLYXUJERORMEDIW[JKJFTUNQRSH<A6FRHJVXObc^YZZLC96DH5577?HOE=?GB16O@ONKA9BK;44IOC9B?9<I?CBLJWKN?BPd`T_\`g]bflo`[VPaqae[YSmngTQfbOMUObg]]^[aqVD|Ü{iYdjgivleU][_TM`ic^^V_prndVQWRG@AL`dONIGU\[NURJK668SIA==?@VIJLH=(4"$2dP?>6,@:496=8;<HHcxshVlh\TIJW]LNKJJYkaRao]VJNOtmcbNNJgq`UhfcRLFkd^YWPN]xr`sq_SQQEH`bHOJGYWVYmZLH::CcXB+%<>@E?KQ@:-0..13@:?H;/0)01EC>545.FG>D?>8omhimmprlecR^bavuqnku}x}ursf\]NYmnlkgedifjglff^TSZe^YX^XWp`^fbSTRM_nwmfofeaYWhÅiOKKIDa`NW[]inqnnqU\SV[ma\UNOR`XYQOPGKVMKNQSA@FFIC>F\RNHTOTW__^`i^Y[VcroeebWuÜâurnXORaTbme`ZYXidbqeÉyhmg|yfdcmlgXSKYekk]Zi|tbbo^[_@JRkhe^X]nthh^ZOXOTSe_\_WQ]q_f^VVMSJJEOMKHGWE@EKP>\NQOOYszdleUJJNLAHXdLoZig}ÜQbZX]PHKÜgÅáeb]ucFRSHJE9IETNICELPOIBKPNLUP?BFRLLPBK<?>RVFGCG=DPXNNH@IDD<?<<9CCBH=<KFRD>A9<5DC@DD@@Y]QOL\XYWZYaRfgaOEAEBFQ]hTWUY]UQ[LBB<9BKRNYkedUMID@V[Z]PAHK:<DCEHCNOGGCO@=JQX\IJRE;98;KSLPLLCA<63,57,01.;=47HD-BC-4LJ=542=?0,/37<4LMECI@B>4=S[djTTNOFMFIPJKHPWeQ]cGJG@C@JR;A>DOXMJDOA@3219FGEBCBTMJMJGK6D?HN>@<9G9;0((!#"'!14)%*;6()*/>E>A11;MK=/#8894>KCC==4=<4FGJOGF=89;DZLJB@DE=.+.DFB<<49G=F<A991/33?79.26HD8>D@;3()?E81359;EFG?F961+.EN0059@?444>?;-<,0=9?<6>/2(8?A>880-3@:5.&.9C$ .26>?B?GKN[][idEHNXWC@<<4@8-47R]D5?;KTUSRM<RB?K[Y\MD;>TPJJGPXQDDJWRKG@1EHMFDKSB50IXVG*1,0WS=A3A1)&855;@4;E>/==/4</)+1.40'1-/7D6"+.4:?JF('023-1183.#"&20(%('))*602&'(37;.1;+),(4>-87;;$",%%382..*,"$#&,3:7*" 4,0%3&./$"%("			 ';689=7955:873+?0$(/6'%@_9CJ@3<F?3$&3+)0<*,'#+2668)'/!" 16+144&8<Y9G/M8>JTX^ZA43%*A5;RJ2/7:&!3PC;(1 445@6?;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*;*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*<*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*>*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*?*@*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*B*B*B*B*B*B*B*B*B*B*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*F*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*I*H*H*H*H*H*H*I*I*H*I*I*I*I*I*I*I*I*I*I*I*I*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*K*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*G*C*C*C*C*C*C*C*C*C*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*A*A*A*@*@*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*B*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*C*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*D*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*E*F*F*F*F*F*F*F*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*O*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*S*S*S*S*S*S*S*S*S*S*S*T*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*V*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Y*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*[*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*[*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*Z*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*\*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*]*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*`*`*`*`*`*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*c*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*d*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*g*g*g*g*g*g*g*g*g*g*g*g*g*g*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*f*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*f*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*h*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*g*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*i*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*j*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*l*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*m*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*q*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*r*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*t*t*t*t*t*t*t*t*t*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*v*w*v*v*v*v*v*v*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*u*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*t*u*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*s*r*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*q*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*p*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*o*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*n*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*l*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*k*j*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*h*g*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*e*d*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*b*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*[*Z*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*X*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*W*V*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*U*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*S*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*R*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*T*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*T*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*T*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*P*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*L*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*H*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*J*K*K*K*K*K*K*K*K*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*O*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*Q*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*Q*Q*Q*Q*Q*Q*Q*Q*P*P*P*P*P*P*P*P*P*P*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*R*R*R*R*R*R*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*Q*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*P*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*N*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*M*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*L*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*G*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*H*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*I*J*J*J*J*J*J*J*J*J*J*J*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*K*
