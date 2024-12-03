@@ -118,7 +118,13 @@ Es werden Goldkugel-Proben sowie HOPG auf sehr kleinen Skalen mithilfe eines Ras
 Das HOPG (Highly Ordered Pyrolithic Graphite \cite{Anleitung}) wird genauer auf seine atomare Struktur untersucht.
 
 \section{Rastertunnelmikroskopie}
-\subsection{Theorie}
+Hier soll u.a. die atomare Struktur einer Probe von HOPG (Highly Ordered Pyrolithic Graphite) untersucht werden.
+Um atomare Auflösung zu erreichen, wird ein Rastertunnelmikroskop (RTM/STM) eingesetzt.
+Dieses ist im Gegensatz zu Mikroskopen, die Welleneffekte verwenden, wie optische oder Elektronenmikroskope,
+in seiner Auflösung nicht durch Beugung begrenzt.
+Stattdessen wird eine Metallspitze sehr nah an die zu untersuchende Oberfläche 
+herangefahren und anhand des stark von dem Abstand Spitze--Probe abhängigen Tunnelstroms auf deren Oberflächenbeschaffenheit geschlossen.
+
 % Rastertunnelmikroskope (Scanning Tunneling Microscope, RTM \cite{Anleitung}) sind keine Mikroskope im optischen Sinne, sondern tasten
 % die abzubildende Oberfläche in kleinen Schritten ab, um Informationen über deren
 % Beschaffenheit zu erhalten. Dadurch sind sie, im Gegensatz zu optischen oder
@@ -128,62 +134,15 @@ Das HOPG (Highly Ordered Pyrolithic Graphite \cite{Anleitung}) wird genauer auf 
 % Die Funktion von STMs basiert auf dem Tunneleffekt, durch den Elektronen 
 % in der zu untersuchenden Probe die Austrittsarbeit des Materials sowie 
 % die Breite des Spaltes zwischen Probe und Spitze überwinden
-\subsubsection*{Tunneleffekt} 
-Das Grundprinzip des Rastertunnelmikroskops (RTM) basiert auf dem Tunneleffekt. Dieser beschreibt quantenmechanisch, wie Teilchen eine Potentialbarriere durchqueren können, ohne über die hierfür notwendige klassische Energie zu verfügen. Die Aufenthaltswahrscheinlichkeit des Teilchens nimmt innerhalb der Barriere exponentiell ab, was präzise Messungen auf atomarer Ebene ermöglicht.
-
-Betrachten wir ein konstantes Potential \( V \), das im Intervall \( I_0 \) den Wert \( V_0 \) annimmt, so gilt für die Wellenfunktion \( \psi(x) \): 
-\begin{align*}
-    E \psi(x) &= \left[ - \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0 \right] \psi(x), \\
-    0 &= \left[ \frac{\partial^2}{\partial x^2} + \frac{2m(E - V_0)}{\hbar^2} \right] \psi(x).
-\end{align*}
-
-Analysiert man das Skalarprodukt der Aufenthaltswahrscheinlichkeit genauer, so ergibt sich die Proportionalität:
-\begin{align*}
-    \abs{\psi(x)}^2 \propto \exp\left(-\frac{2}{\hbar} \sqrt{2m (E - V_0)} \cdot x\right).
-\end{align*}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.5\linewidth]{figure/tunneleffekt.png}
-    \caption{Schematische Darstellung des Tunneleffekts.}
-    \label{fig:tunneleffekt}
-\end{figure}
-
-Hier soll u.a. die atomare Struktur einer Probe von HOPG (Highly Ordered Pyrolithic Graphite) untersucht werden. Um atomare Auflösung zu erreichen, wird das Rastertunnelmikroskop eingesetzt. Dieses ist im Gegensatz zu Mikroskopen, die Welleneffekte verwenden, wie optische oder Elektronenmikroskope,
-in seiner Auflösung nicht durch Beugung begrenzt.
-Stattdessen wird eine Metallspitze sehr nah an die zu untersuchende Oberfläche 
-herangefahren und anhand des stark von dem Abstand Spitze--Probe abhängigen Tunnelstroms auf deren Oberflächenbeschaffenheit geschlossen.
-
-\subsubsection*{Piezo-Effekt}
-Der Piezoeffekt beschreibt die Fähigkeit bestimmter Materialien, unter mechanischer Belastung elektrische Ladungen an ihren Oberflächen zu erzeugen. Diese Ladungen entstehen durch eine Verschiebung von Ladungsschwerpunkten in der Kristallstruktur des Materials, wenn es gedehnt oder zusammengedrückt wird. Typische piezoelektrische Materialien sind Quarz, Keramiken und einige Polymere.
-
-Umgekehrt bewirkt der inverse Piezoeffekt, dass diese Materialien ihre Form ändern, wenn eine elektrische Spannung angelegt wird. Dieser Effekt wird in verschiedenen Anwendungen wie Sensoren, Aktoren und Ultraschallgeräten genutzt, da er präzise Bewegungen und Messungen ermöglicht.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.5\linewidth]{figure/piezo_effekt.jpg}
-    \caption{Piezoeffekt}
-    \label{fig:piezoelektrische}
-\end{figure}
-
-Zur präzisen Bewegung der Spitze werden Piezo-Kristalle eingesetzt. 
-Dies sind Materialien, welche sich unter dem Einfluss einer angelegten Spannung
-verformen. Zur Annäherung der Probe an die Spitze muss diese zunächst eine relativ 
-große Distanz (einige \si{\mm} bis \si{cm}) zurücklegen, wozu ein sogenannter Stick-Slip
-Piezo-Motor eingesetzt wird. Dieser bewegt sich zunächst langsam nach vorne, wobei
-der aufliegende Probenhalter durch Haftreibung mitbewegt wird. Durch eine schnelle
-Rückwärtsbewegung kann der Motor in seinen Ausgangszustand gebracht werden, ohne die
-Probe mitzuziehen. Diese Bewegung kann mit hoher Frequenz wiederholt werden, um die Probe anzunähern.
-Für die Bewegung der Spitze entlang der Probe (seitwärts in $x$- und $y$-Richtung und
-vorwärts in $z$-Richtung) müssen schließlich nur sehr kleine Distanzen zurückgelegt
-werden (wenige \si{nm} bis wenige hundert \si{\nm}), wozu herkömmliche Piezos ausreichen.
-
-Um Informationen über eine Oberfläche zu erhalten, ohne sie zu berühren, nutzen STMs
+\subsection*{Tunneleffekt} 
+Um Informationen über eine Oberfläche zu erhalten, ohne sie zu berühren, nutzen STMs den
 Tunneleffekt, durch den Elektronen von der Probe zur Spitze übergehen können.
+Der Tunneleffekt beschreibt quantenmechanisch, wie Teilchen eine Potentialbarriere durchqueren können, ohne über die hierfür notwendige klassische Energie zu verfügen.
+
 Dazu müssen sie in der zu untersuchenden Probe die Austrittsarbeit des Materials 
 sowie  die Breite des Spaltes zwischen Probe und Spitze überwinden,
 was klassisch nicht möglich wäre. Durch die Quantenmechanik ergibt sich jedoch eine
-Tunnelwahrscheinlichkeit, welche exponentiell vom Abstand Probe--Spitze abhängt \todo{Quelle}.
+Tunnelwahrscheinlichkeit, welche exponentiell vom Abstand Probe--Spitze abhängt \cite{stm-paper}.
 
 Probe und Spitze werden elektrisch verbunden. Dadurch gleichen sich die Fermi-Niveaus (oberste belegte Energie-Niveaus) in beiden Materialien aneinander an.
 Elektronen können jedoch nur von Probe zu Spitze tunneln, wenn ihr entsprechende Energie-Niveau
@@ -205,7 +164,52 @@ gefahren und für jede Position die Werte des Abstands und des Tunnelstroms aufg
 Der Strom wird dabei durch eine PID-Regelung konstant gehalten (\textit{constant current mode}), wozu bei einer Höhenänderung ggf. die z-Position nachjustiert werden muss. In diesem Modus kann die Struktur der Oberfläche also anhand der z-Positionen
 der Spitze erkannt werden.
 
-\subsubsection*{PID-Regler}
+\subsection*{Theorie}
+Betrachten wir ein konstantes Potential \( V \), das im Intervall \( I_0 \) den Wert \( V_0 \) annimmt, so gilt für die Wellenfunktion \( \psi(x) \): 
+\begin{align*}
+    E \psi(x) &= \left[ - \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0 \right] \psi(x), \\
+    0 &= \left[ \frac{\partial^2}{\partial x^2} + \frac{2m(E - V_0)}{\hbar^2} \right] \psi(x).
+\end{align*}
+
+Analysiert man das Skalarprodukt der Aufenthaltswahrscheinlichkeit genauer, so ergibt sich die Proportionalität:
+\begin{align*}
+    \abs{\psi(x)}^2 \propto \exp\left(-\frac{2}{\hbar} \sqrt{2m (E - V_0)} \cdot x\right).
+\end{align*}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figure/tunneleffekt.png}
+    \caption{Schematische Darstellung des Tunneleffekts.}
+    \label{fig:tunneleffekt}
+\end{figure}
+
+\subsection*{Piezo-Effekt}
+Zur präzisen Bewegung der Spitze werden Piezo-Kristalle eingesetzt. 
+Der Piezoeffekt beschreibt die Fähigkeit bestimmter Materialien, unter mechanischer Belastung elektrische Potentialunterschiede an ihren Oberflächen zu erzeugen.
+Diese Spannungen entstehen durch eine Verschiebung von Ladungsschwerpunkten in der Kristallstruktur des Materials, wenn es gedehnt oder zusammengedrückt wird.
+Typische piezoelektrische Materialien sind Quarz, Keramiken und einige Polymere.
+
+Umgekehrt bewirkt der inverse Piezoeffekt, dass diese Materialien ihre Form ändern, wenn eine elektrische Spannung angelegt wird.
+Dieser Effekt wird in verschiedenen Anwendungen wie Sensoren, Aktoren und Ultraschallgeräten genutzt, da er präzise Bewegungen und Messungen ermöglicht.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figure/piezo_effekt.jpg}
+    \caption{Piezoeffekt}
+    \label{fig:piezoelektrische}
+\end{figure}
+
+Zur Annäherung der Probe an die Spitze muss diese zunächst eine relativ 
+große Distanz (einige \si{\mm} bis \si{cm}) zurücklegen, wozu ein sogenannter Stick-Slip
+Piezo-Motor eingesetzt wird. Dieser bewegt sich zunächst langsam nach vorne, wobei
+der aufliegende Probenhalter durch Haftreibung mitbewegt wird. Durch eine schnelle
+Rückwärtsbewegung kann der Motor in seinen Ausgangszustand gebracht werden, ohne die
+Probe mitzuziehen. Diese Bewegung kann mit hoher Frequenz wiederholt werden, um die Probe anzunähern.
+Für die Bewegung der Spitze entlang der Probe (seitwärts in $x$- und $y$-Richtung und
+vorwärts in $z$-Richtung) müssen schließlich nur sehr kleine Distanzen zurückgelegt
+werden (wenige \si{nm} bis wenige hundert \si{\nm}), wozu herkömmliche Piezos ausreichen.
+
+\subsection*{PID-Regler}
 PID ist eine bestimmte Art von Regelung mit drei Parametern P (\textit{proportional}), I (\textit{integral}) und D (\textit{differential}).
 Die Differential-Regelung wird hier i.d.R. weggelassen. Um die Regelung für Änderungen auf kleinen Distanzen auszustellen, kann der P-Parameter auf $0$ und
 der I-Parameter auf einen geringen Wert (z.B. $4$ \cite{Anleitung}) gesetzt werden.
@@ -222,14 +226,14 @@ Proben vermessen werden.
 % Hierbei wird die Spannung am $z$-Piezo durch drei Terme, welche
 % von der Differenz des Soll-Stroms und des tatsächlichen Stroms abhängen, reguliert.
 % Der P-Term (\textit{proportional}) ist propo
-\subsubsection*{Gwyddion} 
+\subsection*{Gwyddion} 
 In \textbf{Gwyddion} können Daten aus STM-Experimenten durch den Import von Dateien, die typische STM-Formate wie \texttt{.sm4} oder \texttt{.ibw} verwenden, analysiert werden. Die Software ermöglicht die Darstellung der Daten als Höhenkarten, sowohl in 2D- als auch in 3D-Ansicht, um die atomaren Strukturen präzise zu visualisieren. Zur Optimierung der Rohdaten stehen Funktionen wie Hintergrundnivellierung, Rauschunterdrückung und Fourier-Transformationen zur Verfügung.
 
 Die Software bietet darüber hinaus Werkzeuge für die quantitative Analyse. Dazu gehören Messungen der Oberflächenrauigkeit, Partikelgrößen und andere strukturelle Parameter. Diese Analysen erlauben eine detaillierte Untersuchung der Topographie und physikalischen Eigenschaften der Probe.
 
 Zusätzlich können in Gwyddion fortgeschrittene Analysen durchgeführt werden, beispielsweise die Extraktion von Linienprofilen oder die Berechnung von statistischen Eigenschaften der Oberfläche. Dank der modularen und benutzerfreundlichen Struktur ist das Programm ein unverzichtbares Werkzeug für die STM-Datenanalyse in der Oberflächenforschung. Für alle unsere Abbildungen des Versuchs wird dieses Programm verwendet.
 
-\subsubsection*{Aufbau und Durchführung}
+\subsection*{Aufbau und Durchführung}
 Der Versuchaufbau ist wie folgend beschrieben: 
 \begin{figure}[h!]
     \centering
@@ -570,6 +574,9 @@ Siehe Abb. \ref{fig:hopg-1}, \ref{fig:hopg-2}, \ref{fig:hopg-3}. Da im Constant 
 
 \bibitem{Anleitung}
 \textit{Physikalisches Praktikum Teil IV -- Versuchsbeschreibungen}, Universität Bonn, 10.10.2024
+
+\bibitem{stm-paper} 
+\textit{High-Speed Electrochemical STM}, M.J. Rost, 2018
 
 \bibitem{naio-video}
 \textit{NaioSTM Overview and Tutorial}, nanosurf, Abruf 27.11.2024, https://youtu.be/dZeZn3Pt2Ss
