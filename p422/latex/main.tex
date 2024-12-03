@@ -231,10 +231,13 @@ In \textbf{Gwyddion} können Daten aus STM-Experimenten durch den Import von Dat
 
 Die Software bietet darüber hinaus Werkzeuge für die quantitative Analyse. Dazu gehören Messungen der Oberflächenrauigkeit, Partikelgrößen und andere strukturelle Parameter. Diese Analysen erlauben eine detaillierte Untersuchung der Topographie und physikalischen Eigenschaften der Probe.
 
-Zusätzlich können in Gwyddion fortgeschrittene Analysen durchgeführt werden, beispielsweise die Extraktion von Linienprofilen oder die Berechnung von statistischen Eigenschaften der Oberfläche. Dank der modularen und benutzerfreundlichen Struktur ist das Programm ein unverzichtbares Werkzeug für die STM-Datenanalyse in der Oberflächenforschung. Für alle unsere Abbildungen des Versuchs wird dieses Programm verwendet.
+Zusätzlich können in Gwyddion fortgeschrittene Analysen durchgeführt werden, beispielsweise die Extraktion von Linienprofilen oder die Berechnung von statistischen Eigenschaften der Oberfläche. Dank der modularen und benutzerfreundlichen Struktur ist das Programm ein unverzichtbares Werkzeug für die STM-Datenanalyse in der Oberflächenforschung.
+Für alle unsere Abbildungen des Versuchs wird dieses Programm verwendet.
+Dabei wird immer die Funktion zur Entfernung von Linien und der Untergrundausgleich angewendet.
+
 
 \subsection*{Aufbau und Durchführung}
-Der Versuchaufbau ist wie folgend beschrieben: 
+Der Versuchaufbau ist in Abb. \ref{fig:aufbau} gezeigt.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.49\textwidth]{aufbau.png}
@@ -243,12 +246,12 @@ Der Versuchaufbau ist wie folgend beschrieben:
 \end{figure}
 
 Die Durchführung dieses Versuchs ist leicht nachvollziehbar. Zunächst wird die Probe auf einem
- USB-Mikroskop positioniert, um Bilder aufzunehmen, die anschließend für die Beurteilung 
- ihres Zustands verwendet werden. Für das Rastertunnelmikroskop (RTM) benötigt man eine 
- geeignete Spitze, die in der Regel selbst hergestellt wird. Mithilfe eines Seitenschneiders 
- wird ein Draht mit einem Durchmesser von etwa $0.3 \, \mathrm{mm}$ so abgetrennt, dass 
- eine scharfe Spitze entsteht. Für optimale Messergebnisse empfiehlt es sich, den Draht gemäß 
- Abbildung \ref{fig:spitze_anl} zuzuschneiden.
+USB-Mikroskop positioniert, um Bilder aufzunehmen, die anschließend für die Beurteilung 
+ihres Zustands verwendet werden. Für das Rastertunnelmikroskop (RTM) benötigt man eine 
+geeignete Spitze, die in der Regel selbst \textit{gerissen} wird. Mithilfe eines Seitenschneiders 
+wird ein Draht mit einem Durchmesser von etwa $0.3 \, \mathrm{mm}$ so abgetrennt, dass 
+eine scharfe Spitze entsteht. Für optimale Messergebnisse empfiehlt es sich, den Draht gemäß 
+Abbildung \ref{fig:spitze_anl} zuzuschneiden.
 
 \begin{figure}[h!]
     \centering
@@ -257,11 +260,12 @@ Die Durchführung dieses Versuchs ist leicht nachvollziehbar. Zunächst wird die
     \label{fig:spitze_anl}
 \end{figure}
 
-Nach der Fertigstellung wird die Spitze erneut unter dem USB-Mikroskop untersucht und fotografiert.
+Nach der Fertigstellung wird die Spitze unter dem USB-Mikroskop untersucht und fotografiert.
 Anschließend wird sie im RTM installiert, während die Proben sicher auf einem Probenhalter
 befestigt werden, der sich auf dem Stick-Slip-Antrieb des Geräts befindet. Mithilfe der
 RTM-Software kann die Probe kontrolliert näher an die Spitze bewegt werden. Idealerweise
-wird der Abstand so weit verringert, dass er nicht mehr sichtbar ist. 
+wird der Abstand manuell so weit verringert, dass er nicht mehr sichtbar ist und danach mit der
+Funktion \textit{Approach} der endgültige Tunnelkontakt hergestellt. 
 
 \newpage
 \section{Goldkugelprobe}
@@ -287,7 +291,8 @@ Die verwendete STM-Spitze ist in Abb. \ref{fig:spitze-1} dargestellt, während e
     \label{fig:goldkugel-lupe}
 \end{figure}
 
-Obwohl die Probe sichtbare Kratzer und Unebenheiten aufwies, wurde sie mit dem STM untersucht, da keine besser erhaltenen Goldproben verfügbar waren. Die Messungen erfolgten im \textbf{Constant Current Mode}, mit den folgenden Parametern: 
+Obwohl die Probe sichtbare Kratzer und Unebenheiten aufwies, wurde sie mit dem STM untersucht, da keine besser erhaltenen Goldproben verfügbar waren. 
+Die Messungen erfolgten im \textbf{Constant Current Mode}, mit den folgenden Parametern: 
 \begin{align*}
     P &= 1000 \\
     I &= 2000 \\
@@ -528,9 +533,6 @@ Außerdem wurden mögliche Ursachen für Bildfehler untersucht, darunter die Pr�
 \section{Anhang}
 Im Folgenden sind weitere Bilder der Proben gezeigt, die aufgenommen wurden aber hier nicht weiter analysiert werden.
 
-\subsection{Goldkugelprobe}
-\todo{todo}
-
 \subsection{HOPG-Probe}
 Siehe Abb. \ref{fig:hopg-1}, \ref{fig:hopg-2}, \ref{fig:hopg-3}. Da im Constant Height-Modus gearbeitet wird, gilt immer $P=0$ und $D=0$.
 
@@ -582,7 +584,7 @@ Siehe Abb. \ref{fig:hopg-1}, \ref{fig:hopg-2}, \ref{fig:hopg-3}. Da im Constant 
 \textit{NaioSTM Overview and Tutorial}, nanosurf, Abruf 27.11.2024, https://youtu.be/dZeZn3Pt2Ss
 
 \bibitem{meshsize}
-\todo{Was Sie über TEM-Grids wissen sollten}, Science Services, Abruf 29.11.2024
+\textit{Was Sie über TEM-Grids wissen sollten}, Science Services, Abruf 29.11.2024
 
 \bibitem{graphite}
 \textit{Graphite}, mindat.org, Abruf 29.11.2024, https://www.mindat.org/min-1740.html
