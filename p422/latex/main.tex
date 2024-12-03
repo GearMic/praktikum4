@@ -164,25 +164,6 @@ gefahren und für jede Position die Werte des Abstands und des Tunnelstroms aufg
 Der Strom wird dabei durch eine PID-Regelung konstant gehalten (\textit{constant current mode}), wozu bei einer Höhenänderung ggf. die z-Position nachjustiert werden muss. In diesem Modus kann die Struktur der Oberfläche also anhand der z-Positionen
 der Spitze erkannt werden.
 
-\subsection*{Theorie}
-Betrachten wir ein konstantes Potential \( V \), das im Intervall \( I_0 \) den Wert \( V_0 \) annimmt, so gilt für die Wellenfunktion \( \psi(x) \): 
-\begin{align*}
-    E \psi(x) &= \left[ - \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0 \right] \psi(x), \\
-    0 &= \left[ \frac{\partial^2}{\partial x^2} + \frac{2m(E - V_0)}{\hbar^2} \right] \psi(x).
-\end{align*}
-
-Analysiert man das Skalarprodukt der Aufenthaltswahrscheinlichkeit genauer, so ergibt sich die Proportionalität:
-\begin{align*}
-    \abs{\psi(x)}^2 \propto \exp\left(-\frac{2}{\hbar} \sqrt{2m (E - V_0)} \cdot x\right).
-\end{align*}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.5\linewidth]{figure/tunneleffekt.png}
-    \caption{Schematische Darstellung des Tunneleffekts.}
-    \label{fig:tunneleffekt}
-\end{figure}
-
 \subsection*{Piezo-Effekt}
 Zur präzisen Bewegung der Spitze werden Piezo-Kristalle eingesetzt. 
 Der Piezoeffekt beschreibt die Fähigkeit bestimmter Materialien, unter mechanischer Belastung elektrische Potentialunterschiede an ihren Oberflächen zu erzeugen.
@@ -191,13 +172,6 @@ Typische piezoelektrische Materialien sind Quarz, Keramiken und einige Polymere.
 
 Umgekehrt bewirkt der inverse Piezoeffekt, dass diese Materialien ihre Form ändern, wenn eine elektrische Spannung angelegt wird.
 Dieser Effekt wird in verschiedenen Anwendungen wie Sensoren, Aktoren und Ultraschallgeräten genutzt, da er präzise Bewegungen und Messungen ermöglicht.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.5\linewidth]{figure/piezo_effekt.jpg}
-    \caption{Piezoeffekt}
-    \label{fig:piezoelektrische}
-\end{figure}
 
 Zur Annäherung der Probe an die Spitze muss diese zunächst eine relativ 
 große Distanz (einige \si{\mm} bis \si{cm}) zurücklegen, wozu ein sogenannter Stick-Slip
@@ -584,7 +558,7 @@ Siehe Abb. \ref{fig:hopg-1}, \ref{fig:hopg-2}, \ref{fig:hopg-3}. Da im Constant 
 \textit{NaioSTM Overview and Tutorial}, nanosurf, Abruf 27.11.2024, https://youtu.be/dZeZn3Pt2Ss
 
 \bibitem{meshsize}
-\textit{Was Sie über TEM-Grids wissen sollten}, Science Services, Abruf 29.11.2024
+\todo{Was Sie über TEM-Grids wissen sollten}, Science Services, Abruf 29.11.2024
 
 \bibitem{graphite}
 \textit{Graphite}, mindat.org, Abruf 29.11.2024, https://www.mindat.org/min-1740.html
@@ -594,6 +568,7 @@ Siehe Abb. \ref{fig:hopg-1}, \ref{fig:hopg-2}, \ref{fig:hopg-3}. Da im Constant 
 
 \bibitem{easyScan}
 \textit{Operating Instructions easyScan 2 STM}, Version 2.2, Januar 2010, PROD.NR.: BT02090-11, NANOSURF AG.
+
 
 
 \end{thebibliography}
