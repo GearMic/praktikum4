@@ -142,6 +142,13 @@ Analysiert man das Skalarprodukt der Aufenthaltswahrscheinlichkeit genauer, so e
     \abs{\psi(x)}^2 \propto \exp\left(-\frac{2}{\hbar} \sqrt{2m (E - V_0)} \cdot x\right).
 \end{align*}
 
+\begin{figure}[h!]
+    \centering
+    %\includegraphics[width=0.5\linewidth]{figure/tunneleffekt.png}
+    \caption{Schematische Darstellung des Tunneleffekts.}
+    \label{fig:tunneleffekt}
+\end{figure}
+
 Hier soll u.a. die atomare Struktur einer Probe von HOPG (Highly Ordered Pyrolithic Graphite) untersucht werden. Um atomare Auflösung zu erreichen, wird das Rastertunnelmikroskop eingesetzt. Dieses ist im Gegensatz zu Mikroskopen, die Welleneffekte verwenden, wie optische oder Elektronenmikroskope,
 in seiner Auflösung nicht durch Beugung begrenzt \todo{Quelle?}.
 Stattdessen wird eine Metallspitze sehr nah an die zu untersuchende Oberfläche 
@@ -151,6 +158,13 @@ herangefahren und anhand des stark von dem Abstand Spitze--Probe abhängigen Tun
 Der Piezoeffekt beschreibt die Fähigkeit bestimmter Materialien, unter mechanischer Belastung elektrische Ladungen an ihren Oberflächen zu erzeugen. Diese Ladungen entstehen durch eine Verschiebung von Ladungsschwerpunkten in der Kristallstruktur des Materials, wenn es gedehnt oder zusammengedrückt wird. Typische piezoelektrische Materialien sind Quarz, Keramiken und einige Polymere.
 
 Umgekehrt bewirkt der inverse Piezoeffekt, dass diese Materialien ihre Form ändern, wenn eine elektrische Spannung angelegt wird. Dieser Effekt wird in verschiedenen Anwendungen wie Sensoren, Aktoren und Ultraschallgeräten genutzt, da er präzise Bewegungen und Messungen ermöglicht.
+
+\begin{figure}[h!]
+    \centering
+    %\includegraphics[width=0.5\linewidth]{figure/piezo_effekt.jpg}
+    \caption{Schematische Darstellung des Tunneleffekts.}
+    \label{fig:tunneleffekt}
+\end{figure}
 
 Zur präzisen Bewegung der Spitze werden Piezo-Kristalle eingesetzt. 
 Dies sind Materialien, welche sich unter dem Einfluss einer angelegten Spannung
@@ -221,6 +235,22 @@ Zur Verfügung standen zwei HOPG-Proben sowie zwei Kristallproben, auf die Gold 
 
 Die verwendete STM-Spitze ist in Abb. \ref{fig:spitze-1} dargestellt, während ein Lupenbild der Probe in Abb. \ref{fig:goldkugel-lupe} gezeigt wird. Um den Maßstab zu bestimmen, wurde zunächst ein 400x100-TEM-Netz mit der Lupe fotografiert. Anschließend wurde die Probe auf das Raster gelegt, und die Lupenhöhe so eingestellt, dass die Oberseite der Probe auf derselben Höhe wie das TEM-Netz liegt. Das Netz weist Abstände von $\frac{1}{100}$ Zoll auf, was einer Länge von $\SI{0.254}{\mm}$ pro Rechteck entspricht \cite{meshsize}.
 
+\begin{figure}[h!]
+    \centering
+    %\includegraphics[width=0.49\textwidth]{Spitze1}
+    \caption{STM-Spitze, die zur Untersuchung der Goldprobe verwendet wurde. Der Maßstab ergibt sich aus der Drahtdicke von \SI{0.3}{\mm}. Die Spitze stammt aus einem Behälter mit alten Spitzen, weshalb sie möglicherweise nicht einatomig war.}
+    \label{fig:spitze-1}
+\end{figure}
+\newpage
+\begin{figure}[h!]
+    \centering
+    %\includegraphics[width=0.49\textwidth]{GitterGold}
+    \hfill
+    %\includegraphics[width=0.49\textwidth]{Gold}
+    \caption{Links: TEM-Netz zur Maßstabbestimmung. Rechts: optisches Bild der Goldkugel-Probe.}
+    \label{fig:goldkugel-lupe}
+\end{figure}
+
 Obwohl die Probe sichtbare Kratzer und Unebenheiten aufwies, wurde sie mit dem STM untersucht, da keine besser erhaltenen Goldproben verfügbar waren. Die Messungen erfolgten im \textbf{Constant Current Mode}, mit den folgenden Parametern: 
 \begin{align*}
     P &= 1000 \\
@@ -230,10 +260,24 @@ Obwohl die Probe sichtbare Kratzer und Unebenheiten aufwies, wurde sie mit dem S
 
 Der Differentialregler $D$ wurde deaktiviert, da er äußere Störungen verstärken könnte. Zunächst wurden Aufnahmen eines $200 \, \text{nm} \times 200 \, \text{nm}$-Bereichs erstellt. Die z-Achse, welche die Oberflächenhöhe darstellt, wurde mithilfe einer Farbcodierung visualisiert. Zur besseren Übersicht wurde die Farbskala invertiert. In Abb. \ref{fig:gold-probe} sind die wolkenartigen Strukturen der Goldoberfläche gut erkennbar. Das nahezu fehlerfreie Bild zeigt, dass die gewählten STM-Einstellungen gut funktionierten.
 
-
+\begin{figure}[h!]
+    \centering
+    %\includegraphics[width=0.45\textwidth]{figure/Gold_mess_2.jpg}
+    \hfill
+    %\includegraphics[width=0.45\textwidth]{figure/Gold_mess_inv.jpg}
+    \caption{STM-Aufnahmen eines $200 \, \text{nm} \times 200 \, \text{nm}$-Bereichs der Goldprobe. Links: Originalbild, rechts: invertierte Farbskala.}
+    \label{fig:gold-probe}
+\end{figure}
 Anschließend wurde ein kleinerer Bereich von $20 \, \text{nm}$ aufgenommen (Abb. \ref{fig:gold-probeb}). Die Darstellung zeigt mehr Imperfektionen, vermutlich aufgrund von Verunreinigungen der Probe oder der Spitze. Es ist auch möglich, dass die Regelparameter für diesen kleineren Bereich nicht optimal eingestellt waren. Trotz der Störungen sind Elektronenwolken weiterhin erkennbar.
 
-
+\begin{figure}[h!]
+    \centering
+    %\includegraphics[width=0.45\textwidth]{figure/Gold_mess_3.jpg}
+    \hfill
+    %\includegraphics[width=0.45\textwidth]{figure/Gold_mess_invb.jpg}
+    \caption{STM-Aufnahmen eines $20 \, \text{nm} \times 20 \, \text{nm}$-Bereichs der Goldprobe. Links: Originalbild, rechts: invertierte Farbskala.}
+    \label{fig:gold-probeb}
+\end{figure}
 
 Die Körnigkeit der Oberflächenstruktur wurde mithilfe der Messfunktion in \textbf{Gwyddion} analysiert. Für zwei klar erkennbare Strukturen wurden folgende Durchmesser ermittelt:
 \begin{align*}
@@ -255,11 +299,29 @@ Vergleich man unsere Ergebnisse (Abbildungen \ref*{} und \ref*{}) mit dem aus de
     \label{fig:goldkugel_vergleich}
   \end{figure}
 
+
 \newpage
 \section{HOPG-Probe}
 Als nächstes soll eine der HOPG-Proben (wir verwendeten Nummer 17) beobachtet werden. 
 Optische Bilder der verwendeten Spitze und des TEM-Netzes sind in Abb. \ref{fig:spitze-2} und \ref{fig:gitter-hopg} gezeigt.
-
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        %\includegraphics[width=\textwidth]{Sptize2}
+        \caption{STM-Spitze, die zur Vermessung der HOPG-Probe verwendet wurde.
+        Der Maßstab ergibt sich aus der Dicke des Drahts, welche \SI{0.3}{\mm} beträgt.
+        Die Spitze wurde für diese Messung neu gerissen.}
+        \label{fig:spitze-2}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        %\includegraphics[width=\textwidth]{GitterHOPG}
+        \caption{TEM-Netz zur Bestimmung des Maßstabs.}
+        \label{fig:gitter-hopg}
+    \end{minipage}
+\end{figure}
 
 Graphit besteht aus Schichten, welche untereinander nur schwach durch Van-der-Waals-Bindungen
 zusammengehalten werden. Darum kann eine obere Schicht mithilfe eines Stücks Klebeband abgezogen werden.
@@ -267,7 +329,22 @@ Dies tun wir hier, um eine möglichst wenig verunreinigte Probe zu erhalten. Die
 Abziehen ist in Abb. \ref{fig:hopg-raw-lupe} und nach mehrfachem Abziehen in Abb. \ref{fig:hopg-nach-lupe}
 gezeigt. Im optischen Bild ist kein großer Unterschied zu erkennen, da nur wenige Atomschichten entfernt wurden.
 
-
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.52\textwidth}
+        \centering
+        %\includegraphics[width=\textwidth]{HOPG_roh}
+        \caption{Verwendete HOPG-Probe vor dem Abziehen mit Klebeband.}
+        \label{fig:hopg-raw-lupe}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.46\textwidth}
+        \centering
+        %\includegraphics[width=\textwidth]{HOPGnach}
+        \caption{Verwendete HOPG-Probe nach dem Abziehen mit Klebeband.}
+        \label{fig:hopg-nach-lupe}
+    \end{minipage}
+\end{figure}
 
 Zunächst wird ein Testlauf im Constant Current Modus durchgeführt, um sicherzugehen, dass
 es im betrachteten Ausschnitt keine größeren Stufen gibt.
@@ -275,10 +352,38 @@ Anschließend wird zum Constant Height Modus gewechselt, indem der P-Parameter a
 I-Parameter auf einen sehr niedrigen Wert ($4 - 10$) gesetzt werden.
 
 Für die erste Abbildung wird mit einem verglichen zur Atomgröße relativ großen Bildausschnitt von $\SI{12.5}{\nm}$ begonnen (Abb. \ref{fig:hopg-large}). Hier lassen sich bereits regelmäßige Strukturen erkennen.
-
+\begin{figure}
+    \centering
+    %\includegraphics[width=0.5\linewidth]{figure/hopg-large.jpg}
+    \caption{STM-Bild von HOPG. Bildgröße \SI{12.5}{\nm}, $256$ Points per Line,
+    $v=\SI{242.7}{\nm\per\s}$, Tip voltage=\SI{150}{\mV}, Setpoint=\SI{1}{\nA}}, $I=10$, Overscan=$5\%$
+    \label{fig:hopg-large}
+\end{figure}
 
 Nach Anpassung einiger Parameter gelingt es schließlich auch, auf kleineren Skalen gute Bilder zu erhalten, siehe Abb. \ref{fig:hopg-medium} und \ref{fig:hopg-small}
+\begin{figure}
+    \centering
+    %\includegraphics[width=0.5\linewidth]{figure/hopg-medium.jpg}
+    \caption{
+        STM-Bild von HOPG. Bildgröße \SI{3.125}{\nm}, $128$ Points per Line,
+        $v=\SI{121.6}{\nm\per\s}$, Tip voltage=\SI{50.4}{\mV}, Setpoint=\SI{1}{\nA}, $I=4$, Overscan=$20\%$
+    }
+    \label{fig:hopg-medium}
+\end{figure}
 
+\begin{figure}
+    \centering
+    %\includegraphics[width=0.5\linewidth]{hopg-small.jpg}
+    % \caption{
+    %     STM-Bild von HOPG. Bildgröße \SI{3.125}{\nm}, $128$ Points per Line,
+    %     $v=\SI{0.950}{\nm\per\s}$, Tip voltage=\SI{50.4}{\mV}, Setpoint=\SI{1}{\nA}, $I=4$
+    % }
+    \caption{
+        STM-Bild von HOPG. Bildgröße \SI{1.56}{\nm}, $128$ Points per Line,
+        $v=\SI{60.7}{\nm\per\s}$, Tip voltage=\SI{50.4}{\mV}, Setpoint=\SI{1}{\nA}, $I=4$, Overscan=$20\%$
+    }
+    \label{fig:hopg-small}
+\end{figure}
 
 
 \begin{table}[h]
