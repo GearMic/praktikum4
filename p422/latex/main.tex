@@ -339,14 +339,42 @@ haben könnte.
 
 
 \newpage
+
 \section{HOPG-Probe}
-Als nächstes soll eine der HOPG-Proben (wir verwendeten Nummer 17) beobachtet werden. 
+Als nächstes soll eine der HOPG-Proben (wir verwendeten Nummer 17) beobachtet werden.
+Bei HOPG kann atomare Auflösung erreicht werden, weshalb dieses Material benutzt wird, um die Piezos, welche die STM-Spitze
+bewegen, zu kalibrieren. Hier soll die Kalibrierung überprüft werden, indem Abbildungen gemacht werden und die daraus
+bestimmte Gitterkonstante mit dem Literaturwert verglichen wird.
+
+\subsection{Struktur von HOPG}
+Ein Schema der Struktur von HOPG ist in Abb. \ref{fig:hopg-structure} gezeigt.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{hopg-structure}
+    \caption{
+        Schema der Struktur von HOPG inklusive charakteristischen Längen \cite{graphite}. $a$ ist die Gitterkonstante.
+        Die Blickrichtung mit dem STM liegt hier parallel zur $c$-Achse.
+    }
+    \label{fig:hopg-structure}
+\end{figure}
+Bei Betrachtung der Schichten senkrecht von oben, wie hier mit dem STM, gibt es drei relevante Formen sichtbarer Strukturen:
+\begin{enumerate}
+  \item Ein Atom in der obersten Schicht und keins in der Schicht darunter
+  \item Ein Atom in der obersten Schicht und ein Atom in der Schicht darunter
+  \item Kein Atom in der obersten Schicht, aber ein Atom in der Schicht darunter
+\end{enumerate}
+Diese drei Strukturen führen an der Oberfläche zu drei unterschiedlich hohen Elektronendichten,
+die im STM-Bild in Form von drei verschiedenen Helligkeitsstufen (Hell, Halb-Hell, Dunkel) sichtbar werden.
+In einem optimalen STM-Bild sollten z.B. die dunklen Punkte in
+einem Gitter gleichseitiger Dreiecke mit Kantenlänge $a$ (Gitterkonstante; siehe Abb. \ref{fig:hopg-structure}) angeordnet sein.
+
+\subsection{Messung}
 Optische Bilder der verwendeten Spitze und des TEM-Netzes sind in Abb. \ref{fig:spitze-2} und \ref{fig:gitter-hopg} gezeigt.
 \begin{figure}[h]
     \centering
     \begin{minipage}{0.49\textwidth}
         \centering
-        %\includegraphics[width=\textwidth]{Sptize2}
+        \includegraphics[width=\textwidth]{Spitze2}
         \caption{STM-Spitze, die zur Vermessung der HOPG-Probe verwendet wurde.
         Der Maßstab ergibt sich aus der Dicke des Drahts, welche \SI{0.3}{\mm} beträgt.
         Die Spitze wurde für diese Messung neu gerissen.}
@@ -355,15 +383,15 @@ Optische Bilder der verwendeten Spitze und des TEM-Netzes sind in Abb. \ref{fig:
     \hfill
     \begin{minipage}{0.49\textwidth}
         \centering
-        %\includegraphics[width=\textwidth]{GitterHOPG}
+        \includegraphics[width=\textwidth]{GitterHOPG}
         \caption{TEM-Netz zur Bestimmung des Maßstabs.}
         \label{fig:gitter-hopg}
     \end{minipage}
 \end{figure}
 
 Graphit besteht aus Schichten, welche untereinander nur schwach durch Van-der-Waals-Bindungen
-zusammengehalten werden. Darum kann eine obere Schicht mithilfe eines Stücks Klebeband abgezogen werden.
-Dies tun wir hier, um eine möglichst wenig verunreinigte Probe zu erhalten. Die Probe vor dem
+zusammengehalten werden. Dadurch kann eine obere Schicht mithilfe eines Stücks Klebeband abgezogen werden.
+Dies tun wir hier, um eine möglichst reine Oberfläche zu erhalten. Die Probe vor dem
 Abziehen ist in Abb. \ref{fig:hopg-raw-lupe} und nach mehrfachem Abziehen in Abb. \ref{fig:hopg-nach-lupe}
 gezeigt. Im optischen Bild ist kein großer Unterschied zu erkennen, da nur wenige Atomschichten entfernt wurden.
 
@@ -371,14 +399,14 @@ gezeigt. Im optischen Bild ist kein großer Unterschied zu erkennen, da nur weni
     \centering
     \begin{minipage}{0.52\textwidth}
         \centering
-        %\includegraphics[width=\textwidth]{HOPG_roh}
+        \includegraphics[width=\textwidth]{HOPG_roh}
         \caption{Verwendete HOPG-Probe vor dem Abziehen mit Klebeband.}
         \label{fig:hopg-raw-lupe}
     \end{minipage}
     \hfill
     \begin{minipage}{0.46\textwidth}
         \centering
-        %\includegraphics[width=\textwidth]{HOPGnach}
+        \includegraphics[width=\textwidth]{HOPGnach}
         \caption{Verwendete HOPG-Probe nach dem Abziehen mit Klebeband.}
         \label{fig:hopg-nach-lupe}
     \end{minipage}
@@ -389,55 +417,94 @@ es im betrachteten Ausschnitt keine größeren Stufen gibt.
 Anschließend wird zum Constant Height Modus gewechselt, indem der P-Parameter auf $0$ und der
 I-Parameter auf einen sehr niedrigen Wert ($4 - 10$) gesetzt werden.
 
-Für die erste Abbildung wird mit einem verglichen zur Atomgröße relativ großen Bildausschnitt von $\SI{12.5}{\nm}$ begonnen (Abb. \ref{fig:hopg-large}). Hier lassen sich bereits regelmäßige Strukturen erkennen.
-\begin{figure}
+Für die erste Abbildung wird mit einem verglichen zur Atomgröße relativ großen Bildausschnitt von $\SI{12.5}{\nm}$ begonnen (Abb. \ref{fig:hopg-large}). 
+\begin{figure}[h]
     \centering
-    %\includegraphics[width=0.5\linewidth]{figure/hopg-large.jpg}
-    \caption{STM-Bild von HOPG. Bildgröße \SI{12.5}{\nm}, $256$ Points per Line,
-    $v=\SI{242.7}{\nm\per\s}$, Tip voltage=\SI{150}{\mV}, Setpoint=\SI{1}{\nA}}, $I=10$, Overscan=$5\%$
+    \includegraphics[width=0.5\linewidth]{figure/hopg-large.jpg}
+    \caption{STM-Bild von HOPG (Tip Current). Bildgröße \SI{12.5}{\nm}, $256$ Points per Line,
+    $v=\SI{242.7}{\nm\per\s}$, Tip voltage=\SI{150}{\mV}, Setpoint=\SI{1}{\nA}, $I=10$, Overscan=$5\%$}
     \label{fig:hopg-large}
 \end{figure}
 
 Nach Anpassung einiger Parameter gelingt es schließlich auch, auf kleineren Skalen gute Bilder zu erhalten, siehe Abb. \ref{fig:hopg-medium} und \ref{fig:hopg-small}
 \begin{figure}
     \centering
-    %\includegraphics[width=0.5\linewidth]{figure/hopg-medium.jpg}
+    \includegraphics[width=0.5\linewidth]{figure/hopg-medium.jpg}
     \caption{
-        STM-Bild von HOPG. Bildgröße \SI{3.125}{\nm}, $128$ Points per Line,
+        STM-Bild von HOPG (Tip Current). Bildgröße \SI{3.125}{\nm}, $128$ Points per Line,
         $v=\SI{121.6}{\nm\per\s}$, Tip voltage=\SI{50.4}{\mV}, Setpoint=\SI{1}{\nA}, $I=4$, Overscan=$20\%$
     }
     \label{fig:hopg-medium}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\linewidth]{hopg-small.jpg}
-     \caption{
-         STM-Bild von HOPG. Bildgröße \SI{3.125}{\nm}, $128$ Points per Line,
-         $v=\SI{0.950}{\nm\per\s}$, Tip voltage=\SI{50.4}{\mV}, Setpoint=\SI{1}{\nA}, $I=4$
-     }
+    \includegraphics[width=0.5\linewidth]{hopg-small}
+    % \caption{
+    %     STM-Bild von HOPG. Bildgröße \SI{3.125}{\nm}, $128$ Points per Line,
+    %     $v=\SI{0.950}{\nm\per\s}$, Tip voltage=\SI{50.4}{\mV}, Setpoint=\SI{1}{\nA}, $I=4$
+    % }
     \caption{
-        STM-Bild von HOPG. Bildgröße \SI{1.56}{\nm}, $128$ Points per Line,
+        STM-Bild von HOPG (Tip Current). Bildgröße \SI{1.56}{\nm}, $128$ Points per Line,
         $v=\SI{60.7}{\nm\per\s}$, Tip voltage=\SI{50.4}{\mV}, Setpoint=\SI{1}{\nA}, $I=4$, Overscan=$20\%$
     }
     \label{fig:hopg-small}
 \end{figure}
 
 
+\subsection{Auswertung}
+Auch in dem größten Bild Abb. \ref{fig:hopg-large} lassen sich bereits regelmäßig angeordnete dunkle Stellen erkennen.
+Diese sind jedoch nicht präzise genug aufgelöst, um genauere Messungen zu machen.
+
+Im kleinsten Bild Abb. \ref{fig:hopg-small} sind die Strukturen deutlich größer zu sehen, zeigen jedoch eine deutliche Verzerrung.
+Diese ist insbesondere am linken Bildrand stark ausgeprägt, also lässt sie sich auf Effekte beim Umdrehen der Bewegungsrichtung der
+Spitze am Ende einer Linie zurückführen. Dies könnte prinzipiell vermutlich durch einen noch höher gewählten Overscan-Parameter
+gelöst werden.
+
+In Abb. \ref{fig:hopg-medium} hingegen sind über einen relativ großen Bereich regelmäßige Strukturen zu erkennen.
+Insbesondere zum rechten Bildrand hin gibt es wieder Verzerrungen durch das Umkehren der Spitze, außerdem ist
+jedoch eine vertikale Verzerrung in der oberen Bildhälfte sichbar. Diese lässt sich vermutlich durch thermische Drift erklären:
+Temperaturänderungen der Probe (z.B durch einen Luftzug oder durch Aufheizen der STM-Elektronik) führen zu einer leichten Ausdehnung.
+Findet diese Ausdehnung während der Scan-Bewegung der Spitze statt, wird der gleiche Punkt an der Oberfläche mehrmals aufgenommen
+und es kommt zu einer Streckung des Bildes.
+
+Im Zentrum des Bildes gibt es jedoch einen Bereich mit wenig Verzerrung.
+Hier wurden mehrere Linien eingezeichnet, um aus dem Abstand der dunklen Punkte die Gitterkonstante $a$
+zu bestimmen. Dabei wurden möglichst viele Gitterabstände überspannt, um den Fehler zu minimieren.
+Die Maße der Linien sind in Tab. \ref{tab:hopg-data} eingetragen. $a$ ergibt sich durch $a=\frac{R}{n}$, wobei $n$
+der Anzahl der von der Linie überspannten Gitterabständen entspricht;
+$\Delta a$ wurde mithilfe von Gauß'scher Fehlerfortpflanzung berechnet.
+
 \begin{table}[h]
     \centering
     \begin{tabular}{c||c|c|c|c|c}
-        Linie Nr. & $\phi/\si{\deg}$ & $R/\si{\nm}$ & $n$ & $a/\si{\nm}$ & $\Delta a/\si{\nm}$ \\
+        Linie Nr. & $\phi/\si{\degree}$ & $R/\si{\nm}$ & $n$ & $a/\si{\nm}$ & $\Delta a/\si{\nm}$ \\
         \hline
         $1$ & $17.0 $   & $1.280$ & $5$ & $0.256$ & $0.010$ \\
         $2$ & $-49.0$	& $0.642$ & $3$ & $0.214$ & $0.017$ \\
         $3$ & $16.4	$   & $1.279$ & $5$ & $0.256$ & $0.010$ \\
         $4$ & $-50.9$	& $0.636$ & $3$ & $0.212$ & $0.017$
     \end{tabular}
-    \caption{gemessene Längen und Winkel im HOPG. $\Delta\phi=\ang{3.0}$, $\Delta R = \SI{0.050}{\nm}$. $\phi$ ist der Winkel der Linie zur Horizontalen, R die Länge der Linie und $n$ steht für die Anzahl an Gitterabständen, welche die Linie überspannt. Die Nummerierung der Linien kommt aus Abb. \ref{fig:hopg-medium} (1 und 3 sind die längeren, 2 und 4 die kürzeren Linien).}
-    \label{tab:hopg-daten-1}
+    \caption{gemessene Längen und Winkel im HOPG. $\Delta\phi=\ang{3.0}$, $\Delta R = \SI{0.050}{\nm}$. $\phi$ ist der Winkel der Linie zur Horizontalen, R die Länge der Linie und $n$ steht für die Anzahl an Gitterabständen, welche die Linie überspannt.
+    Die Nummerierung der Linien kommt aus Abb. \ref{fig:hopg-medium} (1 und 3 sind die längeren, 2 und 4 die kürzeren Linien).}
+    \label{tab:hopg-data}
 \end{table}
 
+Der Literaturwert ist $a=\SI{0.246}{\nm}$, wovon der aus Linien $1$ und $3$ bestimmte $a$-Wert um ca. $\SI{4}{\percent}$
+nach oben abweicht. Die Werte aus Linien $2$ und $4$ hingegen sind um mehr als \SI{10}{\percent} niedriger.
+Dies deutet darauf hin, dass die Piezos für die x- und y- Richtung nicht optimal kalibriert sind.
+Linien $1$ und $3$, die bessere $a$-Werte liefern, verlaufen vorwiegend horizontal, also scheint die Kalibration des x-Piezos
+eher zu stimmen. Linien $2$ und $4$, die eine größere Ausdehnung in der Vertikalen haben, sind deutlich zu kurz,
+also muss der $y-Piezo$ so kalibriert sein, dass er sich zu weit bewegt und somit Abstände unterschätzt werden.
+Der varianzgewichtete Mittelwert der Gitterkonstanten aus Tab. \ref{tab:hopg-data} ist $a = \SI{0.244\pm0.012}{\nm}$,
+was innerhalb des Fehlerbereichs mit dem Literaturwert übereinstimmt und um weniger als $1\%$ von ihm abweicht.
+
+Dass die Kalibration in y-Richtung stärker abweicht, als in x-Richtung,
+führt zu einer Verzerrung des Bilds, welche sich auch in den Winkeln zwischen Linien erkennen lässt: Die Differenz der
+Winkel $\phi$ der Linien $1$ und $2$ ist \SI{66.0\pm 4.2}{\degree} und zwischen Linien $3$ und $4$ \SI{67.3\pm 4.2}{\degree},
+was um ca. \SI{10}{\percent} höher ist, als der Winkel \SI{66}{\degree}, der bei einem gleichseitigen Dreieck eigentlich zu
+erwarten wäre.
+% Aus Linien $1$ und $3$ erhalten wir $a=0.256$ und
 
 
 \clearpage
@@ -454,6 +521,47 @@ Außerdem wurden mögliche Ursachen für Bildfehler untersucht, darunter die Pr�
 
 \clearpage
 \section{Anhang}
+Im Folgenden sind weitere Bilder der Proben gezeigt, die aufgenommen wurden aber hier nicht weiter analysiert werden.
+
+\subsection{Goldkugelprobe}
+\todo{todo}
+
+\subsection{HOPG-Probe}
+Siehe Abb. \ref{fig:hopg-1}, \ref{fig:hopg-2}, \ref{fig:hopg-3}. Da im Constant Height-Modus gearbeitet wird, gilt immer $P=0$ und $D=0$.
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Image20212}
+        \caption{
+            STM-Bild von HOPG (Tip Current). Bildgröße \SI{3.125}{\nm}, $512$ Points per Line,
+            $v=\SI{20.7}{\nm\per\s}$, Tip voltage=\SI{150}{\mV}, Setpoint=\SI{1}{\nA}, $I=10$, Overscan=$5\%$
+        }
+        \label{fig:hopg-1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Image20215}
+        \caption{
+            STM-Bild von HOPG (Tip Current). Bildgröße \SI{3.125}{\nm}, $128$ Points per Line,
+            $v=\SI{121.6}{\nm\per\s}$, Tip voltage=\SI{50.4}{\mV}, Setpoint=\SI{1}{\nA}, $I=4$, Overscan=$10\%$
+        }
+        \label{fig:hopg-2}
+    \end{minipage}
+
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Image20221.jpg}
+        \caption{
+            STM-Bild von HOPG (Tip Current). Bildgröße \SI{1.56}{\nm}, $128$ Points per Line,
+            $v=\SI{60.8}{\nm\per\s}$, Tip voltage=\SI{50.4}{\mV}, Setpoint=\SI{1}{\nA}, $I=4$, Overscan=$20\%$
+        }
+        \label{fig:hopg-3}
+    \end{minipage}
+\end{figure}
+
 
 
 \clearpage
