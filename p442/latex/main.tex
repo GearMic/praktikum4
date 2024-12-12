@@ -113,7 +113,97 @@
 \fancyhead[R]{\thepage}
 \fancyhead[L]{\leftmark}
 
+\section*{TODO}
+\begin{itemize}
+  \item \todo{\enquote{Aufgaben} durchgehen und ins Protokoll aufnehmen}
+  
+\end{itemize}
+
 \section*{Einleitung}
+Durch diesen Versuch soll die grundlegende Funktionsweise von Lasern anhand eines Helium-Neon-Lasers verstanden werden.
+Zunächst werden Wellenlänge und Polarisation des Lichts gemessen und anschließend die Aufspaltung in verschiedene
+Moden genauer untersucht. Zum stabilen Betrieb des Lasers wird eine optische Diode aufgebaut.
+
+\section{Aufbau des Lasers}
+\todo{Aufbau beschreiben, nicht zu spezifisch um späteren Aufbau zu covern. ggf. einfach Anleitung zitieren}
+
+\section{Wellenlänge und Polarisation}
+Zunächst werden Wellenlänge und Polarisation des Laserlichts gemessen.
+Es wurde ab hier ein anderer Aufbau als der zuvor beschriebene verwendet, da ich am zweiten Tag den Versuch als Teil
+einer Dreiergruppe fortführte.
+Die Aufbauten funktionieren grundlegend gleich und unterscheiden sich nur in den Details der Strahlführung.
+
+\subsection{Wellenlänge}
+Anhand der Ablenkung des Laserlichts an einem Transmissionsgitter, welches in den Strahlverlauf gestellt wird,
+kann dessen Wellenlänge bestimmt werden.
+Es gilt die Gittergleichung
+\begin{equation}
+  n\lambda = d(\cos \alpha - \cos \beta_n)
+\end{equation}
+wobei $\alpha$ der Winkel des Lasers und $\beta_n$ der Winkel der $n$-ten Beugungsordnung zur Gitternormalen ist. 
+Daraus folgt die Geradengleichung
+\begin{equation}
+  n = n(\cos\beta) = \frac{d}{\lambda} (\cos \alpha - \cos \beta)
+\end{equation}
+also gilt für die Steigung $m$
+\[
+  m = -\frac{d}{\lambda} \iff \lambda = -\frac{d}{m}
+\]
+
+Hier galt $d=\todo{Wert}. $Die gemessenen Ordnungen sind in Tab. \ref{tab:gitter-fit} gezeigt.
+Eine Geradenanpassung von $n$ in Abhängigkeit von $\cos \beta$ liefert die Gleichung
+\[
+  n(\cos\beta) = \todo{Werte}
+\]
+also $m = \todo{Wert}$ und $\lambda = \todo{Wert}$. \todo{Vergleich mit erwarteter Wellenlänge} 
+
+\subsection{Polarisierung}
+Als nächstes soll die Polarisierung des Laserlichts gemessen werden. Im Lasermedium wird zunächst unpolarisiertes Licht
+erzeugt. Dieses verlässt das Medium jedoch durch Brewsterfenster, welche nur eine bestimmte Polarisationsrichtung durchlassen
+\todo{stimmt das? Brewsterfenster erklären.}.
+
+Zur Messung der Polarisation wird das Licht durch einen Polarisator auf eine Photodiode geschickt
+und die zur Lichtintensität proportionale Spannung mithilfe eines Oszilloskops gemessen.
+Bei vollständig linear polarisiertem Licht und einem idealen Polarisator
+ist der Zusammenhang zwischen Intensität $I$ und Winkel $\alpha$ des
+Polarisators zur Vertikalen durch das \textit{Malus'sche Gesetz} gegeben:
+\begin{equation}
+  I(\alpha) = I_0 \cos^2(\alpha - \alpha_0)
+\end{equation}
+mit $I_0$ der Lichtintensität vor dem Polarisator und $\alpha_0$ der Polarisationsrichtung des Lichts (zur Vertikalen).
+
+Im Allgemeinen kann der $\cos^2$-Verlauf im Vergleich zum Malus'schen Gesetz gestaucht sein, wenn das Licht nicht vollständig
+polarisiert ist:
+% erreicht der Verlauf nicht mehr die maximale oder die verschwindende Intensität, sondern ist auf einen kleineren Bereich
+% eingeschränkt:
+\begin{equation}
+  I(\alpha) = U_\mr{min} + (U_\mr{max}-U_\mr{min}) \cos^2(\alpha - \alpha_0) \label{eq:malus-real}
+\end{equation}
+\todo{begründen wo das herkommt}
+Hier wurde Spannung $U$ anstatt Intensität $I$ verwendet, da die Spannung hier die
+zur Intensität proportionale gemessene Größe ist.
+
+Bei Sättigung der Diode würde der $\cos^2$-Verlauf oberhalb der Maximalspannung der Diode \enquote{abgeschnitten} werden
+und damit nicht mehr \eqref{eq:malus-real} entsprechen. Es wurde daher sichergestellt, dass keine Sättigung auftritt.
+\todo{abschlusswiderstand erklälren?}
+Der Polarisator auf verschiedene Winkel in regelmäßigen Abständen eingestellt und jeweils die Spannung notiert.
+Diese Werte sind in Tab. \ref{tab:polarisation} gezeigt und in Abb. \ref{fig:polarisation} aufgetragen, zusammen
+mit einer $\chi^2$-Anpassung nach \eqref{malus-real}. Diese liefert die Parameter
+\todo{Werte}, 
+\todo{Polarisationsrichtung vergleichen},
+
+% Der Polarisationsgrad PG ist definiert durch 
+% \begin{equation}
+%   \mr{PG} \coloneq \frac{I_\parallel - I_\perp}{I_\parallel + I_\perp}
+%   = \frac{U_\parallel - U_\perp}{U_\parallel + U_\perp}
+%   = \frac{U_\mr{max} - U_\mr{min}}{U_\mr{max} + U_\mr{min}} 
+% \end{equation}
+% wobei 
+Für den Polarisationsgrad PG gilt 
+\begin{equation}
+  \mr{PG} = \frac{U_\mr{max} - U_\mr{min}}{U_\mr{max} + U_\mr{min}} = \todo{Wert einfüllen}
+\end{equation}
+\todo{Diskutieren wenn nicht vollständig polarisiert}
 
 
 
