@@ -125,6 +125,13 @@ in seiner Auflösung nicht durch Beugung begrenzt.
 Stattdessen wird eine Metallspitze sehr nah an die zu untersuchende Oberfläche 
 herangefahren und anhand des stark von dem Abstand Spitze--Probe abhängigen Tunnelstroms auf deren Oberflächenbeschaffenheit geschlossen.
 
+Hier soll u.a. die atomare Struktur einer Probe von HOPG (Highly Ordered Pyrolithic Graphite) untersucht werden.
+Um atomare Auflösung zu erreichen, wird ein Rastertunnelmikroskop (RTM/STM) eingesetzt.
+Dieses ist im Gegensatz zu Mikroskopen, die Welleneffekte verwenden, wie optische oder Elektronenmikroskope,
+in seiner Auflösung nicht durch Beugung begrenzt.
+Stattdessen wird eine Metallspitze sehr nah an die zu untersuchende Oberfläche 
+herangefahren und anhand des stark von dem Abstand Spitze--Probe abhängigen Tunnelstroms auf deren Oberflächenbeschaffenheit geschlossen.
+
 % Rastertunnelmikroskope (Scanning Tunneling Microscope, RTM \cite{Anleitung}) sind keine Mikroskope im optischen Sinne, sondern tasten
 % die abzubildende Oberfläche in kleinen Schritten ab, um Informationen über deren
 % Beschaffenheit zu erhalten. Dadurch sind sie, im Gegensatz zu optischen oder
@@ -164,6 +171,61 @@ gefahren und für jede Position die Werte des Abstands und des Tunnelstroms aufg
 Der Strom wird dabei durch eine PID-Regelung konstant gehalten (\textit{constant current mode}), wozu bei einer Höhenänderung ggf. die z-Position nachjustiert werden muss. In diesem Modus kann die Struktur der Oberfläche also anhand der z-Positionen
 der Spitze erkannt werden.
 
+\subsection*{Theorie}
+\subsection*{Tunneleffekt} 
+Um Informationen über eine Oberfläche zu erhalten, ohne sie zu berühren, nutzen STMs den
+Tunneleffekt, durch den Elektronen von der Probe zur Spitze übergehen können.
+Der Tunneleffekt beschreibt quantenmechanisch, wie Teilchen eine Potentialbarriere durchqueren können, ohne über die hierfür notwendige klassische Energie zu verfügen.
+
+Dazu müssen sie in der zu untersuchenden Probe die Austrittsarbeit des Materials 
+sowie  die Breite des Spaltes zwischen Probe und Spitze überwinden,
+was klassisch nicht möglich wäre. Durch die Quantenmechanik ergibt sich jedoch eine
+Tunnelwahrscheinlichkeit, welche exponentiell vom Abstand Probe--Spitze abhängt \cite{stm-paper}.
+
+Probe und Spitze werden elektrisch verbunden. Dadurch gleichen sich die Fermi-Niveaus (oberste belegte Energie-Niveaus) in beiden Materialien aneinander an.
+Elektronen können jedoch nur von Probe zu Spitze tunneln, wenn ihr entsprechende Energie-Niveau
+in der Spitze frei ist. Zur Verschiebung der Energieniveuas muss also eine Spannung zwischen Spitze und Probe angelegt werden.
+Die Tunnelnden Elektronen führen dann zu einem \textit{Tunnelstrom}, welcher verstärkt,
+zu Spannung umgewandelt und gemessen wird. Dieser Strom ist stärker, je größer die
+anliegende Spannung ist und hängt,
+wie zuvor erklärt, stark von der Distanz Spitze--Probe ab. Eine Änderung des Abstands
+um $\SI{100}{\nm}$ führt zu einer Änderung des Stroms um einen Faktor $10$ \cite{naio-video}.
+Da deshalb nur der Punkt der Spitze, welcher der Probe am nächsten ist, einen signifikanten Beitrag zum Tunnelstrom liefert,
+lässt sich die Spitze oft als punktförmig nähern.
+Hat die Spitze mehrere Atome nebeneinander mit (fast) gleichem Abstand zur Probe,
+ergibt sich das resultierende Bild mathematisch gesehen als Faltung der Formen
+von Spitze und Probe \cite{Anleitung}. Dies kann zu mehrfacher Abbildung von 
+Merkmalen der Probe führen.
+
+Um eine Probe abzubilden, wird die Spitze in einem Raster über die Oberfläche 
+gefahren und für jede Position die Werte des Abstands und des Tunnelstroms aufgenommen.
+Der Strom wird dabei durch eine PID-Regelung konstant gehalten (\textit{constant current mode}), wozu bei einer Höhenänderung ggf. die z-Position nachjustiert werden muss. In diesem Modus kann die Struktur der Oberfläche also anhand der z-Positionen
+der Spitze erkannt werden.
+
+\subsection*{Theorie}
+Betrachten wir ein konstantes Potential \( V \), das im Intervall \( I_0 \) den Wert \( V_0 \) annimmt, so gilt für die Wellenfunktion \( \psi(x) \): 
+\begin{align*}
+    E \psi(x) &= \left[ - \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0 \right] \psi(x), \\
+    0 &= \left[ \frac{\partial^2}{\partial x^2} + \frac{2m(E - V_0)}{\hbar^2} \right] \psi(x).
+\end{align*}
+
+Analysiert man das Skalarprodukt der Aufenthaltswahrscheinlichkeit genauer, so ergibt sich die Proportionalität:
+\begin{align*}
+    \abs{\psi(x)}^2 \propto \exp\left(-\frac{2}{\hbar} \sqrt{2m (E - V_0)} \cdot x\right).
+\end{align*}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figure/tunneleffekt.png}
+    \caption{Schematische Darstellung des Tunneleffekts.}
+    \label{fig:tunneleffekt}
+\end{figure}
+
+\subsection*{Piezo-Effekt}
+Zur präzisen Bewegung der Spitze werden Piezo-Kristalle eingesetzt. 
+Der Piezoeffekt beschreibt die Fähigkeit bestimmter Materialien, unter mechanischer Belastung elektrische Potentialunterschiede an ihren Oberflächen zu erzeugen.
+Diese Spannungen entstehen durch eine Verschiebung von Ladungsschwerpunkten in der Kristallstruktur des Materials, wenn es gedehnt oder zusammengedrückt wird.
+Typische piezoelektrische Materialien sind Quarz, Keramiken und einige Polymere.
 \subsection*{Piezo-Effekt}
 Zur präzisen Bewegung der Spitze werden Piezo-Kristalle eingesetzt. 
 Der Piezoeffekt beschreibt die Fähigkeit bestimmter Materialien, unter mechanischer Belastung elektrische Potentialunterschiede an ihren Oberflächen zu erzeugen.
@@ -172,7 +234,17 @@ Typische piezoelektrische Materialien sind Quarz, Keramiken und einige Polymere.
 
 Umgekehrt bewirkt der inverse Piezoeffekt, dass diese Materialien ihre Form ändern, wenn eine elektrische Spannung angelegt wird.
 Dieser Effekt wird in verschiedenen Anwendungen wie Sensoren, Aktoren und Ultraschallgeräten genutzt, da er präzise Bewegungen und Messungen ermöglicht.
+Umgekehrt bewirkt der inverse Piezoeffekt, dass diese Materialien ihre Form ändern, wenn eine elektrische Spannung angelegt wird.
+Dieser Effekt wird in verschiedenen Anwendungen wie Sensoren, Aktoren und Ultraschallgeräten genutzt, da er präzise Bewegungen und Messungen ermöglicht.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figure/piezo_effekt.jpg}
+    \caption{Piezoeffekt}
+    \label{fig:piezoelektrische}
+\end{figure}
+
+Zur Annäherung der Probe an die Spitze muss diese zunächst eine relativ 
 Zur Annäherung der Probe an die Spitze muss diese zunächst eine relativ 
 große Distanz (einige \si{\mm} bis \si{cm}) zurücklegen, wozu ein sogenannter Stick-Slip
 Piezo-Motor eingesetzt wird. Dieser bewegt sich zunächst langsam nach vorne, wobei
@@ -183,6 +255,7 @@ Für die Bewegung der Spitze entlang der Probe (seitwärts in $x$- und $y$-Richt
 vorwärts in $z$-Richtung) müssen schließlich nur sehr kleine Distanzen zurückgelegt
 werden (wenige \si{nm} bis wenige hundert \si{\nm}), wozu herkömmliche Piezos ausreichen.
 
+\subsection*{PID-Regler}
 \subsection*{PID-Regler}
 PID ist eine bestimmte Art von Regelung mit drei Parametern P (\textit{proportional}), I (\textit{integral}) und D (\textit{differential}).
 Die Differential-Regelung wird hier i.d.R. weggelassen. Um die Regelung für Änderungen auf kleinen Distanzen auszustellen, kann der P-Parameter auf $0$ und
@@ -201,6 +274,7 @@ Proben vermessen werden.
 % von der Differenz des Soll-Stroms und des tatsächlichen Stroms abhängen, reguliert.
 % Der P-Term (\textit{proportional}) ist propo
 \subsection*{Gwyddion} 
+\subsection*{Gwyddion} 
 In \textbf{Gwyddion} können Daten aus STM-Experimenten durch den Import von Dateien, die typische STM-Formate wie \texttt{.sm4} oder \texttt{.ibw} verwenden, analysiert werden. Die Software ermöglicht die Darstellung der Daten als Höhenkarten, sowohl in 2D- als auch in 3D-Ansicht, um die atomaren Strukturen präzise zu visualisieren. Zur Optimierung der Rohdaten stehen Funktionen wie Hintergrundnivellierung, Rauschunterdrückung und Fourier-Transformationen zur Verfügung.
 
 Die Software bietet darüber hinaus Werkzeuge für die quantitative Analyse. Dazu gehören Messungen der Oberflächenrauigkeit, Partikelgrößen und andere strukturelle Parameter. Diese Analysen erlauben eine detaillierte Untersuchung der Topographie und physikalischen Eigenschaften der Probe.
@@ -218,7 +292,19 @@ Der Versuchaufbau ist in Abb. \ref{fig:aufbau} gezeigt.
     \caption{Versuchaufbau nach der Anleitung \cite{Anleitung}}
     \label{fig:aufbau}
 \end{figure}
+Es gibt 2 USB-Lupen. Eine wird über dem Positioneniertisch gebracht, um Aufnahmen von verwendeten Spitzen und
+Proben zu machen. Der Gegendstand wird positioniert, indem man ein Magnet im x-y-z Positioneniertisch
+verbaut. Die andere Lupe wird über dem STM gebracht, um den Anfahrvorgang der Probe zur Spitze zu 
+beobachten.
 
+Zusätzlich hat den Versuch einen Box mit dem Inhalt:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.49\textwidth]{box-inhalt.png}
+    \caption{Bauteile, Probe und Pinzitte \cite{Anleitung}}
+    \label{fig:aufbau}
+\end{figure}
+Hier sind alles, was man zum Untersuchen benötigt.
 Die Durchführung dieses Versuchs ist leicht nachvollziehbar. Zunächst wird die Probe auf einem
 USB-Mikroskop positioniert, um Bilder aufzunehmen, die anschließend für die Beurteilung 
 ihres Zustands verwendet werden. Für das Rastertunnelmikroskop (RTM) benötigt man eine 
@@ -353,11 +439,40 @@ In einem optimalen STM-Bild sollten z.B. die dunklen Punkte in
 einem Gitter gleichseitiger Dreiecke mit Kantenlänge $a$ (Gitterkonstante; siehe Abb. \ref{fig:hopg-structure}) angeordnet sein.
 
 \subsection{Messung}
+Als nächstes soll eine der HOPG-Proben (wir verwendeten Nummer 17) beobachtet werden.
+Bei HOPG kann atomare Auflösung erreicht werden, weshalb dieses Material benutzt wird, um die Piezos, welche die STM-Spitze
+bewegen, zu kalibrieren. Hier soll die Kalibrierung überprüft werden, indem Abbildungen gemacht werden und die daraus
+bestimmte Gitterkonstante mit dem Literaturwert verglichen wird.
+
+\subsection{Struktur von HOPG}
+Ein Schema der Struktur von HOPG ist in Abb. \ref{fig:hopg-structure} gezeigt.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{hopg-structure}
+    \caption{
+        Schema der Struktur von HOPG inklusive charakteristischen Längen \cite{graphite}. $a$ ist die Gitterkonstante.
+        Die Blickrichtung mit dem STM liegt hier parallel zur $c$-Achse.
+    }
+    \label{fig:hopg-structure}
+\end{figure}
+Bei Betrachtung der Schichten senkrecht von oben, wie hier mit dem STM, gibt es drei relevante Formen sichtbarer Strukturen:
+\begin{enumerate}
+  \item Ein Atom in der obersten Schicht und keins in der Schicht darunter
+  \item Ein Atom in der obersten Schicht und ein Atom in der Schicht darunter
+  \item Kein Atom in der obersten Schicht, aber ein Atom in der Schicht darunter
+\end{enumerate}
+Diese drei Strukturen führen an der Oberfläche zu drei unterschiedlich hohen Elektronendichten,
+die im STM-Bild in Form von drei verschiedenen Helligkeitsstufen (Hell, Halb-Hell, Dunkel) sichtbar werden.
+In einem optimalen STM-Bild sollten z.B. die dunklen Punkte in
+einem Gitter gleichseitiger Dreiecke mit Kantenlänge $a$ (Gitterkonstante; siehe Abb. \ref{fig:hopg-structure}) angeordnet sein.
+
+\subsection{Messung}
 Optische Bilder der verwendeten Spitze und des TEM-Netzes sind in Abb. \ref{fig:spitze-2} und \ref{fig:gitter-hopg} gezeigt.
 \begin{figure}[h]
     \centering
     \begin{minipage}{0.49\textwidth}
         \centering
+        \includegraphics[width=\textwidth]{Spitze2}
         \includegraphics[width=\textwidth]{Spitze2}
         \caption{STM-Spitze, die zur Vermessung der HOPG-Probe verwendet wurde.
         Der Maßstab ergibt sich aus der Dicke des Drahts, welche \SI{0.3}{\mm} beträgt.
@@ -368,12 +483,15 @@ Optische Bilder der verwendeten Spitze und des TEM-Netzes sind in Abb. \ref{fig:
     \begin{minipage}{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{GitterHOPG}
+        \includegraphics[width=\textwidth]{GitterHOPG}
         \caption{TEM-Netz zur Bestimmung des Maßstabs.}
         \label{fig:gitter-hopg}
     \end{minipage}
 \end{figure}
 
 Graphit besteht aus Schichten, welche untereinander nur schwach durch Van-der-Waals-Bindungen
+zusammengehalten werden. Dadurch kann eine obere Schicht mithilfe eines Stücks Klebeband abgezogen werden.
+Dies tun wir hier, um eine möglichst reine Oberfläche zu erhalten. Die Probe vor dem
 zusammengehalten werden. Dadurch kann eine obere Schicht mithilfe eines Stücks Klebeband abgezogen werden.
 Dies tun wir hier, um eine möglichst reine Oberfläche zu erhalten. Die Probe vor dem
 Abziehen ist in Abb. \ref{fig:hopg-raw-lupe} und nach mehrfachem Abziehen in Abb. \ref{fig:hopg-nach-lupe}
@@ -384,12 +502,14 @@ gezeigt. Im optischen Bild ist kein großer Unterschied zu erkennen, da nur weni
     \begin{minipage}{0.52\textwidth}
         \centering
         \includegraphics[width=\textwidth]{HOPG_roh}
+        \includegraphics[width=\textwidth]{HOPG_roh}
         \caption{Verwendete HOPG-Probe vor dem Abziehen mit Klebeband.}
         \label{fig:hopg-raw-lupe}
     \end{minipage}
     \hfill
     \begin{minipage}{0.46\textwidth}
         \centering
+        \includegraphics[width=\textwidth]{HOPGnach}
         \includegraphics[width=\textwidth]{HOPGnach}
         \caption{Verwendete HOPG-Probe nach dem Abziehen mit Klebeband.}
         \label{fig:hopg-nach-lupe}
@@ -403,7 +523,12 @@ I-Parameter auf einen sehr niedrigen Wert ($4 - 10$) gesetzt werden.
 
 Für die erste Abbildung wird mit einem verglichen zur Atomgröße relativ großen Bildausschnitt von $\SI{12.5}{\nm}$ begonnen (Abb. \ref{fig:hopg-large}). 
 \begin{figure}[h]
+Für die erste Abbildung wird mit einem verglichen zur Atomgröße relativ großen Bildausschnitt von $\SI{12.5}{\nm}$ begonnen (Abb. \ref{fig:hopg-large}). 
+\begin{figure}[h]
     \centering
+    \includegraphics[width=0.5\linewidth]{figure/hopg-large.jpg}
+    \caption{STM-Bild von HOPG (Tip Current). Bildgröße \SI{12.5}{\nm}, $256$ Points per Line,
+    $v=\SI{242.7}{\nm\per\s}$, Tip voltage=\SI{150}{\mV}, Setpoint=\SI{1}{\nA}, $I=10$, Overscan=$5\%$}
     \includegraphics[width=0.5\linewidth]{figure/hopg-large.jpg}
     \caption{STM-Bild von HOPG (Tip Current). Bildgröße \SI{12.5}{\nm}, $256$ Points per Line,
     $v=\SI{242.7}{\nm\per\s}$, Tip voltage=\SI{150}{\mV}, Setpoint=\SI{1}{\nA}, $I=10$, Overscan=$5\%$}
@@ -414,7 +539,9 @@ Nach Anpassung einiger Parameter gelingt es schließlich auch, auf kleineren Ska
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{figure/hopg-medium.jpg}
+    \includegraphics[width=0.5\linewidth]{figure/hopg-medium.jpg}
     \caption{
+        STM-Bild von HOPG (Tip Current). Bildgröße \SI{3.125}{\nm}, $128$ Points per Line,
         STM-Bild von HOPG (Tip Current). Bildgröße \SI{3.125}{\nm}, $128$ Points per Line,
         $v=\SI{121.6}{\nm\per\s}$, Tip voltage=\SI{50.4}{\mV}, Setpoint=\SI{1}{\nA}, $I=4$, Overscan=$20\%$
     }
@@ -428,13 +555,42 @@ Nach Anpassung einiger Parameter gelingt es schließlich auch, auf kleineren Ska
     %     STM-Bild von HOPG. Bildgröße \SI{3.125}{\nm}, $128$ Points per Line,
     %     $v=\SI{0.950}{\nm\per\s}$, Tip voltage=\SI{50.4}{\mV}, Setpoint=\SI{1}{\nA}, $I=4$
     % }
+    \includegraphics[width=0.5\linewidth]{hopg-small}
+    % \caption{
+    %     STM-Bild von HOPG. Bildgröße \SI{3.125}{\nm}, $128$ Points per Line,
+    %     $v=\SI{0.950}{\nm\per\s}$, Tip voltage=\SI{50.4}{\mV}, Setpoint=\SI{1}{\nA}, $I=4$
+    % }
     \caption{
+        STM-Bild von HOPG (Tip Current). Bildgröße \SI{1.56}{\nm}, $128$ Points per Line,
         STM-Bild von HOPG (Tip Current). Bildgröße \SI{1.56}{\nm}, $128$ Points per Line,
         $v=\SI{60.7}{\nm\per\s}$, Tip voltage=\SI{50.4}{\mV}, Setpoint=\SI{1}{\nA}, $I=4$, Overscan=$20\%$
     }
     \label{fig:hopg-small}
 \end{figure}
 
+
+\subsection{Auswertung}
+Auch in dem größten Bild Abb. \ref{fig:hopg-large} lassen sich bereits regelmäßig angeordnete dunkle Stellen erkennen.
+Diese sind jedoch nicht präzise genug aufgelöst, um genauere Messungen zu machen.
+
+Im kleinsten Bild Abb. \ref{fig:hopg-small} sind die Strukturen deutlich größer zu sehen, zeigen jedoch eine deutliche Verzerrung.
+Diese ist insbesondere am linken Bildrand stark ausgeprägt, also lässt sie sich auf Effekte beim Umdrehen der Bewegungsrichtung der
+Spitze am Ende einer Linie zurückführen. Dies könnte prinzipiell vermutlich durch einen noch höher gewählten Overscan-Parameter
+gelöst werden.
+
+In Abb. \ref{fig:hopg-medium} hingegen sind über einen relativ großen Bereich regelmäßige Strukturen zu erkennen.
+Insbesondere zum rechten Bildrand hin gibt es wieder Verzerrungen durch das Umkehren der Spitze, außerdem ist
+jedoch eine vertikale Verzerrung in der oberen Bildhälfte sichbar. Diese lässt sich vermutlich durch thermische Drift erklären:
+Temperaturänderungen der Probe (z.B durch einen Luftzug oder durch Aufheizen der STM-Elektronik) führen zu einer leichten Ausdehnung.
+Findet diese Ausdehnung während der Scan-Bewegung der Spitze statt, wird der gleiche Punkt an der Oberfläche mehrmals aufgenommen
+und es kommt zu einer Streckung des Bildes.
+
+Im Zentrum des Bildes gibt es jedoch einen Bereich mit wenig Verzerrung.
+Hier wurden mehrere Linien eingezeichnet, um aus dem Abstand der dunklen Punkte die Gitterkonstante $a$
+zu bestimmen. Dabei wurden möglichst viele Gitterabstände überspannt, um den Fehler zu minimieren.
+Die Maße der Linien sind in Tab. \ref{tab:hopg-data} eingetragen. $a$ ergibt sich durch $a=\frac{R}{n}$, wobei $n$
+der Anzahl der von der Linie überspannten Gitterabständen entspricht;
+$\Delta a$ wurde mithilfe von Gauß'scher Fehlerfortpflanzung berechnet.
 
 \subsection{Auswertung}
 Auch in dem größten Bild Abb. \ref{fig:hopg-large} lassen sich bereits regelmäßig angeordnete dunkle Stellen erkennen.
@@ -474,6 +630,21 @@ $\Delta a$ wurde mithilfe von Gauß'scher Fehlerfortpflanzung berechnet.
     \label{tab:hopg-data}
 \end{table}
 
+Der Literaturwert ist $a=\SI{0.246}{\nm}$, wovon der aus Linien $1$ und $3$ bestimmte $a$-Wert um ca. $\SI{4}{\percent}$
+nach oben abweicht. Die Werte aus Linien $2$ und $4$ hingegen sind um mehr als \SI{10}{\percent} niedriger.
+Dies deutet darauf hin, dass die Piezos für die x- und y- Richtung nicht optimal kalibriert sind.
+Linien $1$ und $3$, die bessere $a$-Werte liefern, verlaufen vorwiegend horizontal, also scheint die Kalibration des x-Piezos
+eher zu stimmen. Linien $2$ und $4$, die eine größere Ausdehnung in der Vertikalen haben, sind deutlich zu kurz,
+also muss der $y-Piezo$ so kalibriert sein, dass er sich zu weit bewegt und somit Abstände unterschätzt werden.
+Der varianzgewichtete Mittelwert der Gitterkonstanten aus Tab. \ref{tab:hopg-data} ist $a = \SI{0.244\pm0.012}{\nm}$,
+was innerhalb des Fehlerbereichs mit dem Literaturwert übereinstimmt und um weniger als $1\%$ von ihm abweicht.
+
+Dass die Kalibration in y-Richtung stärker abweicht, als in x-Richtung,
+führt zu einer Verzerrung des Bilds, welche sich auch in den Winkeln zwischen Linien erkennen lässt: Die Differenz der
+Winkel $\phi$ der Linien $1$ und $2$ ist \SI{66.0\pm 4.2}{\degree} und zwischen Linien $3$ und $4$ \SI{67.3\pm 4.2}{\degree},
+was um ca. \SI{10}{\percent} höher ist, als der Winkel \SI{66}{\degree}, der bei einem gleichseitigen Dreieck eigentlich zu
+erwarten wäre.
+% Aus Linien $1$ und $3$ erhalten wir $a=0.256$ und
 Der Literaturwert ist $a=\SI{0.246}{\nm}$, wovon der aus Linien $1$ und $3$ bestimmte $a$-Wert um ca. $\SI{4}{\percent}$
 nach oben abweicht. Die Werte aus Linien $2$ und $4$ hingegen sind um mehr als \SI{10}{\percent} niedriger.
 Dies deutet darauf hin, dass die Piezos für die x- und y- Richtung nicht optimal kalibriert sind.
@@ -551,6 +722,11 @@ Siehe Abb. \ref{fig:hopg-1}, \ref{fig:hopg-2}, \ref{fig:hopg-3}. Da im Constant 
 \bibitem{Anleitung}
 \textit{Physikalisches Praktikum Teil IV -- Versuchsbeschreibungen}, Universität Bonn, 10.10.2024
 
+\bibitem{stm-paper} 
+\textit{High-Speed Electrochemical STM}, M.J. Rost, 2018
+
+\bibitem{naio-video}
+\textit{NaioSTM Overview and Tutorial}, nanosurf, Abruf 27.11.2024, https://youtu.be/dZeZn3Pt2Ss
 \bibitem{stm-paper} 
 \textit{High-Speed Electrochemical STM}, M.J. Rost, 2018
 
