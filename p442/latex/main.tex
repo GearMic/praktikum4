@@ -92,8 +92,7 @@
 
 %% preparation
 \begin{titlepage}
-    \title{Praktikum Atome, Moleküle, kondensierte Materie \\ Versuch 422: Rastertunnelmikroskopie}
-    \author[1]{Carlos Pascua\thanks{s87cpasc@uni-bonn.de}}
+    \title{Praktikum Atome, Moleküle, kondensierte Materie \\ Versuch 442: Laser}
     \author[1]{Michael Vogt\thanks{s65mvogt@uni-bonn.de}}
     \affil[1]{Uni Bonn}
     %\date{\today}
@@ -125,7 +124,30 @@ Zunächst werden Wellenlänge und Polarisation des Lichts gemessen und anschlie�
 Moden genauer untersucht. Zum stabilen Betrieb des Lasers wird eine optische Diode aufgebaut.
 
 \section{Aufbau des Lasers}
-\todo{Aufbau beschreiben, nicht zu spezifisch um späteren Aufbau zu covern. ggf. einfach Anleitung zitieren}
+Zunächst wird der Laser aufgebaut und justiert. Seine fundamentalen Bestandteile sind
+\begin{enumerate}
+  \item das \textbf{Lasermedium}, ein mit HeNe gefülltes Volumen. Durch Anlegen einer hohen Spannung kann das Helium
+  auf den $2^1S_0$-Zustand angeregt und seine Energie durch inelastische Stöße an Neon-Atome abgeben,
+  welche dadurch auf den 3s-Zustand, der ein ähnliches Energieniveau hat, angeregt werden (siehe Abb. \ref{fig:hene-level}).
+  Dieser Zustand ist metastabil bezüglich spontaner Emission, wodurch es zu einer \textit{Besetzungsinversion} kommt: 
+  Es befinden sich mehr Atome im höheren 3s-Zustand als im Grundzustand.
+  \todo{Laserübergang beschreiben}
+  % durch stimulierte Emission
+  % kann jedoch der 3s$\rightarrow$2p-Übergang sehr häufig stattfinden.
+  Dieser Prozess wird als \textbf{optisches Pumpen} bezeichnet.
+  \item Ein \textbf{Resonator} aus zwei Spiegeln, der einen großen Teil des entstehenden Lichts vielfach durch das
+  Lasermedium leitet. Dadurch können Photonen des 3s$\rightarrow$2p-Übergangs, der sonst nur selten durch
+  spontane Emission stattfinden würde, denselben Übergang wieder
+  stimulieren und weitere Photonen freisetzen. Es findet also ein verstärkender Prozess statt, der dem Laser
+  seinen Namen gibt: \textit{Light Amplification Through Stimulated Emission of Radiation}.
+\end{enumerate}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{hene-level}
+  \caption{Für den Laserbetrieb relevant Energienievaus von Helium und Neon. \cite{Anleitung}}
+  \label{fig:hene-level}
+\end{figure}
 
 \section{Wellenlänge und Polarisation}
 Zunächst werden Wellenlänge und Polarisation des Laserlichts gemessen.
