@@ -72,6 +72,7 @@
   {\par\medskip\noindent\minipage{\linewidth}}
   {\endminipage\par\medskip}
 \newcommand*{\inputPath}{./plot} % prepend this command to the argument of all input commands
+\newcommand*{\tablePath}{../data} % prepend this command to the argument of all input commands
 \graphicspath{ {./figure/}{../plot/}{../assets} }
 % own enviroment for definitions
 \newenvironment{definition}[1]
@@ -160,73 +161,176 @@ Anhand der Ablenkung des Laserlichts an einem Transmissionsgitter, welches in de
 kann dessen Wellenlänge bestimmt werden.
 Es gilt die Gittergleichung
 \begin{equation}
-  n\lambda = d(\cos \alpha - \cos \beta_n)
+  \lvert n \rvert\lambda = g(\cos \alpha - \cos \beta_n)
 \end{equation}
-wobei $\alpha$ der Winkel des Lasers und $\beta_n$ der Winkel der $n$-ten Beugungsordnung zur Gitternormalen ist. 
+wobei $\alpha$ der Winkel des Lasers und $\beta_n$ der Winkel der $n$-ten Beugungsordnung zur Gitternormalen ist
+und $g = \frac{1}{600}\si\mm$ für die Gitterkonstante steht. 
 Daraus folgt die Geradengleichung
 \begin{equation}
-  n = n(\cos\beta) = \frac{d}{\lambda} (\cos \alpha - \cos \beta)
+  \lvert n \rvert = f(\cos\beta) = \frac{g}{\lambda} (\cos \alpha - \cos \beta)
 \end{equation}
 also gilt für die Steigung $m$
 \[
-  m = -\frac{d}{\lambda} \iff \lambda = -\frac{d}{m}
+  m = -\frac{g}{\lambda} \iff \lambda = -\frac{g}{m}
 \]
 
-Hier galt $d=\todo{Wert}. $Die gemessenen Ordnungen sind in Tab. \ref{tab:gitter-fit} gezeigt.
+\todo{Winkel aus Abstand berechnung}
+Die gemessenen Ordnungen sind in Tab. \ref{tab:gitter-fit} gezeigt.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c}
+    \todo{werte}
+  \end{tabular}
+  \caption{
+    Gemessene Ordnungen der Beugung des Laserlichts am Gitter. Die Position $x=0$ der 0-ten Ordnung folgt
+    daraus, dass alle anderen $x$-Werte jeweils als Abstand zur 0-ten Ordnung gemessen wurden.
+  }
+\end{table}
+
 Eine Geradenanpassung von $n$ in Abhängigkeit von $\cos \beta$ liefert die Gleichung
 \[
-  n(\cos\beta) = \todo{Werte}
+  n = \todo{Werte}
 \]
 also $m = \todo{Wert}$ und $\lambda = \todo{Wert}$. \todo{Vergleich mit erwarteter Wellenlänge} 
 
-\subsection{Polarisierung}
+\subsection{Polarisation}
 Als nächstes soll die Polarisierung des Laserlichts gemessen werden. Im Lasermedium wird zunächst unpolarisiertes Licht
 erzeugt. Dieses verlässt das Medium jedoch durch Brewsterfenster, welche nur eine bestimmte Polarisationsrichtung durchlassen
-\todo{stimmt das? Brewsterfenster erklären.}.
+
+Brewsterfenster sind Fenster, die in ihrem Brewsterwinkel zur optischen Achse stehen. Dies ist der Winkel, bei dem
+zur Einfallsebene parallel polarisiertes Licht vollständig transmittiert und nicht reflektiert wird.
+Dazu senkrecht polarisiertes Licht wird sowohl transmittiert als auch reflektiert. Der reflektierte Anteil
+verlässt die optische Achse und geht damit verloren.
+Ein Brewsterfenster an sich lässt also eine Polarisationsrichtung stärker hindurch. Wird die andere Polarisationsrichtung
+stark genug abgeschwächt (d.h. geht genug davon durch Reflexion verloren), reicht ihre Intensität
+im Resonator nicht mehr aus, um den Laser zu betreiben.
+So produziert der Laser im Idealfall nur Licht einer bestimmten Polarisationsrichtung.
 
 Zur Messung der Polarisation wird das Licht durch einen Polarisator auf eine Photodiode geschickt
 und die zur Lichtintensität proportionale Spannung mithilfe eines Oszilloskops gemessen.
 Bei vollständig linear polarisiertem Licht und einem idealen Polarisator
 ist der Zusammenhang zwischen Intensität $I$ und Winkel $\alpha$ des
 Polarisators zur Vertikalen durch das \textit{Malus'sche Gesetz} gegeben:
-\begin{equation}
-  I(\alpha) = I_0 \cos^2(\alpha - \alpha_0)
-\end{equation}
-mit $I_0$ der Lichtintensität vor dem Polarisator und $\alpha_0$ der Polarisationsrichtung des Lichts (zur Vertikalen).
-
-Im Allgemeinen kann der $\cos^2$-Verlauf im Vergleich zum Malus'schen Gesetz gestaucht sein, wenn das Licht nicht vollständig
-polarisiert ist:
-% erreicht der Verlauf nicht mehr die maximale oder die verschwindende Intensität, sondern ist auf einen kleineren Bereich
-% eingeschränkt:
+\todo{ZITIEREN!!! BEI ALLEN FORMELN SCHAUEN}
 \begin{equation}
   I(\alpha) = U_\mr{min} + (U_\mr{max}-U_\mr{min}) \cos^2(\alpha - \alpha_0) \label{eq:malus-real}
 \end{equation}
-\todo{begründen wo das herkommt}
 Hier wurde Spannung $U$ anstatt Intensität $I$ verwendet, da die Spannung hier die
 zur Intensität proportionale gemessene Größe ist.
 
 Bei Sättigung der Diode würde der $\cos^2$-Verlauf oberhalb der Maximalspannung der Diode \enquote{abgeschnitten} werden
 und damit nicht mehr \eqref{eq:malus-real} entsprechen. Es wurde daher sichergestellt, dass keine Sättigung auftritt.
-\todo{abschlusswiderstand erklälren?}
+Bei zu hoher Intensität kann die Diode mit einem BNC T-Stück mit einem \SI{50}{\ohm}-Abschlusswiderstand an einem Ausgang 
+verbunden werden.
 Der Polarisator auf verschiedene Winkel in regelmäßigen Abständen eingestellt und jeweils die Spannung notiert.
 Diese Werte sind in Tab. \ref{tab:polarisation} gezeigt und in Abb. \ref{fig:polarisation} aufgetragen, zusammen
-mit einer $\chi^2$-Anpassung nach \eqref{malus-real}. Diese liefert die Parameter
-\todo{Werte}, 
-\todo{Polarisationsrichtung vergleichen},
+mit einer $\chi^2$-Anpassung nach \eqref{eq:malus-real}.
+\begin{figure}[h]
+  \begin{minipage}{0.49\textwidth}
+    \centering
+    \input{\tablePath/5.4polarisation.tex}
+    \caption{Spannung $U$ der Photodiode in Ab\-hängig\-keit der Richtung $\alpha$ des Polarisators zur Vertikalen.}
+    \label{tab:polarisation}
+  \end{minipage}
+  \begin{minipage}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{5.4polarisation}
+    \caption{
+      Spannung $U$ der Photodiode aufgetragen gegen den Winkel $\alpha$ des Polarisators.
+      Daran wurde der Zusammenhang \eqref{eq:malus-real} angepasst.}
+    \label{fig:polarisation}
+  \end{minipage}
+\end{figure}
 
-% Der Polarisationsgrad PG ist definiert durch 
-% \begin{equation}
-%   \mr{PG} \coloneq \frac{I_\parallel - I_\perp}{I_\parallel + I_\perp}
-%   = \frac{U_\parallel - U_\perp}{U_\parallel + U_\perp}
-%   = \frac{U_\mr{max} - U_\mr{min}}{U_\mr{max} + U_\mr{min}} 
-% \end{equation}
-% wobei 
+Diese liefert die Parameter $\alpha_0 = \SI{123.09\pm0.36}{\degree}$,
+$U_\mr{min} = \SI{-0.233\pm0.076}{\mV}$ und $U_\mr{max} = \SI{9.82\pm0.076}{\mV}$.
+
+Der Winkel, in dem die Brewsterfenster stehen, wurde nicht exakt gemessen,
+aber der hier bestimmte Wert für $\alpha_0$ scheint plausibel in Anbetracht der
+bei der Durchführung beobachteten Drehstellung der Fenster.
+
+Eine negative Spannung wie der hier bestimmte Wert für $U_\mr{min}$ entspricht einer negativen
+Lichtintensität und ist damit unphysikalisch. Dass der Wert negativ ist kann ein Artefakt des Fits sein,
+oder die Spannung wurde durch die Verbindung zwischen Diode und Oszilloskop verfälscht. Die gemessene
+Spannung war relativ empfindlich gegen äußere Einflüsse wie z.B. Berührung des Kabels oder der Oszilloskops.
+Das Signal war außerdem mit signifikanten Rauschen behaftet, Was zu einem Oszilloskop-Bild mit einer relativ
+dicken Linie führte. Zum Ablesen wurde sich am unteren Rand dieser Linie orientiert,
+was eine systematische Verschiebung zu kleineren Werten mit sich brachte. Diese beträgt schätzungsweise bis zu $\SI{0.4}{\mV}$
+
+% % Der Polarisationsgrad PG ist definiert durch 
+% % \begin{equation}
+% %   \mr{PG} \coloneq \frac{I_\parallel - I_\perp}{I_\parallel + I_\perp}
+% %   = \frac{U_\parallel - U_\perp}{U_\parallel + U_\perp}
+% %   = \frac{U_\mr{max} - U_\mr{min}}{U_\mr{max} + U_\mr{min}} 
+% % \end{equation}
+
 Für den Polarisationsgrad PG gilt 
 \begin{equation}
-  \mr{PG} = \frac{U_\mr{max} - U_\mr{min}}{U_\mr{max} + U_\mr{min}} = \todo{Wert einfüllen}
+  \mr{PG} = \frac{U_\mr{max} - U_\mr{min}}{U_\mr{max} + U_\mr{min}} = \num{1.049\pm0.016}
 \end{equation}
-\todo{Diskutieren wenn nicht vollständig polarisiert}
+Dass der Polarisationsgrad größer als $1$ ist, wird durch das negative $U_\mr{min}$ versursacht.
+Auch mit Berücksichtigung der systematischen Verschiebung würde sich jedoch kein Wert ergeben,
+der weit unter $1$ liegt. Damit ist das Laserlicht, wie erwartet, vollständig polarisiert.
+Abweichungen des gemessenen Polarisationsgrads von $PG=1$ könnten dadurch auftreten, dass der Polarisator nicht ideal ist.
 
+% % Abweichungen von $PG=1$ könnten dadurch auftreten, dass im Lasermedium unabhängig von der Verstärkung durch den
+% % Resonator auch die senkrechte Polarisationsrichtung erzeugt wird, wovon ein Teil durch die Brewsterfenster und
+
+\section{Strahlprofil}
+Als nächstes soll das Strahlprofil des Lasers, d.h. der Strahlradius $w$ in Abhängigkeit der Position $z$ 
+entlang der optischen Achse, durchmessen werden.
+
+In Resonatoren mit sphärischen Spiegeln entstehen sog. Gauß-Strahlen. Dies sind Lichtsstrahlen, deren transversales
+(senkrecht zur optischen Achse) Intensitätsprofil die Form einer Gauß-Funktion hat.
+Gauß-Strahlen sind in der Mitte zwischen den sphärischen Spiegeln am dünnsten. In unserem Fall werden nicht
+zwei sphärische Spiegel, sondern ein sphärischer und ein planarer Spiegel verwendet.
+Dieser Aufbau (\enquote{halbsymmetrischer Resonator} \cite{Anleitung}) ist äquivalent
+zu einem Resonator doppelter Länger mit zwei sphärischen Spiegeln. 
+
+Um die Breite eines Gauß-Strahls an einem bestimmten Punkt $z$ zu charakterisieren,
+wird der Strahlradius $w$ definiert als der Radius (Abstand zur optischen Achse),
+bei dem das elektrische Feld auf das $e^{-1}$-Fache seines Maximalwerts gefallen ist.
+Der Strahlradius verhält sich in Abhängigkeit von $z$ nach dem Zusammenhang
+\begin{equation}
+  w(z) = w_0 \sqrt{1+\left( \frac{z}{z_R} \right)^2} \cite{Anleitung}
+\end{equation}
+Dabei ist $z$ der Abstand zur Strahltaille, dem Ort minimaler Strahldicke, und $w_0$ der Strahlradius bei der Strahltaille.
+$z_R$ ist sie \textit{Raileigh-Länge} $z_R = \frac{\pi w_0^2}{\lambda}$
+
+Für einen halbsymmetrischen Resonator ergibt sich der minimale Strahlradius durch
+\begin{equation}
+  w_0 = \sqrt{\frac{\lambda}{\pi} \sqrt{L(R-L)}} \cite{Anleitung}
+\end{equation}
+mit $\lambda$ der Wellenlänge, $L$ dem Abstand der Spiegel und $R$ dem Krümmungsradius des Hohlspiegels.
+
+Die Messung der Breite des Strahls erfolgt, wie in der Versuchsanleitung beschrieben:
+\blockquote{
+  Für die Messung des Strahlradius w(z) verwenden Sie einen Messschieber. Dieser wird auf ca. 1.5 mm eingestellt und in den Strahlengang gebracht.
+  Beachten Sie dabei, dass Sie nur den unteren, keilförmig zulaufenden Bereich der Messschieberbacken verwenden, um Messfehler zu vermeiden.
+  Durch eine Bewegung des Messschiebers senkrecht zum Strahl
+  blockt man somit den Laser entweder komplett oder verursacht Verluste durch teilweises Abschneiden des Strahls an den Messbacken.
+  Ist der Abstand der Messbacken hinreichend groß, wird der Laser somit durch eine periodische Bewegung
+  senkrecht zum Strahl in einem gepulsten Modus betrieben: Der Laser erlischt, wenn der Strahl verdeckt wird und blitzt auf,
+  sobald der Strahl zwischen den Messbacken passieren kann. Ist der Abstand der Messbacken andererseits hinreichend klein,
+  so sind die verursachten Verluste für den Laserbetrieb immer so groß, dass der Laser nicht arbeitet und der Laser bleibt
+  stets dunkel. Die kleinste öffnung des Messschiebers, bei der noch Lasertätigkeit zu beobachten ist,
+  ist demnach ein Maß für die Strahlgröße w(z). 
+  
+  [...] Eine andere Messmethode -- die von vielen Experimentatoren als simpler und robuster eingestuft wird -- besteht darin, 
+  den Abstand der Messbacken zu fixieren um hierauf die axiale Position (entlang der Resonatorachse) des Messschiebers
+  so lange zu verändern, bis das Aufblitzen des Lasers gerade nicht mehr zu beobachten ist.
+  Die Messung wird mit verschiedenen sinnvollen Abst¨anden der Messbacken wiederholt.
+  \cite{Anleitung}
+} 
+\todo{Anleitung korrekt zitieren?}
+In der Anleitung werden zwei verschiedene Messmethoden beschrieben, die jedoch auf dem gleichen Prinzip basieren,
+dass die Breite des Strahls gemessen werden kann durch die Breite einer Öffnung, ab der nicht mehr genug Licht hindurchgelassen
+wird, um den Laser zu \enquote{zünden}. In der Durchführung wurden beide Methoden eingesetzt, je nachdem,
+was im konkreten Fall einfacher erschien.
+
+Die Breite, die man durch diese Messmethode erhält, entspricht nicht dem Strahlradius, ist aber proportional zu ihm.
+Zur Unterscheidung zum Strahlradius $w(z)$ werden die Messwerte im Folgenden mit $W(z)$ bezeichnet.
 
 
 \clearpage
