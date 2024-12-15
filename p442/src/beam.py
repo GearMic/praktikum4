@@ -28,22 +28,24 @@ def gauss_beam_width(B, z):
     zR = np.pi * w0**2 / (lbda*1e-9) * 1e2
     return gamma * w0*1e3 * np.sqrt(1 + (z/zR)**2)
 
-def beam_fit_plot(filename):
+def beam_fit_plot(filename, measureLabel='gemessene Strahlbreiten', fitLabel='Anpassung', fitLineLowerBound=None):
     params, paramsErr = odr_fit(gauss_beam_width, z, d, 1, zErr, dErr, p0=(1.5,))
     gamma, gammaErr = params[0], paramsErr[0]
     print('gamma', gamma, gammaErr)
 
-    plt.errorbar(z, d, zErr, dErr, 'x', label='gemessene Strahlbreiten')
+    plt.errorbar(z, d, dErr, zErr, ',', label=measureLabel, zorder=5)
+    if not (fitLineLowerBound is None):
+        z[0] = fitLineLowerBound
     xFit = array_range(z)
     yFit = gauss_beam_width(params, xFit)
-    plt.plot(xFit, yFit, label='Anpassung')
+    plt.plot(xFit, yFit, label=fitLabel)
 
     plt.xlabel(r'$z/\mathrm{cm}$')
     plt.ylabel(r'$W/\mathrm{mm}$')
+    plt.xlim(left=0, right=60)
     plt.grid()
     plt.legend(loc='upper left')
 
-    plt.savefig(filename)
     
 
 ## short resonator
@@ -62,7 +64,7 @@ z, zErr, dataFrame = preprocess_data()
 dataFrame.to_latex('p442/data/5.5beamA.csv', index=False)
 print('zmz0, z0, z, d Err:', zmz0Err, z0Err, zErr, dErr)
 
-beam_fit_plot('p442/plot/5.5beamA.pdf')
+beam_fit_plot('p442/plot/5.5beamA.pdf', 'Messung kurzer Resonator', 'Anpassung kurzer Resonator')
 
 
 ## long resonator
@@ -80,4 +82,7 @@ zmz0, d = load_data('p442/data/5.5strahlB.csv')
 z, zErr, dataFrame = preprocess_data()
 dataFrame.to_latex('p442/data/5.5beamB.csv', index=False)
 
-beam_fit_plot('p442/plot/5.5beamB.pdf')
+filename = 'p442/plot/5.5beamB.pdf'
+beam_fit_plot(filename, 'Messung langer Resonator', 'Anpassung langer Resonator', 2)
+plt.grid()
+plt.savefig(filename)
