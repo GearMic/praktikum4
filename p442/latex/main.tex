@@ -320,7 +320,7 @@ Die Messung der Breite des Strahls erfolgt, wie in der Versuchsanleitung beschri
   [...] Eine andere Messmethode -- die von vielen Experimentatoren als simpler und robuster eingestuft wird -- besteht darin, 
   den Abstand der Messbacken zu fixieren um hierauf die axiale Position (entlang der Resonatorachse) des Messschiebers
   so lange zu verändern, bis das Aufblitzen des Lasers gerade nicht mehr zu beobachten ist.
-  Die Messung wird mit verschiedenen sinnvollen Abst¨anden der Messbacken wiederholt.
+  Die Messung wird mit verschiedenen sinnvollen Abständen der Messbacken wiederholt.
   \cite{Anleitung}
 } 
 \todo{Anleitung korrekt zitieren?}
@@ -331,6 +331,72 @@ was im konkreten Fall einfacher erschien.
 
 Die Breite, die man durch diese Messmethode erhält, entspricht nicht dem Strahlradius, ist aber proportional zu ihm.
 Zur Unterscheidung zum Strahlradius $w(z)$ werden die Messwerte im Folgenden mit $W(z)$ bezeichnet.
+
+\todo{Werte und Tabellen und Plots und alles einfügen}
+
+
+\section{Spektrum}
+Schließlich soll das Spektrum des Lasers analysiert werden. Dieses wird bestimmt durch
+\begin{enumerate}
+  \item Die schwingenden Moden. Neben den longitudinalen Moden, welche durch die Länge des Resonators bestimmt werden,
+    gibt es verschiedene transversale Moden. Diese unterscheiden sich im transversalen Profil das Laserlichts und
+    können unterschiedliche Frequenzen haben.
+  \item Die Linienbreite einzelner Moden. Durch Dopplerverbreiterung hat das Licht einer Mode
+    einen ausgedehnten Frequenzbereich, welcher breit genug sein kann, um mehrere freie Spektralbreiten des
+    Laserresonators zu überdecken. Dadurch werden aus dem Laser mehrere Linien, die den von der Mode
+    überdeckten Transmissionsmaxima des Resonators entsprechen, ausgekoppelt.
+\end{enumerate}
+\todo{stimmt das? FSR erklären}
+
+\subsection{optische Diode}
+Da die Messung des Spektrums empfindlich ist, sollte der Laser hier möglichst stabil laufen.
+Eine Quelle von Instabilität ist die Reflexion von ausgekoppeltem Licht zurück in den Laser. 
+Dieses Licht interferiert mit dem Licht im Lasermedium und kann beeinflussen, welche Moden schwingen.
+
+Um dies zu verhindern, wird eine optische Diode eingebaut, die Licht nur in einer Richtung hindurchlässt.
+Sie besteht aus einem Polarisator hinter dem Planspiegel des Laserresonators und einer Verzögerungsplatte.
+Zunächst wird der Polarisator eingebaut und so gedreht, dass er der Polarisationsrichtung des Laserlichts entspricht.
+Dazu wird er zunächst so gedreht, dass die Transmission (nach Beobachtung mit dem Auge) minimal wird,
+und dann um \ang{90} verstellt.
+
+Dann werden die Verzögerungsplatte und dahinter ein Spiegel eingesetzt.
+Die Platte kann entlang zwei Achsen verstellt werden und wird justiert, bis die rückreflektierte
+Lichtintensität zwischen Polarisator und Planspiegel des Resonators minimal ist. Dies bedeutet,
+dass die Verzögerungsplatte als $\lambda/4$-Platte agiert, welche im Winkel \ang{45} zur Polarisationsrichtung
+der Laserlichts steht. dadurch wird das Laserlicht hinter der Platte zirkular polarisiert. Nach Reflexion
+am Spiegel und erneutem Durchlaufen der Verzögerungsplatte ist es wieder linear polarisiert,
+jedoch senkrecht zur vorigen Richtung. Dadurch kann das Licht den Polarisator nicht mehr passieren.
+
+\subsection{Spektrumanalysator}
+Die erste hier verwendete Messmethode verwendet einen sogenannten Spektrumanalysator.
+Dies ist ein konfokaler Resonator mit einem Spiegelabstand $l$, der durch einen Piezo geringfügig verändert werden kann.
+Die Längenänderung ist dabei (näherungsweise) proportional zur angelegten Spannung.
+Die Mode $q$, $n$, $m$ hat die Frequenz
+\begin{equation}
+  \nu_{qnm} = (q + \frac{n + m}{2})\frac{c}{2l}
+\end{equation}
+% Der Resonator transmittiert das Licht des Lasers, wenn dessen Frequenz einer seiner Moden entspricht.%, also $\nu_{qnm} = \nu$.
+Der Resonator transmittiert das Licht des Lasers, wenn dessen Frequenz einer seiner Moden entspricht.
+Durch Variation der Länge $l$ und Auftragen der entsprechenden Transmission lässt sich also das Spektrum des Lasers abbilden.
+
+Hierzu wird am Piezo eine Wechselspannung (\SI{50}{\Hz}) angelegt.
+Eine dazu proportionale Spannung wird an den x-Eingang und die Spannung einer Photodiode hinter
+dem Analysator an den y-Eingang eines Oszilloskops im xy-Modus gegeben.
+Das resultierende Bild ist in Abb. \ref{fig:analysator-kurz} gezeigt.
+
+\begin{figure}[h]
+  \centering
+  % \includegraphics[width=0.5\textwidth]{}
+  \caption{
+    Oszilloskop-Bild des Spektrumanalysators mit Laserresonator der Länge L=\SI{48.6}{\cm}.
+    Es sind Hilfslinien zum besseren ablesen eingezeichnet.
+    Bei Betrachtung mit dem Auge sieht man eine zweite Linie, welche der hier erkennbaren überlagert und horizontal verschoben ist.
+    Die zwei Linien entsprechen vermutlich dem Hin- und Rückweg (d.h. der Verlängerung und Verkürzung) des Piezos, die sich
+    durch Hysterese-Effekte leicht voneinander unterscheiden.}
+  \label{fig:analysator-kurz}
+\end{figure}
+
+
 
 
 \clearpage
