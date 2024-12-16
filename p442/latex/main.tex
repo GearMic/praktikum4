@@ -345,6 +345,7 @@ Schließlich soll das Spektrum des Lasers analysiert werden. Dieses wird bestimm
     einen ausgedehnten Frequenzbereich, welcher breit genug sein kann, um mehrere freie Spektralbreiten des
     Laserresonators zu überdecken. Dadurch werden aus dem Laser mehrere Linien, die den von der Mode
     überdeckten Transmissionsmaxima des Resonators entsprechen, ausgekoppelt.
+    \todo{Die Aufspaltung ist wahrscheinlich so klein dass man sie nicht sieht}
 \end{enumerate}
 \todo{stimmt das? FSR erklären}
 
@@ -369,32 +370,81 @@ jedoch senkrecht zur vorigen Richtung. Dadurch kann das Licht den Polarisator ni
 
 \subsection{Spektrumanalysator}
 Die erste hier verwendete Messmethode verwendet einen sogenannten Spektrumanalysator.
-Dies ist ein konfokaler Resonator mit einem Spiegelabstand $l$, der durch einen Piezo geringfügig verändert werden kann.
+Dies ist ein konfokaler Resonator mit einem Spiegelabstand $l=\SI{5}{\cm}$, der durch einen Piezo geringfügig verändert werden kann.
 Die Längenänderung ist dabei (näherungsweise) proportional zur angelegten Spannung.
 Die Mode $q$, $n$, $m$ hat die Frequenz
 \begin{equation}
-  \nu_{qnm} = (q + \frac{n + m}{2})\frac{c}{2l}
+  \nu_{qnm} = \left(q + \frac{n + m}{2}\right)\frac{c}{2l}
 \end{equation}
 % Der Resonator transmittiert das Licht des Lasers, wenn dessen Frequenz einer seiner Moden entspricht.%, also $\nu_{qnm} = \nu$.
+Der Modenabstand zwischen transversalen Moden ist also $\mr{MD} = \frac{c}{4l} = \SI{1499}{\MHz}$.
 Der Resonator transmittiert das Licht des Lasers, wenn dessen Frequenz einer seiner Moden entspricht.
 Durch Variation der Länge $l$ und Auftragen der entsprechenden Transmission lässt sich also das Spektrum des Lasers abbilden.
 
 Hierzu wird am Piezo eine Wechselspannung (\SI{50}{\Hz}) angelegt.
 Eine dazu proportionale Spannung wird an den x-Eingang und die Spannung einer Photodiode hinter
 dem Analysator an den y-Eingang eines Oszilloskops im xy-Modus gegeben.
-Das resultierende Bild ist in Abb. \ref{fig:analysator-kurz} gezeigt.
-
+Die resultierenden Bilder für zwei verschiedene Laserresonatorlängen sind in Abb. \ref{fig:analysator} gezeigt.
 \begin{figure}[h]
   \centering
-  % \includegraphics[width=0.5\textwidth]{}
+  \begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{analysator-kurz}
+    \subcaption{mit Laserresonator der Länge L=\SI{48.6}{\cm}.}
+    \label{fig:analysator-kurz}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{analysator-lang}
+    \subcaption{mit Laserresonator der Länge L=\SI{61.5}{\cm}.}
+    \label{fig:analysator-lang}
+  \end{subfigure}
   \caption{
-    Oszilloskop-Bild des Spektrumanalysators mit Laserresonator der Länge L=\SI{48.6}{\cm}.
-    Es sind Hilfslinien zum besseren ablesen eingezeichnet.
-    Bei Betrachtung mit dem Auge sieht man eine zweite Linie, welche der hier erkennbaren überlagert und horizontal verschoben ist.
+    Oszilloskop-Bilder des Spektrumanalysators. Es sind Hilfslinien zum besseren Ablesen eingezeichnet.
+    Bei Betrachtung mit dem Auge sieht man jeweils eine zweite Linie,
+    welche der hier erkennbaren überlagert und horizontal verschoben ist.
     Die zwei Linien entsprechen vermutlich dem Hin- und Rückweg (d.h. der Verlängerung und Verkürzung) des Piezos, die sich
     durch Hysterese-Effekte leicht voneinander unterscheiden.}
-  \label{fig:analysator-kurz}
+  \label{fig:analysator}
 \end{figure}
+Bei genügend hoher Piezo-Spannungsamplitude ist zu erwarten, dass sich die Länge des Analysators stark genug ändert,
+dass er zweimal die gleiche Resonanzfrequenz hat (z.B. $\nu_{qnm}(l_1) = \nu_{qnm+1}(l_2)$).
+Dadurch ergeben sich im Oszilloskop-Bild wiederholende Strukturen. Da die hier betrachteten Längenänderungen klein
+gegen die Gesamtlänge $l$ des Resonators sind, stehen Änderungen der Länge und der Resonanzfrequenz näherungsweise
+in einem linearen Zusammenhang zueinander. Dann entspricht der Abstand zwischen Wiederholungen im Oszillogramm $\delta x_\mr{MD}$
+dem Modenabstand $MD$ und aus den Oszillogrammen lassen sich Frequenzdifferenzen $\delta\nu$ nach dem Zusammenhang
+\begin{equation}
+  \frac{\delta x}{\delta x_\mr{MD}} = \frac{\delta \nu}{\mr{MD}}
+\end{equation}
+ablesen.
+
+Die aus den Oszillogrammen abgelesenen Linien und deren Auswertung sind in Tab. \ref{tab:analysator} gezeigt.
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{\textwidth}
+    \centering
+    \input{\tablePath/5.7analyser_short.tex}
+    \subcaption{
+      L=\SI{48.6}{\cm}, Positionen $x$ abgelesen aus Abb. \ref{fig:analysator-kurz}.
+      Es ist hier nicht direkt ersichtlich, welche Distanz dem Modenabstand entspricht.
+      Da Linien 1, 2, 5 und 6 etwa gleich weit voneinander entfernt sind, wird diese Distanz mit dem Modenabstand identifiziert.
+      Die Dazwischen erkennbaren Moden sind dann Linien 3 und 4.
+      }
+    \label{tab:analysator-kurz}
+  \end{subfigure}
+
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{analysator-lang}
+    \subcaption{L=\SI{61.5}{\cm}, Positionen $x$ abgelesen aus Abb. \ref{fig:analysator-lang}.}
+    \label{tab:analysator-lang}
+  \end{subfigure}
+  \caption{
+    Aus den Oszillogrammen des Spektrumanalysators abgelesene Linien. $\Delta x = 0.3\mr{Skt.}$ und $\delta\nu$ ist in \si\MHz angegeben.}
+  \label{tab:analysator}
+\end{figure}
+
 
 
 

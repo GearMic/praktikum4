@@ -56,7 +56,7 @@ lbda = 632
 
 z0 = 44.1
 z0Err = 0.2
-zmz0Err = 0.5
+zmz0Err = 0.3
 dErr = 0.1
 zmz0, d = load_data('p442/data/5.5strahlA.csv')
 
