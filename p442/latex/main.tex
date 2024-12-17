@@ -113,11 +113,11 @@
 \fancyhead[R]{\thepage}
 \fancyhead[L]{\leftmark}
 
-\section*{TODO}
-\begin{itemize}
-  \item \todo{\enquote{Aufgaben} durchgehen und ins Protokoll aufnehmen}
+% \section*{TODO}
+% \begin{itemize}
+%   \item \todo{\enquote{Aufgaben} durchgehen und ins Protokoll aufnehmen}
   
-\end{itemize}
+% \end{itemize}
 
 \section*{Einleitung}
 Durch diesen Versuch soll die grundlegende Funktionsweise von Lasern anhand eines Helium-Neon-Lasers verstanden werden.
@@ -132,16 +132,20 @@ Zunächst wird der Laser aufgebaut und justiert. Seine fundamentalen Bestandteil
   welche dadurch auf den 3s-Zustand, der ein ähnliches Energieniveau hat, angeregt werden (siehe Abb. \ref{fig:hene-level}).
   Dieser Zustand ist metastabil bezüglich spontaner Emission, wodurch es zu einer \textit{Besetzungsinversion} kommt: 
   Es befinden sich mehr Atome im höheren 3s-Zustand als im Grundzustand.
-  \todo{Laserübergang beschreiben}
   % durch stimulierte Emission
   % kann jedoch der 3s$\rightarrow$2p-Übergang sehr häufig stattfinden.
   Dieser Prozess wird als \textbf{optisches Pumpen} bezeichnet.
   \item Ein \textbf{Resonator} aus zwei Spiegeln, der einen großen Teil des entstehenden Lichts vielfach durch das
-  Lasermedium leitet. Dadurch können Photonen des 3s$\rightarrow$2p-Übergangs, der sonst nur selten durch
-  spontane Emission stattfinden würde, denselben Übergang wieder
+  Lasermedium leitet. Dadurch können Photonen des 3s$\rightarrow$2p-Übergangs (\textit{Laserübergang}),
+  welcher sonst nur selten durch spontane Emission stattfinden würde, denselben Übergang wieder
   stimulieren und weitere Photonen freisetzen. Es findet also ein verstärkender Prozess statt, der dem Laser
   seinen Namen gibt: \textit{Light Amplification Through Stimulated Emission of Radiation}.
 \end{enumerate}
+
+Die Justage besteht primär darin, alle relevanten Bauteile auf der optischen Achse zu justieren.
+Dazu wird zunächst ein weiterer Laser verwendet, welcher über zwei Spiegel durch zwei Blenden geschickt
+wird (siehe Abb. \ref{fig:aufbau}). Die Spiegel werden abwechselnd verkippt, um den Strahl auf beiden Blenden zu zentrieren.
+Anschließend wird das Lasermedium (Entladungsröhre) eingesetzt und auf der durch den Justierlaser definierten optische Achse zentriert.
 
 \begin{figure}[h]
   \centering
@@ -149,6 +153,22 @@ Zunächst wird der Laser aufgebaut und justiert. Seine fundamentalen Bestandteil
   \caption{Für den Laserbetrieb relevant Energienievaus von Helium und Neon. \cite{Anleitung}}
   \label{fig:hene-level}
 \end{figure}
+
+Das Medium wird vorerst wieder entfernt und der Hohlspiegel SRS eingesetzt und gedreht,
+bis die Reflexion des Justierlasers gerade zurückgeht.
+Der Planspiegel ERS wird eingesetzt und justiert, bis der Laserstrahl gerade zwischen beiden Spiegel hin- und herreflektiert wird.
+Anschließend kann das Medium wieder eingesetzt und die Entladungsröhre gezündet werden.
+Um den Justierlaser nicht zu beschädigen, muss dieser vorher abgedeckt werden. Für genauere Informationen zur Justage
+siehe \cite[Abschnitt 5.2]{Anleitung}
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{aufbau}
+  \caption{schematischer Augbau des HeNe-Lasers mit Justierlaser. \cite{Anleitung}}
+  \label{fig:aufbau}
+\end{figure}
+
 
 \section{Wellenlänge und Polarisation}
 Zunächst werden Wellenlänge und Polarisation des Laserlichts gemessen.
@@ -192,11 +212,13 @@ dem Abstand zwischen Gitter und Wand. Die gemessenen Ordnungen sind in Tab. \ref
 
 Eine Geradenanpassung von $n$ in Abhängigkeit von $\sin \beta$ liefert die Gleichung
 \[
-  n = \num{-0.0044\pm0.0020} + \num{2.5809\pm0.0037} \cdot \sin\beta
+  n = (\num{-0.0044\pm0.0020}) + (\num{2.5809\pm0.0037}) \cdot \sin\beta
 \]
-Die Fehler
-also $m = \num{2.5809\pm0.0037}$ und $\lambda = \SI{645.46 \pm 0.93}{\nm}$.
-Die Wellenlänge des Übergangs, auf dem unser Laser basiert, ist $\SI{632.8}{\nm}$,
+Die Fehler-Werte stammen hier aus der Anpassung (orthogonale Regression).
+Wie zu erwarten, ist der Achsenabschnitt nahe 0, da mit dem Winkel $\alpha=0$ des Laser $\sin\alpha = 0$ gilt.
+
+Aus der Anpassung folgt $m = \num{2.5809\pm0.0037}$ und damit $\lambda = \SI{645.46 \pm 0.93}{\nm}$.
+Die Wellenlänge des Übergangs, auf dem unser Laser basiert, ist $\SI{632.8}{\nm}$ \cite{Anleitung},
 wovon der hier bestimmte Wert deutlich abweicht.
 Die Abstände wurden mit einem Zollstock gemessen, der möglicherweise nicht gut geeicht war. Weitere Abweichungen
 könnten durch falsche Messung des Abstands $d$ kommen, z.B. durch schiefes Halten des Zollstocks.
@@ -215,19 +237,27 @@ stark genug abgeschwächt (d.h. geht genug davon durch Reflexion verloren), reic
 im Resonator nicht mehr aus, um den Laser zu betreiben.
 So produziert der Laser im Idealfall nur Licht einer bestimmten Polarisationsrichtung.
 
+
+
 Zur Messung der Polarisation wird das Licht durch einen Polarisator auf eine Photodiode geschickt
 und die zur Lichtintensität proportionale Spannung mithilfe eines Oszilloskops gemessen.
 Bei vollständig linear polarisiertem Licht und einem idealen Polarisator
 ist der Zusammenhang zwischen Intensität $I$ und Winkel $\alpha$ des
 Polarisators zur Vertikalen durch das \textit{Malus'sche Gesetz} gegeben:
-\begin{equation*}
-  I(\alpha) = I_0 \cos^2(\alpha - \alpha_0) \cite{malus}
-\end{equation*}
-\todo{ZITIEREN!!! BEI ALLEN FORMELN SCHAUEN}
 \begin{equation}
-  I(\alpha) = U_\mr{min} + (U_\mr{max}-U_\mr{min}) \cos^2(\alpha - \alpha_0) \label{eq:malus-real} \cite{malus}
+  I(\alpha) = I_0 \cos^2(\alpha - \alpha_0) \cite{malus}
 \end{equation}
-Hier wurde Spannung $U$ anstatt Intensität $I$ verwendet, da die Spannung hier die
+mit $I_0$ der Lichtintensität vor dem Polarisator und $\alpha_0$ der Polarisationsrichtung des Lichts (zur Vertikalen).
+
+Im Allgemeinen kann der $\cos^2$-Verlauf im Vergleich zum Malus'schen Gesetz gestaucht sein, wenn das Licht nicht vollständig
+polarisiert ist:
+% erreicht der Verlauf nicht mehr die maximale oder die verschwindende Intensität, sondern ist auf einen kleineren Bereich
+% eingeschränkt:
+\begin{equation}
+  U(\alpha) = U_\mr{min} + (U_\mr{max}-U_\mr{min}) \cos^2(\alpha - \alpha_0) \label{eq:malus-real}
+\end{equation}
+% \todo{begründen wo das herkommt}
+Es wurde Spannung $U$ anstatt Intensität $I$ verwendet, da die Spannung hier die
 zur Intensität proportionale gemessene Größe ist.
 
 Bei Sättigung der Diode würde der $\cos^2$-Verlauf oberhalb der Maximalspannung der Diode \enquote{abgeschnitten} werden
@@ -236,12 +266,15 @@ Bei zu hoher Intensität kann die Diode mit einem BNC T-Stück mit einem \SI{50}
 verbunden werden.
 Der Polarisator auf verschiedene Winkel in regelmäßigen Abständen eingestellt und jeweils die Spannung notiert.
 Diese Werte sind in Tab. \ref{tab:polarisation} gezeigt und in Abb. \ref{fig:polarisation} aufgetragen, zusammen
-mit einer $\chi^2$-Anpassung nach \eqref{eq:malus-real}.
+mit einer Anpassung nach \eqref{eq:malus-real}.
 \begin{figure}[h]
   \begin{minipage}{0.49\textwidth}
     \centering
     \input{\tablePath/5.4polarisation.tex}
-    \caption{Spannung $U$ der Photodiode in Ab\-hängig\-keit der Richtung $\alpha$ des Polarisators zur Vertikalen.}
+    \caption{
+      Spannung $U$ der Photodiode in Ab\-hängig\-keit der Richtung $\alpha$ des Polarisators zur Vertikalen.
+      $\Delta\phi=\SI{1}{\degree}$, $\Delta U = \SI{0.8}{\mV}$
+    }
     \label{tab:polarisation}
   \end{minipage}
   \begin{minipage}{0.49\textwidth}
@@ -262,8 +295,8 @@ aber der hier bestimmte Wert für $\alpha_0$ scheint plausibel in Anbetracht der
 bei der Durchführung beobachteten Drehstellung der Fenster.
 
 Eine negative Spannung wie der hier bestimmte Wert für $U_\mr{min}$ entspricht einer negativen
-Lichtintensität und ist damit unphysikalisch. Dass der Wert negativ ist kann ein Artefakt des Fits sein,
-oder die Spannung wurde durch die Verbindung zwischen Diode und Oszilloskop verfälscht. Die gemessene
+Lichtintensität und ist damit unphysikalisch. Dass der Wert negativ ist, kann ein Artefakt des Fits sein,
+oder die Spannung wurde durch die Verbindung zwischen Diode und Oszilloskop verfälscht -- die gemessene
 Spannung war relativ empfindlich gegen äußere Einflüsse wie z.B. Berührung des Kabels oder der Oszilloskops.
 Das Signal war außerdem mit signifikanten Rauschen behaftet, Was zu einem Oszilloskop-Bild mit einer relativ
 dicken Linie führte. Zum Ablesen wurde sich am unteren Rand dieser Linie orientiert,
@@ -276,10 +309,12 @@ was eine systematische Verschiebung zu kleineren Werten mit sich brachte. Diese 
 % %   = \frac{U_\mr{max} - U_\mr{min}}{U_\mr{max} + U_\mr{min}} 
 % % \end{equation}
 
-Für den Polarisationsgrad PG gilt 
+Für den Polarisationsgrad PG \cite[S.237]{demtröder2} gilt 
 \begin{equation}
-  \mr{PG} = \frac{U_\mr{max} - U_\mr{min}}{U_\mr{max} + U_\mr{min}} = \num{1.049\pm0.016}
+  \mr{PG} = \frac{U_\mr{\parallel} - U_\mr{\perp}}{U_\mr{\parallel} + U_\mr{\perp}} =
+  \frac{U_\mr{max} - U_\mr{min}}{U_\mr{max} + U_\mr{min}} = \num{1.049\pm0.016} 
 \end{equation}
+
 Dass der Polarisationsgrad größer als $1$ ist, wird durch das negative $U_\mr{min}$ versursacht.
 Auch mit Berücksichtigung der systematischen Verschiebung würde sich jedoch kein Wert ergeben,
 der weit unter $1$ liegt. Damit ist das Laserlicht, wie erwartet, vollständig polarisiert.
@@ -287,6 +322,7 @@ Abweichungen des gemessenen Polarisationsgrads von $PG=1$ könnten dadurch auftr
 
 % % Abweichungen von $PG=1$ könnten dadurch auftreten, dass im Lasermedium unabhängig von der Verstärkung durch den
 % % Resonator auch die senkrechte Polarisationsrichtung erzeugt wird, wovon ein Teil durch die Brewsterfenster und
+
 
 \section{Strahlprofil}
 Als nächstes soll das Strahlprofil des Lasers, d.h. der Strahlradius $w$ in Abhängigkeit der Position $z$ 
@@ -305,18 +341,21 @@ wird der Strahlradius $w$ definiert als der Radius (Abstand zur optischen Achse)
 bei dem das elektrische Feld auf das $e^{-1}$-Fache seines Maximalwerts gefallen ist.
 Der Strahlradius verhält sich in Abhängigkeit von $z$ nach dem Zusammenhang
 \begin{equation}
-  w(z) = w_0 \sqrt{1+\left( \frac{z}{z_R} \right)^2} \cite{Anleitung}
+  w(z) = w_0 \sqrt{1+\left( \frac{z}{z_R} \right)^2} \label{eq:strahlradius} \cite{Anleitung}
 \end{equation}
 Dabei ist $z$ der Abstand zur Strahltaille, dem Ort minimaler Strahldicke, und $w_0$ der Strahlradius bei der Strahltaille.
-$z_R$ ist sie \textit{Raileigh-Länge} $z_R = \frac{\pi w_0^2}{\lambda}$
+$z_R$ ist die \textit{Raileigh-Länge}, für die gilt
+\begin{equation}
+  z_R = \frac{\pi w_0^2}{\lambda} \label{eq:rayleigh-length} \cite{Anleitung}
+\end{equation}
 
 Für einen halbsymmetrischen Resonator ergibt sich der minimale Strahlradius durch
 \begin{equation}
-  w_0 = \sqrt{\frac{\lambda}{\pi} \sqrt{L(R-L)}} \cite{Anleitung}
+  w_0 = \sqrt{\frac{\lambda}{\pi} \sqrt{L(R-L)}} \label{eq:waist} \cite{Anleitung}
 \end{equation}
 mit $\lambda$ der Wellenlänge, $L$ dem Abstand der Spiegel und $R$ dem Krümmungsradius des Hohlspiegels.
 
-Die Messung der Breite des Strahls erfolgt, wie in der Versuchsanleitung beschrieben:
+Die Messung der Breite des Strahls erfolgt, wie in der Versuchsanleitung \cite{Anleitung} beschrieben:
 \blockquote{
   Für die Messung des Strahlradius w(z) verwenden Sie einen Messschieber. Dieser wird auf ca. 1.5 mm eingestellt und in den Strahlengang gebracht.
   Beachten Sie dabei, dass Sie nur den unteren, keilförmig zulaufenden Bereich der Messschieberbacken verwenden, um Messfehler zu vermeiden.
@@ -333,33 +372,97 @@ Die Messung der Breite des Strahls erfolgt, wie in der Versuchsanleitung beschri
   den Abstand der Messbacken zu fixieren um hierauf die axiale Position (entlang der Resonatorachse) des Messschiebers
   so lange zu verändern, bis das Aufblitzen des Lasers gerade nicht mehr zu beobachten ist.
   Die Messung wird mit verschiedenen sinnvollen Abständen der Messbacken wiederholt.
-  \cite{Anleitung}
 } 
-\todo{Anleitung korrekt zitieren?}
 In der Anleitung werden zwei verschiedene Messmethoden beschrieben, die jedoch auf dem gleichen Prinzip basieren,
 dass die Breite des Strahls gemessen werden kann durch die Breite einer Öffnung, ab der nicht mehr genug Licht hindurchgelassen
 wird, um den Laser zu \enquote{zünden}. In der Durchführung wurden beide Methoden eingesetzt, je nachdem,
 was im konkreten Fall einfacher erschien.
 
 Die Breite, die man durch diese Messmethode erhält, entspricht nicht dem Strahlradius, ist aber proportional zu ihm.
-Zur Unterscheidung zum Strahlradius $w(z)$ werden die Messwerte im Folgenden mit $W(z)$ bezeichnet.
+Zur Unterscheidung zum Strahlradius $w(z)$ werden die Messwerte im Folgenden mit $d(z)$ bezeichnet.
 
-\todo{Werte und Tabellen und Plots und alles einfügen}
+Da die Positionen des Messschiebers und die der Spiegel des
+Resonators (Der planare Spiegel definiert hier die Position $z=0$) an unterschiedlichen Skalen zu erkennen sind,
+wird immer zunächst der Abstand $z-z0$ zu einem Referenzpunkt $z_0$ gemessen und daraus $z$ berechnet.
+Die gemessenen Werte sind in Tab. \ref{tab:beam-width} gezeigt.
+Die sich so ergebenden Werte sind in Tab. \ref{tab:beam-width-short} gezeigt.
+\begin{table}
+  \centering
+  \begin{subfigure}{0.42\textwidth}
+    \centering
+    \input{\tablePath/5.5beamA.tex}
+    \caption{
+      bei kurzem Resonator,
+      $L=\SI{48.6\pm0.1}{\cm}$}
+    \label{tab:beam-width-short}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.42\textwidth}
+    \centering
+    \input{\tablePath/5.5beamB.tex}
+    \caption{
+      bei langem Resonator,
+      $L=\SI{61.5\pm0.1}{\cm}$}
+    \label{tab:beam-width-long}
+  \end{subfigure}
+  \caption{
+    Messung der Strahlbreite
+    $z_0=\SI{44.1\pm0.2}{\cm}$;
+    $\Delta d = \SI{0.02}{\mm}$,
+    $\Delta (z-z_0) = \SI{0.5}{\cm}$ (geschätzte Messungenauigkeit);
+    $\Delta z=\SI{0.54}{\cm}$ (aus Fehlerfortpflanzung)}
+  \label{tab:beam-width}
+\end{table}
+
+Für beide Resonatorlängen werden die Messwerte $d(z)$ aufgetragen und der aus \eqref{eq:strahlradius} folgende Zusammenhang
+\begin{equation}
+  d(z) = \gamma w(z) = \gamma w_0 \sqrt{1+\left( \frac{z}{z_R} \right)^2} \label{eq:strahlbreite}
+\end{equation}
+daran angepasst. Die Proportionalitätskonstante $\gamma$ ist der einzige Parameter, welcher aus der Anpassung folgt.
+$w_0$ und $z_R$ lassen sich aus \eqref{eq:waist} und \eqref{eq:rayleigh-length} berechnen. Dabei benutzen wir für die Wellenlänge
+den Literaturwert $\lambda=\SI{632.8}{\nm}$.
+
+Die Plots sind in Abb. \ref{fig:beam-width} gezeigt.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{5.5beamB}
+  \caption{
+    Gemessene Strahlbreite aufgetragen gegen den Abstand $z$ vom planaren Spiegel.
+    Die Daten sind aus Tab. \ref{tab:beam-width} entnommen.
+  }
+  \label{fig:beam-width}
+\end{figure}
+
+Es ergeben sich die Werte $\gamma_\mr{kurz} = \num{2.4190\pm0.0061}$ und $\gamma_\mr{lang} = \num{2.7663\pm0.0043}$.
+Aus dem Plot ist ersichtlich, dass die Anpassung gut den Messwerten folgt,
+was eine Bestätigung für die Gültigkeit von \eqref{eq:strahlbreite} ist.
+Dass die Proportionalitätskonstante hier unterschiedlichen ist,
+könnte dadurch erklärt werden, dass der Laser mit dem längeren Resonator etwas schlechter justiert war.
+Dadurch würde der Laser bereits bei einer größeren Öffnung und entsprechende wäre die gemessene Breite größer.
 
 
 \section{Spektrum}
 Schließlich soll das Spektrum des Lasers analysiert werden. Dieses wird bestimmt durch
-\begin{enumerate}
-  \item Die schwingenden Moden. Neben den longitudinalen Moden, welche durch die Länge des Resonators bestimmt werden,
-    gibt es verschiedene transversale Moden. Diese unterscheiden sich im transversalen Profil das Laserlichts und
-    können unterschiedliche Frequenzen haben.
-  \item Die Linienbreite einzelner Moden. Durch Dopplerverbreiterung hat das Licht einer Mode
-    einen ausgedehnten Frequenzbereich, welcher breit genug sein kann, um mehrere freie Spektralbreiten des
-    Laserresonators zu überdecken. Dadurch werden aus dem Laser mehrere Linien, die den von der Mode
-    überdeckten Transmissionsmaxima des Resonators entsprechen, ausgekoppelt.
-    \todo{Die Aufspaltung ist wahrscheinlich so klein dass man sie nicht sieht}
-\end{enumerate}
-\todo{stimmt das? FSR erklären}
+Die schwingenden Moden. Durch Dopplerverbreiterung hat das Licht des Laserübergangs
+einen ausgedehnten Frequenzbereich, welcher breit genug ist, um mehrere freie Spektralbreiten des
+Laserresonators zu überdecken.
+Dadurch werden aus dem Laser mehrere Linien, die den von der Mode
+überdeckten Transmissionsmaxima des Resonators entsprechen, ausgekoppelt.
+Neben den longitudinalen Moden, welche durch die Länge des Resonators bestimmt werden,
+gibt es verschiedene transversale Moden. Diese unterscheiden sich im transversalen Profil des Laserlichts und
+können unterschiedliche Frequenzen haben.
+
+Der Abstand zwischen benachbarten longitudinalen Moden wird als freie Spektralbreite $\mr{FSR} = \frac{c}{2L_\mr{Laser}}$
+\cite{Anleitung} bezeichnet.
+% \begin{enumerate}
+%   \item Die Linienbreite einzelner Moden. Durch Dopplerverbreiterung hat das Licht einer Mode
+%     einen ausgedehnten Frequenzbereich, welcher breit genug sein kann, um mehrere freie Spektralbreiten des
+%     Laserresonators zu überdecken.
+% Dadurch werden aus dem Laser mehrere Linien, die den von der Mode
+%     überdeckten Transmissionsmaxima des Resonators entsprechen, ausgekoppelt.
+%     \todo{Die Aufspaltung ist wahrscheinlich so klein dass man sie nicht sieht}
+% \end{enumerate}
+
 
 \subsection{optische Diode}
 Da die Messung des Spektrums empfindlich ist, sollte der Laser hier möglichst stabil laufen.
@@ -380,6 +483,7 @@ der Laserlichts steht. dadurch wird das Laserlicht hinter der Platte zirkular po
 am Spiegel und erneutem Durchlaufen der Verzögerungsplatte ist es wieder linear polarisiert,
 jedoch senkrecht zur vorigen Richtung. Dadurch kann das Licht den Polarisator nicht mehr passieren.
 
+
 \subsection{optischer Spektrumanalysator}
 Die erste hier verwendete Messmethode verwendet einen optischen Spektrumanalysator.
 Dies ist ein konfokaler Resonator mit einem Spiegelabstand $l=\SI{5}{\cm}$, der durch einen Piezo geringfügig verändert werden kann.
@@ -389,11 +493,12 @@ Die Mode $q$, $n$, $m$ hat die Frequenz
   \nu_{qnm} = \left(q + \frac{n + m}{2}\right)\frac{c}{2l}
 \end{equation}
 % Der Resonator transmittiert das Licht des Lasers, wenn dessen Frequenz einer seiner Moden entspricht.%, also $\nu_{qnm} = \nu$.
-Der Modenabstand zwischen transversalen Moden ist also $\mr{MD} = \frac{c}{4l} = \SI{1499}{\MHz}$.
+Der Modenabstand zwischen transversalen Moden (bestimmt durch $n$ und $m$)
+ist also $\mr{MD} = \frac{c}{4l} = \SI{1499}{\MHz}$ \cite{Anleitung}.
 Der Resonator transmittiert das Licht des Lasers, wenn dessen Frequenz einer seiner Moden entspricht.
 Durch Variation der Länge $l$ und Auftragen der entsprechenden Transmission lässt sich also das Spektrum des Lasers abbilden.
 
-Hierzu wird am Piezo eine Wechselspannung (\SI{50}{\Hz}) angelegt.
+Hierzu wird am Piezo eine Wechselspannung (Frequenz \SI{50}{\Hz}) angelegt.
 Eine dazu proportionale Spannung wird an den x-Eingang und die Spannung einer Photodiode hinter
 dem Analysator an den y-Eingang eines Oszilloskops im xy-Modus gegeben.
 Die resultierenden Bilder für zwei verschiedene Laserresonatorlängen sind in Abb. \ref{fig:analysator} gezeigt.
@@ -425,7 +530,7 @@ dass er zweimal die gleiche Resonanzfrequenz hat (z.B. $\nu_{qnm}(l_1) = \nu_{qn
 Dadurch ergeben sich im Oszilloskop-Bild wiederholende Strukturen. Da die hier betrachteten Längenänderungen klein
 gegen die Gesamtlänge $l$ des Resonators sind, stehen Änderungen der Länge und der Resonanzfrequenz näherungsweise
 in einem linearen Zusammenhang zueinander. Dann entspricht der Abstand zwischen Wiederholungen im Oszillogramm $\delta x_\mr{MD}$
-dem Modenabstand $MD$ und aus den Oszillogrammen lassen sich Frequenzdifferenzen $\delta\nu$ nach dem Zusammenhang
+dem Modenabstand $\mr{MD}$ und aus den Oszillogrammen lassen sich Frequenzdifferenzen $\delta\nu$ nach dem Zusammenhang
 \begin{equation}
   \frac{\delta x}{\delta x_\mr{MD}} = \frac{\delta \nu}{\mr{MD}} \label{eq:analyser-md-ratio}
 \end{equation}
@@ -439,12 +544,12 @@ Die aus den Oszillogrammen abgelesenen Linien und deren Auswertung sind in Tab. 
     \input{\tablePath/5.7analyser_short.tex}
     \subcaption{
       L=\SI{48.6}{\cm}, Positionen $x$ abgelesen aus Abb. \ref{fig:analysator-kurz}.
-      $\delta\nu$ steht für den Frequenzabstand; ein großes $\Delta$ vor einer Größe kennzeichnet die Unsicherheit.
+      $\delta\nu$ ist in \si\MHz angegeben steht für den Frequenzabstand; ein großes $\Delta$ vor einer Größe kennzeichnet die Unsicherheit.
       Es ist hier nicht direkt ersichtlich, welche Distanz dem Modenabstand entspricht.
       Da Linien 1, 2, 5 und 6 etwa gleich weit voneinander entfernt sind, wird diese Distanz mit dem Modenabstand identifiziert
-      ($\delta x_\mr{MD} = {x_5-x_2}$). Die Dazwischen erkennbaren Moden folgen dann Linien 3 und 4.
-      $\delta x = x_n - x_2$ jeweils der Abstand einer Linie zu Linie 2.
-      daraus ergibt sich die Differenzfrequenz $\delta \nu$ nach \eqref{eq:analyser-md-ratio}.
+      ($\delta x_\mr{MD} = {x_5-x_2}$). Die Dazwischen erkennbaren Moden folgen dann aus den Positionen von Linien 3 und 4.
+      $\delta x = x_n - x_2$ ist jeweils der Abstand einer Linie zu Linie 2.
+      Daraus ergibt sich die Differenzfrequenz $\delta \nu$ nach \eqref{eq:analyser-md-ratio}.
       In den letzten beiden Spalten ist das Verhältnis von $\delta\nu$ zur freien Spektralbreite des Laserresonators
       $\mr{FSR}_\mr{Laser} = \frac{c}{2L_\mr{kurz}} = \SI{243.74\pm0.40}{\MHz}$ eingetragen.
       Sowohl bei Linie 3 als auch 4 liegt dieses Verhältnis im Fehlerbereich um $1$, also könnten beide Moden aus unterschiedlichen
@@ -457,27 +562,28 @@ Die aus den Oszillogrammen abgelesenen Linien und deren Auswertung sind in Tab. 
     \centering
     \input{\tablePath/5.7analyser_long.tex}
     \subcaption{
-      L=\SI{61.5}{\cm}, Positionen $x$ abgelesen aus Abb. \ref{fig:analysator-lang}.}
-    \label{tab:analysator-lang}
-  \end{subfigure}
-  \caption{
-    Aus den Oszillogrammen des Spektrumanalysators abgelesene Linien. $\Delta x = 0.3\mr{Skt.}$ und $\delta\nu$ ist in \si{\MHz} angegeben.
+      L=\SI{61.5}{\cm}, Positionen $x$ abgelesen aus Abb. \ref{fig:analysator-lang}.
     Anhand der dritten Spalte lässt sich erkennen, dass die Abstände zwischen aufeinanderfolgenden Linien immer innerhalb des Fehlerbereichs
     gleich groß sind (es sind immer jeweils Sprünge um $\frac{1}{3}$). Dies deutet darauf hin, dass dieser Abstand dem Modenabstand
     des Spektrumanalysators entspricht. Zwischen den Linien sind keine zusätzlichen Moden zu erkennnen.}
+    \label{tab:analysator-lang}
+  \end{subfigure}
+  \caption{
+    Aus den Oszillogrammen des Spektrumanalysators abgelesene Linien. Die Ableseungenauigkeit wurde auf $\Delta x = 0.3\mr{Skt.}$
+    geschätzt und alle weiteren Fehlerwerte ergeben sich durch gaußsche Fehlerfortpflanzung.}
   \label{tab:analysator}
 \end{table}
 
 
 \subsection{optische Schwebung}
 Die zweite Methode zur Messung des Laserspektrums nutzt den Effekt der optischen Schwebung aus:
-Für eine Überlagerung von Licht zwei verschiedener Frequenzen ist das elektrische Feld \cite{Anleitung}
+Für eine Überlagerung von Licht zwei verschiedener Frequenzen ist das elektrische Feld
 \[
-  E(t) = E_1 \sin(\omega_1 t) + E_2 \sin(\omega_2 t + E_2 \sin(\omega_2 t))
+  E(t) = E_1 \sin(\omega_1 t) + E_2 \sin(\omega_2 t) \cite{Anleitung}
 \]
 die Intensität $I(t) \propto (E(t))^2$ ist dann eine Überlagerung von Schwingungen mit den Frequenzen
-$0, 2\omega_1, 2\omega_2, \omega_1+\omega_2, \lvert \omega_1-\omega_2 \rvert$.
-Die meisten dieser Frequenzen sind im Terahertz-Bereich und damit zu hoch, um mit elektronisch gemessen zu werden.
+$0, 2\omega_1, 2\omega_2, \omega_1+\omega_2, \lvert \omega_1-\omega_2 \rvert$ \cite{Anleitung}.
+Die meisten dieser Frequenzen sind im Terahertz-Bereich und damit zu hoch, um elektronisch gemessen zu werden.
 Für die Frequenz $\lvert \omega_1-\omega_2 \rvert$ erwarten wir
 entsprechend der freien Spektralbreite des Lasers jedoch einen Wert in der Größenordnung $\propto \SI{100}{\MHz}$,
 Was mit einer speziellen schnellen Photodiode gemessen werden kann. Diese wird dazu in den Strahlengang des Lasers
@@ -498,25 +604,26 @@ Das Spektrum ist in Abb. \ref{fig:spectrum} gezeigt.
     \label{fig:spectrum0}
     \caption{Überblick über das gesamte gemessene Spektrum. Ursprung der Skala bei \SI{150}{\MHz} und \SI{50}{\MHz}
       pro Kästchen (ein Kästchen entspricht $5$ kleinen Strichen).
-      Wir haben hier keine Nahaufnahme gemacht, von der wir die Informationen über die Skaleneinteilung noch kennen.}
+      Wir haben hierzu keine Nahaufnahme, von der wir die Informationen über die Skaleneinteilung noch kennen.}
   \end{subfigure}
   
 
   \begin{subfigure}{0.49\textwidth}
     \centering
     \includegraphics[width=\textwidth]{spectrum1}
-    \label{fig:spectrum1}
     \caption{Ausschnitt mit Ursprung der Skala bei \SI{200}{\MHz} und \SI{5}{\MHz}
       pro horizontalem Kästchen.}
+    \label{fig:spectrum1}
   \end{subfigure}
   \hfill
   \begin{subfigure}{0.49\textwidth}
     \centering
     \includegraphics[width=\textwidth]{spectrum2}
-    \label{fig:spectrum2}
     \caption{Ausschnitt mit Ursprung der Skala bei \SI{95}{\MHz} und \SI{2}{\MHz}
       pro horizontalem Kästchen.}
+    \label{fig:spectrum2}
   \end{subfigure}
+  \caption{Aufgenommenes Spektrum von der schnellen Photodiode am Spektrumanalysator.}
   \label{fig:spectrum}
 \end{figure}
 
@@ -524,21 +631,56 @@ Die Frequenzen der am besten erkennbaren Linien sind in Tab. \ref{tab:spectrum} 
 \begin{table}[h]
   \input{\tablePath/5.8spectrum.tex}
   \caption{Frequenzen der am besten erkennbaren Linien aus Abb. \ref{fig:spectrum1}, \ref{fig:spectrum2}}
+  \label{tab:spectrum}
 \end{table}
 Da das Spektrum, wie zuvor erwähnt, nicht vom Laser stammen kann, ist ein genauer Vergleich der Linienabstände
 mit der Freien Spektralbreite des Lasers nicht sinnvoll. Es sei jedoch erwähnt, dass die gemessenen Frequenzen in
 der gleichen Größenordnung liegen, wie die freie Spektralbreite ($\propto \SI{100}{\MHz}$).
 
 
+\subsection{Bestimmung der Lichtgeschwindigkeit}
+Bei Messung des Modenabstands $\delta\nu$ für mehrere verschiedene Resonatorlängen des Lasers lässt sich gemäß
+\[
+  \delta\nu = \mr{FSR}_\mr{Laser} = \frac{c}{2L} \iff \frac{1}{\delta\nu} = \frac{2}{c}\cdot L
+\]
+aus der Steigung von $\frac{1}{\delta\nu}$ in Abhängigkeit von $L$ ein präziser Wert der Lichtgeschwindigkeit bestimmen.
+
+Da wir nur für eine Resonatorlänge den Modenabstand bestimmen konnten, ist eine solche Anpassung hier nicht möglich.
+Stattdessen wird der obige Zusammenhang umgestellt zu
+\[
+  c = 2L\delta\nu
+\]
+und mit dem zuvor bestimmten $\delta\nu = \SI{379\pm69}{\MHz}$ (aus Tab. \ref{tab:analysator-kurz} bei $L=\SI{46.1\pm0.5}{\cm}$)
+ergibt sich $c=\SI{3.49\pm0.69e8}{\m\per\s}$. Dieser Wert weicht mit ca. \SI{16}{\percent}
+relativ stark ab vom Literaturwert $ c =\SI{2.99e8}{\m\per\s}$ \cite{c}, umschließt diesen aber mit seinem Fehlerbereich.
+
+Anhand des zweiten in Tab. \ref{tab:analysator-kurz} bestimmten Modenabstands ergäbe sich ein besserer Wert für die
+Lichtgeschwindigkeit, hier müsste man jedoch die Tatsache hinzuziehen, dass dieser Abstand etwa vier Freien Spektralbreiten
+des Lasers entspricht, was eine Information ist, welche die Kenntnis der Lichtgeschwindigkeit erfordert.
 
 
-\clearpage
 \section{Fazit}
+In diesem Versuch wurde erfolgreich ein HeNe-Laser aus einer Entladungsröhre und einem halbsymmetrischen Resonator gebaut.
+Anhand eines optischen Gitters wurde seine Wellenlänge auf $\lambda = \SI{645.46 \pm 0.93}{\nm}$ bestimmt, was
+nicht dem erwarteten Wert $\SI{632.8}{\nm}$ \cite{Anleitung} entspricht. Hier wurden also vermutlich die Messfehler unterschätzt.
+Es wurde der Polarisationsgrad des Lasers bestimmt und ein Wert nahe $1$ erhalten.
+
+Anschließend wurde das longitudinale Profil der Strahlbreite für zwei verschiedene Resonatorlängen
+$L_\mr{kurz} = \SI{46.1}{\cm}$ und $L_\mr{lang} = \SI{61.5}{\cm}$ durchmessen und
+der Zusammenhang \eqref{eq:strahlradius} für Gauß-Strahlen an die Daten angepasst.
+Mit einem zusätzlichen Proportionalitätsfaktor lässt sich das gemessene Profil
+gut durch den theoretischen Zusammenhang beschreiben.
+
+Zuletzt wurde das Spektrum des Laserlichts genauer untersucht, um eine Modenaufspaltung zu erkennen.
+Mithilfe eines optischen Spektrumanalysators erhielt man für den kürzeren Laserresonator Modenabstände,
+die, wie zu erwarten, innerhalb des Fehlerbereichs der freien Spektralbreite des Lasers entsprechen.
+Für den Längeren Resonator ließ sich keine weitere Modenstruktur erkennen.
+Außerdem wurde versucht, das Spektrum unter Ausnutzung einer optischen Schwebung mithilfe eines elektronischen
+Spektrumanalysators zu untersuchen. Dies gelang nicht, da das Gerät ein Spektrum anzeigte, dass nicht mit dem Laser zusammenhing.
+Aus dem Modenabstand beim kurzen Resonator ließ sich die Lichtgeschwindigkeit auf 
+$c=\SI{3.49\pm0.69e8}{\m\per\s}$ bestimmen, wobei der Literaturwert $c =\SI{2.99e8}{\m\per\s}$ \cite{c} im Fehlerbereich liegt.
 
 
-
-\clearpage
-\section{Anhang}
 
 
 
@@ -548,10 +690,14 @@ der gleichen Größenordnung liegen, wie die freie Spektralbreite ($\propto \SI{
 \bibitem{Anleitung}
 \textit{Physikalisches Praktikum Teil IV -- Versuchsbeschreibungen}, Universität Bonn, 10.10.2024
 
-\bititem{malus}
+\bibitem{malus}
 \textit{Gesetz von MALUS}, LEIFIphysik, https://www.leifiphysik.de/optik/polarisation/grundwissen/gesetz-von-malus, Abruf 14.12.2024
 
+\bibitem{demtröder2}
+\textit{Experimentalphysik 2}, 7. Auflage, Wolfgang Demtröder, 2017
 
+\bibitem{c}
+\textit{Speed of Light in Vacuum}, NIST, https://physics.nist.gov/cgi-bin/cuu/Value?c, Abruf 16.12.2024
 
 \end{thebibliography}
 

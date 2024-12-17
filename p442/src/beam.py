@@ -56,12 +56,12 @@ lbda = 632
 
 z0 = 44.1
 z0Err = 0.2
-zmz0Err = 0.3
-dErr = 0.1
+zmz0Err = 0.5
+dErr = 0.02
 zmz0, d = load_data('p442/data/5.5strahlA.csv')
 
 z, zErr, dataFrame = preprocess_data()
-dataFrame.to_latex('p442/data/5.5beamA.csv', index=False)
+dataFrame.to_latex('p442/data/5.5beamA.auto.csv', index=False)
 print('zmz0, z0, z, d Err:', zmz0Err, z0Err, zErr, dErr)
 
 beam_fit_plot('p442/plot/5.5beamA.pdf', 'Messung kurzer Resonator', 'Anpassung kurzer Resonator')
@@ -76,11 +76,11 @@ lbda = 632
 z0 = 44.1
 z0Err = 0.2
 zmz0Err = 0.5
-dErr = 0.1
+dErr = 0.02
 zmz0, d = load_data('p442/data/5.5strahlB.csv')
 
 z, zErr, dataFrame = preprocess_data()
-dataFrame.to_latex('p442/data/5.5beamB.csv', index=False)
+dataFrame.to_latex('p442/data/5.5beamB.auto.tex', index=False)
 
 filename = 'p442/plot/5.5beamB.pdf'
 beam_fit_plot(filename, 'Messung langer Resonator', 'Anpassung langer Resonator', 2)
