@@ -73,7 +73,7 @@
   {\endminipage\par\medskip}
 \newcommand*{\inputPath}{./plot} % prepend this command to the argument of all input commands
 \newcommand*{\tablePath}{../data} % prepend this command to the argument of all input commands
-\graphicspath{ {./figure/}{../plot/}{../assets} }
+\graphicspath{ {./figure/}{./figure/spectrum/}{../plot/} }
 % own enviroment for definitions
 \newenvironment{definition}[1]
 {\begin{quote} \noindent \textbf{\textit{#1\ifx&#1& \else : \fi}} \itshape}
@@ -369,8 +369,8 @@ der Laserlichts steht. dadurch wird das Laserlicht hinter der Platte zirkular po
 am Spiegel und erneutem Durchlaufen der Verzögerungsplatte ist es wieder linear polarisiert,
 jedoch senkrecht zur vorigen Richtung. Dadurch kann das Licht den Polarisator nicht mehr passieren.
 
-\subsection{Spektrumanalysator}
-Die erste hier verwendete Messmethode verwendet einen sogenannten Spektrumanalysator.
+\subsection{optischer Spektrumanalysator}
+Die erste hier verwendete Messmethode verwendet einen optischen Spektrumanalysator.
 Dies ist ein konfokaler Resonator mit einem Spiegelabstand $l=\SI{5}{\cm}$, der durch einen Piezo geringfügig verändert werden kann.
 Die Längenänderung ist dabei (näherungsweise) proportional zur angelegten Spannung.
 Die Mode $q$, $n$, $m$ hat die Frequenz
@@ -421,7 +421,7 @@ dem Modenabstand $MD$ und aus den Oszillogrammen lassen sich Frequenzdifferenzen
 ablesen.
 
 Die aus den Oszillogrammen abgelesenen Linien und deren Auswertung sind in Tab. \ref{tab:analysator} gezeigt.
-\begin{figure}[h]
+\begin{table}[h]
   \centering
   \begin{subfigure}{\textwidth}
     \centering
@@ -450,13 +450,73 @@ Die aus den Oszillogrammen abgelesenen Linien und deren Auswertung sind in Tab. 
     \label{tab:analysator-lang}
   \end{subfigure}
   \caption{
-    Aus den Oszillogrammen des Spektrumanalysators abgelesene Linien. $\Delta x = 0.3\mr{Skt.}$ und $\delta\nu$ ist in \si\MHz angegeben.
+    Aus den Oszillogrammen des Spektrumanalysators abgelesene Linien. $\Delta x = 0.3\mr{Skt.}$ und $\delta\nu$ ist in \si{\MHz} angegeben.
     Anhand der dritten Spalte lässt sich erkennen, dass die Abstände zwischen aufeinanderfolgenden Linien immer innerhalb des Fehlerbereichs
     gleich groß sind (es sind immer jeweils Sprünge um $\frac{1}{3}$). Dies deutet darauf hin, dass dieser Abstand dem Modenabstand
     des Spektrumanalysators entspricht. Zwischen den Linien sind keine zusätzlichen Moden zu erkennnen.}
   \label{tab:analysator}
+\end{table}
+
+
+\subsection{optische Schwebung}
+Die zweite Methode zur Messung des Laserspektrums nutzt den Effekt der optischen Schwebung aus:
+Für eine Überlagerung von Licht zwei verschiedener Frequenzen ist das elektrische Feld \cite{Anleitung}
+\[
+  E(t) = E_1 \sin(\omega_1 t) + E_2 \sin(\omega_2 t + E_2 \sin(\omega_2 t))
+\]
+die Intensität $I(t) \propto (E(t))^2$ ist dann eine Überlagerung von Schwingungen mit den Frequenzen
+$0, 2\omega_1, 2\omega_2, \omega_1+\omega_2, \lvert \omega_1-\omega_2 \rvert$.
+Die meisten dieser Frequenzen sind im Terahertz-Bereich und damit zu hoch, um mit elektronisch gemessen zu werden.
+Für die Frequenz $\lvert \omega_1-\omega_2 \rvert$ erwarten wir
+entsprechend der freien Spektralbreite des Lasers jedoch einen Wert in der Größenordnung $\propto \SI{100}{\MHz}$,
+Was mit einer speziellen schnellen Photodiode gemessen werden kann. Diese wird dazu in den Strahlengang des Lasers
+hinter die optische Diode gestellt und ihr Signal an einen elektronischen Spektrumanalysator (HAMEG HM5510) gegeben.
+Dieser trägt die Amplitude des Signals gegen die Frequenz auf (d.h. er zeigt die Fourier-Transformation des Signals).
+
+Während der Versuchsdurchführung fiel auf, dass der Spektrumanalysator das gleiche Bild zeigte, unabhängig vom verwendeten Laser
+und sogar wenn die Photodiode zugehalten wurde. Nur Entfernen des BNC-Steckers brachte das Bild zum erlöschen.
+Aus Zeitmangel konnte die Ursache dieses Problems während der Versuchsdurchführung nicht mehr gefunden werden.
+Das gemessene Spektrum kann also nicht das des Lasers sein. Trotzdem werden im Folgenden einige der erkennbaren Peaks gemessen.
+
+Das Spektrum ist in Abb. \ref{fig:spectrum} gezeigt.
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,trim={0 15cm 0 21cm},clip=true]{spectrum0}
+    \label{fig:spectrum0}
+    \caption{Überblick über das gesamte gemessene Spektrum. Ursprung der Skala bei \SI{150}{\MHz} und \SI{50}{\MHz}
+      pro Kästchen (ein Kästchen entspricht $5$ kleinen Strichen).
+      Wir haben hier keine Nahaufnahme gemacht, von der wir die Informationen über die Skaleneinteilung noch kennen.}
+  \end{subfigure}
+  
+
+  \begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{spectrum1}
+    \label{fig:spectrum1}
+    \caption{Ausschnitt mit Ursprung der Skala bei \SI{200}{\MHz} und \SI{5}{\MHz}
+      pro horizontalem Kästchen.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{spectrum2}
+    \label{fig:spectrum2}
+    \caption{Ausschnitt mit Ursprung der Skala bei \SI{95}{\MHz} und \SI{2}{\MHz}
+      pro horizontalem Kästchen.}
+  \end{subfigure}
+  \label{fig:spectrum}
 \end{figure}
 
+Die Frequenzen der am besten erkennbaren Linien sind in Tab. \ref{tab:spectrum} gezeigt.
+\begin{table}[h]
+  \input{\tablePath/5.8spectrum.tex}
+  \caption{Frequenzen der am besten erkennbaren Linien aus Abb. \ref{fig:spectrum1}, \ref{fig:spectrum2}}
+\end{table}
+Da das Spektrum, wie zuvor erwähnt, nicht vom Laser stammen kann, ist ein genauer Vergleich der Linienabstände
+mit der Freien Spektralbreite des Lasers nicht sinnvoll. Es fällt aber auf, dass die gemessenen Frequenzen in
+der gleichen Größenordnung liegen, wie die freie Spektralbreite ($\propto \SI{100}{\MHz}$).
 
 
 

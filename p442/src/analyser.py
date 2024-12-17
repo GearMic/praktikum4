@@ -52,6 +52,7 @@ def preprocess_data(leftIndex, rightIndex):
 c = 2.998e8
 l = 5e-2
 modeSep = c/l/4
+print('modeSep', modeSep)
 xErr = 0.3
 
 ## short resonator
