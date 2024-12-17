@@ -279,7 +279,8 @@ Abweichungen des gemessenen Polarisationsgrads von $PG=1$ könnten dadurch auftr
 
 \section{Strahlprofil}
 Als nächstes soll das Strahlprofil des Lasers, d.h. der Strahlradius $w$ in Abhängigkeit der Position $z$ 
-entlang der optischen Achse, durchmessen werden.
+entlang der optischen Achse, durchmessen werden. Ab hier werden alle Schritte für zwei verschiedene Resonatorlängen durchgeführt:
+$L_\mr{kurz} = \SI{46.1\pm0.1}{\cm}$ und $L_\mr{lang} = \SI{61.5\pm0.1}{\cm}$
 
 In Resonatoren mit sphärischen Spiegeln entstehen sog. Gauß-Strahlen. Dies sind Lichtsstrahlen, deren transversales
 (senkrecht zur optischen Achse) Intensitätsprofil die Form einer Gauß-Funktion hat.
@@ -415,7 +416,7 @@ gegen die Gesamtlänge $l$ des Resonators sind, stehen Änderungen der Länge un
 in einem linearen Zusammenhang zueinander. Dann entspricht der Abstand zwischen Wiederholungen im Oszillogramm $\delta x_\mr{MD}$
 dem Modenabstand $MD$ und aus den Oszillogrammen lassen sich Frequenzdifferenzen $\delta\nu$ nach dem Zusammenhang
 \begin{equation}
-  \frac{\delta x}{\delta x_\mr{MD}} = \frac{\delta \nu}{\mr{MD}}
+  \frac{\delta x}{\delta x_\mr{MD}} = \frac{\delta \nu}{\mr{MD}} \label{eq:analyser-md-ratio}
 \end{equation}
 ablesen.
 
@@ -427,21 +428,32 @@ Die aus den Oszillogrammen abgelesenen Linien und deren Auswertung sind in Tab. 
     \input{\tablePath/5.7analyser_short.tex}
     \subcaption{
       L=\SI{48.6}{\cm}, Positionen $x$ abgelesen aus Abb. \ref{fig:analysator-kurz}.
+      $\delta\nu$ steht für den Frequenzabstand; ein großes $\Delta$ vor einer Größe kennzeichnet die Unsicherheit.
       Es ist hier nicht direkt ersichtlich, welche Distanz dem Modenabstand entspricht.
-      Da Linien 1, 2, 5 und 6 etwa gleich weit voneinander entfernt sind, wird diese Distanz mit dem Modenabstand identifiziert.
-      Die Dazwischen erkennbaren Moden sind dann Linien 3 und 4.
+      Da Linien 1, 2, 5 und 6 etwa gleich weit voneinander entfernt sind, wird diese Distanz mit dem Modenabstand identifiziert
+      ($\delta x_\mr{MD} = {x_5-x_2}$). Die Dazwischen erkennbaren Moden folgen dann Linien 3 und 4.
+      $\delta x = x_n - x_2$ jeweils der Abstand einer Linie zu Linie 2.
+      daraus ergibt sich die Differenzfrequenz $\delta \nu$ nach \eqref{eq:analyser-md-ratio}.
+      In den letzten beiden Spalten ist das Verhältnis von $\delta\nu$ zur freien Spektralbreite des Laserresonators
+      $\mr{FSR}_\mr{Laser} = \frac{c}{2L_\mr{kurz}} = \SI{243.74\pm0.40}{\MHz}$ eingetragen.
+      Sowohl bei Linie 3 als auch 4 liegt dieses Verhältnis im Fehlerbereich um $1$, also könnten beide Moden aus unterschiedlichen
+      longitudinalen Moden des Laserresonators stammen.
       }
     \label{tab:analysator-kurz}
   \end{subfigure}
 
   \begin{subfigure}{\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{analysator-lang}
-    \subcaption{L=\SI{61.5}{\cm}, Positionen $x$ abgelesen aus Abb. \ref{fig:analysator-lang}.}
+    \input{\tablePath/5.7analyser_long.tex}
+    \subcaption{
+      L=\SI{61.5}{\cm}, Positionen $x$ abgelesen aus Abb. \ref{fig:analysator-lang}.}
     \label{tab:analysator-lang}
   \end{subfigure}
   \caption{
-    Aus den Oszillogrammen des Spektrumanalysators abgelesene Linien. $\Delta x = 0.3\mr{Skt.}$ und $\delta\nu$ ist in \si\MHz angegeben.}
+    Aus den Oszillogrammen des Spektrumanalysators abgelesene Linien. $\Delta x = 0.3\mr{Skt.}$ und $\delta\nu$ ist in \si\MHz angegeben.
+    Anhand der dritten Spalte lässt sich erkennen, dass die Abstände zwischen aufeinanderfolgenden Linien immer innerhalb des Fehlerbereichs
+    gleich groß sind (es sind immer jeweils Sprünge um $\frac{1}{3}$). Dies deutet darauf hin, dass dieser Abstand dem Modenabstand
+    des Spektrumanalysators entspricht. Zwischen den Linien sind keine zusätzlichen Moden zu erkennnen.}
   \label{tab:analysator}
 \end{figure}
 
