@@ -161,38 +161,46 @@ Anhand der Ablenkung des Laserlichts an einem Transmissionsgitter, welches in de
 kann dessen Wellenlänge bestimmt werden.
 Es gilt die Gittergleichung
 \begin{equation}
-  \lvert n \rvert\lambda = g(\cos \alpha - \cos \beta_n)
+  n\lambda = g(\sin \beta_n - \sin \alpha)
 \end{equation}
 wobei $\alpha$ der Winkel des Lasers und $\beta_n$ der Winkel der $n$-ten Beugungsordnung zur Gitternormalen ist
 und $g = \frac{1}{600}\si\mm$ für die Gitterkonstante steht. 
 Daraus folgt die Geradengleichung
 \begin{equation}
-  \lvert n \rvert = f(\cos\beta) = \frac{g}{\lambda} (\cos \alpha - \cos \beta)
+  n = f(\sin\beta) = \frac{g}{\lambda} (\sin \beta - \sin \alpha)
 \end{equation}
 also gilt für die Steigung $m$
 \[
-  m = -\frac{g}{\lambda} \iff \lambda = -\frac{g}{m}
+  m = \frac{g}{\lambda} \iff \lambda = \frac{g}{m}
 \]
 
-\todo{Winkel aus Abstand berechnung}
-Die gemessenen Ordnungen sind in Tab. \ref{tab:gitter-fit} gezeigt.
+Hier ist $\alpha=0$, da der Laser senkrecht auf das Gitter scheint,
+$\beta_n$ ergibt sich aus $x_n$ durch $\beta_n = \arctan(x_n/d)$, mit $d=\SI{28.25\pm0.05}{\cm}$
+dem Abstand zwischen Gitter und Wand. Die gemessenen Ordnungen sind in Tab. \ref{tab:gitter-fit} gezeigt.
 
 \begin{table}[h]
   \centering
-  \begin{tabular}{c}
-    \todo{werte}
-  \end{tabular}
-  \caption{
-    Gemessene Ordnungen der Beugung des Laserlichts am Gitter. Die Position $x=0$ der 0-ten Ordnung folgt
-    daraus, dass alle anderen $x$-Werte jeweils als Abstand zur 0-ten Ordnung gemessen wurden.
-  }
+  \input{\tablePath/5.3lambda.tex}
+  % \caption{
+  %   Gemessene Ordnungen der Beugung des Laserlichts am Gitter. Die Position $x=0$ der 0-ten Ordnung folgt
+  %   daraus, dass alle anderen $x$-Werte jeweils als Abstand zur 0-ten Ordnung gemessen wurden.
+  % }
+  \caption{ Gemessene Ordnungen der Beugung des Laserlichts am Gitter und daraus berechnete Größe $\sin\beta$ für die Anpassung.
+  Die Fehler wurden mit gaußscher Fehlerfortpflanzung berechnet. }
+  \label{tab:gitter-fit}
 \end{table}
 
-Eine Geradenanpassung von $n$ in Abhängigkeit von $\cos \beta$ liefert die Gleichung
+Eine Geradenanpassung von $n$ in Abhängigkeit von $\sin \beta$ liefert die Gleichung
 \[
-  n = \todo{Werte}
+  n = \num{-0.0044\pm0.0020} + \num{2.5809\pm0.0037} \cdot \sin\beta
 \]
-also $m = \todo{Wert}$ und $\lambda = \todo{Wert}$. \todo{Vergleich mit erwarteter Wellenlänge} 
+Die Fehler
+also $m = \num{2.5809\pm0.0037}$ und $\lambda = \SI{645.46 \pm 0.93}{\nm}$.
+Die Wellenlänge des Übergangs, auf dem unser Laser basiert, ist $\SI{632.8}{\nm}$,
+wovon der hier bestimmte Wert deutlich abweicht.
+Die Abstände wurden mit einem Zollstock gemessen, der möglicherweise nicht gut geeicht war. Weitere Abweichungen
+könnten durch falsche Messung des Abstands $d$ kommen, z.B. durch schiefes Halten des Zollstocks.
+
 
 \subsection{Polarisation}
 Als nächstes soll die Polarisierung des Laserlichts gemessen werden. Im Lasermedium wird zunächst unpolarisiertes Licht
@@ -212,9 +220,12 @@ und die zur Lichtintensität proportionale Spannung mithilfe eines Oszilloskops 
 Bei vollständig linear polarisiertem Licht und einem idealen Polarisator
 ist der Zusammenhang zwischen Intensität $I$ und Winkel $\alpha$ des
 Polarisators zur Vertikalen durch das \textit{Malus'sche Gesetz} gegeben:
+\begin{equation*}
+  I(\alpha) = I_0 \cos^2(\alpha - \alpha_0) \cite{malus}
+\end{equation*}
 \todo{ZITIEREN!!! BEI ALLEN FORMELN SCHAUEN}
 \begin{equation}
-  I(\alpha) = U_\mr{min} + (U_\mr{max}-U_\mr{min}) \cos^2(\alpha - \alpha_0) \label{eq:malus-real}
+  I(\alpha) = U_\mr{min} + (U_\mr{max}-U_\mr{min}) \cos^2(\alpha - \alpha_0) \label{eq:malus-real} \cite{malus}
 \end{equation}
 Hier wurde Spannung $U$ anstatt Intensität $I$ verwendet, da die Spannung hier die
 zur Intensität proportionale gemessene Größe ist.
@@ -536,6 +547,9 @@ der gleichen Größenordnung liegen, wie die freie Spektralbreite ($\propto \SI{
 
 \bibitem{Anleitung}
 \textit{Physikalisches Praktikum Teil IV -- Versuchsbeschreibungen}, Universität Bonn, 10.10.2024
+
+\bititem{malus}
+\textit{Gesetz von MALUS}, LEIFIphysik, https://www.leifiphysik.de/optik/polarisation/grundwissen/gesetz-von-malus, Abruf 14.12.2024
 
 
 
