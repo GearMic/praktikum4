@@ -37,7 +37,7 @@ def energy_calibration(inFilename, outFilename, p0=None):
     n, N = load_data(inFilename)
     n, N = slice_from_range(80, 160, n, N)
 
-    params, paramsErr = multi_gauss_ODR_fit(n, N, 4, centers=centers, heights=heights)
+    params, paramsErr = multi_gauss_ODR_fit(n, N, 4, p0=p0)
     # params, paramsErr = multi_gauss_ODR_fit(n, N, 4, centers=centers, heights=heights)
     # params, paramsErr = multi_gauss_ODR_fit(n, N, 2, centers=np.array((104, 140)), heights=np.array((5000, 600)))
     # params, paramsErr = multi_gauss_ODR_fit(n, N, 2, p0=np.array((5000, 104, 10, 600, 140, 5, 50)))
@@ -49,6 +49,8 @@ def energy_calibration(inFilename, outFilename, p0=None):
     # ax.set_xlim(80, 160)
     ax.plot(n, N)
     ax.plot(*fit_curve(multi_gauss_fn, params, n, 500), zorder=4)
+    ax.minorticks_on()
+    ax.grid(which='both')
     fig.savefig(outFilename)
 
     a, b = 0, 0
@@ -78,8 +80,9 @@ inDir = 'p428/data/5.2'
 outDir = 'p428/plot/5.2'
 # directory_gauss_fit(inDir, outDir)
 # energy_calibration('p428/data/5.2/FeZn.txt', 'p428/plot/FeZn_raw.pdf', np.array((104, 112, 137, 155)), np.array((5000, 2000, 600, 100)))
-energy_calibration('p428/data/5.2/FeZn.txt', 'p428/plot/FeZn_raw.pdf')
-
+energy_calibration(
+    'p428/data/5.2/FeZn.txt', 'p428/plot/FeZn_raw.pdf',
+    p0=np.array((5000, 100, 4, 1000, 112, 3, 600, 136, 5, 100, 150, 5, 50)))
 
 """ 
 
