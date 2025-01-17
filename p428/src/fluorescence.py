@@ -70,30 +70,42 @@ def multi_gauss_ODR_fit(x, y, nGaussians, xErr=None, yErr=None, p0: np.array=Non
 
 # def energy_calibration(inFilename, outFilename, centers=None, heights=None):
 # def energy_calibration(inFilename, outFilename, energyValues, **kwargs):
-def energy_calibration(inFilename, outFilename, energyValues, p0a, p0b):
-    n, N = load_data(inFilename)
+def energy_calibration(dataFilename, plot1Filename, plot2Filename, energyValues, p0a, p0b):
+    n, N = load_data(dataFilename)
 
-    # nSlice1, NSlice1 = slice_from_range(80, 160, n, N)
-    # params1, params1Err = multi_gauss_ODR_fit(nSlice1, NSlice1, 4, p0=np.concatenate((p0a[:-1], p0b)))
+    nSlice, NSlice = slice_from_range(80, 160, n, N)
+    params, paramsErr = multi_gauss_ODR_fit(nSlice, NSlice, 4, p0=np.concatenate((p0a[:-1], p0b)))
 
-    nSlice1, NSlice1 = slice_from_range(80, 122, n, N)
-    params1, params1Err = multi_gauss_ODR_fit(nSlice1, NSlice1, 2, p0=p0a)
-    nSlice2, NSlice2 = slice_from_range(126, 160, n, N)
-    params2, params2Err = multi_gauss_ODR_fit(nSlice2, NSlice2, 2, p0=p0b)
-    print(params1)
-    print(params2)
+    # nSlice1, NSlice1 = slice_from_range(80, 122, n, N)
+    # params1, params1Err = multi_gauss_ODR_fit(nSlice1, NSlice1, 2, p0=p0a)
+    # nSlice2, NSlice2 = slice_from_range(126, 160, n, N)
+    # params2, params2Err = multi_gauss_ODR_fit(nSlice2, NSlice2, 2, p0=p0b)
+    print(params)
+    # print(params2)
 
     fig, ax = plt.subplots()
     ax.set_xlim(80, 160)
     ax.plot(n, N)
-    ax.plot(*fit_curve(multi_gauss_fn, params1, nSlice1, 500), zorder=4)
-    ax.plot(*fit_curve(multi_gauss_fn, params2, nSlice2, 500), zorder=4)
+    ax.plot(*fit_curve(multi_gauss_fn, params, nSlice, 500), zorder=4)
+    # ax.plot(*fit_curve(multi_gauss_fn, params1, nSlice1, 500), zorder=4)
+    # ax.plot(*fit_curve(multi_gauss_fn, params2, nSlice2, 500), zorder=4)
     ax.minorticks_on()
     ax.grid(which='both')
-    fig.savefig(outFilename)
+    fig.savefig(plot1Filename)
 
-    a, b = 0, 0
-    return a, b
+    # do linear fit for energy calibration
+    energyValues /= 1e3
+    x0 = params[1:-1:3]
+    x0Err = paramsErr[1:-1:3] # TODO: is the slice done by reference?
+    params, paramsErr = odr_fit(linear_fn_odr, x0, energyValues, 2, xErr=paramsErr)
+
+    fig, ax = plt.subplots()
+    ax.errorbar(x0, energyValues, 0, x0Err, 'x', zorder=4)
+    ax.errorbar
+    ax.plot(*fit_curve(linear_fn_odr, params, x0))
+    fig.savefig(plot2Filename)
+
+    return params, paramsErr
 
 def directory_gauss_fit(inDir, outDir):
     """Do Gauss Fits on an entire directory of Data."""
@@ -119,90 +131,12 @@ inDir = 'p428/data/5.2'
 outDir = 'p428/plot/5.2'
 # directory_gauss_fit(inDir, outDir)
 # energy_calibration('p428/data/5.2/FeZn.txt', 'p428/plot/FeZn_raw.pdf', np.array((104, 112, 137, 155)), np.array((5000, 2000, 600, 100)))
-energy_calibration(
-    'p428/data/5.2/FeZn.txt', 'p428/plot/FeZn_raw3.pdf',
-    (6403.84, 7057.98, 8638.86, 9572.0), # TODO: cite xdb
+params, paramsErr = energy_calibration(
+    'p428/data/5.2/FeZn.txt', 'p428/plot/FeZn_energy_fit.pdf', 'p428/plot/energy_calibration.pdf',
+    np.array((6403.84, 7057.98, 8638.86, 9572.0)), # TODO: cite xdb
     p0a=np.array((5400, 104, 4, 2200, 109, 6, 50)),
     p0b=np.array((550, 136, 6, 110, 150, 10, 10)))
     # p0=np.array((5000, 100, 4, 1000, 112, 3, 600, 136, 3, 100, 150, 10, 50)))
 
+print(params)
 
-""" 
-
-def plot_data_fit(fig, ax, alpha, y, yErr, params=None):
-    ax.errorbar(alpha, y, yErr, fmt='-', label='Daten', lw=0.5)
-    # ax.plot(alpha, y, '-', lw=1, label='Daten')
-
-    # paramsPrint = np.array((params, paramsErr)).T
-    # paramsPrint = (r' \pm '.join(tuple(np.array(param, dtype=str))) for param in paramsPrint)
-    # paramsPrint = r',\ '.join(paramsPrint)
-    # print(paramsPrint)
-
-    if not (params is None):
-        xFit = array_range(alpha, overhang=0)
-        yFit = double_gauss_fn(xFit, *params)
-        ax.plot(xFit, yFit, label='Kalibrierungskurve')
-
-def full_gauss_fit_for_lines():
-    omegaG = np.array((13.8, 18.2, 37.0))
-    alphaRange = np.array(((-0.5, 0.9), (-0.06, 0.04), (-0.2, 0.1)))
-    p0 = ((20, -0.02, 0.05, 20, 0, 0.05, 40), (10, -0.03, 0.01, 20, 0, 0.02, 5), (20, -0.1, 0.02, 80, 0, 0.02, 5))
-    doFit = (False, True, True)
-    inFilenames = tuple('p402/data/ccd/line%.1f.txt' % omega for omega in omegaG)
-    outFilenames = tuple('p402/plot/line%.1f.pdf' % omega for omega in omegaG)
-    lowerBounds = np.array((0, -np.inf, 0, 0, -np.inf, 0, 0))
-    upperBounds = np.array((np.inf, np.inf, np.inf, np.inf, np.inf, np.inf, np.inf))
-
-    params, paramsErr = np.zeros((len(omegaG), 7)), np.zeros((len(omegaG), 7))
-    for i in range(len(inFilenames)):
-    # for i in range(9, 10):
-        lower, upper = alphaRange[i, 0], alphaRange[i, 1]
-
-        alpha, y, yErr = load_data(inFilenames[i], 0.0001, 0.5)
-        rangeMask = (alpha >= np.full_like(alpha, lower)) & (alpha <= np.full_like(alpha, upper))
-        alpha, y, yErr = alpha[rangeMask], y[rangeMask], yErr[rangeMask]
-
-        # fit data
-        param, paramErr = None, None
-        if doFit[i]:
-            param, paramErr = chisq_fit(
-                double_gauss_fn, alpha, y, yErr, p0=p0[i],
-                bounds = (lowerBounds, upperBounds), absolute_sigma=True)
-
-            params[i] = param
-            paramsErr[i] = paramErr
-        
-
-        fig, ax = plt.subplots()
-
-        plot_data_fit(fig, ax, alpha, y, yErr, param)
-        ax.legend()
-        ax.minorticks_on()
-        ax.grid(which='both')
-
-        # ax.set_title('Linien bei $\\omega_G=%.1f°$' % omegaG[i])
-        ax.set_xlabel(r'Position $\gamma$/°')
-        ax.set_ylabel(r'Intensität $I$/%')
-        fig.savefig(outFilenames[i])
-
-    mu1, mu1Err = params[:, 1], paramsErr[:, 1]
-    mu2, mu2Err = params[:, 4], paramsErr[:, 4]
-    deltaBeta = np.abs(mu2 - mu1)
-    deltaBetaErr = np.sqrt(mu1Err**2 + mu2Err**2)
-
-    omegaB = 140
-    beta = (180+omegaG-omegaB)
-    betaErr = 0.6
-    alpha = omegaG
-
-    paramsFrame = pd.DataFrame({
-        r'$\alpha/°$': alpha, r'$\beta/°$': beta,
-        r'$\mu_1/°$': mu1, r'$\Delta\mu_1/°$': mu1Err, r'$\mu_2/°$': mu2, r'$\Delta\mu_2/°$': mu2Err,
-        r'$\delta\beta/°$': deltaBeta, r'$\Delta\delta\beta/°$': deltaBetaErr, 
-    })
-    paramsFrame.to_csv('p402/data/balmer_gauss_fit.csv', index=False)
-
-    # return alpha, beta, deltaBeta, betaErr, deltaBetaErr, paramsFrame
-    return np.deg2rad(alpha), np.deg2rad(beta), np.deg2rad(deltaBeta), np.deg2rad(betaErr), np.deg2rad(deltaBetaErr), paramsFrame
-
- """
