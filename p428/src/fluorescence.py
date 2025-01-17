@@ -68,20 +68,11 @@ def multi_gauss_ODR_fit(x, y, nGaussians, xErr=None, yErr=None, p0: np.array=Non
 
     return odr_fit(multi_gauss_fn, x, y, nParams, xErr, yErr, p0)
 
-# def energy_calibration(inFilename, outFilename, centers=None, heights=None):
-# def energy_calibration(inFilename, outFilename, energyValues, **kwargs):
 def energy_calibration(dataFilename, plot1Filename, plot2Filename, energyValues, p0a, p0b):
     n, N = load_data(dataFilename)
 
     nSlice, NSlice = slice_from_range(80, 160, n, N)
     params, paramsErr = multi_gauss_ODR_fit(nSlice, NSlice, 4, p0=np.concatenate((p0a[:-1], p0b)))
-
-    # nSlice1, NSlice1 = slice_from_range(80, 122, n, N)
-    # params1, params1Err = multi_gauss_ODR_fit(nSlice1, NSlice1, 2, p0=p0a)
-    # nSlice2, NSlice2 = slice_from_range(126, 160, n, N)
-    # params2, params2Err = multi_gauss_ODR_fit(nSlice2, NSlice2, 2, p0=p0b)
-    print(params)
-    # print(params2)
 
     fig, ax = plt.subplots()
     ax.set_xlim(80, 160)
@@ -107,8 +98,9 @@ def energy_calibration(dataFilename, plot1Filename, plot2Filename, energyValues,
 
     return params, paramsErr
 
-def directory_gauss_fit(inDir, outDir):
+def directory_gauss_fit(inDir, outDir, energyParams, lines):
     """Do Gauss Fits on an entire directory of Data."""
+    lines /= 1e3
 
     inDir = Path(inDir)
     for file in inDir.iterdir():
@@ -117,26 +109,28 @@ def directory_gauss_fit(inDir, outDir):
         
         n, N = load_data(file)
         Nerr = 2
+        E = linear_fn_odr(energyParams, n)
 
         fig, ax = plt.subplots()
-        ax.plot(n, N)
+        ax.plot(E, N)
+        for line in lines:
+            ax.axvline(line)
         ax.minorticks_on()
         ax.grid(which='both')
 
         outFilename = str(Path(outDir))+'/'+file.stem+'.pdf'
         fig.savefig(outFilename)
 
-    
-inDir = 'p428/data/5.2'
-outDir = 'p428/plot/5.2'
-# directory_gauss_fit(inDir, outDir)
-# energy_calibration('p428/data/5.2/FeZn.txt', 'p428/plot/FeZn_raw.pdf', np.array((104, 112, 137, 155)), np.array((5000, 2000, 600, 100)))
+
 params, paramsErr = energy_calibration(
     'p428/data/5.2/FeZn.txt', 'p428/plot/FeZn_energy_fit.pdf', 'p428/plot/energy_calibration.pdf',
     np.array((6403.84, 7057.98, 8638.86, 9572.0)), # TODO: cite xdb
     p0a=np.array((5400, 104, 4, 2200, 109, 6, 50)),
     p0b=np.array((550, 136, 6, 110, 150, 10, 10)))
-    # p0=np.array((5000, 100, 4, 1000, 112, 3, 600, 136, 3, 100, 150, 10, 50)))
-
 print(params)
-
+    
+inDir = 'p428/data/5.2'
+outDir = 'p428/plot/5.2'
+lines = np.array((8047.78, 4510.84, 11442.3)) # Cu, Ti, Au (Au weird)
+directory_gauss_fit(inDir, outDir, params, lines)
+# energy_calibration('p428/data/5.2/FeZn.txt', 'p428/plot/FeZn_raw.pdf', np.array((104, 112, 137, 155)), np.array((5000, 2000, 600, 100)))
