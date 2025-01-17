@@ -69,17 +69,25 @@ def multi_gauss_ODR_fit(x, y, nGaussians, xErr=None, yErr=None, p0: np.array=Non
     return odr_fit(multi_gauss_fn, x, y, nParams, xErr, yErr, p0)
 
 # def energy_calibration(inFilename, outFilename, centers=None, heights=None):
-def energy_calibration(inFilename, outFilename, energyValues, **kwargs):
+# def energy_calibration(inFilename, outFilename, energyValues, **kwargs):
+def energy_calibration(inFilename, outFilename, energyValues, p0a, p0b):
     n, N = load_data(inFilename)
-    n, N = slice_from_range(80, 160, n, N)
 
-    params, paramsErr = multi_gauss_ODR_fit(n, N, 4, **kwargs)
-    print(params)
+    # nSlice1, NSlice1 = slice_from_range(80, 160, n, N)
+    # params1, params1Err = multi_gauss_ODR_fit(nSlice1, NSlice1, 4, p0=np.concatenate((p0a[:-1], p0b)))
+
+    nSlice1, NSlice1 = slice_from_range(80, 122, n, N)
+    params1, params1Err = multi_gauss_ODR_fit(nSlice1, NSlice1, 2, p0=p0a)
+    nSlice2, NSlice2 = slice_from_range(126, 160, n, N)
+    params2, params2Err = multi_gauss_ODR_fit(nSlice2, NSlice2, 2, p0=p0b)
+    print(params1)
+    print(params2)
 
     fig, ax = plt.subplots()
-    # ax.set_xlim(80, 160)
+    ax.set_xlim(80, 160)
     ax.plot(n, N)
-    ax.plot(*fit_curve(multi_gauss_fn, params, n, 500), zorder=4)
+    ax.plot(*fit_curve(multi_gauss_fn, params1, nSlice1, 500), zorder=4)
+    ax.plot(*fit_curve(multi_gauss_fn, params2, nSlice2, 500), zorder=4)
     ax.minorticks_on()
     ax.grid(which='both')
     fig.savefig(outFilename)
@@ -112,9 +120,11 @@ outDir = 'p428/plot/5.2'
 # directory_gauss_fit(inDir, outDir)
 # energy_calibration('p428/data/5.2/FeZn.txt', 'p428/plot/FeZn_raw.pdf', np.array((104, 112, 137, 155)), np.array((5000, 2000, 600, 100)))
 energy_calibration(
-    'p428/data/5.2/FeZn.txt', 'p428/plot/FeZn_raw2.pdf',
+    'p428/data/5.2/FeZn.txt', 'p428/plot/FeZn_raw3.pdf',
     (6403.84, 7057.98, 8638.86, 9572.0), # TODO: cite xdb
-    p0=np.array((5000, 100, 4, 1000, 112, 3, 600, 136, 3, 100, 150, 10, 50)))
+    p0a=np.array((5400, 104, 4, 2200, 109, 6, 50)),
+    p0b=np.array((550, 136, 6, 110, 150, 10, 10)))
+    # p0=np.array((5000, 100, 4, 1000, 112, 3, 600, 136, 3, 100, 150, 10, 50)))
 
 
 """ 
