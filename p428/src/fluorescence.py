@@ -69,34 +69,17 @@ def multi_gauss_ODR_fit(x, y, nGaussians, xErr=None, yErr=None, p0: np.array=Non
     return odr_fit(multi_gauss_fn, x, y, nParams, xErr, yErr, p0)
 
 # def energy_calibration(inFilename, outFilename, centers=None, heights=None):
-def energy_calibration(inFilename, outFilename, p0=None):
+def energy_calibration(inFilename, outFilename, energyValues, **kwargs):
     n, N = load_data(inFilename)
     n, N = slice_from_range(80, 160, n, N)
 
-    params, paramsErr = multi_gauss_ODR_fit(n, N, 4, p0=p0)
-    # params, paramsErr = multi_gauss_ODR_fit(n, N, 2, p0=np.array((5000, 102, 4, 600, 137, 2, 2)))
-    # params, paramsErr = multi_gauss_ODR_fit(n, N, 4, centers=centers, heights=heights)
-    # params, paramsErr = multi_gauss_ODR_fit(n, N, 2, centers=np.array((104, 140)), heights=np.array((5000, 600)))
-    # params, paramsErr = multi_gauss_ODR_fit(n, N, 2, p0=np.array((5000, 104, 10, 600, 140, 5, 50)))
-    # params, paramsErr = multi_gauss_ODR_fit(n, N, 1, centers=np.array((104)), heights=np.array((5000)))
-    # params, paramsErr = odr_fit(double_gauss_fn, n, N, 7, p0=np.array((5000, 104, 10, 600, 140, 5, 50)))
+    params, paramsErr = multi_gauss_ODR_fit(n, N, 4, **kwargs)
     print(params)
-
-    ## testing
-    gmodel = lmfit.Model(Double_Gaussian_linoff)
-    init_params = dict(a1=5000, x01=102, sigma1=4,
-                   a2=600, x02=137, sigma2=2,
-                   m=0, b=2)
-    params = gmodel.make_params(**init_params)
-    x_eval = np.linspace(80,160,500)
-    y_eval = gmodel.eval(x=x_eval,params = params)
-    # print(x_eval)
 
     fig, ax = plt.subplots()
     # ax.set_xlim(80, 160)
     ax.plot(n, N)
-    ax.plot(x_eval,y_eval)
-    # ax.plot(*fit_curve(multi_gauss_fn, params, n, 500), zorder=4)
+    ax.plot(*fit_curve(multi_gauss_fn, params, n, 500), zorder=4)
     ax.minorticks_on()
     ax.grid(which='both')
     fig.savefig(outFilename)
@@ -130,7 +113,8 @@ outDir = 'p428/plot/5.2'
 # energy_calibration('p428/data/5.2/FeZn.txt', 'p428/plot/FeZn_raw.pdf', np.array((104, 112, 137, 155)), np.array((5000, 2000, 600, 100)))
 energy_calibration(
     'p428/data/5.2/FeZn.txt', 'p428/plot/FeZn_raw2.pdf',
-    p0=np.array((5000, 100, 4, 1000, 112, 3, 600, 136, 5, 100, 150, 5, 50)))
+    (6403.84, 7057.98, 8638.86, 9572.0), # TODO: cite xdb
+    p0=np.array((5000, 100, 4, 1000, 112, 3, 600, 136, 3, 100, 150, 10, 50)))
 
 
 """ 
