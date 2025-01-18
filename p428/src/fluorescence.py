@@ -126,8 +126,8 @@ def plot_lines_directory(inDir, outDir, energyParams, linesDic):
         ax.set_ylabel(r'$N$')
         ax.legend()
         ax.minorticks_on()
-        ax.grid(which='minor', alpha=0.5)
-        ax.grid(which='major')
+        ax.grid(which='minor', visible=True, alpha=0.5)
+        ax.grid(which='major', visible=True)
         outFilename = str(Path(outDir))+'/'+sampleName+'.pdf'
         fig.savefig(outFilename)
         plt.close(fig)
@@ -152,6 +152,10 @@ def fit_fluorescence_data(inFile, outFile, energyParams, lineData, nGaussians, *
 
     ax.set_xlabel(r'$E/\mathrm{keV}$')
     ax.set_ylabel(r'$N$')
+    ax.minorticks_on()
+    ax.grid(which='minor', visible=True, alpha=0.4)
+    ax.grid(which='major', visible=True)
+    ax.legend()
     fig.savefig(outFile)
     plt.close(fig)
 
@@ -179,6 +183,7 @@ plot_lines_directory(inDir, outDir, energyParams, linesDic)
 params4, params4Err = fit_fluorescence_data(
     'p428/data/5.2/Unbekannt4.txt', 'p428/plot/Unbekannt4_fit.pdf',
     energyParams, lines4,
-    3, p0=np.array((60, 4.510, 0.5, 270, 8.05, 0.5, 35, 12, 1.5))
+    3, p0=np.array((60, 4.510, 0.5, 270, 8.05, 0.5, 30, 11.0, 0.3, 1))
 )
+print(params4)
 # TODO: include statistische Fehler
