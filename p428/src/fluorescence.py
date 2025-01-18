@@ -101,27 +101,40 @@ def energy_calibration(dataFilename, plot1Filename, plot2Filename, energyValues,
 
     return params, paramsErr
 
-def directory_gauss_fit(inDir, outDir, energyParams, lines):
-    """Do Gauss Fits on an entire directory of Data."""
-    lines /= 1e3
+def plot_lines_directory(inDir, outDir, energyParams, linesDic):
+    """
+    Plot all files from inDir and save plots in outDir.
+    Use energy calibration with the parameters energyParams and
+    plot vertical lines corresponding to the values in linesDic.
+    """
+    # lines /= 1e3
+    colors = ('red', 'green', 'blue', 'yellow', 'purple')
 
     inDir = Path(inDir)
     for file in inDir.iterdir():
         if not file.is_file():
             continue
+        sampleName = file.stem
         
         n, N = load_data(file)
         Nerr = 2
         E = linear_fn_odr(energyParams, n)
 
         fig, ax = plt.subplots()
-        ax.plot(E, N)
-        for line in lines:
-            ax.axvline(line)
+        ax.plot(E, N, label='Messdaten')
+        # for line in lines:
+        #     ax.axvline(line)
+        if sampleName in linesDic:
+            lines, lineNames = linesDic[sampleName]
+            for i in range(len(lines)):
+                ax.axvline(lines[i], color=colors[i], lw=1, label=lineNames[i])
+        ax.set_xlabel(r'$E/\mathrm{keV}$')
+        ax.set_ylabel(r'$N$')
+        ax.legend()
         ax.minorticks_on()
-        ax.grid(which='both')
-
-        outFilename = str(Path(outDir))+'/'+file.stem+'.pdf'
+        ax.grid(which='minor', alpha=0.5)
+        ax.grid(which='major')
+        outFilename = str(Path(outDir))+'/'+sampleName+'.pdf'
         fig.savefig(outFilename)
 
 
@@ -134,6 +147,12 @@ print(params)
     
 inDir = 'p428/data/5.2'
 outDir = 'p428/plot/5.2'
-lines = np.array((8047.78, 4510.84, 11442.3)) # Cu, Ti, Au (Au weird)
-directory_gauss_fit(inDir, outDir, params, lines)
+lines = np.array((8047.78, 4510.84, 11442.3, 12613.7)) # Cu, Ti, Au, Pb
+linesDic = {
+    'Unbekannt1': [(5.414, 6.403), (r'Cr $K_\alpha$', r'Fe $K_\alpha$')],
+    'Unbekannt2': [(8.047, 8.638), (r'Cu $K_\alpha$', r'Zn $K_\alpha$')],
+    'Unbekannt3': [(8.047, 8.638, 8.264), (r'Cu $K_\alpha$', r'Zn $K_\alpha$', r'Ni $K_\beta$')],
+    'Unbekannt4': [(4.510, 8.047, 12.613), (r'Ti $K_\alpha$', r'Cu $K_\alpha$', r'Pb $L_\beta$')]
+}
+plot_lines_directory(inDir, outDir, params, linesDic)
 # energy_calibration('p428/data/5.2/FeZn.txt', 'p428/plot/FeZn_raw.pdf', np.array((104, 112, 137, 155)), np.array((5000, 2000, 600, 100)))
