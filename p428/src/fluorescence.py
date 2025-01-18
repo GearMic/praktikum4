@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import lmfit
 
 def Gaussian(x, a, x0, sigma, offset=0):
-    """
+    """ (von Samuel)
     1-dimensional Gaussian distribution
 
     Parameters
@@ -25,7 +25,6 @@ def Gaussian(x, a, x0, sigma, offset=0):
     np.array
     """
     gauss = a * np.exp(-0.5 * np.square((x-x0)/sigma))
-    #(1 / (sigma * np.sqrt(2 * np.pi)))
     return offset + gauss
 
 def Gaussian_linoff(x,a1,x01,sigma1,m,b):
@@ -58,7 +57,6 @@ def multi_gauss_fn(B, x):
         result += gauss_fn(B[3*i:3*(i+1)], x)
     return result
 
-# def multi_gauss_ODR_fit(x, y, nGaussians, xErr=None, yErr=None, centers: np.array=None, heights: np.array=None):
 def multi_gauss_ODR_fit(x, y, nGaussians, xErr=None, yErr=None, p0: np.array=None):
     nParams = 3*nGaussians+1
     # p0 = np.ones(nParams)
@@ -85,10 +83,6 @@ def energy_calibration(dataFilename, plot1Filename, plot2Filename, energyValues,
     ax.set_xlim(80, 160)
     ax.plot(n, N)
     ax.plot(*fit_curve(multi_gauss_fn, paramsGauss, nSlice, 500), zorder=4)
-    # ax.plot(*fit_curve(multi_gauss_fn, params1, nSlice1, 500), zorder=4)
-    # ax.plot(*fit_curve(multi_gauss_fn, params2, nSlice2, 500), zorder=4)
-    # for x0i in x0:
-    #     ax.axvline(x0i, color='xkcd:gray', label='')
     ax.minorticks_on()
     ax.grid(which='both')
     fig.savefig(plot1Filename)
@@ -107,7 +101,6 @@ def plot_lines_directory(inDir, outDir, energyParams, linesDic):
     Use energy calibration with the parameters energyParams and
     plot vertical lines corresponding to the values in linesDic.
     """
-    # lines /= 1e3
     colors = ('red', 'green', 'blue', 'yellow', 'purple')
 
     inDir = Path(inDir)
@@ -122,8 +115,6 @@ def plot_lines_directory(inDir, outDir, energyParams, linesDic):
 
         fig, ax = plt.subplots()
         ax.plot(E, N, label='Messdaten')
-        # for line in lines:
-        #     ax.axvline(line)
         if sampleName in linesDic:
             lines, lineNames = linesDic[sampleName]
             for i in range(len(lines)):
@@ -155,4 +146,3 @@ linesDic = {
     'Unbekannt4': [(4.510, 8.047, 12.613), (r'Ti $K_\alpha$', r'Cu $K_\alpha$', r'Pb $L_\beta$')]
 }
 plot_lines_directory(inDir, outDir, params, linesDic)
-# energy_calibration('p428/data/5.2/FeZn.txt', 'p428/plot/FeZn_raw.pdf', np.array((104, 112, 137, 155)), np.array((5000, 2000, 600, 100)))
