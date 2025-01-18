@@ -71,24 +71,27 @@ def multi_gauss_ODR_fit(x, y, nGaussians, xErr=None, yErr=None, p0: np.array=Non
 def energy_calibration(dataFilename, plot1Filename, plot2Filename, energyValues, p0a, p0b):
     n, N = load_data(dataFilename)
 
+    # fit gaussians to data
     nSlice, NSlice = slice_from_range(80, 160, n, N)
-    params, paramsErr = multi_gauss_ODR_fit(nSlice, NSlice, 4, p0=np.concatenate((p0a[:-1], p0b)))
+    paramsGauss, paramsGaussErr = multi_gauss_ODR_fit(nSlice, NSlice, 4, p0=np.concatenate((p0a[:-1], p0b)))
+
+    # do linear fit for energy calibration
+    energyValues /= 1e3
+    x0 = paramsGauss[1:-1:3]
+    x0Err = paramsGaussErr[1:-1:3] # TODO: is the slice done by reference?
+    params, paramsErr = odr_fit(linear_fn_odr, x0, energyValues, 2, xErr=x0Err)
 
     fig, ax = plt.subplots()
     ax.set_xlim(80, 160)
     ax.plot(n, N)
-    ax.plot(*fit_curve(multi_gauss_fn, params, nSlice, 500), zorder=4)
+    ax.plot(*fit_curve(multi_gauss_fn, paramsGauss, nSlice, 500), zorder=4)
     # ax.plot(*fit_curve(multi_gauss_fn, params1, nSlice1, 500), zorder=4)
     # ax.plot(*fit_curve(multi_gauss_fn, params2, nSlice2, 500), zorder=4)
+    # for x0i in x0:
+    #     ax.axvline(x0i, color='xkcd:gray', label='')
     ax.minorticks_on()
     ax.grid(which='both')
     fig.savefig(plot1Filename)
-
-    # do linear fit for energy calibration
-    energyValues /= 1e3
-    x0 = params[1:-1:3]
-    x0Err = paramsErr[1:-1:3] # TODO: is the slice done by reference?
-    params, paramsErr = odr_fit(linear_fn_odr, x0, energyValues, 2, xErr=paramsErr)
 
     fig, ax = plt.subplots()
     ax.errorbar(x0, energyValues, 0, x0Err, 'x', zorder=4)
