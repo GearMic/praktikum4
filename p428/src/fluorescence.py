@@ -187,3 +187,11 @@ params4, params4Err = fit_fluorescence_data(
 )
 print(params4)
 # TODO: include statistische Fehler
+
+n4, N4 = load_data('p428/data/5.2/Unbekannt4.txt')
+nCu, Cu = load_data('p428/data/5.2/Cu.txt')
+nPb, Pb = load_data('p428/data/5.2/Pb.txt')
+fig, ax = plt.subplots()
+ax.plot(n4, N4)
+ax.plot(nCu, 0.23*Pb + 0.135*Cu)
+fig.savefig('p428/plot/4test.pdf')
