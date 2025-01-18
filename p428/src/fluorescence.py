@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import lmfit
 
 pltColors = ('red', 'green', 'blue', 'yellow', 'purple')
+# nErr = 4
 
 def Gaussian(x, a, x0, sigma, offset=0):
     """ (von Samuel)
@@ -146,9 +147,10 @@ def fit_fluorescence_data(inFile, outFile, energyParams, lineData, nGaussians, *
 
     ax.plot(E, N, label='Messdaten')
     ax.plot(*fit_curve(multi_gauss_fn, params, E, 500), label='Gauß-Anpassung')
-    lines, lineNames = lineData
-    for i in range(len(lines)):
-        ax.axvline(lines[i], color=pltColors[i], lw=1, label=lineNames[i])
+    if not (lineData is None):
+        lines, lineNames = lineData
+        for i in range(len(lines)):
+            ax.axvline(lines[i], color=pltColors[i], lw=1, label=lineNames[i])
 
     ax.set_xlabel(r'$E/\mathrm{keV}$')
     ax.set_ylabel(r'$N$')
@@ -160,6 +162,52 @@ def fit_fluorescence_data(inFile, outFile, energyParams, lineData, nGaussians, *
     plt.close(fig)
 
     return params, paramsErr
+
+def fit_mixing_ratio(unknownFile, elementFiles, plotFile, energyParams, ratioInitialGuess):
+    # get E values of the unknown alloy
+    n, NUn = load_data(unknownFile)
+    E = linear_fn_odr(energyParams, n)
+    samples = len(E)
+    # EUn = linear_fn_odr(energyParams, NUn)
+
+    # get E values for the different elements
+    count = len(elementFiles)
+    NElements = np.zeros((count, samples))
+    for i in range(count):
+        _, NElements[i] = load_data(elementFiles[i])
+        # _, NElement = load_data(elementFile)
+        # EElement = linear_fn_odr(energyParams, NElement)
+        # EElements.append(EElement)
+
+    # try to find a fitting linear combination of element spectra to imitate the spectrum of the alloy
+    def fit_fn(B, x):
+        # find index of Energy value closest to x
+        # xIdx = (np.abs(E - x)).argmin()
+        xIdx = np.searchsorted(E, x)
+        maxMask = xIdx == samples
+        xIdx[maxMask] = samples-1
+        B = np.array(B)
+
+        result = np.sum(B[:, np.newaxis]*NElements[:, xIdx], 0)
+        return result
+        # result = 0
+        # for i in range(count):
+        #     result += B[i] * NElements[i,xIdx]
+
+    params, paramsErr = odr_fit(fit_fn, E, NUn, count, p0=ratioInitialGuess)
+
+    fig, ax = plt.subplots()
+    ax.plot(E, NUn, label='Messdaten')
+    ax.plot(*fit_curve(fit_fn, params, E, 512), label='Anpassung')
+    ax.minorticks_on()
+    ax.grid(which='minor', visible=True, alpha=0.4)
+    ax.grid(which='major', visible=True)
+    ax.legend()
+    fig.savefig(plotFile)
+    plt.close(fig)
+
+    return params, paramsErr
+        
 
 
 energyParams, energyParamsErr = fluorescence_energy_calibration(
@@ -180,18 +228,33 @@ linesDic = {
 }
 plot_lines_directory(inDir, outDir, energyParams, linesDic)
 
+paramsTest, paramsTestErr = fit_mixing_ratio(
+    'p428/data/5.2/Unbekannt4.txt', ('p428/data/5.2/Cu.txt', 'p428/data/5.2/Pb.txt', 'p428/data/5.2/Ti.txt'),
+    'p428/plot/Unbekannt4_testfit.pdf', energyParams, (0.135, 0.23, 0.1)
+)
+
 params4, params4Err = fit_fluorescence_data(
     'p428/data/5.2/Unbekannt4.txt', 'p428/plot/Unbekannt4_fit.pdf',
     energyParams, lines4,
     3, p0=np.array((60, 4.510, 0.5, 270, 8.05, 0.5, 30, 11.0, 0.3, 1))
+) # TODO: do 4 fits?
+paramsCu, paramsCuErr = fit_fluorescence_data(
+    'p428/data/5.2/Cu.txt', 'p428/plot/Cu_fit.pdf',
+    energyParams, None,
+    1, p0=np.array((1850, 8.3, 0.2, 0))
 )
-print(params4)
+paramsPb, paramsPbErr = fit_fluorescence_data(
+    'p428/data/5.2/Pb.txt', 'p428/plot/Pb_fit.pdf',
+    energyParams, None,
+    3, p0=np.array((175, 4.0, 2.5, 130, 8.2, 0.6, 185, 10.5, 0.5, 1))
+)
+
 # TODO: include statistische Fehler
 
-n4, N4 = load_data('p428/data/5.2/Unbekannt4.txt')
-nCu, Cu = load_data('p428/data/5.2/Cu.txt')
-nPb, Pb = load_data('p428/data/5.2/Pb.txt')
-fig, ax = plt.subplots()
-ax.plot(n4, N4)
-ax.plot(nCu, 0.23*Pb + 0.135*Cu)
-fig.savefig('p428/plot/4test.pdf')
+# n4, N4 = load_data('p428/data/5.2/Unbekannt4.txt')
+# nCu, Cu = load_data('p428/data/5.2/Cu.txt')
+# nPb, Pb = load_data('p428/data/5.2/Pb.txt')
+# fig, ax = plt.subplots()
+# ax.plot(n4, N4)
+# ax.plot(nCu, 0.23*Pb + 0.135*Cu)
+# fig.savefig('p428/plot/4test.pdf')
