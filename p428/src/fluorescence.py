@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import lmfit
 
 pltColors = ('red', 'green', 'blue', 'yellow', 'purple')
-# nErr = 4
+nErr = 1
 
 def Gaussian(x, a, x0, sigma, offset=0):
     """ (von Samuel)
@@ -74,7 +74,7 @@ def fluorescence_energy_calibration(dataFilename, plot1Filename, plot2Filename, 
 
     # fit gaussians to data
     nSlice, NSlice = slice_from_range(80, 160, n, N)
-    paramsGauss, paramsGaussErr = multi_gauss_ODR_fit(nSlice, NSlice, 4, p0=np.concatenate((p0a[:-1], p0b)))
+    paramsGauss, paramsGaussErr = multi_gauss_ODR_fit(nSlice, NSlice, 4, p0=np.concatenate((p0a[:-1], p0b)), xErr=nErr)
 
     # do linear fit for energy calibration
     energyValues /= 1e3
@@ -207,6 +207,12 @@ def fit_mixing_ratio(unknownFile, elementFiles, plotFile, energyParams, ratioIni
     plt.close(fig)
 
     return params, paramsErr
+
+def calc_mass_ratio(rho, eta, etaErr):
+    ratios = rho * eta / np.sum(rho * eta)
+    ratiosErr = rho * etaErr / np.sum(rho * eta) # TODO: do proper err calculation
+
+    return ratios, ratiosErr
         
 
 
@@ -214,7 +220,8 @@ energyParams, energyParamsErr = fluorescence_energy_calibration(
     'p428/data/5.2/FeZn.txt', 'p428/plot/FeZn_energy_fit.pdf', 'p428/plot/fluorescence_energy_calibration.pdf',
     np.array((6403.84, 7057.98, 8638.86, 9572.0)), # TODO: cite xdb
     p0a=np.array((5400, 104, 4, 2200, 109, 6, 50)),
-    p0b=np.array((550, 136, 6, 110, 150, 10, 10)))
+    p0b=np.array((550, 136, 6, 110, 150, 10, 10))
+)
     
 inDir = 'p428/data/5.2'
 outDir = 'p428/plot/5.2'
@@ -228,10 +235,16 @@ linesDic = {
 }
 plot_lines_directory(inDir, outDir, energyParams, linesDic)
 
-paramsTest, paramsTestErr = fit_mixing_ratio(
+# determine mass ratio
+eta, etaErr = fit_mixing_ratio(
     'p428/data/5.2/Unbekannt4.txt', ('p428/data/5.2/Cu.txt', 'p428/data/5.2/Pb.txt', 'p428/data/5.2/Ti.txt'),
     'p428/plot/Unbekannt4_testfit.pdf', energyParams, (0.135, 0.23, 0.1)
 )
+rho = 8.96, 11.3, 4.51  # TODO: include source in tex; from https://www.engineersedge.com/materials/densities_of_metals_and_elements_table_13976.htm
+
+ratios, ratiosErr = calc_mass_ratio(rho, eta, etaErr)
+print('mass ratios:', ratios, ratiosErr)
+
 
 params4, params4Err = fit_fluorescence_data(
     'p428/data/5.2/Unbekannt4.txt', 'p428/plot/Unbekannt4_fit.pdf',
@@ -250,6 +263,7 @@ paramsPb, paramsPbErr = fit_fluorescence_data(
 )
 
 # TODO: include statistische Fehler
+# TODO: mention that some spectra are way too high
 
 # n4, N4 = load_data('p428/data/5.2/Unbekannt4.txt')
 # nCu, Cu = load_data('p428/data/5.2/Cu.txt')
