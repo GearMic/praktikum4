@@ -100,6 +100,13 @@ def fluorescence_energy_calibration(dataFilename, plot1Filename, plot2Filename, 
 
     return params, paramsErr
 
+def n_to_E(n, energyParams, energyParamsErr):
+    E = linear_fn_odr(energyParams, n)
+    _, b = energyParams
+    aErr, bErr = energyParamsErr
+    EErr = np.sqrt(aErr**2 + (bErr*n)**2 + (b*nErr)**2)
+    return E, EErr
+
 def plot_lines_directory(inDir, outDir, energyParams, linesDic):
     """
     Plot all files from inDir and save plots in outDir.
@@ -113,12 +120,12 @@ def plot_lines_directory(inDir, outDir, energyParams, linesDic):
             continue
         sampleName = file.stem
         
-        n, N = load_data(file)
-        Nerr = 2
-        E = linear_fn_odr(energyParams, n)
+        _, N = load_data(file)
+        # E = linear_fn_odr(energyParams, n)
 
         fig, ax = plt.subplots()
-        ax.plot(E, N, label='Messdaten')
+        # ax.plot(E, N, label='Messdaten')
+        ax.errorbar(E, N, 0, EErr, label='Messdaten')
         if sampleName in linesDic:
             lines, lineNames = linesDic[sampleName]
             for i in range(len(lines)):
@@ -166,11 +173,11 @@ def fit_fluorescence_data(inFile, outFile, energyParams, lineData, nGaussians, *
 def fit_mixing_ratio(unknownFile, elementFiles, plotFile, energyParams, ratioInitialGuess):
     # get E values of the unknown alloy
     n, NUn = load_data(unknownFile)
-    E = linear_fn_odr(energyParams, n)
+    # E = linear_fn_odr(energyParams, n)
     samples = len(E)
     # EUn = linear_fn_odr(energyParams, NUn)
 
-    # get E values for the different elements
+    # get N values for the different elements
     count = len(elementFiles)
     NElements = np.zeros((count, samples))
     for i in range(count):
@@ -182,7 +189,6 @@ def fit_mixing_ratio(unknownFile, elementFiles, plotFile, energyParams, ratioIni
     # try to find a fitting linear combination of element spectra to imitate the spectrum of the alloy
     def fit_fn(B, x):
         # find index of Energy value closest to x
-        # xIdx = (np.abs(E - x)).argmin()
         xIdx = np.searchsorted(E, x)
         maxMask = xIdx == samples
         xIdx[maxMask] = samples-1
@@ -190,11 +196,27 @@ def fit_mixing_ratio(unknownFile, elementFiles, plotFile, energyParams, ratioIni
 
         result = np.sum(B[:, np.newaxis]*NElements[:, xIdx], 0)
         return result
-        # result = 0
-        # for i in range(count):
-        #     result += B[i] * NElements[i,xIdx]
 
-    params, paramsErr = odr_fit(fit_fn, E, NUn, count, p0=ratioInitialGuess)
+    def fit_fn_alt(B, x):
+        # find index of Energy value closest to x
+        xIdxA = np.searchsorted(E, x)
+        xIdxB = xIdxA - 1
+        maxMask = xIdxA == samples
+        xIdxA[maxMask] = samples-1
+        maxMask = xIdxB == samples
+        xIdxB[maxMask] = samples-1
+        minMask = xIdxB == -1
+        xIdxB[minMask] = 0
+        B = np.array(B)
+
+        result1 = np.sum(B[:, np.newaxis]*NElements[:, xIdxA], 0)
+        result2 = np.sum(B[:, np.newaxis]*NElements[:, xIdxB], 0)
+        deltaE = E[1]-E[0]
+        deltax = x - E[xIdxA]
+        result = result1 + deltax/deltaE * (result2-result1)
+        return result
+    
+    params, paramsErr = odr_fit(fit_fn, E, NUn, count, xErr=EErr, p0=ratioInitialGuess)
 
     fig, ax = plt.subplots()
     ax.plot(E, NUn, label='Messdaten')
@@ -209,12 +231,12 @@ def fit_mixing_ratio(unknownFile, elementFiles, plotFile, energyParams, ratioIni
     return params, paramsErr
 
 def calc_mass_ratio(rho, eta, etaErr):
-    ratios = rho * eta / np.sum(rho * eta)
-    ratiosErr = rho * etaErr / np.sum(rho * eta) # TODO: do proper err calculation
+    totalMass = np.sum(rho * eta)
+    ratios = rho * eta / totalMass
+    # ratiosErr = rho * etaErr / np.sum(rho * eta) # TODO: do proper err calculation
+    ratiosErr = np.sqrt((rho * etaErr / totalMass)**2 + np.sum((rho**2*eta*etaErr/totalMass**2)**2))
 
     return ratios, ratiosErr
-        
-
 
 energyParams, energyParamsErr = fluorescence_energy_calibration(
     'p428/data/5.2/FeZn.txt', 'p428/plot/FeZn_energy_fit.pdf', 'p428/plot/fluorescence_energy_calibration.pdf',
@@ -222,6 +244,9 @@ energyParams, energyParamsErr = fluorescence_energy_calibration(
     p0a=np.array((5400, 104, 4, 2200, 109, 6, 50)),
     p0b=np.array((550, 136, 6, 110, 150, 10, 10))
 )
+n, _ = load_data('p428/data/5.2/FeZn.txt')
+E, EErr = n_to_E(n, energyParams, energyParamsErr)
+print('energy params', energyParams, energyParamsErr)
     
 inDir = 'p428/data/5.2'
 outDir = 'p428/plot/5.2'
@@ -233,42 +258,21 @@ linesDic = {
     'Unbekannt3': [(8.047, 8.638, 8.264), (r'Cu $K_\alpha$', r'Zn $K_\alpha$', r'Ni $K_\beta$')],
     'Unbekannt4': lines4
 }
-plot_lines_directory(inDir, outDir, energyParams, linesDic)
+# plot_lines_directory(inDir, outDir, energyParams, linesDic)
 
 # determine mass ratio
 eta, etaErr = fit_mixing_ratio(
     'p428/data/5.2/Unbekannt4.txt', ('p428/data/5.2/Cu.txt', 'p428/data/5.2/Pb.txt', 'p428/data/5.2/Ti.txt'),
-    'p428/plot/Unbekannt4_testfit.pdf', energyParams, (0.135, 0.23, 0.1)
+    'p428/plot/Unbekannt4_testfit.pdf', energyParams, (0.347, 0.640, 0.0121)#(0.135, 0.23, 0.1)
 )
-rho = 8.96, 11.3, 4.51  # TODO: include source in tex; from https://www.engineersedge.com/materials/densities_of_metals_and_elements_table_13976.htm
+rho = np.array((8.96, 11.3, 4.51))  # TODO: include source in tex; from https://www.engineersedge.com/materials/densities_of_metals_and_elements_table_13976.htm
 
 ratios, ratiosErr = calc_mass_ratio(rho, eta, etaErr)
 print('mass ratios:', ratios, ratiosErr)
 
 
-params4, params4Err = fit_fluorescence_data(
-    'p428/data/5.2/Unbekannt4.txt', 'p428/plot/Unbekannt4_fit.pdf',
-    energyParams, lines4,
-    3, p0=np.array((60, 4.510, 0.5, 270, 8.05, 0.5, 30, 11.0, 0.3, 1))
-) # TODO: do 4 fits?
-paramsCu, paramsCuErr = fit_fluorescence_data(
-    'p428/data/5.2/Cu.txt', 'p428/plot/Cu_fit.pdf',
-    energyParams, None,
-    1, p0=np.array((1850, 8.3, 0.2, 0))
-)
-paramsPb, paramsPbErr = fit_fluorescence_data(
-    'p428/data/5.2/Pb.txt', 'p428/plot/Pb_fit.pdf',
-    energyParams, None,
-    3, p0=np.array((175, 4.0, 2.5, 130, 8.2, 0.6, 185, 10.5, 0.5, 1))
-)
-
 # TODO: include statistische Fehler
 # TODO: mention that some spectra are way too high
+# TODO: mention that errorbars aren't included for visibility
 
-# n4, N4 = load_data('p428/data/5.2/Unbekannt4.txt')
-# nCu, Cu = load_data('p428/data/5.2/Cu.txt')
-# nPb, Pb = load_data('p428/data/5.2/Pb.txt')
-# fig, ax = plt.subplots()
-# ax.plot(n4, N4)
-# ax.plot(nCu, 0.23*Pb + 0.135*Cu)
-# fig.savefig('p428/plot/4test.pdf')
+
