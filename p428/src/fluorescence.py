@@ -5,6 +5,9 @@ import lmfit
 
 pltColors = ('red', 'green', 'blue', 'yellow', 'purple')
 nErr = 1
+minorAlpha=0.3
+majorAlpha=1.0
+
 
 def Gaussian(x, a, x0, sigma, offset=0):
     """ (von Samuel)
@@ -80,21 +83,33 @@ def fluorescence_energy_calibration(dataFilename, plot1Filename, plot2Filename, 
     energyValues /= 1e3
     x0 = paramsGauss[1:-1:3]
     x0Err = paramsGaussErr[1:-1:3] # TODO: is the slice done by reference?
+    print('centers', x0, x0Err)
     params, paramsErr = odr_fit(linear_fn_odr, x0, energyValues, 2, xErr=x0Err)
 
     fig, ax = plt.subplots()
+    ax.plot(n, N, label='Messdaten')
+    ax.plot(*fit_curve(multi_gauss_fn, paramsGauss, nSlice, 500), zorder=4, label='Anpassung')
     ax.set_xlim(80, 160)
-    ax.plot(n, N)
-    ax.plot(*fit_curve(multi_gauss_fn, paramsGauss, nSlice, 500), zorder=4)
+    ax.set_ylim(bottom=0)
     ax.minorticks_on()
-    ax.grid(which='both')
+    ax.grid(which='minor', visible=True, alpha=minorAlpha)
+    ax.grid(which='major', visible=True, alpha=majorAlpha)
+    ax.set_xlabel('$n$')
+    ax.set_ylabel('$N$')
+    ax.legend()
     fig.savefig(plot1Filename)
     plt.close(fig)
 
     fig, ax = plt.subplots()
-    ax.errorbar(x0, energyValues, 0, x0Err, 'x', zorder=4)
-    ax.errorbar
-    ax.plot(*fit_curve(linear_fn_odr, params, x0))
+    ax.errorbar(x0, energyValues, 0, x0Err, 'x', zorder=4, label='Maxima aus Gauß-Anpassung')
+    ax.plot(*fit_curve(linear_fn_odr, params, x0), label='lineare Anpassung')
+    ax.set_xlim(102, 150)
+    ax.minorticks_on()
+    ax.grid(which='minor', visible=True, alpha=minorAlpha)
+    ax.grid(which='major', visible=True, alpha=majorAlpha)
+    ax.set_xlabel('$n$')
+    ax.set_ylabel(r'$E/\mathrm{keV}$')
+    ax.legend()
     fig.savefig(plot2Filename)
     plt.close(fig)
 
@@ -107,7 +122,7 @@ def n_to_E(n, energyParams, energyParamsErr):
     EErr = np.sqrt(aErr**2 + (bErr*n)**2 + (b*nErr)**2)
     return E, EErr
 
-def plot_lines_directory(inDir, outDir, energyParams, linesDic):
+def plot_lines_directory(inDir, outDir, energyParams, linesDic={}, fitDic={}):
     """
     Plot all files from inDir and save plots in outDir.
     Use energy calibration with the parameters energyParams and
@@ -115,21 +130,31 @@ def plot_lines_directory(inDir, outDir, energyParams, linesDic):
     """
 
     inDir = Path(inDir)
+    sampleNames = []
+    maxEnergies = [] # Photon energy corresponding to the maximum Intensity
     for file in inDir.iterdir():
         if not file.is_file():
             continue
         sampleName = file.stem
+        sampleNames.append(sampleName)
         
         _, N = load_data(file)
         # E = linear_fn_odr(energyParams, n)
+        maxEnergies.append(E[np.argmax(N)])
 
         fig, ax = plt.subplots()
         # ax.plot(E, N, label='Messdaten')
-        ax.errorbar(E, N, 0, EErr, label='Messdaten')
+
+        # ax.errorbar(E, N, 0, EErr, label='Messdaten')
+        ax.plot(E, N, label='Messdaten')
         if sampleName in linesDic:
             lines, lineNames = linesDic[sampleName]
             for i in range(len(lines)):
                 ax.axvline(lines[i], color=pltColors[i], lw=1, label=lineNames[i])
+        if sampleName in fitDic:
+            params, paramsErr = multi_gauss_ODR_fit(E, N, 1, xErr=EErr, p0=fitDic[sampleName])
+            ax.plot(*fit_curve(multi_gauss_fn, params, E, 500), label='Anpassung')
+
         ax.set_xlabel(r'$E/\mathrm{keV}$')
         ax.set_ylabel(r'$N$')
         ax.legend()
@@ -139,6 +164,11 @@ def plot_lines_directory(inDir, outDir, energyParams, linesDic):
         outFilename = str(Path(outDir))+'/'+sampleName+'.pdf'
         fig.savefig(outFilename)
         plt.close(fig)
+
+    # print('sampleNames', sampleNames)
+    # print('maxEnergies', maxEnergies)
+    maxEnergyDic = {sampleNames[i]: maxEnergies[i] for i in range(len(sampleNames))}
+    print('maxEnergies', maxEnergyDic)
 
 def fit_fluorescence_data(inFile, outFile, energyParams, lineData, nGaussians, **kwargs):
     """
@@ -255,10 +285,16 @@ lines4 = [(4.510, 8.047, 12.613), (r'Ti $K_\alpha$', r'Cu $K_\alpha$', r'Pb $L_\
 linesDic = {
     'Unbekannt1': [(5.414, 6.403), (r'Cr $K_\alpha$', r'Fe $K_\alpha$')],
     'Unbekannt2': [(8.047, 8.638), (r'Cu $K_\alpha$', r'Zn $K_\alpha$')],
-    'Unbekannt3': [(8.047, 8.638, 8.264), (r'Cu $K_\alpha$', r'Zn $K_\alpha$', r'Ni $K_\beta$')],
+    # 'Unbekannt3': [(8.047, 8.638, 8.264), (r'Cu $K_\alpha$', r'Zn $K_\alpha$', r'Ni $K_\beta$')],
+    'Unbekannt3': [(8.047, 8.638), (r'Cu $K_\alpha$', r'Zn $K_\alpha$')],
     'Unbekannt4': lines4
 }
-# plot_lines_directory(inDir, outDir, energyParams, linesDic)
+
+defaultp0 = np.array((2000, 7.5, 2, 0))
+fitDic = {
+    'Fe': np.array((2200, 6.5, 1, 0)), 'Cu': defaultp0, 'Zn': defaultp0, 'Pb': defaultp0, 'Ti': defaultp0
+} # 'Fe Cu Zn Pb Ti Cr' # TODO: dont forget Cr
+plot_lines_directory(inDir, outDir, energyParams, linesDic=linesDic, fitDic=fitDic)
 
 # determine mass ratio
 eta, etaErr = fit_mixing_ratio(
@@ -276,3 +312,4 @@ print('mass ratios:', ratios, ratiosErr)
 # TODO: mention that errorbars aren't included for visibility
 
 
+# Metals list: 
