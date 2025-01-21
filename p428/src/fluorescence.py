@@ -63,12 +63,13 @@ def multi_gauss_fn(B, x):
         result += gauss_fn(B[3*i:3*(i+1)], x)
     return result
 
-def multi_gauss_ODR_fit(x, y, nGaussians, xErr=None, yErr=None, p0: np.array=None):
+def multi_gauss_ODR_fit(x, y, nGaussians=None, xErr=None, yErr=None, p0: np.array=None):
+    if nGaussians is None:
+        if p0 is None:
+            raise ValueError('Cannot determine amount of parameters.')
+        else:
+            nGaussians = nParams//3
     nParams = 3*nGaussians+1
-    # p0 = np.ones(nParams)
-    # if not (centers is None):
-    #     p0[1:-1:3] = centers
-    #     p0[0:-1:3] = heights
 
     return odr_fit(multi_gauss_fn, x, y, nParams, xErr, yErr, p0)
 
@@ -155,6 +156,7 @@ def plot_lines_directory(inDir, outDir, energyParams, linesDic={}, fitDic={}):
             params, paramsErr = multi_gauss_ODR_fit(E, N, 1, xErr=EErr, p0=fitDic[sampleName])
             ax.plot(*fit_curve(multi_gauss_fn, params, E, 500), label='Anpassung')
 
+        ax.set_ylim(bottom=0)
         ax.set_xlabel(r'$E/\mathrm{keV}$')
         ax.set_ylabel(r'$N$')
         ax.legend()
@@ -291,8 +293,9 @@ linesDic = {
 }
 
 defaultp0 = np.array((2000, 7.5, 2, 0))
+p0Fe = np.array((180, 0.6, 0.4, 2200, 6.5, 0.5, 200, 9.5, 3, 0))
 fitDic = {
-    'Fe': np.array((2200, 6.5, 1, 0)), 'Cu': defaultp0, 'Zn': defaultp0, 'Pb': defaultp0, 'Ti': defaultp0
+    'Fe': np.array((2200, 6.7, 1.5, 0)), 'Cu': defaultp0, 'Zn': defaultp0, 'Pb': defaultp0, 'Ti': defaultp0
 } # 'Fe Cu Zn Pb Ti Cr' # TODO: dont forget Cr
 plot_lines_directory(inDir, outDir, energyParams, linesDic=linesDic, fitDic=fitDic)
 
