@@ -286,9 +286,9 @@ outDir = 'p428/plot/5.2'
 lines4 = [(4.510, 8.047, 12.613), (r'Ti $K_\alpha$', r'Cu $K_\alpha$', r'Pb $L_\beta$')]
 linesDic = {
     'Unbekannt1': [(5.414, 6.403), (r'Cr $K_\alpha$', r'Fe $K_\alpha$')],
-    'Unbekannt2': [(8.047, 8.638), (r'Cu $K_\alpha$', r'Zn $K_\alpha$')],
+    # 'Unbekannt2': [(8.047, 8.638), (r'Cu $K_\alpha$', r'Zn $K_\alpha$')],
     # 'Unbekannt3': [(8.047, 8.638, 8.264), (r'Cu $K_\alpha$', r'Zn $K_\alpha$', r'Ni $K_\beta$')],
-    'Unbekannt3': [(8.047, 8.638), (r'Cu $K_\alpha$', r'Zn $K_\alpha$')],
+    'Unbekannt3': [(8.047, 8.638, 12.613), (r'Cu $K_\alpha$', r'Zn $K_\alpha$', r'Pb $L_\beta$')],
     'Unbekannt4': lines4
 }
 
@@ -297,7 +297,7 @@ p0Fe = np.array((180, 0.6, 0.4, 2200, 6.5, 0.5, 200, 9.5, 3, 0))
 fitDic = {
     'Fe': np.array((2200, 6.7, 1.5, 0)), 'Cu': defaultp0, 'Zn': defaultp0, 'Pb': defaultp0, 'Ti': defaultp0
 } # 'Fe Cu Zn Pb Ti Cr' # TODO: dont forget Cr
-plot_lines_directory(inDir, outDir, energyParams, linesDic=linesDic, fitDic=fitDic)
+plot_lines_directory(inDir, outDir, energyParams, linesDic=linesDic)
 
 # determine mass ratio
 eta, etaErr = fit_mixing_ratio(
@@ -307,11 +307,11 @@ eta, etaErr = fit_mixing_ratio(
 rho = np.array((8.96, 11.3, 4.51))  # TODO: include source in tex; from https://www.engineersedge.com/materials/densities_of_metals_and_elements_table_13976.htm
 
 ratios, ratiosErr = calc_mass_ratio(rho, eta, etaErr)
+print('eta:', eta, etaErr)
 print('mass ratios:', ratios, ratiosErr)
 
 
 # TODO: include statistische Fehler
-# TODO: mention that some spectra are way too high
 # TODO: mention that errorbars aren't included for visibility
 
 
