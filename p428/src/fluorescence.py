@@ -123,7 +123,7 @@ def n_to_E(n, energyParams, energyParamsErr):
     EErr = np.sqrt(aErr**2 + (bErr*n)**2 + (b*nErr)**2)
     return E, EErr
 
-def plot_lines_directory(inDir, outDir, energyParams, linesDic={}, fitDic={}):
+def plot_lines_directory(inDir, outDir, energyParams, linesDic={}, fitDic={}, xlimDic={}):
     """
     Plot all files from inDir and save plots in outDir.
     Use energy calibration with the parameters energyParams and
@@ -157,6 +157,8 @@ def plot_lines_directory(inDir, outDir, energyParams, linesDic={}, fitDic={}):
             ax.plot(*fit_curve(multi_gauss_fn, params, E, 500), label='Anpassung')
 
         ax.set_ylim(bottom=0)
+        if sampleName in xlimDic:
+            ax.set_xlim(*xlimDic[sampleName])
         ax.set_xlabel(r'$E/\mathrm{keV}$')
         ax.set_ylabel(r'$N$')
         ax.legend()
@@ -170,7 +172,7 @@ def plot_lines_directory(inDir, outDir, energyParams, linesDic={}, fitDic={}):
     # print('sampleNames', sampleNames)
     # print('maxEnergies', maxEnergies)
     maxEnergyDic = {sampleNames[i]: maxEnergies[i] for i in range(len(sampleNames))}
-    print('maxEnergies', maxEnergyDic)
+    # print('maxEnergies', maxEnergyDic)
 
 def fit_fluorescence_data(inFile, outFile, energyParams, lineData, nGaussians, **kwargs):
     """
@@ -286,7 +288,7 @@ outDir = 'p428/plot/5.2'
 lines4 = [(4.510, 8.047, 12.613), (r'Ti $K_\alpha$', r'Cu $K_\alpha$', r'Pb $L_\beta$')]
 linesDic = {
     'Unbekannt1': [(5.414, 6.403), (r'Cr $K_\alpha$', r'Fe $K_\alpha$')],
-    # 'Unbekannt2': [(8.047, 8.638), (r'Cu $K_\alpha$', r'Zn $K_\alpha$')],
+    'Unbekannt2': [(8.047, 8.638), (r'Cu $K_\alpha$', r'Zn $K_\alpha$')],
     # 'Unbekannt3': [(8.047, 8.638, 8.264), (r'Cu $K_\alpha$', r'Zn $K_\alpha$', r'Ni $K_\beta$')],
     'Unbekannt3': [(8.047, 8.638, 12.613), (r'Cu $K_\alpha$', r'Zn $K_\alpha$', r'Pb $L_\beta$')],
     'Unbekannt4': lines4
@@ -297,7 +299,13 @@ p0Fe = np.array((180, 0.6, 0.4, 2200, 6.5, 0.5, 200, 9.5, 3, 0))
 fitDic = {
     'Fe': np.array((2200, 6.7, 1.5, 0)), 'Cu': defaultp0, 'Zn': defaultp0, 'Pb': defaultp0, 'Ti': defaultp0
 } # 'Fe Cu Zn Pb Ti Cr' # TODO: dont forget Cr
-plot_lines_directory(inDir, outDir, energyParams, linesDic=linesDic)
+xlimDic = {
+    'Unbekannt1': (1, 16),
+    'Unbekannt2': (1, 16),
+    'Unbekannt3': (1, 16),
+    'Unbekannt4': (0, 28)
+}
+plot_lines_directory(inDir, outDir, energyParams, linesDic=linesDic, xlimDic=xlimDic)
 
 # determine mass ratio
 eta, etaErr = fit_mixing_ratio(
